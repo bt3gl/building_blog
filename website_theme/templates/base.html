@@ -14,9 +14,6 @@
         padding-top: 60px;
         padding-bottom: 40px;
       }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
       .tag-1 {
         font-size: 13pt;
       }
@@ -32,13 +29,8 @@
     </style>
     <link href="{{ SITEURL }}/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
         <link href="{{ SITEURL }}/theme/css/font-awesome.css" rel="stylesheet">
-
     <link href="{{ SITEURL }}/theme/css/pygments.css" rel="stylesheet">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico">
@@ -76,13 +68,12 @@
                           <li class="divider-vertical"></li>
               {% endif %}
 
-
                           <ul class="nav pull-right">
                                 <li><a href="{{ SITEURL }}/authors.html">About</a></li>
+                                <li><a href="{{ SITEURL }}/archives.html"><b>Archives</b></a></li>
                                 <li><a href="https://github.com/bt3gl">GitHub</a></li>
                                 <li><a href="https://twitter.com/1bt337">Twitter</a></li>
-                                <li><a href="http://bt3gl.github.io/projects_page/index.html">Ph.D.</a></li>
-                                <li><a href="{{ SITEURL }}/archives.html"><b>Archives</b></a></li>
+                                <li><a href="http://bt3gl.github.io/projects_page/index.html">Bygone Playful Times</a></li>
 
                           </ul>
 
@@ -100,9 +91,6 @@
             {% endblock %}
         </div><!--/span-->
 
-                <div class="span3 well sidebar-nav" id="sidebar">
-            {% include 'sidebar.html' %}
-        </div><!--/.well -->
 
       </div><!--/row-->
 

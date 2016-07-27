@@ -12,7 +12,7 @@
 html, body {
     font: 14px courier, clean, sans-serif;
     text-align: center;
-    background-image: url("../figs/peace.png");
+    /*background-image: url("../figs/peace.png");*/
     background-repeat: no-repeat;
     background-position: right;
     color: #31B96E;
