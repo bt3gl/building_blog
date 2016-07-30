@@ -1,5 +1,5 @@
 Title: Ouroboros Statement
-Date: 2016-07-20
+Date: 2016-07-15
 Category: Statements
 
 
