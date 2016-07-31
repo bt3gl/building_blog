@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Marina von Steinkirch'
-SITENAME = u'Higher Bytes'
+SITENAME = u'chmod +x singularity.sh'
 SITEURL = 'http://bt3gl.github.io'
 PATH = 'content'
 TIMEZONE = 'America/New_York'
