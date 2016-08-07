@@ -32,8 +32,6 @@
 /* sprites.less reset */
 [class^="icon-"], [class*=" icon-"] {
     display: inline;
-    width: 4em;
-    height: 4em;
     line-height: inherit;
     vertical-align: baseline;
     background-image: none;
@@ -59,20 +57,20 @@ a [class^="icon-"], a [class*=" icon-"] {
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
     vertical-align: top;
-    font-size: 14.8em;
+    font-size: 4.8em;
 }
 .btn [class^="icon-"], .btn [class*=" icon-"] {
     /* keeps button heights with and without icons the same */
-    line-height: 14.9em;
+    line-height: 4.9em;
 }
 li [class^="icon-"], li [class*=" icon-"] {
     display: inline-block;
-    width: 10.5em;
+    width: 3.5em;
     text-align: center;
 }
 li .icon-large[class^="icon-"], li .icon-large[class*=" icon-"] {
     /* 1.5 increased font size for icon-large * 1.25 width */
-    width: 10.5em;
+    width: 3.5em;
 }
 li[class^="icon-"], li[class*=" icon-"] {
     margin-left: 0;
