@@ -39,6 +39,7 @@ img {
     border: 0;
     -ms-interpolation-mode: bicubic;
     vertical-align: middle;
+    margin: 15px 15px 15px 15px;
 }
 button, input, select, textarea {
     margin: 0;
