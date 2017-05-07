@@ -1,0 +1,34 @@
+Title: Some Nice DevOps Articles I wrote at CodeWall
+Date: 2015-01-27
+Category: DevOps
+
+
+For fun or profit:
+
+*  [Getting Started with Vagrant in Fedora 20](https://coderwall.com/p/s6hapa/getting-started-with-vagrant-in-fedora-20).
+
+* [The Linux File System (Fedora)](https://coderwall.com/p/5pam_q/the-linux-file-system-fedora).
+
+*  [A ThttpD Web Server](https://coderwall.com/p/uzu9mq/a-thttpd-web-server).
+
+*  [Setting a SSH Server in Fedora 20](https://coderwall.com/p/kopgca/setting-a-ssh-server-in-fedora-20).
+
+*  [Setting up a VNC Server in Fedora 20](https://coderwall.com/p/3mpszw/setting-up-a-vnc-server-in-fedora-20).
+
+* [Rooting and Pwning your Android](https://coderwall.com/p/3hrrmq/rooting-and-pwning-your-android).
+
+* [Practical Guide to Linux's CUT Command](https://coderwall.com/p/wcje3w/practical-guide-to-linux-s-cut-command).
+
+*  [Setting up Stunnel in Fedora 20](https://coderwall.com/p/gkhwoq/setting-up-stunnel-in-fedora-20).
+
+* [Proxying your Computer's Connection](https://coderwall.com/p/vm0-fw/proxying-your-computer-s-connection).
+
+* [Simple Online Security Guide](https://coderwall.com/p/rnywsq/simple-online-security-guide).
+
+* [Linux and (Bash) Shell: Basics](https://coderwall.com/p/kubxjq/linux-and-bash-shell-basics).
+
+* [Quick ip-netns](https://coderwall.com/p/uf_44a/quick-ip-netns).
+
+* [Getting Started with IRC](https://coderwall.com/p/l2vbta/getting-started-with-irc).
+
+* [Python: *args vs. **kwargs](https://coderwall.com/p/_5bn5w/python-args-vs-kwargs).
