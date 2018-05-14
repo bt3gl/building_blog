@@ -1,0 +1,11 @@
+Title: I'm being translated to Korean!
+Date: 2017-05-07
+Category: winning
+
+
+
+Hello all!
+
+In today's hottest news: I'm very glad to announce that I've signed with [Hanbit Media, Inc.](http://www.hanbit.co.kr/) to have my [book in Python and Algorithms](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures) publish in Korean!
+
+More soon!
