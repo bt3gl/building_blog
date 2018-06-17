@@ -1,2 +1,2 @@
 html:
-	pelican blog_original_files
+	pelican content
