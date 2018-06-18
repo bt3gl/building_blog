@@ -1,19 +1,19 @@
 Title: A Quick Intro to Kubernetes
-Date: 2018-02-01
+Date: 2017-12-04
 Category: k8s, dev, h4x0r
 
 ![cyberpunk](./cyberpunk/27.jpg){:height="300px" width="400px"}
 
 
-Wanna try Kubernetes for the first time and don't know how to start? No problem! I wrote this quick guide to help some of the junior engineers in my team at Etsy to get started with k8s!
+Hey everyone, I wrote this quick guide to help the junior engineers in my team at Etsy to get started with k8s, and I thought I could share with you.
 
-In this guide I will show you how to spin a quick Node.js server in kubernetes and to grasp some of its main concepts. Read on! [Here is the source code](https://github.com/bt3gl/k8s_security).
+In this guide I show you how to spin a quick ```Node.js``` server in kubernetes and to grasp some of its main concepts. [Here is the source code](https://github.com/bt3gl/k8s_security).
 
 ### Install kubectl
 
-First things first, you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) in your machine or VM.
+First you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) in your machine.
 
-Make sure you have all the auths right:
+Make sure you have all the auths right, for instance, I do the follow:
 
 1. Create a auth token and move to `~/.kube`
 2. Create a config file and move to `~/.kube`
@@ -35,7 +35,7 @@ $ make run
 
 Which is:
 ```
-docker build -t  node_app_test .
+docker build -t node_app_test .
 ```
 
 Check whether the server is up:
@@ -43,12 +43,16 @@ Check whether the server is up:
 $ make curl
 ```
 
+Voilà!
+
+You can also check the status of your setup with:
+
 ```
 $ make status
 ```
 
 
-#### Other useful commands
+#### Other useful Docker commands
 
 Exec inside the container:
 
@@ -65,22 +69,24 @@ $ docker images
 
 ### Pushing the Registry to Kubernetes
 
-In a real production system, we’ll want to build images in one place, then run them in the Kubernetes cluster. The system that
- stores these images for distribution out to the running containers is called a **container registry**.
+In a real production system, we’ll want to build images in one place, then run these images in the Kubernetes cluster. 
+
+The system that images for distribution is called a **container registry**.
 
 
-Using a `yaml` Kubernetes files (for example, the one inside `node_server_example/` you can now deploy the image with
+Using a `yaml` Kubernetes files (for example, the one inside `node_server_example/`), you can now deploy the image with:
 
 ```
 $ kubectl create -f  node_example_kube_config.yaml
 ```
 
-Now you can create the service with:
+After that, you are able to create the service with:
 
 ```
 $  kubectl expose deployment node-app-test
 ```
-See the service at:
+
+Also, check out the service status with:
 
 ```
 $ kubectl get services
@@ -102,25 +108,25 @@ $ kubectl delete deployment node-app-test
 Checking out pods:
 
 ```
-$ kubectl get pods --namespace=security
+$ kubectl get pods --namespace=<ns-name>
 ```
 
 Checking deployments:
 
 ```
-$ kubectl get deployments --namespace=security
+$ kubectl get deployments --namespace=<ns-name>
 ```
 
 Checking services:
 
 ```
-$ kubectl get services --namespace=security
+$ kubectl get services --namespace=<ns-name>
 ```
 
 Get more information about a pod:
 
 ```
-$ kubectl describe pod --namespace=security <pod name>
+$ kubectl describe pod --namespace=<ns-name> <pod name>
 ```
 
 
