@@ -5,9 +5,9 @@ Category: H4x0r, infra
 
 ![cyberpunk](./cyberpunk/19.jpg){:height="300px" width="400px"}
 
-Throughout my many years of hacking I have accumulate so many resources: books, scripts, tools, how-to, etc!
+Throughout my many years of hacking I have been accumulating so many resources: books, scripts, tools, how-to, etc. I realized it's time to share them!
 
-I decided to make everything available for you in this [github repo](https://github.com/bt3gl/Gray-Hacker-Resources), and indexed my theme:
+Please check out my [gray hacker github repo](https://github.com/bt3gl/Gray-Hacker-Resources), where I have indexed everything by subject:
 
 * CTFs and WARGAMES
 * CRYPTOGRAPHY
@@ -27,6 +27,8 @@ I decided to make everything available for you in this [github repo](https://git
 
 
 ⚡️ Enjoy and let me know what you think!
+
+**Update: Thank you everyone for the 500+ stars and 200+ forks! <3**
 
 
 

@@ -4,7 +4,7 @@ Category: ml, science, dnn
 
 ![cyberpunk](./cyberpunk/25.jpg){:height="300px" width="400px"}
 
-At Apple, I had the chance to learn a lot of deep learning while working with the team that develops its DNN toolkit. Today I have open-sourced my **personal** studies:
+At Apple I had the chance to learn a lot of deep learning while working with the team that develops its DNN toolkit. Today I have open-sourced my **personal** studies:
 
 * [🚀 My Resources for AI, ML, and DNN](https://github.com/bt3gl/Machine-Learning-Resources).
 * [🛰 CUDA Studies for Deep Learning Problems](https://github.com/bt3gl/CUDA_Studies_For_Deep_Learning).

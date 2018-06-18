@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Sharif University CTF 2014</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Marina von Steinkirch">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.dark.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-4 {
+        font-size: 8pt;
+     }
+     }
+    </style>
+    <link href="./theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
+    <link href="./theme/css/font-awesome.css" rel="stylesheet">
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="chmod +x singularity.sh ATOM Feed" />
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">chmod +x singularity.sh </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                          <li class="divider-vertical"></li>
+
+                          <ul class="nav pull-right">
+                                <li><a href="./authors.html">Who is this Replicant</a></li>
+                                <li><a href="./archives.html">Old Musing</a></li>
+                                <li>
+                                      <a href="https://github.com/bt3gl">The Language Within
+                                      <!--<i class="icon-github-sign icon-large" ></i>-->
+                                      </a></li>
+                                <li><a href="http://bt3gl.github.io/projects_page/index.html">Bygone Playful Times
+                                      </a></li>
+                                <li><a href="http://www.astro.sunysb.edu/steinkirch/index.html">Universe and Everything Else
+                                     </a></li>
+                          
+                          
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to The Sharif University CTF 2014">
+                                        The Sharif University CTF 2014
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<abbr class="published" title="2014-09-26T04:20:00-04:00">
+      Fri 26 September 2014 </abbr>
+
+<span class="label"> Category</span>
+<a href="./category/reverse-engineering.html"><i class="icon-folder-open"></i>Reverse Engineering</a>
+
+
+<span class="label">Tags</span>
+	<a href="./tag/ctf.html"><i class="icon-tag"></i>CTF</a>
+	<a href="./tag/steganography.html"><i class="icon-tag"></i>Steganography</a>
+	<a href="./tag/jad.html"><i class="icon-tag"></i>jad</a>
+	<a href="./tag/outguess.html"><i class="icon-tag"></i>OutGuess</a>
+</footer><!-- /.post-info -->                </div>
+                <p>It looked like a fun CTF, but I did not have the chance to play for too long. I managed to solve a few problems in the morning and the solutions are below.</p>
+<h2>Avatar: Steganography</h2>
+<p>The challenge starts with:</p>
+<blockquote>
+<p>A terrorist has changed his picture in a social network. What is the hidden message?</p>
+</blockquote>
+<p>And the following image:</p>
+<p><img alt="" src="http://i.imgur.com/6NIu64us.jpg"></p>
+<p>For this problem, I use <a href="http://www.outguess.org/download.php">OutGuess</a>, which can be installed as:</p>
+<div class="highlight"><pre><span></span>$ tar -zxvf outguess-0.2.tar.gz
+$ <span class="nb">cd</span> outguess
+$ ./configure <span class="o">&amp;&amp;</span> make
+</pre></div>
+
+
+<p>Running it will give us the flag:</p>
+<div class="highlight"><pre><span></span>$ ./outguess -r lamb.jpg pass.txt
+Reading ../lamb.jpg....
+Extracting usable bits:   <span class="m">28734</span> bits
+Steg retrieve: seed: <span class="m">94</span>, len: <span class="m">41</span>
+$ cat pass.txt
+We should blow up the bridge at midnight
+</pre></div>
+
+
+<hr>
+<h2>What is this: Steganography</h2>
+<p>This challenge has a very short text:</p>
+<blockquote>
+<p>Find the flag.</p>
+</blockquote>
+<p>Together with two pictures:</p>
+<p><img alt="" src="http://i.imgur.com/sbSwBju.jpg">
+<img alt="" src="http://i.imgur.com/mpcIKWt.jpg"></p>
+<p>After the usual inspection (tail, file, diff, compare), I applied my knowledge of a former astrophysicist to inspect what would happen if I added or subtracted the picture. I wrote the following script:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">imread</span><span class="p">,</span> <span class="n">imsave</span>
+
+<span class="k">def</span> <span class="nf">compare_images</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="n">img2</span><span class="p">):</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">img1</span> <span class="o">+</span> <span class="n">img2</span>
+    <span class="n">imsave</span><span class="p">(</span><span class="s1">&#39;sum.png&#39;</span><span class="p">,</span> <span class="n">diff</span><span class="p">)</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">img1</span> <span class="o">-</span> <span class="n">img2</span>
+    <span class="n">imsave</span><span class="p">(</span><span class="s1">&#39;diff.png&#39;</span><span class="p">,</span> <span class="n">diff</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">file1</span><span class="p">,</span> <span class="n">file2</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">img1</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="n">file1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">img2</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="n">file2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">compare_images</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="n">img2</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Running it, give us the flag!</p>
+<p><img alt="" src="http://i.imgur.com/mvj8OJl.png"></p>
+<hr>
+<h2>Guess the number: Reverse Engineering</h2>
+<p>This problem starts with another not very informative text:</p>
+<blockquote>
+<p>Guess the number and find the flag.</p>
+</blockquote>
+<p>Then it gives us a <em>java class</em> file. It was clear that we needed to decompile it. I'm using
+<a href="http://varaneckas.com/jad/">jad</a>for this task:</p>
+<div class="highlight"><pre><span></span>$ jad guess.class
+</pre></div>
+
+
+<p>Now, opening this file in a text editor, we can see how to generate the flag:</p>
+<div class="highlight"><pre><span></span><span class="err">```</span><span class="n">java</span>
+<span class="c1">// Decompiled by Jad v1.5.8e. Copyright 2001 Pavel Kouznetsov.</span>
+<span class="c1">// Jad home page: http://www.geocities.com/kpdus/jad.html</span>
+<span class="c1">// Decompiler options: packimports(3)</span>
+<span class="c1">// Source File Name:   guess.java</span>
+
+<span class="o">(...)</span>
+<span class="n">String</span> <span class="n">str_one</span> <span class="o">=</span> <span class="s">&quot;4b64ca12ace755516c178f72d05d7061&quot;</span><span class="o">;</span>
+ <span class="n">String</span> <span class="n">str_two</span> <span class="o">=</span> <span class="s">&quot;ecd44646cfe5994ebeb35bf922e25dba&quot;</span><span class="o">;</span>
+ <span class="n">String</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">XOR</span><span class="o">(</span><span class="n">str_one</span><span class="o">,</span> <span class="n">str_two</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="k">new</span> <span class="n">StringBuilder</span><span class="o">(</span><span class="s">&quot;your flag is: &quot;</span><span class="o">)).</span><span class="na">append</span><span class="o">(</span><span class="n">answer</span><span class="o">).</span><span class="na">toString</span><span class="o">());</span>
+</pre></div>
+
+
+<p>Running the modified version gives us:</p>
+<div class="highlight"><pre><span></span><span class="n">$</span> <span class="n">javac</span> <span class="o">-</span><span class="n">g</span> <span class="n">guess</span><span class="o">.</span><span class="na">java</span>
+<span class="n">$</span> <span class="n">java</span> <span class="n">guess</span>
+<span class="n">your</span> <span class="n">flag</span> <span class="n">is</span><span class="o">:</span> <span class="n">a7b08c546302cc1fd2a4d48bf2bf2ddb</span>
+</pre></div>
+
+
+<hr>
+<h2>Sudoku image encryption - cryptography</h2>
+<p>This challenge starts with the following text:</p>
+<blockquote>
+<p>Row Major Order</p>
+</blockquote>
+<p>And it gives us two pictures: a map and a sudoku.</p>
+<p><img alt="" src="http://i.imgur.com/U9Zq4wp.png"></p>
+<p>We solve the sudoku and write the solution in a script to reorder the blocks:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+
+<span class="c1"># solved sudoku</span>
+<span class="n">sudoku</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">964127538</span>
+<span class="s1">712385694</span>
+<span class="s1">385496712</span>
+<span class="s1">491578263</span>
+<span class="s1">238614975</span>
+<span class="s1">576239841</span>
+<span class="s1">627843159</span>
+<span class="s1">153962487</span>
+<span class="s1">849751326</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sudoku</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;image.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+      <span class="n">img_cell</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">i</span> <span class="o">*</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">*</span> <span class="mi">50</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="n">j</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">50</span><span class="p">))</span>
+      <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">+</span> <span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">50</span>
+      <span class="n">out</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">img_cell</span><span class="p">,</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">j</span> <span class="o">*</span> <span class="mi">50</span><span class="p">))</span>
+
+<span class="n">out</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;out_image.png&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>This gives us our flag:</p>
+<p><img alt="" src="http://i.imgur.com/sA7JPrl.png"></p>
+<p><strong> Hack all the things! </strong></p>
+                </div><!-- /.entry-content -->
+        </article>
+</section>
+        </div><!--/span-->
+
+
+      </div><!--/row-->
+
+
+
+      <footer>
+        <address id="about">
+
+        </address><!-- /#about -->
+
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+    <script src="./theme/js/jquery-1.7.2.min.js"></script>
+    <script src="./theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

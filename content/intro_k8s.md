@@ -9,36 +9,40 @@ Wanna try Kubernetes for the first time and don't know how to start? No problem!
 
 In this guide I will show you how to spin a quick Node.js server in kubernetes and to grasp some of its main concepts. Read on! [Here is the source code](https://github.com/bt3gl/k8s_security).
 
-## Install kubectl in your VM
+### Install kubectl
+
+First things first, you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) in your machine or VM.
+
+Make sure you have all the auths right:
 
 1. Create a auth token and move to `~/.kube`
 2. Create a config file and move to `~/.kube`
 
-If you want to install `kubectl` in your local machine.
 
 ### Spinning up a Hello World node server in docker
 
-Download [this code](https://github.com/bt3gl/intro_to_k8s/tree/master/node_server_example).
-
-Build the image:
+Download [this code](https://github.com/bt3gl/intro_to_k8s/tree/master/node_server_example) and build the image:
 
 ```
 $ make build:
 ```
 
-Run the container:
+Now, just run the container:
 
 ```
 $ make run
 ```
-    docker build -t  node_app_test .
 
-Check whether the server worked:
+Which is:
+```
+docker build -t  node_app_test .
+```
+
+Check whether the server is up:
 ```
 $ make curl
 ```
 
-Check container's status:
 ```
 $ make status
 ```

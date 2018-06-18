@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>chmod +x singularity.sh - Forensics</title><link>http://bt3gl.github.io/</link><description></description><lastBuildDate>Sun, 28 Sep 2014 11:21:00 -0400</lastBuildDate><item><title>CSAW CTF 2014 - Forensics 300: "Fluffy No More"</title><link>http://bt3gl.github.io/csaw-ctf-2014-forensics-300-fluffy-no-more.html</link><description>&lt;p&gt;This is the fourth and the last of the forensics challenge in the CSAW CTF 2014 competition. It was much harder than the three before, but it was also much more interesting.&lt;/p&gt;
+&lt;p&gt;The challenge starts with the following text:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OH NO WE'VE BEEN HACKED!!!!!! -- said the Eye Heart Fluffy Bunnies …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Sun, 28 Sep 2014 11:21:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2014-09-28:/csaw-ctf-2014-forensics-300-fluffy-no-more.html</guid><category>CTF</category><category>CSAW</category><category>hashcat</category><category>pdf-parser</category><category>qpdf</category><category>LAMP</category><category>JavaScript</category></item><item><title>CSAW CTF 2014 - Forensics 200: "Obscurity"</title><link>http://bt3gl.github.io/csaw-ctf-2014-forensics-200-obscurity.html</link><description>&lt;p&gt;The third forensics challenge starts with the following text:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;see or do not see&lt;/p&gt;
+&lt;p&gt;Written by marc&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ctf.isis.poly.edu/static/uploads/883c7046854e04138c55680ffde90a61/pdf.pdf"&gt;pdf.pdf&lt;/a&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Hacking PDFs, what fun!&lt;/p&gt;
+&lt;p&gt;In general, when dealing with reverse-engineering malicious documents, we follow these steps:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 1. We search for malicious embedded code (shell code, JavaScript).
+
+ 2. We extract any suspicious …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Mon, 22 Sep 2014 07:20:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2014-09-22:/csaw-ctf-2014-forensics-200-obscurity.html</guid><category>CTF</category><category>CSAW</category><category>pdf-parser</category><category>pdftotext</category></item><item><title>CSAW CTF 2014 - Forensics 100: "dumpster diving"</title><link>http://bt3gl.github.io/csaw-ctf-2014-forensics-100-dumpster-diving.html</link><description>&lt;p&gt;This was the first forensic challenge. It starts with the following text:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;dumpsters are cool, but cores are cooler&lt;/p&gt;
+&lt;p&gt;Written by marc&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ctf.isis.poly.edu/static/uploads/606580b079e73e14ab2751e35d22ad44/firefox.mem.zip"&gt;firefox.mem.zip&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Unziping firefox.mem.zip&lt;/h2&gt;
+&lt;p&gt;The given file has a funny extension &lt;em&gt;.mem.zip&lt;/em&gt;. Before we go ahead and unzip it, let's try to learn more …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Mon, 22 Sep 2014 06:20:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2014-09-22:/csaw-ctf-2014-forensics-100-dumpster-diving.html</guid><category>CTF</category><category>CSAW</category><category>readelf</category><category>mem</category></item><item><title>CSAW CTF 2014 - Forensics 200: "why not sftp?"</title><link>http://bt3gl.github.io/csaw-ctf-2014-forensics-200-why-not-sftp.html</link><description>&lt;p&gt;The purpose of this problem is to teach about the need of encrypting your data. The &lt;a href="http://en.wikipedia.org/wiki/File_Transfer_Protocol"&gt;FTP&lt;/a&gt;  protocol sends clear text over the wire, &lt;em&gt;i.e&lt;/em&gt;  the  data is transmitted without any encryption.
+ &lt;a href="http://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol"&gt;SSH/Secure File Transfer Protocol&lt;/a&gt; is a network protocol providing secure file transfer. Using SFTP, instead of …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Mon, 22 Sep 2014 05:20:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2014-09-22:/csaw-ctf-2014-forensics-200-why-not-sftp.html</guid><category>CTF</category><category>CSAW</category><category>Wireshark</category><category>FTP</category></item></channel></rss>

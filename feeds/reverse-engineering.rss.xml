@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>chmod +x singularity.sh - Reverse Engineering</title><link>http://bt3gl.github.io/</link><description></description><lastBuildDate>Fri, 26 Sep 2014 04:20:00 -0400</lastBuildDate><item><title>The Sharif University CTF 2014</title><link>http://bt3gl.github.io/the-sharif-university-ctf-2014.html</link><description>&lt;p&gt;It looked like a fun CTF, but I did not have the chance to play for too long. I managed to solve a few problems in the morning and the solutions are below.&lt;/p&gt;
+&lt;h2&gt;Avatar: Steganography&lt;/h2&gt;
+&lt;p&gt;The challenge starts with:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A terrorist has changed his picture in a social network. What …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Fri, 26 Sep 2014 04:20:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2014-09-26:/the-sharif-university-ctf-2014.html</guid><category>CTF</category><category>Steganography</category><category>jad</category><category>OutGuess</category></item><item><title>CSAW CTF 2014 - Reverse Engineering 100: "eggshells"</title><link>http://bt3gl.github.io/csaw-ctf-2014-reverse-engineering-100-eggshells.html</link><description>&lt;p&gt;This is the first exploitation problem and it starts with the following text:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I trust people on the Internet all the time, do you?&lt;/p&gt;
+&lt;p&gt;Written by ColdHeat&lt;/p&gt;
+&lt;p&gt;eggshells-master.zip&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Unzipping and Analyzing the Files&lt;/h2&gt;
+&lt;p&gt;Let’s unzip the provided zip file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ unzip eggshells-master.zip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This creates a directory called &lt;em&gt;eggshells-master …&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Mon, 22 Sep 2014 09:20:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2014-09-22:/csaw-ctf-2014-reverse-engineering-100-eggshells.html</guid><category>CTF</category><category>CSAW</category><category>uncompyle2</category></item></channel></rss>
