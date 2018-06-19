@@ -1,6 +1,6 @@
 Title: A Quick Intro to Kubernetes
 Date: 2017-12-04
-Category: k8s, dev, h4x0r
+Category: k8s, dev, h4x0r, docker
 
 ![cyberpunk](./cyberpunk/27.jpg){:height="300px" width="400px"}
 

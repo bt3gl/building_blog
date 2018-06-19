@@ -1,6 +1,6 @@
 Title: Introducing OsqueryX
 Date: 2017-07-18
-Category: web, js
+Category: osquery, security, elastalert, docker
 
 ![cyberpunk](./cyberpunk/28.jpg){:height="300px" width="400px"}
 

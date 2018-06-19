@@ -1,6 +1,6 @@
 Title: Introducing Amigo, a tool to manage Google Cloud Platform Security
 Date: 2017-12-17
-Category: gcp, dev, h4x0r
+Category: gcp, dev, h4x0r, python
 
 ![cyberpunk](./cyberpunk/27.jpg){:height="300px" width="400px"}
 

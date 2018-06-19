@@ -17,7 +17,7 @@ Follow [this instructions](https://github.com/kubeless/kubeless). Customize Kube
 $ make kl
 ```
 
-## Crating Kubeless topic
+## Creating Kubeless topic
 
 In Kafka, messages are published into topics. The functions ran by kubeless (consumers) are going to receive these messages by creating the topic:
 
