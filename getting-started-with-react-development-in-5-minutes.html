@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started with React Development in 5 Minutes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Marina von Steinkirch">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.dark.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 11pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-4 {
+        font-size: 8pt;
+     }
+     }
+    </style>
+    <link href="./theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
+    <link href="./theme/css/font-awesome.css" rel="stylesheet">
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="chmod +x singularity.sh ATOM Feed" />
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html">chmod +x singularity.sh </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                          <li class="divider-vertical"></li>
+
+                          <ul class="nav pull-right">
+                                <li><a href="./authors.html">Who is this Replicant</a></li>
+                                <li><a href="./archives.html">Old Musing</a></li>
+                                <li>
+                                      <a href="https://github.com/bt3gl">The Language Within
+                                      <!--<i class="icon-github-sign icon-large" ></i>-->
+                                      </a></li>
+                                <li><a href="http://bt3gl.github.io/projects_page/index.html">Bygone Playful Times
+                                      </a></li>
+                                <li><a href="http://www.astro.sunysb.edu/steinkirch/index.html">Universe and Everything Else
+                                     </a></li>
+                          
+                          
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to Getting Started with React Development in 5 Minutes">
+                                        Getting Started with React Development in 5 Minutes
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<abbr class="published" title="2018-06-01T00:00:00-04:00">
+      Fri 01 June 2018 </abbr>
+
+<span class="label"> Category</span>
+<a href="./category/web-js.html"><i class="icon-folder-open"></i>web, js</a>
+
+
+</footer><!-- /.post-info -->                </div>
+                <p><img alt="cyberpunk" height="300px" src="./cyberpunk/5.jpg" width="400px"></p>
+<p>Hey Everyone!</p>
+<p>The VR world is about a lot of <a href="https://reactjs.org/">React</a> and there is so many things I have been learning and I want to share with you! I am starting to write a series of posts diving into React and I am dumping all the things in <a href="https://github.com/bt3gl/Everything_React">this github repository</a>.</p>
+<p>Today I am showing how easy is to start with react in 5 minutes.</p>
+<h3>What's React?</h3>
+<p>From <a href="https://reactjs.org/tutorial/tutorial.html#what-is-react">React's documentation</a>: <strong>"React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.</strong></p>
+<p>Starting with <code>React.Component</code>, the <code>render</code> method returns a description of what you want to see on the screen, returning a <code>React element</code>, which is a lightweight description of what to render.</p>
+<p>For instance, React developers use a syntax called <code>JSX</code> which makes these structures easier. For example,  the <code>&lt;div /&gt;</code> syntax is transformed at build time to <code>React.createElement('div')</code>. You can put any JavaScript expressions within braces inside JSX!</p>
+<h3>OK, Just Show me React Already!</h3>
+<p>OK!</p>
+<ol>
+<li>Install Node.js and Yarn.</li>
+</ol>
+<div class="highlight"><pre><span></span>$ brew install node
+$ brew install yarn
+</pre></div>
+
+
+<ol>
+<li>
+<p>Install <a href="https://github.com/facebook/create-react-app">create-react-app</a>. This awesome framework abstracts away all the complexity of implementing <a href="https://webpack.js.org/">Webpack</a>, <a href="https://babeljs.io/">Babel</a>, a dev server, a production build process, and other critical things.</p>
+</li>
+<li>
+<p>Create Your App</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span>$ yarn create react-app &lt;your-app-name&gt;
+</pre></div>
+
+
+<ol>
+<li>Run it!</li>
+</ol>
+<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> &lt;your-app-name&gt;
+$ yarn start
+</pre></div>
+
+
+<ol>
+<li>
+<p>Edit <code>src/App.js</code> and see it being update instantly in your browser at <code>http://localhost:3000/</code>. The directory structure is the following:</p>
+<ul>
+<li><code>node_modules</code>: holds all the third-party code, such as React.</li>
+<li><code>public</code>: where our static assets go, like our favicon. It also keeps the project's HTML file. Because React is all JavaScript, you only really need the HTML file to update the <head> (title and meta tags).</li>
+<li><code>src</code> is where our application actually lives. I’d recommend exploring all these files, to get a sense of how they work together.</li>
+</ul>
+</li>
+</ol>
+<h3>Voilà! Dat's it? Yes, datzit! &lt;3</h3>
+<h2>References to get Started</h2>
+<ul>
+<li><a href="https://reactjs.org/tutorial/tutorial.html">React Tutorial</a>.</li>
+<li><a href="https://www.fullstackreact.com/30-days-of-react/">30 Days of React</a>.</li>
+<li><a href="https://www.robinwieruch.de/the-road-to-learn-react/.">The Road to Learn React</a></li>
+</ul>
+<hr>
+<p><strong><em>Test it at home and stay tunned for the next episode! 🦄</em></strong></p>
+                </div><!-- /.entry-content -->
+        </article>
+</section>
+        </div><!--/span-->
+
+
+      </div><!--/row-->
+
+
+
+      <footer>
+        <address id="about">
+
+        </address><!-- /#about -->
+
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+    <script src="./theme/js/jquery-1.7.2.min.js"></script>
+    <script src="./theme/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -2,7 +2,7 @@ Title: Developing Applications for Apple: A Beginner Guide for tvOS, iOS, and Ma
 Date: 2018-06-15
 Category: apple, dev
 
-![cyberpunk](./cyberpunk/13.jpg){:height="300px" width="400px"}
+![cyberpunk](./cyberpunk/?.jpg){:height="300px" width="400px"}
 
 Xcode
 integrated developement enviroment

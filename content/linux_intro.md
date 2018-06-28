@@ -1,4 +1,4 @@
-Title: My Cute and Fluffy Intro to Linux (aka Yet Another Linux Guide)
+Title: The Ultimate Linux Guide for Hackers ;)
 Date: 2014-11-10 4:20
 Category: Life,Universe,Everything
 Tags: Linux, Python, Unicode, tr, ifconfig, ssh, netcat, Stripe

@@ -144,7 +144,7 @@ There are plenty of programs that will reformat videos, rearranging file setting
 
 ## 18. Automate
 
-Have a Continuous Delivery pipeline which includes profiling and performance analysis of acceptance and load tests.
+Have a [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) pipeline which includes profiling and performance analysis of acceptance and load tests.
 
 
 

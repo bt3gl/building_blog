@@ -2,7 +2,7 @@ Title: Get Started with Full Stack Web App with React Development
 Date: 2017-06-14
 Category: web, js
 
-![cyberpunk](./cyberpunk/12.jpg){:height="300px" width="400px"}
+![cyberpunk](./cyberpunk/?.jpg){:height="300px" width="400px"}
 
 
 * Client-Side
@@ -72,3 +72,15 @@ package.json
  angular
  * typescritpt
  * es 2015+
+
+
+ http://getbootstrap.com/
+https://github.com/johnpapa/lite-server
+https://nodejs.org/en/
+https://prettier.io
+https://github.com/airbnb/javascript
+https://expressjs.com/
+https://github.com/facebook/create-react-app
+https://webpack.js.org/configuration/dev-server/
+https://webpack.js.org/
+https://eslint.org/

@@ -1,13 +1,15 @@
-Title: A Quick Intro to Kubernetes
+Title: Spin up a Node.JS Server in Kubernetes in 10 Minutes
 Date: 2017-12-04
 Category: k8s, dev, h4x0r, docker
 
-![cyberpunk](./cyberpunk/27.jpg){:height="300px" width="400px"}
+![cyberpunk](./cyberpunk/13.jpg){:height="300px" width="400px"}
 
 
-Hey everyone, I wrote this quick guide to help the junior engineers in my team at Etsy to get started with k8s, and I thought I could share with you.
+Hey everyone!
 
-In this guide I show you how to spin a quick ```Node.js``` server in kubernetes and to grasp some of its main concepts. [Here is the source code](https://github.com/bt3gl/k8s_security).
+I wrote this quick guide to help you to get started with k8s in 10 min.
+
+In this guide I show you how to spin a quick ```Node.js``` server in Kubernetes and to grasp some of its main concepts. [Here is the source code](https://github.com/bt3gl/k8s_security).
 
 ### Install kubectl
 

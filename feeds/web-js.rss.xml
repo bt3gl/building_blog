@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>chmod +x singularity.sh - web, js</title><link>http://bt3gl.github.io/</link><description></description><lastBuildDate>Tue, 18 Jul 2017 00:00:00 -0400</lastBuildDate><item><title>Introducing OsqueryX</title><link>http://bt3gl.github.io/introducing-osqueryx.html</link><description>&lt;p&gt;&lt;img alt="cyberpunk" height="300px" src="./cyberpunk/28.jpg" width="400px"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/bt3gl/osqueryx"&gt;osqueryX&lt;/a&gt; is a set of tools to manage security data collection and alerts from &lt;a href="https://osquery.io/"&gt;osquery&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Installing&lt;/h2&gt;
-&lt;p&gt;Clone this repo and bootstrap your environment running:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ make install
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;If you get a &lt;code&gt;Success!&lt;/code&gt; message and you've finished the docker setup correctly, you should now be able start with:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ osqueryx start
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Installation Notes …&lt;/h3&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Tue, 18 Jul 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2017-07-18:/introducing-osqueryx.html</guid></item><item><title>Get Started with Full Stack Web App with React Development</title><link>http://bt3gl.github.io/get-started-with-full-stack-web-app-with-react-development.html</link><description>&lt;p&gt;&lt;img alt="cyberpunk" height="300px" src="./cyberpunk/12.jpg" width="400px"&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Client-Side&lt;ul&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Full stack React application with Node.js and Expre&lt;/p&gt;
-&lt;p&gt;Client side code is written in React 
-backend API is written using Express. &lt;/p&gt;
-&lt;p&gt;front end code will be served by the webpack dev server &lt;/p&gt;
-&lt;p&gt;server side Express code will be served by a node server using nodemon which helps in …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Wed, 14 Jun 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2017-06-14:/get-started-with-full-stack-web-app-with-react-development.html</guid></item></channel></rss>
+<rss version="2.0"><channel><title>chmod +x singularity.sh - web, js</title><link>http://bt3gl.github.io/</link><description></description><lastBuildDate>Sun, 24 Jun 2018 00:00:00 -0400</lastBuildDate><item><title>Introducing iOS ARKit with "Post Malone Balloon"</title><link>http://bt3gl.github.io/introducing-ios-arkit-with-post-malone-balloon.html</link><description>&lt;p&gt;&lt;img alt="cyberpunk" height="300px" src="./cyberpunk/post_1.jpg" width="400px"&gt;&lt;/p&gt;
+&lt;p&gt;Hi Everyone!&lt;/p&gt;
+&lt;p&gt;I am starting a series of posts where &lt;strong&gt;&lt;em&gt;I go deep into AR &amp;amp; VR through fun examples&lt;/em&gt;&lt;/strong&gt; and I'd love you to join me!&lt;/p&gt;
+&lt;p&gt;Today I am going to show how neat is to write an AR iOS application with &lt;a href="https://developer.apple.com/arkit/"&gt;ARKit&lt;/a&gt;. We are going to dive into a …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Sun, 24 Jun 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2018-06-24:/introducing-ios-arkit-with-post-malone-balloon.html</guid></item><item><title>Getting Started with React Development in 5 Minutes</title><link>http://bt3gl.github.io/getting-started-with-react-development-in-5-minutes.html</link><description>&lt;p&gt;&lt;img alt="cyberpunk" height="300px" src="./cyberpunk/5.jpg" width="400px"&gt;&lt;/p&gt;
+&lt;p&gt;Hey Everyone!&lt;/p&gt;
+&lt;p&gt;The VR world is about a lot of &lt;a href="https://reactjs.org/"&gt;React&lt;/a&gt; and there is so many things I have been learning and I want to share with you! I am starting to write a series of posts diving into React and I am dumping all the things in &lt;a href="https://github.com/bt3gl/Everything_React"&gt;this github …&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marina von Steinkirch</dc:creator><pubDate>Fri, 01 Jun 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:bt3gl.github.io,2018-06-01:/getting-started-with-react-development-in-5-minutes.html</guid></item></channel></rss>

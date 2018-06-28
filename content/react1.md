@@ -1,0 +1,69 @@
+Title: Getting Started with React Development in 5 Minutes
+Date: 2018-06-01
+Category: web, js
+
+![cyberpunk](./cyberpunk/5.jpg){:height="300px" width="400px"}
+
+
+Hey Everyone!
+
+The VR world is about a lot of [React](https://reactjs.org/) and there is so many things I have been learning and I want to share with you! I am starting to write a series of posts diving into React and I am dumping all the things in [this github repository](https://github.com/bt3gl/Everything_React).
+
+Today I am showing how easy is to start with react in 5 minutes.
+
+
+### What's React?
+
+From [React's documentation](https://reactjs.org/tutorial/tutorial.html#what-is-react): **"React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.**
+
+
+Starting with `React.Component`, the `render` method returns a description of what you want to see on the screen, returning a `React element`, which is a lightweight description of what to render.
+
+For instance, React developers use a syntax called `JSX` which makes these structures easier. For example,  the ` <div />` syntax is transformed at build time to `React.createElement('div')`. You can put any JavaScript expressions within braces inside JSX!
+
+
+### OK, Just Show me React Already!
+
+OK!
+
+1. Install Node.js and Yarn.
+
+```
+$ brew install node
+$ brew install yarn
+```
+
+2. Install [create-react-app](https://github.com/facebook/create-react-app). This awesome framework abstracts away all the complexity of implementing [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io/), a dev server, a production build process, and other critical things.
+
+3. Create Your App
+
+```
+$ yarn create react-app <your-app-name>
+```
+
+ 4. Run it!
+
+```
+$ cd <your-app-name>
+$ yarn start
+```
+
+5. Edit `src/App.js` and see it being update instantly in your browser at `http://localhost:3000/ `. The directory structure is the following:
+
+    * `node_modules`: holds all the third-party code, such as React.
+    * `public`: where our static assets go, like our favicon. It also keeps the project's HTML file. Because React is all JavaScript, you only really need the HTML file to update the <head> (title and meta tags).
+    * `src` is where our application actually lives. I’d recommend exploring all these files, to get a sense of how they work together.
+
+### Voilà! Dat's it? Yes, datzit! <3
+
+## References to get Started
+
+* [React Tutorial](https://reactjs.org/tutorial/tutorial.html).
+* [30 Days of React](https://www.fullstackreact.com/30-days-of-react/).
+* [The Road to Learn React](https://www.robinwieruch.de/the-road-to-learn-react/.)
+
+
+
+-----
+
+***Test it at home and stay tunned for the next episode! 🦄***
