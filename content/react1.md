@@ -7,7 +7,7 @@ Category: web, js
 
 Hey Everyone!
 
-The VR world is about a lot of [React](https://reactjs.org/) and there is so many things I have been learning and I want to share with you! I am starting to write a series of posts diving into React and I am dumping all the things in [this github repository](https://github.com/bt3gl/Everything_React).
+The VR world has a lot of [React](https://reactjs.org/) and there is so many things I have been learning and I want to share with you! I am starting to write a series of posts diving into React and I am dumping all the things in [this github repository](https://github.com/bt3gl/Everything_React).
 
 Today I am showing how easy is to start with react in 5 minutes.
 
@@ -48,11 +48,42 @@ $ cd <your-app-name>
 $ yarn start
 ```
 
-5. Edit `src/App.js` and see it being update instantly in your browser at `http://localhost:3000/ `. The directory structure is the following:
+5. You now have your app running at `http://localhost:3000/ `! The components of your app are the following:
 
-    * `node_modules`: holds all the third-party code, such as React.
-    * `public`: where our static assets go, like our favicon. It also keeps the project's HTML file. Because React is all JavaScript, you only really need the HTML file to update the <head> (title and meta tags).
-    * `src` is where our application actually lives. I’d recommend exploring all these files, to get a sense of how they work together.
+* `node_modules`: holds all the third-party code, such as React.
+* `public`: where our static assets go, like our favicon. It also keeps the project's HTML file. Because React is all JavaScript, you only really need the HTML file to update the <head> (title and meta tags).
+* `src` is where our application actually lives. I’d recommend exploring all these files, to get a sense of how they work together.
+
+6. Go to `src` and edit `App.js` (and `App.css`) to add things you want React to render:
+
+```
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          HELLO THERE!
+          <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+You will see the additions instantly updated in your browser at `http://localhost:3000/ `. Also, keep in mind that `index.js` is where all of your React code lives.
+
+
 
 ### Voilà! Dat's it? Yes, datzit! <3
 
@@ -66,4 +97,4 @@ $ yarn start
 
 -----
 
-***Test it at home and stay tunned for the next episode! 🦄***
+***Test it at home and stay tunned for the next episode when we are going to talk about [React 360](https://facebook.github.io/react-360/docs/what-is.html)! 🦄***
