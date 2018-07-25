@@ -1,17 +1,16 @@
 Title: Introducing iOS ARKit with "Post Malone Balloon"
 Date: 2018-06-24
-Category: web, js
+Category: ios, arkit, ar
 
 ![cyberpunk](./cyberpunk/post_1.jpg){:height="300px" width="400px"}
-
-Hi Everyone!
-
-I am starting a series of posts where ***I go deep into AR & VR through fun examples*** and I'd love you to join me! In this post, we are diving into a simple but fun [App where you can insert Post Malone head balloons](https://github.com/bt3gl/AR_PostMalone) into your reality.
 
 *Augmented reality (AR) describes user experiences that add 2D or 3D elements to the live view from a device’s camera in a way that makes those elements appear to inhabit the real world.*
 
 
-I am going to show how neat is to write an AR iOS application with [ARKit](https://developer.apple.com/arkit/), a framework that provides you high level classes for **tracking**, **scene understanding** and **rendering**. More specifically, ARKit is a session based framework. This means that everything will happen in a concrete session. Sessions are a way of encapsulating the logic and data contained within a defined period of the applications activity. It relates the virtual objects with the real world by means of the Tracking.
+Hi Everyone!
+
+
+In this post, I  show how neat is to write an AR iOS application with [ARKit](https://developer.apple.com/arkit/), a framework that provides you high level classes for **tracking**, **scene understanding** and **rendering**. More specifically, ARKit is a session based framework. This means that everything will happen in a concrete session. Sessions are a way of encapsulating the logic and data contained within a defined period of the applications activity. It relates the virtual objects with the real world by means of the Tracking.
 
 This app runs an ARKit world tracking session with content displayed in a [SpriteKit](https://developer.apple.com/documentation/spriteKit) 2D view. Every session has a scene that will render the virtual objects in the real world, accessed by means of the iOS device sensors.
 
@@ -44,7 +43,7 @@ Contains two [story board files](https://www.raywenderlich.com/160521/storyboard
 
 ### `Scene.swift`
 
-Anchors are 3D points that correspond real world features that ARKit detects. This class is where the anchor is created, and also manages the Sprite scene (Scene.sks). This module is where you call the class `Scene` to control how the App is operating with the scene. Rendering brings tracking and scene understanding together with your content.
+Anchors are 3D points that correspond real world features that ARKit detects. Anchors are created in this class, together with the Sprite scene (Scene.sks). The class `Scene` controls how the App is operating within the scenes. Rendering brings tracking and scene understanding together with your content.
 
 For our App, we are:
 

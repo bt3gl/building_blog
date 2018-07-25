@@ -9,7 +9,7 @@ Hey Everyone!
 
 The VR world has a lot of [React](https://reactjs.org/) and there is so many things I have been learning and I want to share with you! I am starting to write a series of posts diving into React and I am dumping all the things in [this github repository](https://github.com/bt3gl/Everything_React).
 
-Today I am showing how easy is to start with react in 5 minutes.
+Today I am showing how easy is to start with React in 5 minutes.
 
 
 ### What's React?
@@ -17,9 +17,26 @@ Today I am showing how easy is to start with react in 5 minutes.
 From [React's documentation](https://reactjs.org/tutorial/tutorial.html#what-is-react): **"React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.**
 
 
+### Some Concepts
+
+#### Components
+
+Everything in React is a component, and these usually take the form of JavaScript classes.
+
 Starting with `React.Component`, the `render` method returns a description of what you want to see on the screen, returning a `React element`, which is a lightweight description of what to render.
 
-For instance, React developers use a syntax called `JSX` which makes these structures easier. For example,  the ` <div />` syntax is transformed at build time to `React.createElement('div')`. You can put any JavaScript expressions within braces inside JSX!
+### JSX
+
+React developers use a syntax called `JSX` which makes these structures easier. For example,  the ` <div />` syntax is transformed at build time to `React.createElement('div')`. You can put any JavaScript expressions within braces inside JSX!
+
+#### Data
+
+There are two types of data in React:
+
+* state: private and can be changed from within the component itself.
+* props: external, and not controlled by the component itself.
+
+A component can change its internal state directly but it can not change its props directly.
 
 
 ### OK, Just Show me React Already!
@@ -51,7 +68,7 @@ $ yarn start
 5. You now have your app running at `http://localhost:3000/ `! The components of your app are the following:
 
 * `node_modules`: holds all the third-party code, such as React.
-* `public`: where our static assets go, like our favicon. It also keeps the project's HTML file. Because React is all JavaScript, you only really need the HTML file to update the <head> (title and meta tags).
+* `public`: where our static assets go, like our favicon. It also keeps the project's HTML file. Because React is all JavaScript, you only really need the HTML file to update the head (like title and meta tags).
 * `src` is where our application actually lives. I’d recommend exploring all these files, to get a sense of how they work together.
 
 6. Go to `src` and edit `App.js` (and `App.css`) to add things you want React to render:
