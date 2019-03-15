@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Marina von Steinkirch'
+AUTHOR = u'Mia von Steinkirch'
 SITENAME = u'chmod +x singularity.sh'
 SITEURL = 'http://bt3gl.github.io'
 PATH = 'content'
@@ -11,8 +11,7 @@ DEFAULT_LANG = u'en'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
-SOCIAL = (('GitHub', 'https://github.com/bt3gl'),
-          ('Twitter', 'https://twitter.com/1bt337'),)
+SOCIAL = (('GitHub', 'https://github.com/bt3gl'),)
 
 DEFAULT_PAGINATION = 10
 RELATIVE_URLS = True

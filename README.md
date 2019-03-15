@@ -1,6 +1,6 @@
 # Building the Blog
 
-1. Create the blog most as a ```md``` file inside ```./blog_original_files``.
+1. Create the blog most as a ```md``` file inside ```./content``.
 
 2. ```Makefile``` has the commands to generate the final page:
 
