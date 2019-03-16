@@ -4,9 +4,9 @@ Category: hacking, reality, aleph, simulation
 Tags: 
 
 
-[![hacking](./cyberpunk/h1.png)]([https://www.youtube.com/watch?v=6j_3MuyEMt0)](https://www.youtube.com/watch?v=6j_3MuyEMt0)){:height="300px" width="400px"}
+[![hacking](./cyberpunk/h1.png){:height="300px" width="400px"}](https://www.youtube.com/watch?v=6j_3MuyEMt0)
 
-Hello Humans,
+### Hello Humans,
 
 After spending almost 2 years as a digital nomad, surfing and skateboarding the world, I have filled [the prophecy](https://matrix.fandom.com/wiki/The_Prophecy) and arrived at my final destination.
 
@@ -21,5 +21,5 @@ Meanwhile, enjoy the weekly references and tips I will be throwing at you 😘
 * [The Aleph, by Borges](http://web.mit.edu/allanmc/www/borgesaleph.pdf).
 
 
-Stay rebel,
-**The Byt3girl**a
+**Stay rebel,**
+**The Byt3girl**
