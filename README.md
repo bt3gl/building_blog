@@ -11,6 +11,6 @@ $ make html
 3. The content will be generate in ```output```, which can be copied to the website's repo with:
 
 ```
-$ cp -r output/* ../bt3gl.github.io/
+$ yes | cp -r output/* ../bt3gl.github.io/
 ```
 

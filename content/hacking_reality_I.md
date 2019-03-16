@@ -43,7 +43,7 @@ UNTIL population has converged
 STOP
 ```
 
-[This algorithm has been well-known for the last 50 years](https://en.wikipedia.org/wiki/Genetic_algorithm), but they are still *hot* as an optimization technique. Combined with neural networks they can help to find the best hyper-parameters, by create a population of many NNs and letting it evolving.
+[GA algorithm are known for decades](https://en.wikipedia.org/wiki/Genetic_algorithm), but they are still *hot* as an optimization technique. Combined with neural networks they can help to find the best hyper-parameters, by creating a population of many NNs and letting it evolve.
 
 This is exactly what we are doing at QGR, I will be telling you more soon.
 
@@ -51,7 +51,7 @@ This is exactly what we are doing at QGR, I will be telling you more soon.
 ## This w33k's References
 
 ### Papers 
-* [The Simulation Argument](https://www.simulation-argument.com/simulation.pdf).
+* [Are You Living in a Simulation, Nick Bostrom](https://www.simulation-argument.com/simulation.pdf).
 * [AdS/CFT as a deep Boltzmann machine](https://arxiv.org/pdf/1903.04951.pdf).
 
 ### Books 
