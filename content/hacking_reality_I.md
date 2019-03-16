@@ -1,6 +1,6 @@
 Title: Hacking Reality - Week I
 Date: 2019-03-15 4:20 
-Category: hacking, reality
+Category: hacking, reality, aleph, simulation
 Tags: 
 
 
