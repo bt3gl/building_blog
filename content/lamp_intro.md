@@ -260,3 +260,10 @@ In this snippet we query our database by order, using ascending order.
 ---
 Enjoy! This article was originally posted [here](https://coderwall.com/p/5ltrxq/lamp-and-codeigniter).
 
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

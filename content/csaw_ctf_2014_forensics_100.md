@@ -162,3 +162,11 @@ Yay! We found the flag: **cd69b4957f06cd818d7bf3d61980e291**!
 [file]: http://en.wikipedia.org/wiki/File_(command)
 [firefox.mem.zip]: https://ctf.isis.poly.edu/static/uploads/606580b079e73e14ab2751e35d22ad44/firefox.mem.zip
 [ELF]: http://en.wikipedia.org/wiki/Executable_and_Linkable_Format
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

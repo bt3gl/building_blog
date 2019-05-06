@@ -809,3 +809,10 @@ $ iwconfig eth` channel 4
 - [Using Wireshark to Smash the Yak](https://silverskylabs.github.io/yakhak/).
 - [The TCP/IP Drinking Game](http://valerieaurora.org/tcpip.html).
 - [Common Types of Network Attacks](http://technet.microsoft.com/en-us/library/cc959354.aspx).
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

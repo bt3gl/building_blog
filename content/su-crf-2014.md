@@ -163,3 +163,11 @@ This gives us our flag:
 
 [OutGuess]: http://www.outguess.org/download.php
 [jad]:  http://varaneckas.com/jad/
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

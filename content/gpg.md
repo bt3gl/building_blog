@@ -225,3 +225,11 @@ If you really need something in your browser,  the creator of [Cryptocat](https:
 ## Further Readings
 
 - [The GNU Privacy Handbook](https://www.gnupg.org/gph/en/manual.html)
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

@@ -329,11 +329,6 @@ Several variants of DNS spoofing attacks that can result in cache poisoning.
 5. Future queries for the compromised domain or zone are answered with the forged DNS resolutions from the cache. If the attacker has specified a very long time-to-live on the forged response, the forged records stay in the cache for as long as possible without being refreshed.
 
 
-
-
-
-
-
 ----
 
 # References:
@@ -342,3 +337,9 @@ Several variants of DNS spoofing attacks that can result in cache poisoning.
 * [Django Security](https://docs.djangoproject.com/en/dev/topics/security/)
 * [Bleach: Sanitizing Tool in Python](https://docs.djangoproject.com/en/dev/topics/security/)
 * [Google's Public DNS](https://developers.google.com/speed/public-dns/docs/security)
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

@@ -20,3 +20,10 @@ To understand the first steps of this pipeline, check out an example of a cookbo
 
 * [AWS CI guide](https://aws.amazon.com/devops/continuous-delivery/).
 * [Create your first pipeline with Jenkins](https://jenkins.io/doc/pipeline/tour/hello-world/).
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

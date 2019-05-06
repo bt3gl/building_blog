@@ -142,3 +142,11 @@ Yaaay! The flag is **trust_is_risky**! Easy!
 [urllib2]: https://docs.python.org/2/library/urllib2.html#module-urllib2
 [urlopen()]: https://docs.python.org/2/library/urllib2.html#urllib2.urlopen
 [read()]: http://www.tutorialspoint.com/python/file_read.htm
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

@@ -330,3 +330,7 @@ This is another example of Vigenere Cipher. Using the same method as before we f
 
 
 ----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

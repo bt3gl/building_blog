@@ -330,3 +330,10 @@ That's all, folks. Hope you had fun.
 - [Black Hat Python](http://www.nostarch.com/blackhatpython).
 - [My Gray hat repo](https://github.com/bt3gl/My-Gray-Hacker-Resources).
 
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

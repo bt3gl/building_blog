@@ -17,3 +17,11 @@ If you like astrophysics, check out some of my IDL and Python work:
 * [Spectra of Earthshine](https://github.com/bt3gl/Spectra_of_Earthshine): The detection of exolife is one of the most important goals for future space missions. Here we analyze images taken from the moon at the Mt. Stony Brook, to be able to extract the spectra of the Earthshine and detect elements such as water and chlorophyll from Earth. Source code in IDL for data reduction and analysis.
 
 * [Calculating the Diameter of the Sun](https://github.com/bt3gl/Calculating_the_Diameter_of_Sun): IDL Source code for data reduction and analysis. Here we analyze interferometric radio data from the Sun to be able to obtain its angular diameter.
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

@@ -189,4 +189,9 @@ I am sharing a compilation of some of VR & AR resources that I have been learnin
 * [/r/HTC_Vive](https://www.reddit.com/r/HTC_Vive).
 * [/r/learnVRdev](https://www.reddit.com/r/learnVRdev/).
 
+
 ----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

@@ -396,3 +396,10 @@ netsh firewall set opmode mode=DISABLE.
 ----
 
 **That's it. Hack all the things!**
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

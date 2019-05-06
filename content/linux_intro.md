@@ -1444,3 +1444,11 @@ $ convert -delay 20 -loop 0 *.jpg myimage.gif
     - In Python 3, len("美國") is 2 (it's two Unicode characters) and " 美國"[0] is the string "美" (the first character in the string).
 
     - Each version of Python provides a data type that produces the other version's default behavior (the Unicode type in Python 2 and the bytes type in Python 3).
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

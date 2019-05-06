@@ -296,3 +296,11 @@ If you like this solution, take a look at my  [exploit for this problem].
 [module]: http://en.wikipedia.org/wiki/Modulo_operation
 [Unicode]: http://en.wikipedia.org/wiki/Unicode
 [encode()]: https://docs.python.org/2/library/stdtypes.html#str.encode
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

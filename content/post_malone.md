@@ -99,4 +99,6 @@ ARSession object that manages the motion tracking and image processing.
 
 ----
 
-*** Thank you for reading and see you in the next episode! <3***
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

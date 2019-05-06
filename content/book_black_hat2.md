@@ -782,3 +782,10 @@ Really cool!
 - [Black Hat Python](http://www.nostarch.com/blackhatpython).
 - [My Gray hat repo](https://github.com/bt3gl/My-Gray-Hacker-Resources).
 
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

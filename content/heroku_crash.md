@@ -207,3 +207,9 @@ That's it! The app should be running at ```< app-name >.herokuapp.com```.
 ---
 Enjoy! This article was originally posted [here](https://coderwall.com/p/pstm1w/deploying-a-flask-app-at-heroku).
 
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

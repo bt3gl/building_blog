@@ -38,3 +38,10 @@ In an EFI boot:
 ```
 $ grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 ```
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

@@ -328,3 +328,10 @@ That's it! Browser safe!
 ---
 Enjoy! This article was originally posted [here](https://coderwall.com/p/m3excg/a-tor-proxy-in-a-raspberry-pi).
 
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

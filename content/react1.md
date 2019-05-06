@@ -112,6 +112,9 @@ You will see the additions instantly updated in your browser at `http://localhos
 
 
 
------
 
-***Test it at home and stay tunned for the next episode when we are going to talk about [React 360](https://facebook.github.io/react-360/docs/what-is.html)! 🦄***
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

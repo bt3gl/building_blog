@@ -139,3 +139,11 @@ $ kubectl describe pod --namespace=<ns-name> <pod name>
 
 ----
 ***Thank you for reading, and let me know what you think!***
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

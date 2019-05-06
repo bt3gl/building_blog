@@ -415,3 +415,11 @@ Hack all the things! (:
 [ASIS CTF]: http://asis-ctf.ir/home/
 [Binary search]:http://en.wikipedia.org/wiki/Binary_search_algorithm
 [my scripts]: https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures/tree/master/src/searching_and_sorting/searching
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

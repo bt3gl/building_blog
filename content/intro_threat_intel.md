@@ -739,3 +739,10 @@ Go to town with `make`:
 $ sudo pip install tox
 $ make test
 ```
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

@@ -11,3 +11,10 @@ You got it! Check out [an entire (free) book that I wrote for that](https://gith
 
 
 ***Update***: This book has been bought by [Hanbit](http://www.hanbit.co.kr/), to be published in Korean!
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

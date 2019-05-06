@@ -125,3 +125,10 @@ Some fixable issue is that OCSP stapling supports only one response at a time. T
 [SSL Server Test](https://www.ssllabs.com/ssltest/)
 
 [SSL Certificate Checker](https://www.digicert.com/help/)
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**

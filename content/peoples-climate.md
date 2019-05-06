@@ -22,3 +22,11 @@ The rest of the pictures (and in larger resolution) are [here (flickr)] or [here
 [People's Climate March]: http://en.wikipedia.org/wiki/People's_Climate_March
 [here (behance)]: https://www.behance.net/gallery/20284067/Peoples-Climate-March-NYC-2014
 [here (flickr)]: https://flic.kr/s/aHsk4dVkbV
+
+
+
+----
+
+**Love, Gratitude & Peace 🌺,**
+
+**The Byt3girl**
