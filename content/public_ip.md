@@ -54,6 +54,4 @@ $ curl -s http://checkip.dyndns.org/ | grep -o "[[:digit:].]\+"
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

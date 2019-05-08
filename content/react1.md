@@ -1,5 +1,5 @@
 Title: Getting Started with React Development in 5 Minutes
-Date: 2018-06-01
+Date: 2017-06-01
 Category: web, js
 
 ![cyberpunk](./cyberpunk/5.jpg){:height="300px" width="400px"}
@@ -112,9 +112,6 @@ You will see the additions instantly updated in your browser at `http://localhos
 
 
 
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

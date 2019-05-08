@@ -750,7 +750,4 @@ Additionally, let's  take a quick look to all the methods available with the **s
 
 ----
 
-
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

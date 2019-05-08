@@ -813,6 +813,4 @@ $ iwconfig eth` channel 4
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

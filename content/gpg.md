@@ -227,9 +227,6 @@ If you really need something in your browser,  the creator of [Cryptocat](https:
 - [The GNU Privacy Handbook](https://www.gnupg.org/gph/en/manual.html)
 
 
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

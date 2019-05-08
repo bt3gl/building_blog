@@ -89,6 +89,4 @@ for f in pcap.pcapng-chaosreader/*.html; do cat "${f}" | w3m -dump -T text/html 
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

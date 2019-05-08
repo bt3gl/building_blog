@@ -425,9 +425,6 @@ $ cat log_file |grep "{ :;};" | awk '{print $1}'|uniq
 
 [https://isc.sans.edu/forums/diary/Shellshock+A+Collection+of+Exploits+seen+in+the+wild/18725](https://isc.sans.edu/forums/diary/Shellshock+A+Collection+of+Exploits+seen+in+the+wild/18725)
 
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

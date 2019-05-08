@@ -326,11 +326,6 @@ This is another example of Vigenere Cipher. Using the same method as before we f
 
 
 
-### Fun, isn't?
-
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

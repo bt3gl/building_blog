@@ -1,5 +1,5 @@
 Title: Spin up a Node.JS Server in Kubernetes in 10 Minutes
-Date: 2017-12-04
+Date: 2017-12-13
 Category: k8s, dev, h4x0r, docker
 
 ![cyberpunk](./cyberpunk/13.jpg){:height="300px" width="400px"}
@@ -144,6 +144,4 @@ $ kubectl describe pod --namespace=<ns-name> <pod name>
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

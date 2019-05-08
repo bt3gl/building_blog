@@ -1,5 +1,5 @@
-Title: Introducing iOS ARKit with "Post Malone Balloon"
-Date: 2018-06-24
+Title: Quick & Dirty iOS ARKit with "Post Malone Balloon"
+Date: 2017-12-16
 Category: ios, arkit, ar
 
 ![cyberpunk](./cyberpunk/post_1.jpg){:height="300px" width="400px"}
@@ -96,9 +96,6 @@ ARSession object that manages the motion tracking and image processing.
 
 
 
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

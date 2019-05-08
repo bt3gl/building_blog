@@ -1061,14 +1061,6 @@ narnia5
 ```
 
 
-
-----------
-
-All right, we have completed half of the challenges from Narnia. Soon I will post the other half.
-
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

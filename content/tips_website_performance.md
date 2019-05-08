@@ -146,9 +146,6 @@ There are plenty of programs that will reformat videos, rearranging file setting
 
 Have a [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) pipeline which includes profiling and performance analysis of acceptance and load tests.
 
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

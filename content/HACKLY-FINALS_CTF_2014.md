@@ -264,13 +264,6 @@ flag{FreeBoozeForEverone-Party!}
 
 
 
-
-___
- **That's it! Hack all the things!**
-
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

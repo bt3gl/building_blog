@@ -111,6 +111,4 @@ If we don't know the name of the file we are looking for, but we know its type, 
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

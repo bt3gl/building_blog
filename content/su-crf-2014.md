@@ -168,6 +168,4 @@ This gives us our flag:
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

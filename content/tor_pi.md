@@ -332,6 +332,4 @@ Enjoy! This article was originally posted [here](https://coderwall.com/p/m3excg/
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

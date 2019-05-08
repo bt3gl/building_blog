@@ -19,12 +19,6 @@ Additionally, when I was in my PhD I had the pleasure of doing [some nice work o
 * [🌺 NetAna - Complex Network Analysis Package](https://github.com/bt3gl/NetAna-Complex-Network-Analysis).
 
 
-
-***Enjoy and let me know what you think! :)***
-
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

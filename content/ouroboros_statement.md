@@ -17,6 +17,4 @@ At that time I was taking some graduate courses in the computer science departme
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

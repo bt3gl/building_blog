@@ -427,9 +427,6 @@ jQuery.isArray( myValue ); // true
 Enjoy! This article was originally posted [here](https://coderwall.com/p/skucrq/javascript-crash-course).
 
 
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

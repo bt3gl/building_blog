@@ -264,6 +264,4 @@ Enjoy! This article was originally posted [here](https://coderwall.com/p/5ltrxq/
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

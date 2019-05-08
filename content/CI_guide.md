@@ -24,6 +24,4 @@ To understand the first steps of this pipeline, check out an example of a cookbo
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

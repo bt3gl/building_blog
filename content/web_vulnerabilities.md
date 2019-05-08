@@ -340,6 +340,4 @@ Several variants of DNS spoofing attacks that can result in cache poisoning.
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

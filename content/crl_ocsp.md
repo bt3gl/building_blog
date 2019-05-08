@@ -129,6 +129,4 @@ Some fixable issue is that OCSP stapling supports only one response at a time. T
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

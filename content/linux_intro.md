@@ -1449,6 +1449,4 @@ $ convert -delay 20 -loop 0 *.jpg myimage.gif
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

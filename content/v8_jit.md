@@ -194,9 +194,6 @@ In summary, [V8's garbage collection](https://developers.google.com/v8/design#ga
 [1] When the Python interpreter is invoked with the ```-O``` flag, optimized code is generated and stored in ***.pyo*** files. The optimizer removes assert statements.
 
 
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

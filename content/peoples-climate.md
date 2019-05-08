@@ -27,6 +27,4 @@ The rest of the pictures (and in larger resolution) are [here (flickr)] or [here
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

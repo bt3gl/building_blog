@@ -1,5 +1,5 @@
 Title: Fun with Genetic Algorithms
-Date: 2018-03-15 4:22
+Date: 2017-11-15 4:22
 Category: hacking, reality, aleph, simulation
 Tags: 
 
@@ -50,6 +50,4 @@ STOP
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

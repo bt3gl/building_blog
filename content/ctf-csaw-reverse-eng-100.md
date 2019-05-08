@@ -147,6 +147,4 @@ Yaaay! The flag is **trust_is_risky**! Easy!
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**

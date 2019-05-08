@@ -31,13 +31,7 @@ Please check out my [gray hacker github repo](https://github.com/bt3gl/Gray-Hack
 **Update: Thank you everyone for the 500+ stars and 200+ forks! <3**
 
 
-
-
-
-
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**
 

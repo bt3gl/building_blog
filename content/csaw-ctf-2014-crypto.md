@@ -301,6 +301,4 @@ If you like this solution, take a look at my  [exploit for this problem].
 
 ----
 
-**Love, Gratitude & Peace 🌺,**
-
-**The Byt3girl**
+**Aloha, Mia**
