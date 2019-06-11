@@ -10,7 +10,7 @@ Tags: mindfulness, TheGame, reality
 
 
 
-## Things you should never apologize for ;)
+## Things we should never apologize for ;)
 
 #### 1. Removing someone from our lives that repeatedly crosses our boundaries. 
 

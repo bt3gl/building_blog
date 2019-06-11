@@ -16,6 +16,8 @@ Category: readings
 * [A year of large scale GraphQL - the biggest takeaways](https://dev.to/peternycander/a-year-of-large-scale-graphql-the-biggest-takeaways-3d5n).
 * [Retail AI: It's Not Just for the Fortune 500 Anymore](https://blog.reactioncommerce.com/retail-ai-its-not-just-for-the-fortune-500-anymore/).
 * [GraphQL with Golang: A Deep Dive From Basics To Advanced](https://www.freecodecamp.org/news/deep-dive-into-graphql-with-golang-d3e02a429ac3/).
+* [Landlord 2.0: Tech’s New Rentier Capitalism](https://onezero.medium.com/landlord-2-0-techs-new-rentier-capitalism-a0bfe491b463).
+* [Privacy Is Just the Beginning of the Debate Over Tech](https://onezero.medium.com/privacy-is-just-the-beginning-of-the-debate-over-tech-8807c2f8458f).
 
 ## Github
 
@@ -37,6 +39,7 @@ Category: readings
 
 ## Fun
 
+* [Majestic Surfing - Full movie SLATER CURREN MARTINEZ REYNOLDS FANNING](https://www.youtube.com/watch?time_continue=1140&v=IUjtW2lGjmk).
 * [Tarantino's New Movie, "Once Upon a Time In Hollywood"](https://www.youtube.com/watch?v=Scf8nIJCvs4).
 * [Getsomerest by Quickly, Quickly](https://open.spotify.com/track/2RycgtfFQZOPgEGrzBGE0j?si=EarIttFFS7-qVlG7LXGPJQ).
 * [Godspeed You Black Emperor is in tour and playing in LA on 08/17!](http://cstrecords.com/shows/).
