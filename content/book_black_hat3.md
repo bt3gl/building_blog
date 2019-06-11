@@ -376,6 +376,8 @@ Enter command:
 - [Ogre: port scanner and brute-force tool (from a friend I met at Hacker School)](https://github.com/tristanfisher/ogre/blob/master/ogre)
 - [Black Hat Python](http://www.nostarch.com/blackhatpython).
 - [My Gray hat repo](https://github.com/bt3gl/My-Gray-Hacker-Resources).
+
+
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

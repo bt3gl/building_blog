@@ -24,7 +24,6 @@ The rest of the pictures (and in larger resolution) are [here (flickr)] or [here
 [here (flickr)]: https://flic.kr/s/aHsk4dVkbV
 
 
-
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

@@ -47,7 +47,6 @@ STOP
 ### Thinking 
 * [The Aleph, by Borges](http://web.mit.edu/allanmc/www/borgesaleph.pdf).
 
-
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

@@ -1,5 +1,5 @@
-Title: 7 Reasons why Go is Awesome
-Date: 2019-04-02 5:00 
+Title: 8 Reasons why Go is Awesome
+Date: 2018-01-12 6:00 
 Category: software
 Tags: golang, algorithms, awesome
 
@@ -22,6 +22,7 @@ Type system is really important for large scale applications. Python sometimes w
 ###3 Pointers
 
 Aiming to provide a modern equivalent of C, Go has brought back pointers. Most modern languages do not provide pointers but sometimes pointers help to solve a lot of common issues: they can play a far important role when it comes to memory layout and building low level system tools.
+
 
 For example, you can pass your **data struct** along functions in very clean way:
 
@@ -125,8 +126,16 @@ Go heavily relies on static code analysis. Examples include [godoc](https://gola
 
 Those tools are commonly implemented as stand-alone command line applications and integrate easily with any coding environment.
 
+###7 Workspaces are Simple 
 
-###7 Fun Factor
+Golang code must be kept inside a workspace:  a directory hierarchy with three directories at its root:
+* `src` contains go source files organized into packages,
+* `pkg` contains package objects,
+* `bin` contains executable commands.
+
+The `GOPATH` environment variable determines the location of the workspace. It is the only environment variable that you have to set when developing Go code.
+
+###8 Fun Factor
 
 Go is a relatively simple language and was designed with a very minimalistic approach: quick to learn and easy to write!
 Plus several cool stuff has been written in Go, such as [Docker](https://www.docker.com), [Kubernetes](https://kubernetes.io/), and [Terraform](https://www.terraform.io/).
@@ -143,6 +152,8 @@ Plus several cool stuff has been written in Go, such as [Docker](https://www.doc
 * Watch some [JustForFunc videos](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw).
 * [Understanding Data Types in Go](https://www.digitalocean.com/community/tutorials/understanding-data-types-in-go).
 * [Tensorflow in Go](https://medium.com/@hackintoshrao/deep-learning-in-go-f13e586f7d8a).
+
+
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

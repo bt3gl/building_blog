@@ -196,4 +196,4 @@ In summary, [V8's garbage collection](https://developers.google.com/v8/design#ga
 
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

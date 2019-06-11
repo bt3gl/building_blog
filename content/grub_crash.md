@@ -40,4 +40,4 @@ $ grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 ```
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

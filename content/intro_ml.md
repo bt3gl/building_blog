@@ -18,7 +18,6 @@ Additionally, when I was in my PhD I had the pleasure of doing [some nice work o
 * [🔋 NetClean - Complex Networks Data-Cleanser](https://github.com/bt3gl/NetClean-Complex-Networks-Data-Cleanser).
 * [🌺 NetAna - Complex Network Analysis Package](https://github.com/bt3gl/NetAna-Complex-Network-Analysis).
 
-
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

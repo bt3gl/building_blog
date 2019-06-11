@@ -1,5 +1,5 @@
 Title: To All the AR & VR Groms Out There
-Date: 2018-06-21
+Date: 2017-12-07
 Category: vr, ar, dev
 
 ![cyberpunk](./cyberpunk/26.jpg){:height="300px" width="400px"}
@@ -191,4 +191,4 @@ I am sharing a compilation of some of VR & AR resources that I have been learnin
 
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

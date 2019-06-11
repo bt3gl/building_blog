@@ -578,7 +578,6 @@ done
 * Some other writeups: [here](http://blog.delroth.net/2012/03/my-stripe-ctf-writeup/), [here](https://khr0x40sh.wordpress.com/2012/02/), [here](http://du.nham.ca/blog/posts/2012/03/20/stripe-ctf/), and [here](https://isisblogs.poly.edu/2012/03/23/stripe-ctf-level01/).
 
 
-
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

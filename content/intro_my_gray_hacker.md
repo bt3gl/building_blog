@@ -28,10 +28,9 @@ Please check out my [gray hacker github repo](https://github.com/bt3gl/Gray-Hack
 
 ⚡️ Enjoy and let me know what you think!
 
-**Update: Thank you everyone for the 500+ stars and 200+ forks! <3**
+**Update: Thank you everyone for the 800+ stars and 200+ forks! <3**
 
 
 ----
 
-**Aloha, Mia**
-
+**Aloha, bt3**

@@ -126,7 +126,6 @@ Some fixable issue is that OCSP stapling supports only one response at a time. T
 
 [SSL Certificate Checker](https://www.digicert.com/help/)
 
-
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

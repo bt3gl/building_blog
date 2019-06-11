@@ -39,4 +39,4 @@ Examples of **deep dream** with the following layers:
 
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

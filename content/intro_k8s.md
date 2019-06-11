@@ -137,11 +137,10 @@ $ kubectl describe pod --namespace=<ns-name> <pod name>
 
 * [Dockerfiles good practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#general-guidelines-and-recommendations).
 
+
+
+
+
 ----
-***Thank you for reading, and let me know what you think!***
 
-
-
-----
-
-**Aloha, Mia**
+**Aloha, bt3**

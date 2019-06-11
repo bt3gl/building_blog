@@ -1,5 +1,5 @@
 Title: Forget Docker Compose: You Want Skaffold
-Date: 2019-04-05 5:00 
+Date: 2018-04-02 5:00 
 Category: software
 Tags: docker, microservices, skaffold
 
@@ -7,7 +7,7 @@ Tags: docker, microservices, skaffold
 
 I still remember, back in 2015 at [Yelp](https://engineeringblog.yelp.com/), when I learned about [Docker Compose](https://docs.docker.com/compose/). It was beautiful, like magic.
 
-It kinda felt the same when I recently found out about [Skaffold](https://skaffold.dev/), a command line tool [released a year ago by Google](https://www.infoq.com/news/2018/03/skaffold-kubernetes), and designed to make local Kubernetes development very easy, allowing for iterative local development against a Kubernetes cluster. Check this out:
+It kinda felt the same when I recently found out about [Skaffold](https://skaffold.dev/), a command line tool [recently released by Google](https://www.infoq.com/news/2018/03/skaffold-kubernetes), and designed to make local Kubernetes development very easy, allowing for iterative local development against a Kubernetes cluster. Check this out:
 
 * It runs as a binary in your local machine (e.g. [easy install with brew](https://formulae.brew.sh/formula/skaffold), etc.).
 * It uses `yaml` configuration to describe how your application should be built: you specify the Docker images for your service(s) and Skaffold will tag them and push them to any valid Docker image repository.
@@ -50,10 +50,11 @@ Cool, right? :)
 * [Official documentation](https://skaffold.dev/).
 * [Skaffold & GCP documentation](https://cloud.google.com/blog/products/gcp/introducing-skaffold-easy-and-repeatable-kubernetes-development?hl=is).
 * [Github repository with examples](https://github.com/GoogleContainerTools/skaffold).
+* [Skaffold Yaml References](https://skaffold.dev/docs/references/yaml/).
 * [Skaffold examples](https://github.com/GoogleContainerTools/skaffold/tree/master/examples).
 * [Skaffold: From code on your laptop to cloud](https://github.com/ahmetb/skaffold-from-laptop-to-cloud).
 * [Skaffold: happy Kubernetes workflows](https://ahmet.im/blog/skaffold/).
 
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**

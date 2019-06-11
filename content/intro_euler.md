@@ -8,7 +8,6 @@ It was really cold outside so I spent a week solving as much as [Project Euler](
 
 Project Euler is a website dedicated to a series of computational and mathematics problems! Check out [my solutions here](https://github.com/bt3gl/Project-Euler) (but give a try yourself first!).
 
-
 ----
 
-**Aloha, Mia**
+**Aloha, bt3**
