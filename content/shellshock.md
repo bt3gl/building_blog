@@ -4,7 +4,7 @@ Category: Vulnerabilities
 Tags: Shellshock, Bash, Command_Injection
 
 
-![](http://i.imgur.com/kjkWTWV.png)
+![cyber](http://i.imgur.com/kjkWTWV.png)
 
 Almost a week ago, a new ([old]) type of [OS command Injection] was reported. The **Shellshock** vulnerability, also know as **[CVE-2014-6271]**, allows attackers to inject their own code into [Bash] using specially crafted **environment variables**, and it was disclosed with the following description:
 

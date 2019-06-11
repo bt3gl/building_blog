@@ -4,7 +4,7 @@ Category: Cryptography
 Tags: CTF, Paillier, Python, Binary_Search, Oracle, Decimal
 
 
-![](http://i.imgur.com/7LMyBGx.png)
+![img](http://i.imgur.com/7LMyBGx.png)
 
 The [ASIS CTF] happened last weekend. Although I ended up not playing all I wanted, I did spend some time working on a crypto challenge that was worth a lot of points in the game. The challenge was about a sort of not well-known system, the [Paillier cryptosystem].
 
@@ -60,13 +60,13 @@ For example, the multiplication of a **cipher 1** by a **cipher 2** is decrypted
 
 [modulo]: http://en.wikipedia.org/wiki/Modulo_operation
 
-![](http://i.imgur.com/EBrjNjO.png)
+![img](http://i.imgur.com/EBrjNjO.png)
 
 
 And, look at this: we can also exponentiate the cipher by some constant **k**!
 
 
-![](http://i.imgur.com/UONTcAb.png)
+![img](http://i.imgur.com/UONTcAb.png)
 
 
 Pretty cool, huh? I think so... :)
