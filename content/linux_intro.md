@@ -37,7 +37,7 @@ $ man <COMMAND>
 $ ls /
 ```
 
-![](http://i.imgur.com/qhYyiK8.png)
+![cyber](http://i.imgur.com/qhYyiK8.png)
 
 * You can verify their sizes and where they are mounted with:
 

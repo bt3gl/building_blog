@@ -9,7 +9,7 @@ I have been wanting to write about Python's network resources for a while and no
 
 Ah, by the way, all the source codes in this post are available at [my repo](https://github.com/bt3gl/My-Gray-Hacker-Resources).
 
-![](http://i.imgur.com/l3iyyOO.jpg)
+![cyber](http://i.imgur.com/l3iyyOO.jpg)
 
 ---
 ## A TCP Client

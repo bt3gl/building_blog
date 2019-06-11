@@ -79,13 +79,13 @@ Now it's pretty obvious that we need to decode these headers.
 ### The IP Header
 A typical IP header has the following structure, where each field belongs to a variable (this header is originally [written in C](http://minirighi.sourceforge.net/html/structip.html)):
 
-![](http://i.imgur.com/3fmVLJS.jpg)
+![cyber](http://i.imgur.com/3fmVLJS.jpg)
 
 
 ### The ICMP Header
 In the same way, ICMP can vary in its content but each message contains three elements that are consistent: **type** and **code** (tells the receiving host what type of ICMP message is arriving for decoding) and **checksum** fields.
 
-![](http://i.imgur.com/gsUPKRa.gif)
+![cyber](http://i.imgur.com/gsUPKRa.gif)
 
 
 For our scanner, we are looking for a **type value of 3** and a **code value of 3**, which are the **Destination Unreachable** class and **Port Unreachable** [errors in ICMP messages](http://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages).

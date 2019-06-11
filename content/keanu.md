@@ -31,7 +31,7 @@ Aw, [such a nice heart](https://www.theepochtimes.com/hollywood-superstar-keanu-
 
 ### 5. Finally someone is standing with "being alone is freakin awesome" 
 
-![cyberpunk](./cyberpunk/keanu2.jpg) 
+![cyberpunk](./cyberpunk/keanu2.jpg){:height="200" width="300"}
 
 
 ### 6. I mean, The Matrix 

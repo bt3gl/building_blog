@@ -37,7 +37,7 @@ So the first thing I did was searching for the string *password*:
 3. Search for password choosing the options string and packet bytes.
 
 Clicking on *Follow TCP Stream* gives:
-![](http://i.imgur.com/c61P5Aj.png)
+![cyber](http://i.imgur.com/c61P5Aj.png)
 
 Nope. This is a misleading information!
 
@@ -47,7 +47,7 @@ Nope. This is a misleading information!
 
 Now, if we search for *flag* we actually find something:
 
-![](http://i.imgur.com/knuwJFq.png)
+![cyber](http://i.imgur.com/knuwJFq.png)
 
 We find the packet with a file named flag! Awesome.
 
@@ -69,7 +69,7 @@ ftp-data
 ```
 
 Cool, we found a few packets:
-![](http://i.imgur.com/cWhiXZD.png)
+![cyber](http://i.imgur.com/cWhiXZD.png)
 
  We don't need to scroll down too much to find a packet with  a string flag on it! Awesome.
 
@@ -80,7 +80,7 @@ Cool, we found a few packets:
 
 Once we find the packet with any of the methods above, we right-click it selecting *Follow TCP Stream*. This leads to:
 
-![](http://i.imgur.com/LZTse2s.png)
+![cyber](http://i.imgur.com/LZTse2s.png)
 
 The file *flag.png* is our flag. To extract it we  click in the *Save as* button, then in the terminal we can use the command [file]:
 ```sh
@@ -90,7 +90,7 @@ s.whatever: Zip archive data, at least v2.0 to extract
 
 Awesome, so all we need is to *unzip* this file and we get *flag.png*:
 
-![](http://i.imgur.com/WcxyITv.png)
+![cyber](http://i.imgur.com/WcxyITv.png)
 
 #### Extra: Finding files with *File Signatures*
 If we don't know the name of the file we are looking for, but we know its type, we can search for its [file signature], which can be found [here] (a hex value).

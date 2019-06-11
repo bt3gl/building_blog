@@ -34,7 +34,7 @@ When a program starts a process, the OS kernel provides it a piece of [physical 
 
 I like [Peter Jay Salzman]'s picture showing the process' virtual memory in terms of its address.
 
-![](http://i.imgur.com/RYEpFEA.png)
+![cyber](http://i.imgur.com/RYEpFEA.png)
 
 
 The *text* and *data* segments are the places where the program puts the code and the static data (*e.g*., global variables). This region is normally marked read-only and any attempt to write to it will result in a [segmentation violation].

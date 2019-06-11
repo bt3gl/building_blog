@@ -23,7 +23,7 @@ Before we are able to understand and analyze network traffic packets, we must ha
 
 The [Open Systems Interconnection](http://en.wikipedia.org/wiki/OSI_model) (OSI) model  was published in 1983 and is a conceptual model that characterizes and standardizes the internal functions of a communication system by partitioning it into abstraction layers.
 
-![](http://i.imgur.com/dZyiOTX.png)
+![cyber](http://i.imgur.com/dZyiOTX.png)
 
 Protocols are separated according to their function and the hierarchy makes it easier to understand network communication:
 
@@ -91,7 +91,7 @@ For instance, in Wireshark we can track the sequence number where a higher layer
 There are four primary ways to capture traffic from a target device on a
 **switched** network: using a **hub**, using a **tap**, by port mirroring, or by ARP spoofing/cache poisoning. The first two obviously require a hub or a tap. Port mirroring requires forwarding capability from the switch. A great way to decide which method to use was borrowed by the reference [1]:
 
-![](http://i.imgur.com/aRUfmsp.png)
+![cyber](http://i.imgur.com/aRUfmsp.png)
 
 
 All of the techniques for switched network are available on **routed** networks as well. However, for routers the sniffer placement becomes more relevant since a device's broadcast domain extends only until it reaches a
@@ -137,7 +137,7 @@ In addition, an IP address consists of two parts: a **network address** and a **
 
 The determination of these two parts is given by another set of addressing information, the **network mask** (netmask or subnet mask), which is also 32 bit longs. In the netmask, every bit set to 1 identifies the portion of the IP address that belongs to the network address. Remaining bits set to 0 identify the host address:
 
-![](http://i.imgur.com/a7Evq9z.png)
+![cyber](http://i.imgur.com/a7Evq9z.png)
 
 Additionally, the IP packet header contain informations such as:
 

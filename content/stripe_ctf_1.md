@@ -18,7 +18,7 @@ This CTF was composed of 6 levels, and its style was very similar to other Warga
 
 When I booted the image  I got this first message:
 
-![](http://i.imgur.com/O9ixhUv.jpg)
+![cyber](http://i.imgur.com/O9ixhUv.jpg)
 
 In the  *level01* folder I found:
 
@@ -26,7 +26,7 @@ In the  *level01* folder I found:
 
 * The C source code of this binary:
 
-![](http://i.imgur.com/DgB55I8.jpg)
+![cyber](http://i.imgur.com/DgB55I8.jpg)
 
 Checking the code closely we notice the following lines:
 ```

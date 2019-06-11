@@ -3,7 +3,7 @@ Date: 2018-12-12 9:00
 Category: life
 Tags: nomad, droning, love
 
-![cyberpunk](./cyberpunk/drone.jpg)
+![cyberpunk](./cyberpunk/drone.jpg){:height="270px" width="390px"}
 
 So here is a story for you. A few years ago, after I left my career in Silicon Valley, I decided to [break bad](https://vimeo.com/262786853) 😂. I know, it sounds silly, but hey, I had fun. I spent almost two years being a full-time traveler (part-time remote-located engineer and part-time [having-so-much-freakin-fun](https://www.instagram.com/innermost.limits.of.pure.fun)).
 

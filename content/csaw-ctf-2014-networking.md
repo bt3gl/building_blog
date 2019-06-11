@@ -48,7 +48,7 @@ It turned out that all we need was to look for the string *password*. To do this
 
 Yay! We found something over a **telnet** protocol:
 
-![](http://i.imgur.com/mUN4b1n.png)
+![cyber](http://i.imgur.com/mUN4b1n.png)
 
 
 ____

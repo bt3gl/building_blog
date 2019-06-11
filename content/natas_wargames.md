@@ -4,7 +4,7 @@ Category: Web Security
 Tags: Wargames, Python, BurpSuite, request, PHP, JavaScript, SQLi, Command_Injection, MySQL,  XOR, Brute_Force
 
 
-![](http://i.imgur.com/ihtJsdE.png)
+![cyber](http://i.imgur.com/ihtJsdE.png)
 
 Continuing my quest through the [Wargames], today I am going to talk about the 20 first levels of [Natas], the **web exploitation episode**.
 
@@ -273,7 +273,7 @@ Yes, we can.
 
 This level's page has a search form. If we try to submit a word, for example *secret*, we get several variations of this word:
 
-![](http://i.imgur.com/ZQwlqsQl.png)
+![cyber](http://i.imgur.com/ZQwlqsQl.png)
 
 
 
@@ -376,7 +376,7 @@ This level starts with an input form to set a background color and a message:
 
 > cookies are protected with XOR encryption
 
-![](http://i.imgur.com/aD4CKbY.png)
+![cyber](http://i.imgur.com/aD4CKbY.png)
 
 
 Let's inspect the source code in several steps. First, we have this suspicious array:
@@ -515,7 +515,7 @@ This results in the code we need to add to the cookie. We do this through the pl
 
 
 This challenge starts with a JPG file uploader:
-![](http://i.imgur.com/xcSJ5kr.png)
+![cyber](http://i.imgur.com/xcSJ5kr.png)
 
 Inspecting the source code, we see that the first function returns a random string of length 10:
 
@@ -652,26 +652,26 @@ $ java -jar -Xmx1024m /path/to/burp.jar
 
 Then we go to the proxy tab and then options and we confirm Burp's Proxy listener is active at *127.0.0.1:8080*:
 
-![](http://i.imgur.com/5xkHB29.png)
+![cyber](http://i.imgur.com/5xkHB29.png)
 
 We set the proxy configuration in our system to this address:
 
-![](http://i.imgur.com/Au1Gimm.png)
+![cyber](http://i.imgur.com/Au1Gimm.png)
 
 Back in Burp, we go to *Proxy --> Intercept* and mark it ON:
 
-![](http://i.imgur.com/FAf5Hru.png)
+![cyber](http://i.imgur.com/FAf5Hru.png)
 
 In the browser, we load the Natas12 page and accept the initial intercepts (forwarding it). We upload out exploit.
 
 Before we forward this request to the server, we open it in Burp and we change the name of the random string in *jpg* to our *php* exploit:
 
-![](http://i.imgur.com/eywDMOy.png)
+![cyber](http://i.imgur.com/eywDMOy.png)
 
 
 The browser will return the link for the file:
 
-![](http://i.imgur.com/SGjbVsy.png)
+![cyber](http://i.imgur.com/SGjbVsy.png)
 
 Clicking it will reveal the password.
 
@@ -740,7 +740,7 @@ and following the previous steps, leads to the password for the next level.
 
 This level starts with a *username* and *password* form:
 
-![](http://i.imgur.com/qDA3nCP.png)
+![cyber](http://i.imgur.com/qDA3nCP.png)
 
 Looking at the source code, we see THE connection to  a MySQL server, and a SQL query to look for a record in the database:
 
@@ -775,7 +775,7 @@ Therefore, while a simple GET query such as:
 
 returns:
 
-![](http://i.imgur.com/mWhSVxh.png)
+![cyber](http://i.imgur.com/mWhSVxh.png)
 
 
 A crafted query using [SQL Injection] (SQLi) can return whatever we want :).
@@ -829,7 +829,7 @@ reveals the password.
 
 This level starts with a  form to check the existence of some username:
 
-![](http://i.imgur.com/SO4K5wK.png)
+![cyber](http://i.imgur.com/SO4K5wK.png)
 
  The source code is almost equal to the previous level, with exception of this part:
 
@@ -955,7 +955,7 @@ After around 10 minutes we have our password.
 
 This level starts with a searching form:
 
-![](http://i.imgur.com/kMHZzZ9.png)
+![cyber](http://i.imgur.com/kMHZzZ9.png)
 
 The source code is similar to the 9th and 10th levels:
 ```
@@ -1348,7 +1348,7 @@ This level looks exactly like the previous except that it has the following mess
 
 > This page uses mostly the same code as the previous level, but session IDs are no longer sequential...
 
-![](http://i.imgur.com/OQ7LATt.png)
+![cyber](http://i.imgur.com/OQ7LATt.png)
 
 
 This time we have no access to the source code to see how the session IDs are created. However, we have access to the values in the cookie which are created by the session.

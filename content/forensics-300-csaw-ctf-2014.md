@@ -150,8 +150,8 @@ All right, let's give a last try and open the tables from the MySQL dump file in
 We open ```localhost/phpmyadmin``` in our browser. First we go  to *Databases* and then *Create Database* with any name we want. Then we  *Import* ```mysql_backup.sql`` to this database. All the tables are loaded. Let's use the *Search* option to look for *key* or *flag*.
 
 
-![](http://i.imgur.com/tVOY1VJ.png)
-![](http://i.imgur.com/jY7CbLZ.png)
+![cyber](http://i.imgur.com/tVOY1VJ.png)
+![cyber](http://i.imgur.com/jY7CbLZ.png)
 
 Nope. Nothing in special. By the way, ```default_pingback_flag1`` is just a **Wordpress** flag indicating the default status of ping backs when new blog posts are published.
 
@@ -160,7 +160,7 @@ Let's continue our search. If we look  inside each of the tables we find:
 * The URL for the [blog], which doesn't render. However, in the source code there is a commented link that leads to a [cute website]. Nothing else.
 
 * Oh, wait! We found a hashed password!
-![](http://i.imgur.com/FiQONze.png)
+![cyber](http://i.imgur.com/FiQONze.png)
 
 ---
 ## Cracking the Password
@@ -418,7 +418,7 @@ We decode it using Python or a [online hex-decode] and we get another file:
 ```
 
 Opening the URL leads to this picture:
-![](http://i.imgur.com/CNEQhfG.png)
+![cyber](http://i.imgur.com/CNEQhfG.png)
 
 
 LOL. Funny, but no flag yet...

@@ -157,7 +157,7 @@ Sent 1 packets.
 
 
 This  is how this packet looks like in [Wireshark]():
-![](http://i.imgur.com/jjuWHaZ.png)
+![cyber](http://i.imgur.com/jjuWHaZ.png)
 
 To send the same packet over again we can simply add the **loop=1** argument within the **send** method:
 
@@ -172,7 +172,7 @@ $ sudo python send_packet.py
 
 Which looks like this in Wireshark:
 
-![](http://i.imgur.com/lv89lc3.png)
+![cyber](http://i.imgur.com/lv89lc3.png)
 
 
 ###  Sending & Receiving a Packet
@@ -494,7 +494,7 @@ The best way to test this is using a Windows virtual machine (take a look in [th
 
 Before the attack, go to the Windows box, open the terminal (```cmd```) and check the IP and gateway IP address with```ipconfig```. Then check the associated  ARP cache entry MAC address with ```arp -a```. We are going to use the former information and we will see the ARP data being changed:
 
-![](http://i.imgur.com/ME069uS.png)
+![cyber](http://i.imgur.com/ME069uS.png)
 
 Following is our ARP poisoning script (based on [Black Hat Python](http://www.nostarch.com/blackhatpython)). The script does the following steps:
 
@@ -620,7 +620,7 @@ $ sudo python arp_cache_poisoning.py
 ```
 we see the changes in the victim's machine (Windows):
 
-![](http://i.imgur.com/RFdIz4H.png)
+![cyber](http://i.imgur.com/RFdIz4H.png)
 
 Now open in Wireshark the PCAP file resulting from the script. BAM! The entire traffic from the victim is in your hand!
 

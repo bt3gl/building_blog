@@ -57,7 +57,7 @@ We answer *stars* and get a funny menu:
 
 The first option *constellation*, shows a very interesting scheme:
 
-![](http://i.imgur.com/OzVjrVh.png)
+![cyber](http://i.imgur.com/OzVjrVh.png)
 
 Choosing the options **namestar** we are able to pick a (new) name to add a key. Picking the option **showstar** we are able to see the key for some name (for example, for Wahkoowar, Makawee, or any new name we had added before).
 
@@ -69,7 +69,7 @@ So, from the above scheme, we know:
 
 3. Wahkoowah and Makawee have a shared secret key. The way they share this key without knowing each other's private key is by this tricky transformation:
 
-![](http://i.imgur.com/TwxShK9.jpg)
+![cyber](http://i.imgur.com/TwxShK9.jpg)
 
 Notice that we can move the multiplications' modulo operation to the end, due to [this propriety](http://en.wikipedia.org/wiki/Modular_arithmetic#Congruence_relation).
 
@@ -180,7 +180,7 @@ It didn't work. The reason is that p is too large. When multiplied by the key (t
 
 Let's take a look again at the way the messages are generated:
 
-![](http://i.imgur.com/Hz5uf7X.jpg)
+![cyber](http://i.imgur.com/Hz5uf7X.jpg)
 
 We notice that the public key is exponentiated by r_m. It means that, if r_m is an even number, two values of the public key are mapped to the same value of the final message: +pubk and -pubk.
 

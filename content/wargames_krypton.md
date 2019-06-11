@@ -3,7 +3,7 @@ Date: 2014-10-9 1:30
 Category: Cryptography
 Tags: Wargames,ROT13, Vigenere, pygenere, ltrace, base64, tr, Python
 
-![](http://i.imgur.com/nZqQILK.png)
+![cyber](http://i.imgur.com/nZqQILK.png)
 
 
 [Continuing to talk about] the [Wargames], today I'll briefly go through [Krypton], the cryptography episode.

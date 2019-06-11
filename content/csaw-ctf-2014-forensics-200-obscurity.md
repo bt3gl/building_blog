@@ -45,7 +45,7 @@ Yeap, this easy:
 
     4. You see the flag!
 
-![](http://i.imgur.com/b03EehK.png)
+![cyber](http://i.imgur.com/b03EehK.png)
 
 OK, we were luck. Keep reading if you think this was too easy.
 

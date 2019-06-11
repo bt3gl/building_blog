@@ -16,7 +16,7 @@ The challenge starts with:
 And the following image:
 
 
-![](http://i.imgur.com/6NIu64us.jpg)
+![cyber](http://i.imgur.com/6NIu64us.jpg)
 
 
 
@@ -47,8 +47,8 @@ This challenge has a very short text:
 
 Together with two pictures:
 
-![](http://i.imgur.com/sbSwBju.jpg)
-![](http://i.imgur.com/mpcIKWt.jpg)
+![cyber](http://i.imgur.com/sbSwBju.jpg)
+![cyber](http://i.imgur.com/mpcIKWt.jpg)
 
 After the usual inspection (tail, file, diff, compare), I applied my knowledge of a former astrophysicist to inspect what would happen if I added or subtracted the picture. I wrote the following script:
 
@@ -73,7 +73,7 @@ def main():
 
 Running it, give us the flag!
 
-![](http://i.imgur.com/mvj8OJl.png)
+![cyber](http://i.imgur.com/mvj8OJl.png)
 
 --------------------
 ## Guess the number: Reverse Engineering
@@ -120,7 +120,7 @@ This challenge starts with the following text:
 
 And it gives us two pictures: a map and a sudoku.
 
-![](http://i.imgur.com/U9Zq4wp.png)
+![cyber](http://i.imgur.com/U9Zq4wp.png)
 
 We solve the sudoku and write the solution in a script to reorder the blocks:
 ```python
@@ -155,7 +155,7 @@ out.save('out_image.png')
 
 This gives us our flag:
 
-![](http://i.imgur.com/sA7JPrl.png)
+![cyber](http://i.imgur.com/sA7JPrl.png)
 
 
 ** Hack all the things! **
