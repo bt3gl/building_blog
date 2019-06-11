@@ -1,5 +1,5 @@
 Title: 8 Favorite Drone videos filmed and edited by Me, Myself and I
-Date: 2018-12-12 9:00 
+Date: 2019-01-12 9:00 
 Category: life
 Tags: nomad, droning, love
 

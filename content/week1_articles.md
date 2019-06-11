@@ -1,11 +1,9 @@
-Title: 19'Week 24's Best Articles
-Date: 2019-06-10 4:19 
+Title: 19'Week 24's Interwebz Best
+Date: 2019-06-09 4:19 
 Category: readings
 
 
 ![cyberpunk](./cyberpunk/news1.jpg){:height="270px" width="390px"}
-
-Cool things I found this week in the interwebz.
 
 
 ## Tech
@@ -29,9 +27,9 @@ Cool things I found this week in the interwebz.
 ## Life
 
 * [7 Psychological Superpowers Few People Have](https://medium.com/publishous/7-psychological-superpowers-few-people-have-that-you-can-use-to-set-yourself-apart-925fcee821d4).
-  * "Hide your intelligence", "Stop Taking Everything So Seriously", and "Resist Group Think" ;)
+    * *"Hide your intelligence", "Stop Taking Everything So Seriously", and "Resist Group Think" ;)*
 * [It’s Time to End Perfection Anxiety Once and For All](https://thriveglobal.com/stories/how-to-stop-perfection-anxiety-tips-arianna-huffington/). 
-    * I loved "Share an imperfect photo of yourself on social media."
+    * *"Share an imperfect photo of yourself on social media."*
 * [Patagonia’s CEO is donating company’s entire $10M Trump tax cut to fight climate change](https://www.upworthy.com/patagonia-s-ceo-is-donating-company-s-entire-10-m-trump-tax-cut-to-fight-climate-change).
 * [Yes, Burnout Is Real — And We Can Address It Much Better When We Call It What It Is](https://thriveglobal.com/stories/yes-virginia-there-is-a-burnout-crisis-arianna-huffington/.)
 
