@@ -6,11 +6,11 @@ Tags: CRL, CRLSets, OCSP, TLS, Chrome
 
 Today I am going to talk about some regulation details of **SSL/TLS connections**. These connections rely on a chain of trust. This chain of trust is established by **certificate authorities** (CAs), which serve as trust anchors to verify the validity of who a device thinks it is talking to. In technical terms, **X.509** is an [ITU-T](http://en.wikipedia.org/wiki/ITU-T) standard that specifies standard formats for things such as *public key certificates* and *certificate revocation lists*.
 
-A **public key certificate** is  how websites bind their identity to a *public key* to allow  an encrypted session (SSL/TLS) with the user. The certificate includes information about the key, the owner's *identity* (such as the DNS name), and the *digital signature* of the entity that issued the certificate (the [Certificate Authority](http://en.wikipedia.org/wiki/Certificate_authority), also known as CA).  As a consequence, browsers and other [user-agents](http://en.wikipedia.org/wiki/User_agent) should always be able to check the authenticity of these certificates before proceeding.
+A **public key certificate** is how websites bind their identity to a *public key* to allow an encrypted session (SSL/TLS) with the user. The certificate includes information about the key, the owner's *identity* (such as the DNS name), and the *digital signature* of the entity that issued the certificate (the [Certificate Authority](http://en.wikipedia.org/wiki/Certificate_authority), also known as CA).  As a consequence, browsers and other [user-agents](http://en.wikipedia.org/wiki/User_agent) should always be able to check the authenticity of these certificates before proceeding.
 
-Some organizations need SSL/TLS simply for confidentiality (encryption), while other organizations use it to enhance trust in their security and identity. Therefore, CAs issue different certificates with different levels of verification, ranging from just confirming the control of the domain name (*Domain Validation*, DV) to more extensive identity checks (*Extended Validation*, EV). For instance, if a site's DNS gets hijacked, while the attacker could be able to issue a controlled DV, she wouldn't be able to issue new EV certificates  just with domain validation.
+Some organizations need SSL/TLS simply for confidentiality (encryption), while other organizations use it to enhance trust in their security and identity. Therefore, CAs issue different certificates with different levels of verification, ranging from just confirming the control of the domain name (*Domain Validation*, DV) to more extensive identity checks (*Extended Validation*, EV). For instance, if a site's DNS gets hijacked, while the attacker could be able to issue a controlled DV, she wouldn't be able to issue new EV certificates just with domain validation.
 
-Since EV and DV certificates can be valid for years, they might lose their validity before they expire by age.  For instance, the website can lose control of its key or, as recently in the event of the [Heartbleed bug](http://heartbleed.com/), a very large number of SSL/TLS websites needed to revoke and reissue their certificates. Therefore, the need for an efficient revocation machinery is evident.
+Since EV and DV certificates can be valid for years, they might lose their validity before they expire by age.  For instance, the website can lose control of its key or, as recently in the event of the [Heartbleed bug](http://heartbleed.com/), a very large number of SSL/TLS websites needed to revoke and reissue their certificates. Therefore, the need for efficient revocation machinery is evident.
 
 For many years,  two ways of revoking a certificate have prevailed:
 
@@ -19,7 +19,7 @@ For many years,  two ways of revoking a certificate have prevailed:
 * by a communication protocol named **Online Certificate Status Protocol** (OCSP), which allows a system to check with a CA for the status of a single certificate without pulling the entire CRL.
 
 
-While CRLs are long lists and OCSP only deals with a single certificate, they are both methods of getting signed statements about the status of a certificate; and they both present issues concerning privacy, integrity, and availability. In this post I discuss some of these issues and I review possible alternatives.
+While CRLs are long lists and OCSP only deals with a single certificate, they are both methods of getting signed statements about the status of a certificate; and they both present issues concerning privacy, integrity, and availability. In this post, I discuss some of these issues and I review possible alternatives.
 
 
 
@@ -35,26 +35,26 @@ A CRL is a list of  serial numbers (such as ```54:99:05:bd:ca:2a:ad:e3:82:21:95:
 
 Each CA maintains and publishes its own CRL. CRLs are in continuous changes: old certificates expire due to their age and serial numbers of newly revoked certificates are added.
 
-The main issue here is that the original *public key infrastructure* (PKI) scheme does not scale. Users all over the Internet are constantly checking for  revocation and having to download files that can be many MB.  In addition, although CRL can be cached, they are still very volatile, turning CAs into a major performance bottleneck on the Internet.
+The main issue here is that the original *public key infrastructure* (PKI) scheme does not scale. Users all over the Internet are constantly checking for revocation and having to download files that can be many MB.  In addition, although CRL can be cached, they are still very volatile, turning CAs into a major performance bottleneck on the Internet.
 
 
 
 ### Online Certificate Status Protocol (OCSP)
 
-[OCSP was intended to replace the CRL system](https://tools.ietf.org/html/rfc2560), however it presented several issues:
+[OCSP was intended to replace the CRL system](https://tools.ietf.org/html/rfc2560), however, it presented several issues:
 
-* *Reliability*: Every time any user connects to any secured website, her  browser must query the CA's OCSP server. The typical CA issues certificates for hundreds of thousands of individual websites and the checks can be  up to  seconds.  Also, the CA's OCSP server might experience downtime! If a server is offline, overloaded, under attack, or unable to reply for any reason, certificate validity cannot be confirmed.
+* *Reliability*: Every time any user connects to any secured website, her browser must query the CA's OCSP server. The typical CA issues certificates for hundreds of thousands of individual websites and the checks can be up to seconds.  Also, the CA's OCSP server might experience downtime! If a server is offline, overloaded, under attack, or unable to reply for any reason, certificate validity cannot be confirmed.
 
 * *Privacy*: CAs can learn the IP address of users and which websites they wish to securely visit.
 
-* *Security*: Browsers can not be sure that a CA's server is reachable (*e.g.*, captive portals that require one to sign in on a HTTPS site, but blocks traffic to all other sites, including CA's OCSP servers).
+* *Security*: Browsers cannot be sure that a CA's server is reachable (*e.g.*, captive portals that require one to sign in on an HTTPS site, but blocks traffic to all other sites, including CA's OCSP servers).
 
 
 One attempt to circumvent the lack of assurance of a server's reliability was issuing OCSP checks with a **soft-fail** option. In this case, online revocation checks which result in a *network error would be ignored*.
 
 This brings serious issues. A simple example is when an [attacker can intercept HTTPS traffic and make online revocation checks appear to fail, bypassing OCSP checks](http://www.thoughtcrime.org/papers/ocsp-attack.pdf).
 
-On the flip side, it's also not a good idea to enforce a **hard-fail** check:  OCSP servers are pretty flaky/slow and you do not want to relay on their capabilities (DDoS attackers would love this though).
+On the flip side, it's also not a good idea to enforce a **hard-fail** check:  OCSP servers are pretty flaky/slow and you do not want to rely on their capabilities (DDoS attackers would love this though).
 
 
 
@@ -66,11 +66,11 @@ There are several attempts of a solution for the revocation problem but none of 
 ### CRLSets
 
 
-Google Chrome uses [**CRLSets**](https://dev.chromium.org/Home/chromium-security/crlsets) int its update mechanism to send lists of serial numbers of revoked certificates which are constantly added by crawling the CAs.
+Google Chrome uses [**CRLSets**](https://dev.chromium.org/Home/chromium-security/crlsets) in its update mechanism to send lists of serial numbers of revoked certificates which are constantly added by crawling the CAs.
 
-This method brings  more performance and reliability to the browser and, in addition, [CRLSet updates occur at least daily](https://www.imperialviolet.org/2014/04/19/revchecking.html), which is faster than most OCSP validity periods.
+This method brings more performance and reliability to the browser and, in addition, [CRLSet updates occur at least daily](https://www.imperialviolet.org/2014/04/19/revchecking.html), which is faster than most OCSP validity periods.
 
-A complementary initiative from Google is the  [Certificate Transparency](http://www.certificate-transparency.org/what-is-ct) project. The objective is to help with  structural flaws in the SSL certificate system such as domain validation, end-to-end encryption, and the chains of trust set up by CAs.
+A complementary initiative from Google is the  [Certificate Transparency](http://www.certificate-transparency.org/what-is-ct) project. The objective is to help with structural flaws in the SSL certificate system such as domain validation, end-to-end encryption, and the chains of trust set up by CAs.
 
 
 
@@ -89,7 +89,7 @@ Some fixable issue is that OCSP stapling supports only one response at a time. T
 
 -----
 
-**tl;dr:** The security of the Internet depends on the agent's ability to revoke compromised certificates, but the status quo is broken. There is  a urgent  need for rethinking the way things have been done!
+**tl;dr:** The security of the Internet depends on the agent's ability to revoke compromised certificates, but the status quo is broken. There is a urgent need for rethinking the way things have been done!
 
 -----
 

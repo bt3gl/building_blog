@@ -5,7 +5,7 @@ Category: DevOps
 
 ## Understanding MBR and EFI
 
-BIOS/MBR is an older partition table type also referred to as Legacy mode. Nowadays, UEFI is in most of the new computer (specially those that came with W8 or W8.1 pre-installed). UEFI always use the gpt partition table type.
+BIOS/MBR is an older partition table type also referred to as Legacy mode. Nowadays, UEFI is in most of the new computer (especially those that came with W8 or W8.1 pre-installed). UEFI always use the gpt partition table type.
 
 To find out each one your computer uses, you can boot into your computers Bios/firmware. In addition, to see if it is UEFI:
 

@@ -8,7 +8,7 @@ Tags: golang, algorithms, awesome
 
 For years, I have been advocating [Python as the most useful language we have](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures). Only recently, I have been shifting my mind a little to another awesome language: [Golang, also know as Go](https://golang.org/)!
 
-Go is a programming language developed by Google, introduced to the public in 2009. Go's developers had the goal of creating a language based on the syntax of the C programming language, elimination some "garbage" of older languages (such as C++), while containing many features of modern languages.
+Go is a programming language developed by Google, introduced to the public in 2009. Go's developers had the goal of creating a language based on the syntax of the C programming language, elimination some "garbage" of older languages (such as C++) while containing many features of modern languages.
 
 
 ###1 It Compiles Into a Single Binary
@@ -17,53 +17,53 @@ Golang builds as a compiled language and, using static linking, it combines all 
 
 ###2 Static Type System
 
-Type system is really important for large scale applications. Python sometimes will give you unusual exceptions (e.g. you are trying to use a variable as an integer but it turns out that it’s a string). Go will tell you write alway that it won't work.
+A type system is really important for large scale applications. Python sometimes will give you unusual exceptions (e.g. you are trying to use a variable as an integer but it turns out that it’s a string). Go will tell you to write alway that it won't work.
 
 ###3 Pointers
 
-Aiming to provide a modern equivalent of C, Go has brought back pointers. Most modern languages do not provide pointers but sometimes pointers help to solve a lot of common issues: they can play a far important role when it comes to memory layout and building low level system tools.
+Aiming to provide a modern equivalent of C, Go has brought back pointers. Most modern languages do not provide pointers but sometimes pointers help to solve a lot of common issues: they can play a far important role when it comes to memory layout and building low-level system tools.
 
 
-For example, you can pass your **data struct** along functions in very clean way:
+For example, you can pass your **data struct** along with functions in a very clean way:
 
 ```go
 type Route struct {
-	service        string
-	url            string
+    service        string
+    url            string
 }
 
 
 func AddRoute(routes map[uint8]*UDP_Route, requestPacket uint8, service string, url string) {
-	routes[requestPacket] = &UDP_Route{service: service, url: url}
+    routes[requestPacket] = &UDP_Route{service: service, url: url}
 }
 
 
 func InitializeRoutes() map[uint8]*UDP_Route {
-	routes := make(map[uint8]*UDP_Route)
+    routes := make(map[uint8]*UDP_Route)
     AddRoute(routes, service, url)
-	return routes
+    return routes
 }
 
 
 func UDP_Handler(routes map[uint8]*UDP_Route, ...) { 
-	var route *UDP_Route = routes[packetType]
+    var route *UDP_Route = routes[packetType]
 ```
 
 ###4 Performance and Goroutines
 
-Most of the modern programming languages (like Java, Python, etc.) are from the ’90s single threaded environment. Go, in another hand, offers some great concurrency primitives and makes it extremely easy to implement a concurrent system. Go routines are cheap, lightweight threads of execution. Spawning a go routine is as simple as adding the `go` keyword before a function.
+Most of the modern programming languages (like Java, Python, etc.) are from the ’90s single-threaded environment. Go, on another hand, offers some great concurrency primitives and makes it extremely easy to implement a concurrent system. Goroutines are cheap, lightweight threads of execution. Spawning a goroutine is as simple as adding the `go` keyword before a function.
 
 ```go
 func GorotineExample() {
-	time.Sleep(10)
-	go fmt.Println("go routine ftw")
+    time.Sleep(10)
+    go fmt.Println("go routine ftw")
 ```
 
-Go tends to perform better because of this concurrency model and CPU scalability. Whenever you need to process some internal request, you just use a Goroutine, which are much cheaper in resources than Python's threads, saving lots of resources (Memory, CPU) because of the built in language features.
+Go tends to perform better because of this concurrency model and CPU scalability. Whenever you need to process some internal request, you just use a Goroutine, which is much cheaper in resources than Python's threads, saving lots of resources (Memory, CPU) because of the built-in language features.
 
 In addition, goroutines have growable segmented stacks (use more memory only when needed), a faster startup time than threads, come with built-in primitives to communicate safely between themselves (by using `channel`: kind of pipe to specify goroutine where to send the output), allow you to avoid having to resort to mutex locking when sharing data structures, and can run on multiple threads.
 
-Finally, Go has the `defer` statement, which ensure that a function call is performed later in a program’s execution (for instance, for cleanup). The deferred call's arguments are evaluated right way, but the function call is not executed until the function returns.  
+Finally, Go has the `defer` statement, which ensures that a function call is performed later in a program’s execution (for instance, for cleanup). The deferred call's arguments are evaluated right way, but the function call is not executed until the function returns.  
 
 
 ###5 You Don’t Need a Web Framework

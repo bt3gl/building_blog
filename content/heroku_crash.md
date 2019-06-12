@@ -59,7 +59,7 @@ $ heroku login
 
 ## Authorize your Machine at Heroku
 
-### Create and add a SSH Key at Heroku:
+### Create and add an SSH Key at Heroku:
 
 ```
 $ ssh-keygen -t rsa
@@ -70,7 +70,7 @@ The public and private keys will be at ```~/.ssh```. I recommend always backup y
 
 ### Creating a Git Repository
 
-Heroku's push/commits work just like as Git. But instead of using the "origin" you use "heroku" (you can verify this later at .git/refs/remotes/). In other words, your project's control version (development) is done by using:
+Heroku's push/commits work just like Git. But instead of using the "origin" you use "heroku" (you can verify this later at .git/refs/remotes/). In other words, your project's control version (development) is done by using:
 
 ```
 $ git push origin master (or any branch you like)
@@ -138,11 +138,11 @@ web gunicorn manage:app
 ```
 (if this is how you run your application).
 
-In the Procfile, each line has a task name, a colon, and the command that runs the task. We use web here because Heroku recognizes it as the task that start the web server. Heroku gives this task a PORT environment variable, and set it to the port in which the application needs to listen for requests.
+In the Procfile, each line has a task name, a colon, and the command that runs the task. We use web here because Heroku recognizes it as the task that starts the web server. Heroku gives this task a PORT environment variable, and set it to the port in which the application needs to listen for requests.
 
 ### Using Foreman to Emulate Heroku
 
-The Heroku Toolbet includes Foreman, used to run the app locally through the Procfile for testing purposes. The environment variables set at Heroku must be defined locally. Just create a file var.env with this information:
+The Heroku Toolbelt includes Foreman, used to run the app locally through the Procfile for testing purposes. The environment variables set at Heroku must be defined locally. Just create a file var.env with this information:
 
 ```
 FLASK_CONFIG=heroku
@@ -193,7 +193,7 @@ If everything is well-done, it's time to deploy your application. Since you alre
 $ git push heroku master
 ```
 
-In my app, I have a script for the deployment (such taking care of database and other setups for production). So, additionally, I run:
+In my app, I have a script for the deployment (such as taking care of database and other setups for production). So, additionally, I run:
 
 ```
 $ heroku run python manage.py deploy

@@ -8,7 +8,7 @@ Tags: Wargames, Python, BurpSuite, request, PHP, JavaScript, SQLi, Command_Injec
 
 Continuing my quest through the [Wargames], today I am going to talk about the 20 first levels of [Natas], the **web exploitation episode**.
 
-I divide the exploits in two parts. The first part contains the easy challenges that don't demand much art (and are a bit boring). The second part comprehends the challenges that do, with scripting, brute force, and all the fun stuff.
+I divide the exploits into two parts. The first part contains the easy challenges that don't demand much art (and are a bit boring). The second part comprehends the challenges that do, with scripting, brute force, and all the fun stuff.
 
 Let the game begin.
 
@@ -23,7 +23,7 @@ Let the game begin.
 
 ### Level 0 and 1: Simple source code inspection
 
-The first two levels starts with a simple HTML page. No hints.
+The first two levels start with a simple HTML page. No hints.
 
 Obviously, the first thing we do is ti take a look  at the source code.
 
@@ -90,9 +90,9 @@ Looking at the content of  the folder */s3cr3t/* revels:
 ```
 Index of /s3cr3t
 
-[ICO]	Name	Last modified	Size	Description
-[DIR]	Parent Directory	 	-
-[TXT]	users.txt	12-Jul-2013 13:35	40
+[ICO]    Name    Last modified    Size    Description
+[DIR]    Parent Directory         -
+[TXT]    users.txt    12-Jul-2013 13:35    40
 ```
 
 Which give us the password file:
@@ -401,7 +401,7 @@ if($data["showpassword"] == "yes") {
 We know our way now.
 
 
-We then have this XOR function that take an input value, *$text*, and XOR to a variable, *$key*. So we know that XORing the output with what we sent as the input can return the content of *$key*:
+We then have this XOR function that takes an input value, *$text*, and XOR to a variable, *$key*. So we know that XORing the output with what we sent as the input can return the content of *$key*:
 
 ```
 function xor_encrypt($in) {
@@ -662,7 +662,7 @@ Back in Burp, we go to *Proxy --> Intercept* and mark it ON:
 
 ![cyber](http://i.imgur.com/FAf5Hru.png)
 
-In the browser, we load the Natas12 page and accept the initial intercepts (forwarding it). We upload out exploit.
+In the browser, we load the Natas12 page and accept the initial intercepts (forwarding it). We upload our exploit.
 
 Before we forward this request to the server, we open it in Burp and we change the name of the random string in *jpg* to our *php* exploit:
 
@@ -789,7 +789,7 @@ SELECT * from users where username="$(Username)" and password="$(Password)"
 
 We want to inject stuff in the middle to make this query do *more things*.
 
-In SQLi, we need to take care of the **"** that is automatically added in the end by the server. The simplest way to do this is by including an **always true clause** in the end of everything. This can be represented by:
+In SQLi, we need to take care of the **"** that is automatically added in the end by the server. The simplest way to do this is by including an **always true clause** at the end of everything. This can be represented by:
 
 ```
 OR '1'='1'
@@ -831,7 +831,7 @@ This level starts with a  form to check the existence of some username:
 
 ![cyber](http://i.imgur.com/SO4K5wK.png)
 
- The source code is almost equal to the previous level, with exception of this part:
+ The source code is almost equal to the previous level, with the exception of this part:
 
 ```
 /*
@@ -869,7 +869,7 @@ if(array_key_exists("username", $_REQUEST)) {
 
 We can't just modify the query to return a record because it won't accept **"**.
 
-However, the additional information about the table's proprieties are enough for us! We are going to brute force it!
+However, additional information about the table's proprieties is enough for us! We are going to brute force it!
 
 #### Stating the Attack:
 
@@ -1114,7 +1114,7 @@ We can play with time!
 
 #### Stating the Attack:
 
-Luckily, MySQL has a query [sleep()] that delays the next command for a number of seconds. We can use this as an inject command in the end of our former exploits:
+Luckily, MySQL has a query [sleep()] that delays the next command for a number of seconds. We can use this as an injected command at the end of our former exploits:
 
 [sleep()]: http://dev.mysql.com/doc/refman/5.0/en/miscellaneous-functions.html#function_sleep
 
@@ -1273,7 +1273,7 @@ function isValidAdminLogin() { /* {{{ */
 
 
 
-So, in resume, we have a function that starts the session, first checking if the session id is in the cookie and if this session id is a number. If true, it checks if it's a fresh session. Then, it checks if the word *admin* is in [SESSION_ID]. If not, it invalidates the session.
+So, in summary, we have a function that starts the session, first checking if the session id is in the cookie and if this session id is a number. If true, it checks if it's a fresh session. Then, it checks if the word *admin* is in [SESSION_ID]. If not, it invalidates the session.
 
 [SESSION_ID]: http://en.wikipedia.org/wiki/Session_ID
 
@@ -1431,7 +1431,7 @@ if __name__ == '__main__':
     brute_force_password(AUTH, URL, PAYLOAD, MAXID)
 ```
 
-And we get our password in the 501th attempt. Awesome.
+And we get our password in the 501st attempt. Awesome.
 
 
 

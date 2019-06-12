@@ -7,7 +7,7 @@ Category: web, js
 
 Hey Everyone!
 
-The VR world has a lot of [React](https://reactjs.org/) and there is so many things I have been learning and I want to share with you! I am starting to write a series of posts diving into React and I am dumping all the things in [this github repository](https://github.com/bt3gl/Everything_React).
+The VR world has a lot of [React](https://reactjs.org/) and there are so many things I have been learning and I want to share with you! I am starting to write a series of posts diving into React and I am dumping all the things in [this GitHub repository](https://github.com/bt3gl/Everything_React).
 
 Today I am showing how easy is to start with React in 5 minutes.
 

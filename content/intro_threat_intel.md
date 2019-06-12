@@ -2,7 +2,7 @@ Title: Introducing Threat Intel
 Date: 2015-10-02
 Category: h4x0r, dev
 
-[Threat intel 🍒](https://github.com/bt3gl/threat_intel) is a work I developed when I was at Yelp. It is a set of Threat Intelligence APIs that can be used by security developers and analysts for incident response. Additionally, it contains wrappers for:
+[Threat Intel 🍒](https://github.com/bt3gl/threat_intel) is a work I developed when I was at Yelp. It is a set of Threat Intelligence APIs that can be used by security developers and analysts for incident response. Additionally, it contains wrappers for:
 
 * OpenDNS Investigate API
 * VirusTotal API v2.0
@@ -51,7 +51,7 @@ investigate = InvestigateApi("<INVESTIGATE-API-KEY-HERE>", cache_file_name="/tmp
 
 Calls `domains/categorization/?showLabels` Investigate API endpoint.
 It takes a list (or any other Python enumerable) of domains and returns
-the categories associated with this domains by OpenDNS along with a [-1, 0, 1] score, where -1 is a malicious status.
+the categories associated with these domains by OpenDNS along with a [-1, 0, 1] score, where -1 is a malicious status.
 
 ```python
 domains = ["google.com", "baidu.com", "bibikun.ru"]
@@ -104,7 +104,7 @@ will result in:
 #### Co-occurrences for a domain
 
 Calls `recommendations/name/` Investigate API endpoint.
-Use this method to find out a list of co-occurence domains (domains that are being accessed by the same users within a small window of time) to the one given in a list, or any other Python enumerable.
+Use this method to find out a list of co-occurrence domains (domains that are being accessed by the same users within a small window of time) to the one given in a list, or any other Python enumerable.
 
 ```python
 domains = ["google.com", "baidu.com", "bibikun.ru"]
@@ -252,7 +252,7 @@ will result in:
 
 Calls `whois/emails/{email}` Investigate API endpoint.
 
-Use this method to see WHOIS information for the email address. (For now the OpenDNS API will only return at most 500 results)
+Use this method to see WHOIS information for the email address. (For now, the OpenDNS API will only return at most 500 results)
 
 ```python
 emails = ["dns-admin@google.com"]
@@ -282,7 +282,7 @@ will result in:
 
 Calls `whois/nameservers/{nameserver}` Investigate API endpoint.
 
-Use this method to see WHOIS information for the nameserver. (For now the OpenDNS API will only return at most 500 results)
+Use this method to see WHOIS information for the nameserver. (For now, the OpenDNS API will only return at most 500 results)
 
 ```python
 nameservers = ["ns2.google.com"]
@@ -417,7 +417,7 @@ To initialize the API wrapper you need the API key:
 vt = VirusTotalApi("<VIRUSTOTAL-API-KEY-HERE>")
 ```
 
-VirusTotal API calls allow to squeeze a list of file hashes or URLs into a single HTTP call.
+VirusTotal API calls allow squeezing a list of file hashes or URLs into a single HTTP call.
 Depending on the API version you are using (public or private) you may need to tune the maximum number
 of the resources (file hashes or URLs) that could be passed in a single API call.
 You can do it with the `resources_per_req` parameter:
@@ -430,7 +430,7 @@ When using the public API your standard request rate allows you too put maximum 
 With private API you are able to put up to 25 resources per call. That is also the default value if you
 don't pass the `resources_per_req` parameter.
 
-Of course when calling the API wrapper methods in the `VirusTotalApi` class you can pass as many resources
+Of course, when calling the API wrapper methods in the `VirusTotalApi` class you can pass as many resources
 as you want and the wrapper will take care of producing as many API calls as necessary to satisfy the request rate.
 
 Similarly to OpenDNS API wrapper, you can also specify the file name where the responses will be cached:
@@ -553,9 +553,9 @@ will result in:
 Calls `file/rescan` VirusTotal API endpoint. Use to rescan a previously submitted file.
 You can request the file reports passing a list of hashes (md5, sha1 or sha2):
 
-#### Hash behaviour endpoint
+#### Hash behavior endpoint
 
-Calls `file/behaviour` VirusTotal API endpoint. Use to get a report about the behaviour of the file when executed in a sandboxed environment (Cuckoo sandbox).
+Calls `file/behaviour` VirusTotal API endpoint. Use to get a report about the behavior of the file when executed in a sandboxed environment (Cuckoo sandbox).
 You can request the file reports passing a list of hashes (md5, sha1 or sha2):
 
 ```python
@@ -654,7 +654,7 @@ will result in:
 
 #### URL live feed endpoint
 
-Calls `url/distribution` VirusTotal API endpoint. Use to get a live a feed with the latest URLs submitted to VirusTotal.
+Calls `url/distribution` VirusTotal API endpoint. Use to get a live feed with the latest URLs submitted to VirusTotal.
 
 ```python
 vt.get_url_distribution()
@@ -678,7 +678,7 @@ vt.get_file_search()
 
 #### File date endpoint
 
-Calls `file/clusters` VirusTotal API endpoint. Use to list simililarity clusters for a given time frame.
+Calls `file/clusters` VirusTotal API endpoint. Use to list similarity clusters for a given time frame.
 
 ```python
 vt.get_file_clusters()
@@ -688,7 +688,7 @@ vt.get_file_clusters()
 
 ### ShadowServer API
 
-[ShadowServer](http://shadowserver.org/) provides and [API](http://bin-test.shadowserver.org/) that allows to test
+[ShadowServer](http://shadowserver.org/) provides an [API](http://bin-test.shadowserver.org/) that allows to test
 the hashes against a list of known software applications.
 
 To use the ShadowServer API wrapper import `ShadowServerApi` class from `threat_intel.shadowserver` module:

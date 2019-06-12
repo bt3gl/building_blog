@@ -38,7 +38,7 @@ This post is divided as the following:
 
 ## A Simple Packet and its Headers
 
-The basic unit in a  network communication is the *packet*.  So let's create one!
+The basic unit in network communication is the *packet*.  So let's create one!
 
 
 Scapy builds packets by the *layers* and then by the *fields* in each layer. Each layer is nested inside the parent layer, represented by the **<** and **>** brackets.
@@ -112,7 +112,7 @@ In another hand, Scapy's method [sendp](http://www.secdev.org/projects/scapy/doc
 ```
 >>> sendp(Ether()/ip/tcp)
 .
-Sent 1 packets.
+Sent 1 packet.
 ```
 
 
@@ -279,7 +279,7 @@ send(ip/PUSH/data)
 
 However, running the snippet above will not work.
 
-The reason is that crafting TCP sessions with Scapy circumvents the native TCP/IP stack. Since the host is unaware that Scapy is sending packets, the native host would receive an unsolicited SYN/ACK that is not associated with any known open session/socket. This would result in the host reseting the connection when receiving the SYN/ACK.
+The reason is that crafting TCP sessions with Scapy circumvents the native TCP/IP stack. Since the host is unaware that Scapy is sending packets, the native host would receive an unsolicited SYN/ACK that is not associated with any known open session/socket. This would result in the host resetting the connection when receiving the SYN/ACK.
 
 
 One solution is to use the host's firewall with [iptables](http://en.wikipedia.org/wiki/Iptables) to block the outbound resets. For example, to drop all outbound packets that are TCP and destined for IP 192.168.1.25 from 192.168.1.114 to destination port 80, examining the flag bits, we can run:
@@ -424,7 +424,7 @@ Or be used to discover hosts on the local Ethernet, with [arping](http://www.sec
 >>>> print arping('192.168.1.114')
 ```
 
-Scapy has also commands for network-based attack such as [arpcachepoison  and srpflood](http://www.secdev.org/projects/scapy/doc/usage.html#tcp-traceroute).
+Scapy has also commands for a network-based attack such as [arpcachepoison and srpflood](http://www.secdev.org/projects/scapy/doc/usage.html#tcp-traceroute).
 
 
 Additionally, we can use Scapy to re-create a packet that has been sniffed or received. The method **command()** returns a string of the commands necessary for this task.
@@ -477,20 +477,20 @@ def packet_callback(packet):
 sniff(filter="tcp port 110 or tcp port 25 or tcp port 143", prn=packet_callback, store=0)
 ```
 
-Running this script when loading load some mail client (such as [Thunderbird](https://www.mozilla.org/en-US/thunderbird/)) will allow us to see the login information, if they are sent to the server as plain text.
+Running this script when loading load some mail client (such as [Thunderbird](https://www.mozilla.org/en-US/thunderbird/)) will allow us to see the login information if they are sent to the server as plain text.
 
 
 
 -----------
 ## <a name="arp"></a> ARP Cache Poisoning
 
-I talked about [ARP cache poisoning using command line arpspoof](http://bt3gl.github.io/wiresharking-for-fun-or-profit.html) in my guide about Wireshark. Here we are going to see how to implement similar tool using Scapy.
+I talked about [ARP cache poisoning using command line arpspoof](http://bt3gl.github.io/wiresharking-for-fun-or-profit.html) in my guide about Wireshark. Here we are going to see how to implement a similar tool using Scapy.
 
-ARP cache poisoning works by convincing a target machine that we are the gateway, and then convincing the gateway that all traffic should pass through our machine.
+ARP cache poisoning works by convincing a target machine that we are the gateway and then convincing the gateway that all traffic should pass through our machine.
 
 Every machine in a network maintains an ARP cache that stores the recent MAC addresses that match to IP addresses on the local network. All we need to do is to poison this cache with controlled entries.
 
-The best way to test this is using a Windows virtual machine (take a look in [this guide I wrote](http://bt3gl.github.io/setting-up-a-playing-environment-with-virtual-machines.html)).
+The best way to test this is by using a Windows virtual machine (take a look in [this guide I wrote](http://bt3gl.github.io/setting-up-a-playing-environment-with-virtual-machines.html)).
 
 Before the attack, go to the Windows box, open the terminal (```cmd```) and check the IP and gateway IP address with```ipconfig```. Then check the associated  ARP cache entry MAC address with ```arp -a```. We are going to use the former information and we will see the ARP data being changed:
 
@@ -498,7 +498,7 @@ Before the attack, go to the Windows box, open the terminal (```cmd```) and chec
 
 Following is our ARP poisoning script (based on [Black Hat Python](http://www.nostarch.com/blackhatpython)). The script does the following steps:
 
-1. Define constant values, set our interface card, and turn off output.
+1. Define constant values, set our interface card, and turn off the output.
 
 2. Resolve the gateway and target MAC address.
     * The function **get_mac** use the **srp** method to emit an ARP request to an IP address to resolve the MAC address.
@@ -600,7 +600,7 @@ if __name__ == '__main__':
         sys.exist()
 ```
 
-To run it, we need to tell the local host machine (Kali Linux) to forward packets along both the gateway and the target IP address:
+To run it, we need to tell the local host machine (Kali Linux) to forward packets along with both the gateway and the target IP address:
 
 ```sh
 $ echo 1 /proc/sys/net/ipv4/ip_foward
@@ -653,7 +653,7 @@ p.show()
 
 ### Analyzing PCAP Files
 
-Based in one of the examples from [Black Hat Python]() we are going to analyze images from HTTP traffic dumped in a PCAP file. We can do this with the library [opencv](http://opencv.org/). We also need to install [numpy](http://www.numpy.org/) and [scipy](http://www.scipy.org/):
+Based on one of the examples from [Black Hat Python]() we are going to analyze images from HTTP traffic dumped in a PCAP file. We can do this with the library [opencv](http://opencv.org/). We also need to install [numpy](http://www.numpy.org/) and [scipy](http://www.scipy.org/):
 
 ```sh
 $ sudo pip install numpy
@@ -666,7 +666,7 @@ To try to detect images that contain human faces, first either create or downloa
 
 The following script does the following:
 
-1) The function **http_assembler** takes a PCAP and separates each TCP session in a dictionary. Then it loops in these section using the HTTP filter (which is the same as *Follow the TCP stream* in Wireshark). After the HTTP data is assembled, it parses the headers with the **get_http_headers** function and send to the **extract_image** function. If the image header are returned, it saves the image and try to detect faces with the function **face_detect**.
+1) The function **http_assembler** takes a PCAP and separates each TCP session in a dictionary. Then it loops in these sections using the HTTP filter (which is the same as *Follow the TCP stream* in Wireshark). After the HTTP data is assembled, it parses the headers with the **get_http_headers** function and send to the **extract_image** function. If the image header are returned, it saves the image and try to detect faces with the function **face_detect**.
 
 ```python
 def http_assembler(PCAP):
@@ -717,7 +717,7 @@ def get_http_headers(http_payload):
     return headers
 ```
 
-3. The **extract_image** function determine whether an image is in a HTTP response by checking by the **'Content-Type'** string.
+3. The **extract_image** function determines whether an image is in a HTTP response by checking by the **'Content-Type'** string.
 
 ```python
 def extract_image(headers, http_payload):

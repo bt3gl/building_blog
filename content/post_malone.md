@@ -10,7 +10,7 @@ Category: ios, arkit, ar
 Hi Everyone!
 
 
-In this post, I  show how neat is to write an AR iOS application with [ARKit](https://developer.apple.com/arkit/), a framework that provides you high level classes for **tracking**, **scene understanding** and **rendering**. More specifically, ARKit is a session based framework. This means that everything will happen in a concrete session. Sessions are a way of encapsulating the logic and data contained within a defined period of the applications activity. It relates the virtual objects with the real world by means of the Tracking.
+In this post, I  show how neat is to write an AR iOS application with [ARKit](https://developer.apple.com/arkit/), a framework that provides you high-level classes for **tracking**, **scene understanding** and **rendering**. More specifically, ARKit is a session based framework. This means that everything will happen in a concrete session. Sessions are a way of encapsulating the logic and data contained within a defined period of the applications activity. It relates the virtual objects with the real world by means of the Tracking.
 
 This app runs an ARKit world tracking session with content displayed in a [SpriteKit](https://developer.apple.com/documentation/spriteKit) 2D view. Every session has a scene that will render the virtual objects in the real world, accessed by means of the iOS device sensors.
 
@@ -43,7 +43,7 @@ Contains two [story board files](https://www.raywenderlich.com/160521/storyboard
 
 ### `Scene.swift`
 
-Anchors are 3D points that correspond real world features that ARKit detects. Anchors are created in this class, together with the Sprite scene (Scene.sks). The class `Scene` controls how the App is operating within the scenes. Rendering brings tracking and scene understanding together with your content.
+Anchors are 3D points that correspond real-world features that ARKit detects. Anchors are created in this class, together with the Sprite scene (Scene.sks). The class `Scene` controls how the App is operating within the scenes. Rendering brings tracking and scene understanding together with your content.
 
 For our App, we are:
 
@@ -56,7 +56,7 @@ For our App, we are:
 
 ### `ViewController.swift`
 
-This view is managed by the class ViewController, which inherents from `ARSKViewDelegate` so that we can create a `sceneView` variable. This class has methods for:
+This view is managed by the class ViewController, which inherits from `ARSKViewDelegate` so that we can create a `sceneView` variable. This class has methods for:
 
 * Views
     - Scaling and placing the view.
@@ -85,7 +85,7 @@ This is where we call the class `AppDelegate`, which responds for `UIApplication
 
 * **Field of view**: measured in degrees, is the extent of the observable world that is seen at any given moment (humans have a FOV of around 180°, but most HMDs offer between 50 and 110°).
 
-* **Latency**: In VR, a 20 millisecond latency is considered low and acceptable for a comfortable experience.
+* **Latency**: In VR, a 20-millisecond latency is considered low and acceptable for a comfortable experience.
 
 * **Haptics**: recreate the sense of touch by applying forces, vibrations, or motions to the user, through feedback devices (example, vibrating game controllers).
 

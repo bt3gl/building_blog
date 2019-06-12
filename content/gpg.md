@@ -9,10 +9,10 @@ Tags: PGP, GPG
 [Pretty Good Privacy](http://en.wikipedia.org/wiki/Pretty_Good_Privacy) (PGP) is a model that provides cryptographic privacy and authentication for data communication. It was created by [Phil Zimmermann](http://en.wikipedia.org/wiki/Phil_Zimmermann) in 1991. Today, PGP is a [company](http://en.wikipedia.org/wiki/PGP_Corporation) that sells a proprietary encryption program, [OpenPGP](http://www.openpgp.org/) is the open protocol that defines how PGP encryption works, and [GnuGP](https://www.gnupg.org/) is the free software.
 
 
-The distribution of PGP keys can be done using the concept of [web of trust](http://en.wikipedia.org/wiki/Web_of_trust). This is a decentralized way of establishing the authenticity  of a public key and its owner. If you want a cute (ludic) picture of the web of trust, check [Cory Doctorow](https://twitter.com/doctorow)'s book [Little Brother](http://craphound.com/littlebrother/).
+The distribution of PGP keys can be done using the concept of [web of trust](http://en.wikipedia.org/wiki/Web_of_trust). This is a decentralized way of establishing the authenticity of a public key and its owner. If you want a cute (ludic) picture of the web of trust, check [Cory Doctorow](https://twitter.com/doctorow)'s book [Little Brother](http://craphound.com/littlebrother/).
 
 
-Almost 15 years after its creation, [PGP continues to be *pretty good*](https://firstlook.org/theintercept/2014/10/28/smuggling-snowden-secrets/). But there is  still a [need for new solutions](http://blog.cryptographyengineering.com/2014/08/whats-matter-with-pgp.html) (and they appear to be [coming soon](http://googleonlinesecurity.blogspot.com/2014/06/making-end-to-end-encryption-easier-to.html)). Perhaps the main issue with PGP is its persistence. If one key is compromised, any message from the past can be read.  That's where the concept of [perfect forward secrecy ](http://en.wikipedia.org/wiki/Forward_secrecy) comes in play, but this is a subject to another post. Meanwhile, I wrote this tutorial and I hope you find it fun.
+Almost 15 years after its creation, [PGP continues to be *pretty good*](https://firstlook.org/theintercept/2014/10/28/smuggling-snowden-secrets/). But there is still a [need for new solutions](http://blog.cryptographyengineering.com/2014/08/whats-matter-with-pgp.html) (and they appear to be [coming soon](http://googleonlinesecurity.blogspot.com/2014/06/making-end-to-end-encryption-easier-to.html)). Perhaps the main issue with PGP is its persistence. If one key is compromised, any message from the past can be read.  That's where the concept of [perfect forward secrecy ](http://en.wikipedia.org/wiki/Forward_secrecy) comes in play, but this is a subject to another post. Meanwhile, I wrote this tutorial and I hope you find it fun.
 
 
 
@@ -53,7 +53,7 @@ $ gpg --fingerprint EMAIL
 ```
 
 #### By sending the ASCII file
-You can copy your key to an file to be shared:
+You can copy your key to a file to be shared:
 ```sh
 $ gpg --export --armor  YOUR_EMAIL > YOUR_NAME-pubkey.asc
 ```
@@ -108,7 +108,7 @@ You should allow the person whose key you are signing to enjoy the advantages of
 $ gpg --export --armor PERSON_EMAIL
 ```
 
-When you received similar *trusted* key, you can import it  into your GPG database:
+When you received a similar *trusted* key, you can import it  into your GPG database:
 
 ```sh
 $ gpg --import FILENAME
@@ -160,11 +160,11 @@ $ man gpg
 ### VII. Encrypting and Decryptying Messages
 
 
-With someone's **public key**, you can **encrypt** messages that can only be decrypted with her secret key. You can also **verify signatures** that were generated with her secret key.
+With someone's **public key**, you can **encrypt** messages that can only be decrypted with her secret key. You can also **verify signatures** that was generated with her secret key.
 
 In the other hand, with your secret key you can **decrypt** messages that were encrypted using your public key. You can also and  **sign messages**.
 
-With GPG, you  encrypt messages using the ```--encrypt``` flag.
+With GPG, you encrypt messages using the ```--encrypt``` flag.
 
 The command below encrypts the message signing with your private key (to guarantee that is coming from you). It also generates the message in a text format, instead of raw bytes:
 
@@ -218,7 +218,7 @@ Finally, a word about browser plugins. Although there are several of them to enc
 
 If you are serious about ensuring your long-term privacy, the safest way to go is to use a text editor to write your email message, encrypting the message outside of the web browser, and then cutting and pasting into your webmail interface. This will guarantee that only the recipient will be able to read your email.
 
-If you really need something in your browser,  the creator of [Cryptocat](https://crypto.cat/) recently released [minilock](https://minilock.io/). This tool  uses  [Curve25519 elliptic curve cryptography](http://en.wikipedia.org/wiki/Curve25519) (the sames as in Cryptocat) so that the public keys are much shorter (and easier to share). Remember,  it's a new app, so it might not yet be the best choice for high-stakes environment (but  it's  worth keeping tabs on this project).
+If you really need something in your browser,  the creator of [Cryptocat](https://crypto.cat/) recently released [minilock](https://minilock.io/). This tool uses [Curve25519 elliptic curve cryptography](http://en.wikipedia.org/wiki/Curve25519) (the same as in Cryptocat) so that the public keys are much shorter (and easier to share). Remember,  it's a new app, so it might not yet be the best choice for the high-stakes environment (but it's worth keeping tabs on this project).
 
 ---
 

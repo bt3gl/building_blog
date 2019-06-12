@@ -1,6 +1,6 @@
 Title: To All the AR & VR Groms Out There
 Date: 2017-12-07
-Category: vr, ar, dev
+Category: VR, AR, dev
 
 ![cyberpunk](./cyberpunk/26.jpg){:height="300px" width="400px"}
 

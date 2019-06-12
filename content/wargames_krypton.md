@@ -11,7 +11,7 @@ Tags: Wargames,ROT13, Vigenere, pygenere, ltrace, base64, tr, Python
 The problems are very straightforward and very similar to those from the last [CSAW CTF] ([see my post here]).
 
 
-**Disclaimer**: if you haven't played WarGames but you are planing to, PLEASE DON'T READY ANY FURTHER. If you don't try to solve the problems by yourself first, you will be wasting your time.
+**Disclaimer**: if you haven't played WarGames but you are planning to, PLEASE DON'T READ ANY FURTHER. If you don't try to solve the problems by yourself first, you will be wasting your time.
 
 
 
@@ -34,7 +34,7 @@ This level starts with:
   > Use this password to log in to krypton.labs.overthewire.org with username krypton1 using SSH. You can the files for other levels in /krypton/.
 
 
-[Base64] is just a way to represent binary data in ASCII, by translating it into a radix-64. Linux provides a built-in Base64 enconder/decoder tool, so all we need to do is:
+[Base64] is just a way to represent binary data in ASCII, by translating it into a radix-64. Linux provides a built-in Base64 encoder/decoder tool, so all we need to do is:
 
 ```
 $ base64 -d KRYPTON0.txt
@@ -50,7 +50,7 @@ $ base64 -d KRYPTON0.txt
 
 The second level starts with:
 
-  > The password for level 2 is in the file ‘krypton2’. It is ‘encrypted’ using a simple rotation. It is also in non standard ciphertext format. When using alpha characters for cipher text it is normal to group the letters into 5 letter clusters, regardless of word boundaries. This helps obfuscate any patterns. This file has kept the plain text word boundaries and carried them to the cipher text. Enjoy!
+  > The password for level 2 is in the file ‘krypton2’. It is ‘encrypted’ using a simple rotation. It is also in non-standard ciphertext format. When using alpha characters for ciphertext it is normal to group the letters into 5 letter clusters, regardless of word boundaries. This helps obfuscate any patterns. This file has kept the plain text word boundaries and carried them to the ciphertext. Enjoy!
 
 
 This is the classic [Caesar Cypher] (they really love this thing :).
@@ -89,7 +89,7 @@ The third level starts with:
 
   > In this example, the letter 'a' in plaintext is replaced by a 'G' in the ciphertext so, for example, the plaintext 'bad' becomes 'HGJ' in ciphertext.
 
-  > The password for level 3 is in the file krypton3.  It is in 5 letter group ciphertext.  It is encrypted with a Caesar Cipher.  Without any  further information, this cipher text may be difficult to break.  You do not have direct access to the key, however you do have access to a program  that will encrypt anything you wish to give it using the key.  If you think logically, this is completely easy.
+  > The password for level 3 is in the file krypton3.  It is in 5 letter group ciphertext.  It is encrypted with a Caesar Cipher.  Without any  further information, this ciphertext may be difficult to break.  You do not have direct access to the key, however you do have access to a program  that will encrypt anything you wish to give it using the key.  If you think logically, this is completely easy.
 
 
 First, we make a file filled with the alphabet, so we can test  the binary:
@@ -242,7 +242,7 @@ The fifth level starts with:
   > VFZFK SOPKS ELTUL VGUCH KR
   > This level is a Vigenère Cipher. You have intercepted two longer, english language messages. You also have a key piece of information. You know the key length!
 
-This is a classical case of [Vigenere cipher], which  is a variation on the Caesar’s cipher. In this case, one uses multiple shift amounts according to a keyword.
+This is a classic case of [Vigenere cipher], which  is a variation on the Caesar’s cipher. In this case, one uses multiple shift amounts according to a keyword.
 
 To solve this we use the [pygenere] library in Python. First we need to find the key:
 
@@ -319,7 +319,7 @@ if __name__ == '__main__':
 The sixth level starts with:
 
 
-  > Frequency analysis can break a known key length as well.  Lets try one last polyalphabetic cipher, but this time the key length is unknown.
+  > Frequency analysis can break a known key length as well.  Let's try one last polyalphabetic cipher, but this time the key length is unknown.
 
 This is another example of Vigenere Cipher. Using the same method as before we first get the key and then the password.
 

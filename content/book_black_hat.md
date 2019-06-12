@@ -3,9 +3,9 @@ Date: 2014-12-10
 Category: Networking
 Tags: Python, netcat, socket,  threading, subprocess, UDP, TCP, Book, getopt, proxy
 
-Last week I got my copy of [Black Hat Python](http://www.nostarch.com/blackhatpython), the new [Justin Seitz](https://twitter.com/jms_dot_py)'s book. The compilation talks about network programing, web hacking, and Windows exploitation. All in Python!
+Last week I got my copy of [Black Hat Python](http://www.nostarch.com/blackhatpython), the new [Justin Seitz](https://twitter.com/jms_dot_py)'s book. The compilation talks about network programming, web hacking, and Windows exploitation. All in Python!
 
-I have been wanting to write about Python's network resources for a while and now this is my chance! In this first post I discuss Python's [socket](https://docs.python.org/2/library/socket.html) module, which  contains all the tools to write [TCP](http://en.wikipedia.org/wiki/Transmission_Control_Protocol)/[UDP](http://en.wikipedia.org/wiki/User_Datagram_Protocol) clients and servers, including [raw sockets](http://en.wikipedia.org/wiki/Raw_socket). It's really nice! **T-1000** is loving it!
+I have been wanting to write about Python's network resources for a while and now this is my chance! In this first post, I discuss Python's [socket](https://docs.python.org/2/library/socket.html) module, which contains all the tools to write [TCP](http://en.wikipedia.org/wiki/Transmission_Control_Protocol)/[UDP](http://en.wikipedia.org/wiki/User_Datagram_Protocol) clients and servers, including [raw sockets](http://en.wikipedia.org/wiki/Raw_socket). It's really nice! **T-1000** is loving it!
 
 Ah, by the way, all the source codes in this post are available at [my repo](https://github.com/bt3gl/My-Gray-Hacker-Resources).
 
@@ -47,7 +47,7 @@ if __name__ == '__main__':
 The simplicity of this script relies in making the following assumptions about the sockets:
 
 * our *connection will always succeed*,
-* the *server is always waiting for us to send data first* (as oppose to servers that expect to send data and then wait for response), and
+* the *server is always waiting for us to send data first* (as opposed to servers that expect to send data and then wait for response), and
 * the server will always send us data back in a *short time*.
 
 Let's run this script (notice that we get *Moved Permanently* because Google  issues HTTPS connections):
@@ -79,11 +79,11 @@ Simple like that.
 ----------
 ## A TCP Server
 
-Let's move on and write a *multi-threaded* TCP server. For this we will use Python's [threading](https://docs.python.org/2/library/threading.html) module.
+Let's move on and write a *multi-threaded* TCP server. For this, we will use Python's [threading](https://docs.python.org/2/library/threading.html) module.
 
-First we define the IP address and port that we want the server to listen on.  We then define a **handle_client** function that starts a thread to handle client connections. The function takes the client socket and gets data from the client, sending a **ACK** message.
+First, we define the IP address and port that we want the server to listen on.  We then define a **handle_client** function that starts a thread to handle client connections. The function takes the client socket and gets data from the client, sending an **ACK** message.
 
-The main function for our server, **tcp_server**, creates a server socket and starts listening on the port and IP (we set the maximum backlog of connections  to 5). Then it starts a loop waiting for when a client connects. When this happens,  it receives the client socket (the client variables go to the **addr** variable).
+The main function for our server, **tcp_server**, creates a server socket and starts listening on the port and IP (we set the maximum backlog of connections to 5). Then it starts a loop waiting for when a client connects. When this happens,  it receives the client socket (the client variables go to the **addr** variable).
 
 At this point, the program creates a thread object for the function **handle_client** which we mentioned above:
 
@@ -173,7 +173,7 @@ if __name__ == '__main__':
 
 ## A UDP Server
 
-Below is an example of a very simple  UDP server. Notice that there is no **listen** or **accept**:
+Below is an example of a very simple  UDP server. Notice that there are no **listen** or **accept**:
 
 
 ```python
@@ -392,7 +392,7 @@ def server_loop():
         client_thread.start()
 ```
 
-The **threading** function calls **client_handler** which will either upload a file, or execute a command (in a special shell named *NETCAT*):
+The **threading** function calls **client_handler** which will either upload a file or execute a command (in a special shell named *NETCAT*):
 ```python
 
 def client_handler(client_socket):
@@ -506,13 +506,13 @@ Cool, huh?
 
 ## A TCP Proxy
 
-A TCP proxy can be very useful for forwarding traffic and when assessing network-based softwares (for example, when you cannot run [Wireshark](http://bt3gl.github.io/wiresharking-for-fun-or-profit.html) or you cannot load drivers or tools in the machine you are exploiting).
+A TCP proxy can be very useful for forwarding traffic and when assessing network-based software (for example, when you cannot run [Wireshark](http://bt3gl.github.io/wiresharking-for-fun-or-profit.html) or you cannot load drivers or tools in the machine you are exploiting).
 
 To create a proxy we need to verify if we need to *first initiate a connection* to the remote side. This will request data before going into our main loop and some server daemons expect you to do this first (for instance, FTP servers send a banner first).  We call this information **receive_first**.
 
 
 ### The Main Function
-So let us start with our **main** function. First we define the usage, which should have four more arguments together with  **receive_first**. Then we check these arguments to variables and start a listening socket:
+So let us start with our **main** function. First, we define the usage, which should have four more arguments together with  **receive_first**. Then we check these arguments to variables and start a listening socket:
 
 ```python
 import socket
@@ -636,7 +636,7 @@ def receive_from(connection):
     return buffer
 ```
 
-The **response_handler** function is used to modify the packet contents from the inbound traffic (for example, to  perform fuzzing, test for authentication, etc). The function **request_handler** does the same for outbound traffic:
+The **response_handler** function is used to modify the packet contents from the inbound traffic (for example, to perform fuzzing, test for authentication, etc). The function **request_handler** does the same for outbound traffic:
 
 ```python
 def request_handler(buffer):
@@ -667,7 +667,7 @@ def hexdump(src, length=16):
 
 ### Firing Up our Proxy
 
-Now we just need to run our script with some server. For example, for a FTP server at the standard port 21:
+Now we just need to run our script with some server. For example, for an FTP server at the standard port 21:
 ```sh
 $ sudo ./tcp_proxy.py localhost 21 ftp.target 21 True
 [*] Listening on localhost:21
@@ -680,7 +680,7 @@ $ sudo ./tcp_proxy.py localhost 21 ftp.target 21 True
 ---
 ## Extra Stuff: The socket Object Methods
 
-Additionally, let's  take a quick look to all the methods available with the **socket** object from the **socket** module. I think it's useful to have an idea of this list:
+Additionally, let's take a quick look to all the methods available with the **socket** object from the **socket** module. I think it's useful to have an idea of this list:
 
 * **socket.accept()**: Accept a connection.
 

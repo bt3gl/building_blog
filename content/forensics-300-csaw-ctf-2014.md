@@ -15,7 +15,7 @@ The challenge starts with the following text:
 > OH NO WE'VE BEEN HACKED!!!!!! -- said the Eye Heart Fluffy Bunnies Blog owner.
 > Life was grand for the fluff fanatic until one day the site's users started to get attacked! Apparently fluffy bunnies are not just a love of fun furry families but also furtive foreign governments. The notorious "Forgotten Freaks" hacking group was known to be targeting high powered politicians. Were the cute bunnies the next in their long list of conquests!??
 >
->Well... The fluff needs your stuff. I've pulled the logs from the server for you along with a backup of it's database and configuration. Figure out what is going on!
+>Well... The fluff needs your stuff. I've pulled the logs from the server for you along with a backup of its database and configuration. Figure out what is going on!
 >
 >Written by brad_anton
 >
@@ -147,7 +147,7 @@ The IP 72.167.232.29  leads to another generic page with no hints and with nothi
 
 All right, let's give a last try and open the tables from the MySQL dump file inside a nice GUI. I use [phpMyAdmin], which I showed how to install and to configure in my tutorial about setting up a [LAMP server].
 
-We open ```localhost/phpmyadmin``` in our browser. First we go  to *Databases* and then *Create Database* with any name we want. Then we  *Import* ```mysql_backup.sql`` to this database. All the tables are loaded. Let's use the *Search* option to look for *key* or *flag*.
+We open ```localhost/phpmyadmin``` in our browser. First, we go to *Databases* and then *Create Database* with any name we want. Then we  *Import* ```mysql_backup.sql`` to this database. All the tables are loaded. Let's use the *Search* option to look for *key* or *flag*.
 
 
 ![cyber](http://i.imgur.com/tVOY1VJ.png)
@@ -157,7 +157,7 @@ Nope. Nothing in special. By the way, ```default_pingback_flag1`` is just a **Wo
 
 Let's continue our search. If we look  inside each of the tables we find:
 
-* The URL for the [blog], which doesn't render. However, in the source code there is a commented link that leads to a [cute website]. Nothing else.
+* The URL for the [blog], which doesn't render. However, in the source code, there is a commented link that leads to a [cute website]. Nothing else.
 
 * Oh, wait! We found a hashed password!
 ![cyber](http://i.imgur.com/FiQONze.png)
@@ -165,7 +165,7 @@ Let's continue our search. If we look  inside each of the tables we find:
 ---
 ## Cracking the Password
 
-We want to crack ```$P$BmHbpWPZrjt.2V8T2xDJfbDrAJZ9So1``` and for this we are going to use [hashcat]. If you are in [Kali] or in any Debian distribution you can install it with:
+We want to crack ```$P$BmHbpWPZrjt.2V8T2xDJfbDrAJZ9So1``` and for this, we are going to use [hashcat]. If you are in [Kali] or in any Debian distribution you can install it with:
 ```sh
 $ apt-get hashcat
 ```
@@ -305,7 +305,7 @@ $ find . -type f  -name '*.log'
 ./upstart/modemmanager.log
 ```
 
-We start with the Apache's log, because they carry the connection information. If there is any important information in the log files, it should appears in the end, because the attack should be one of the last things that were logged.
+We start with the Apache's log because they carry the connection information. If there is any important information in the log files, it should appear in the end, because the attack should be one of the last things that were logged.
 
  It turned out that [Tailing] the *apache* logs did not reveal anything useful.
 

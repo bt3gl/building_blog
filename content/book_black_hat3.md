@@ -7,7 +7,7 @@ This is the second post based on my readings from [Black Hat Python](http://www.
 
 **Paramiko** is awesome!!! It uses my dear [PyCrypto](https://www.dlitz.net/software/pycrypto/) to give us access to the [SSH2 protocol](http://en.wikipedia.org/wiki/SSH2), and it has a flexible and easy to use API.
 
-You are going to see it with your own eyes: in this post we will see code for SSH clients and servers, reverse shells, and tunnel connections, and it will be smooth and fun (and remember that my source codes are available in my [github repo](https://github.com/bt3gl/My-Gray-Hacker-Resources))!
+You are going to see it with your own eyes: in this post, we will see the code for SSH clients and servers, reverse shells, and tunnel connections, and it will be smooth and fun (and remember that my source codes are available in my [github repo](https://github.com/bt3gl/My-Gray-Hacker-Resources))!
 
 Shall we start?
 
@@ -15,7 +15,7 @@ Shall we start?
 
 ## A Simple SSH Client
 
-The first program we are going to write is a SSH client that makes a connection to some available SSH server, and then runs a single command that we send to it.
+The first program we are going to write is an SSH client that makes a connection to some available SSH server, and then runs a single command that we send to it.
 
 But before we start, make sure you have  **paramiko** installed in our environment:
 
@@ -160,7 +160,7 @@ As a note, this script is based in some of the [paramiko demos](https://github.c
 
 ### The SSH Server
 
-In our server script, we first  create a class **Server** that issues a new thread event, checking whether the session is valid, and performing authentication. Notice that for simplicity we are hard-coding the values for username, password and host key, which is never a good practice:
+In our server script, we first create a class **Server** that issues a new thread event, checking whether the session is valid, and performing authentication. Notice that for simplicity we are hard-coding the values for username, password and host key, which is never a good practice:
 
 ```python
 HOST_KEY = paramiko.RSAKey(filename='test_rsa.key')
@@ -186,7 +186,7 @@ Now, let's take a look at the **main** function, which does the following:
 2. Once a connection is established (the client tried to connect to the server and the socket accepted the connection), it creates a **paramiko** [Transport](http://docs.paramiko.org/en/1.15/api/transport.html) object for this socket. In paramiko there are two main communication methods: *Transport*, which makes and maintains the encrypted connection, and *Channel*, which is like a socket for sending/receiving data over the encrypted session (the other three are Client, Message, and Packetizer).
 3. The program instantiates a **Server** object and starts the paramiko session with it.
 4. Authentication is attempted. If it is successful, we get a **ClientConnected** message.
-5. The server starts a loop where it will keep getting  input commands from the user and issuing it in the client. This is our reversed  shell!
+5. The server starts a loop where it will keep getting input commands from the user and issuing it in the client. This is our reversed shell!
 
 ```python
 import paramiko
@@ -348,7 +348,7 @@ $ ssh_client_reverse.py localhost -p 22 -u buffy -a killvampires
 Welcome to Buffy's SSH
 ```
 
-Now we can send any command from the server side to run  in the client: we have a reversed shell!
+Now we can send any command from the server side to run in the client: we have a reversed shell!
 
 ```sh
 [+] Listening for connection ...

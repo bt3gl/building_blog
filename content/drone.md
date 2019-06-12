@@ -1,5 +1,5 @@
 Title: 8 Favorite Drone videos filmed and edited by Me, Myself and I
-Date: 2019-01-12 9:00 
+Date: 2018-11-12 9:00 
 Category: life
 Tags: nomad, droning, love
 
@@ -7,7 +7,7 @@ Tags: nomad, droning, love
 
 So here is a story for you. A few years ago, after I left my career in Silicon Valley, I decided to [break bad](https://vimeo.com/262786853) 😂. I know, it sounds silly, but hey, I had fun. I spent almost two years being a full-time traveler (part-time remote-located engineer and part-time [having-so-much-freakin-fun](https://www.instagram.com/innermost.limits.of.pure.fun)).
 
-Here is my top drone videos from those wild times:
+Here are my top drone videos from those wild times:
 
 ## 1\. Hawai’i Aerial Reel
 
@@ -43,7 +43,7 @@ Thank you, Godspeed-Z.
 
 I always really wanted to go to Maui, it was itching.
 
-So I took two weeks off my job at Surfline in Huntington Beach and just travelled to [a random hostel in Lahaina](https://www.booking.com/hotel/us/hakuna-matata-lahaina.html).
+So I took two weeks off my job at Surfline in Huntington Beach and just traveled to [a random hostel in Lahaina](https://www.booking.com/hotel/us/hakuna-matata-lahaina.html).
 
 It turned out that I was on the other side of the island from [Jaws](https://en.wikipedia.org/wiki/Peahi,_Hawaii), which was the place I really wanted to drone.
 

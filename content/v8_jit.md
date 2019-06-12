@@ -3,7 +3,7 @@ Date: 2014-11-1 4:20
 Category: Web Security
 Tags: V8, JIT, JavaScript, garbage_collection, cache, bytecode, Chrome, Python
 
-[In 2008, Google released a sandbox-oriented browser](http://blogoscoped.com/google-chrome/), that was assembled from several different code libraries from Google and third parties (for instance, it borrowed a rendering machinery from the open-source  [Webkit layout engine](https://www.webkit.org/), later changing it to a forked version, [Blink](http://en.wikipedia.org/wiki/Blink_(layout_engine))).  Six years later, Chrome has became the preferred browser for [half of users in the Internet](http://en.wikipedia.org/wiki/File:Usage_share_of_web_browsers_(Source_StatCounter).svg). This is enough reason to investigate further how security is dealt in this engine. With this motivation in mind, I summarize the main features of Chrome and its [Chromium Project](http://www.chromium.org/Home), describing the pristine way of processing JavaScript with the **V8 JavaScript virtual machine**.
+[In 2008, Google released a sandbox-oriented browser](http://blogoscoped.com/google-chrome/), that was assembled from several different code libraries from Google and third parties (for instance, it borrowed a rendering machinery from the open-source  [Webkit layout engine](https://www.webkit.org/), later changing it to a forked version, [Blink](http://en.wikipedia.org/wiki/Blink_(layout_engine))).  Six years later, Chrome has become the preferred browser for [half of the users on the Internet](http://en.wikipedia.org/wiki/File:Usage_share_of_web_browsers_(Source_StatCounter).svg). This is enough reason to investigate further how security is dealt with in this engine. With this motivation in mind, I summarize the main features of Chrome and its [Chromium Project](http://www.chromium.org/Home), describing the pristine way of processing JavaScript with the **V8 JavaScript virtual machine**.
 
 
 
@@ -21,7 +21,7 @@ In mainstream computer languages, a [source code in a **high level language** is
 
 The truth is that things are generally mixed.  For example, when you type some instruction in  Python's REPL, [the language executes four steps](http://akaptur.com/blog/2013/11/17/introduction-to-the-python-interpreter-3/): *lexing* (breaks the code into pieces), *parsing* (generates an AST with those pieces - it is the syntax analysis), *compiling* (converts the AST into code objects - which are attributes of the function objects), and *interpreting* (executes the code objects).
 
-In Python, byte-compiled code, in form of **.pyc** files, is used by the compiler to speed-up the start-up time (load time) for short programs that use a lot of standard modules. And, by the way, byte codes are attributes of the code object so to see them, you just need to call ```func_code``` (code object) and ```co_code```(bytecode)[1]:
+In Python, byte-compiled code, in the form of **.pyc** files, is used by the compiler to speed-up the start-up time (load time) for short programs that use a lot of standard modules. And, by the way, byte codes are attributes of the code object so to see them, you just need to call ```func_code``` (code object) and ```co_code```(bytecode)[1]:
 
 ```py
 >>> def some_function():
@@ -31,14 +31,14 @@ In Python, byte-compiled code, in form of **.pyc** files, is used by the compile
 'd\x00\x00S'
 ```
 
-On the other hand, traditional JavaScript code is represented as a bytecode or an AST, and then executed in a *virtual machine* or further compiled into machine code. When JavaScript interprets code, it executes roughly the following steps: *parsing* and *preprocessing*, *scope analysis*, and *bytecode or translation to native*. Just a note: the JavaScript engine represents bytecode using [SpiderMonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Internals/Bytecode).
+On the other hand, traditional JavaScript code is represented as bytecode or an AST, and then executed in a *virtual machine* or further compiled into machine code. When JavaScript interprets code, it executes roughly the following steps: *parsing* and *preprocessing*, *scope analysis*, and *bytecode or translation to native*. Just a note: the JavaScript engine represents bytecode using [SpiderMonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Internals/Bytecode).
 
 So we see that when modern languages choose the way they compile or interpret code, they are trading off with the speed they want things to run. Since browsers are preoccupied with delivering content the faster they can,  this is a fundamental concept.
 
 
 ### Method JITs and Tracing JITs
 
-To speed things up, instead of having the code being parsed and then executed ([one at time](http://en.wikipedia.org/wiki/Ahead-of-time_compilation)),  **dynamic translators**  (*Just-in-time* translators, or JIT) can be used. JITs *translate intermediate representation into machine language  at runtime*. They have the efficiency of running native code with the cost of startup time plus increased memory (when the bytecode or AST are first compiled).
+To speed things up, instead of having the code being parsed and then executed ([one at a time](http://en.wikipedia.org/wiki/Ahead-of-time_compilation)),  **dynamic translators**  (*Just-in-time* translators, or JIT) can be used. JITs *translate intermediate representation into machine language  at runtime*. They have the efficiency of running native code with the cost of startup time plus increased memory (when the bytecode or AST are first compiled).
 
 Engines have different policies on code generation, which can roughly be grouped into types: **tracing** and **method**.
 
@@ -59,7 +59,7 @@ However, the language's high dynamical behavior (that I'm briefly discussing her
 
 ### JavaScript's Structure
 
-In JavaScript, every object has a *prototype*, and the prototype is also an object. All JavaScript objects inherit their properties and methods from their prototype.
+In JavaScript, every object has a *prototype*, and a prototype is also an object. All JavaScript objects inherit their properties and methods from their prototype.
 
 So, for example, supposing an application that has an object *Point* (borrowed from the [official documentation](https://developers.google.com/v8/design)):
 
@@ -82,7 +82,7 @@ a.x;
 b.x;
 ```
 
-In the above implementation, we would have two different Point objects that do not share any structure. This is because JavaScript is **classless**: you create  new objects on the fly and dynamically add or remove proprieties. Functions can move from an object to another. Objects with same type can appear in the same sites in the program with no constraints.
+In the above implementation, we would have two different Point objects that do not share any structure. This is because JavaScript is **classless**: you create  new objects on the fly and dynamically add or remove proprieties. Functions can move from an object to another. Objects with the same type can appear in the same sites in the program with no constraints.
 
 Furthermore, to store their object proprieties, most JavaScript engines use a *dictionary-like data structure*. Each property access demands a dynamic lookup to resolve their location in memory. This contrasts  *static* languages such as Java, where instance variables are located at fixed offsets determined by the compiler (due to the *fixed* object layout by the *object's class*). In this case, access is given by a simple memory load or store (a single instruction).
 
@@ -96,7 +96,7 @@ The other possibility is *manual memory management*, which requires the develope
 
 2. **Double free bugs**: when the program tries to free a region of memory that it had already freed.
 
-3. **Memory leaks**: when the program fails to free memory occupied by an object that had became unreachable, leading to memory exhaustion.
+3. **Memory leaks**: when the program fails to free memory occupied by an object that had become unreachable, leading to memory exhaustion.
 
 
 As one could guess, JavaScript has automatic memory management. Actually, the core design flaw of traditional JavaScript engines is **bad garbage collection behavior**. The problem is that JavaScript engines do not know exactly where all the pointers are, and they will search through the entire execution stack to see what data looks like pointers (for instance, integers can look like a pointer to an address in the heap).
@@ -133,7 +133,7 @@ So, for our example, if another Point object is created:
 
 3. When property ```y``` is added, V8 follows the hidden class transition from **C1** to **C2** and writes the value of ```y``` at the offset specified by **C2**.
 
-Instead of having a generic lookup for a propriety, V8  generates an efficient machine code to search the propriety. The machine code generated for accessing ```x``` is something like this:
+Instead of having a generic lookup for propriety, V8  generates efficient machine code to search the propriety. The machine code generated for accessing ```x``` is something like this:
 
 ```
 # ebx = the point object
@@ -165,7 +165,7 @@ If V8 has predicted correctly the property's value, this is assigned in a single
 
 4. **Megamorphic**: Like the initialized stub (since it always does runtime lookup) except that it never replaces itself.
 
-In conclusion, the combination of using hidden classes to access properties with inline caching (plus  machine code generation) does optimize in cases where  type of objects are frequently created and accessed in a similar way. This greatly improves the speed at which most JavaScript code can be executed.
+In conclusion, the combination of using hidden classes to access properties with inline caching (plus  machine code generation) does optimize in cases where the type of objects are frequently created and accessed in a similar way. This greatly improves the speed at which most JavaScript code can be executed.
 
 
 
@@ -173,7 +173,7 @@ In conclusion, the combination of using hidden classes to access properties with
 ### V8's Efficient Garbage Collecting
 
 
-In V8, a **precise garbage collection** is used. *Every pointer's location are known on the execution stack*, so V8 is able to implement incremental garbage collection. V8 can migrate an object to another place and just rewire the pointer.
+In V8, a **precise garbage collection** is used. *Every pointer's location is known on the execution stack*, so V8 is able to implement incremental garbage collection. V8 can migrate an object to another place and just rewire the pointer.
 
 In summary, [V8's garbage collection](https://developers.google.com/v8/design#garb_coll):
 

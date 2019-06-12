@@ -6,7 +6,7 @@ Tags: CTF, Paillier, Python, Binary_Search, Oracle, Decimal
 
 ![img](http://i.imgur.com/7LMyBGx.png)
 
-The [ASIS CTF] happened last weekend. Although I ended up not playing all I wanted, I did spend some time working on a crypto challenge that was worth a lot of points in the game. The challenge was about a sort of not well-known system, the [Paillier cryptosystem].
+The [ASIS CTF] happened last weekend. Although I ended up not playing all I wanted, I did spend some time working on a crypto challenge that was worth a lot of points in the game. The challenge was about a sort of a not well-known system, the [Paillier cryptosystem].
 
 
 ____
@@ -15,7 +15,7 @@ ____
 
 The challenge was started by netcating to ```nc asis-ctf.ir 12445```:
 
-      > Here we use a well-known cryptosystem, which introduced in late 90s as a part of PhD Thesis. This cryptosystem is a probabilistic asymmetric algorithm, so computer nerds are familiar with the basics. The power of this cryptosystem is based on the fact that no efficient general method for computing discrete logarithms on conventional computers is known. In real world it could be used in a situation where there is a need for anonymity and a mechanism to validate, like election. What's the name of this cryptosystem?
+      > Here we use a well-known cryptosystem, which introduced in the late 90s as a part of Ph.D. Thesis. This cryptosystem is a probabilistic asymmetric algorithm, so computer nerds are familiar with the basics. The power of this cryptosystem is based on the fact that no efficient general method for computing discrete logarithms on conventional computers is known. In the real world it could be used in a situation where there is a need for anonymity and a mechanism to validate, like an election. What's the name of this cryptosystem?
 
 The answer would return an [oracle]:
 
@@ -169,7 +169,7 @@ Tell us your secret to decrypt: 731099650804852471317102092661239107058896367441
 Your original message is: 1
 ```
 
-* ... but **up to a size**! I tried to input a ridiculous large number and it was rejected. Anything a bit larger than an encrypted message was rejected. This is important! It means that the we might have a [modulo] here. It also means that we cannot just multiply two ciphers and ask the oracle, since the message would be too large.
+* ... but **up to a size**! I tried to input a ridiculously large number and it was rejected. Anything a bit larger than an encrypted message was rejected. This is important! It means that we might have a [modulo] here. It also means that we cannot just multiply two ciphers and ask the oracle, since the message would be too large.
 
 * The secret was **changing periodically** (probably each hour). It means that the keys (the module) were changing too. This ruins any plan of **brute forcing** it.
 
@@ -183,7 +183,7 @@ Your original message is: 1
 
 ### Automatizing Responses
 
-Whenever we have a netcat challenge, I like to have a clean script to get and send messages (copying from terminal is lame).
+Whenever we have a netcat challenge, I like to have a clean script to get and send messages (copying from the terminal is lame).
 
 In addition, all the numbers in this challenge were really long (the encrypted messages had 614 chars), so we need to perform operations in a consistent and efficient way.
 
@@ -277,7 +277,7 @@ if __name__ == "__main__":
 
 At this point we know that we cannot do anything in the Paillier system without knowing the modulo, **n**. Of course, this value was not given. However, from the recon we have learned that we can find it from the oracle.
 
-The exactly value when the oracle cycles back to the beginning is our **n**. This value should not return any message since **n%n = 0**. So, we are looking for this **None** result.
+The exact value when the oracle cycles back to the beginning are our **n**. This value should not return any message since **n%n = 0**. So, we are looking for this **None** result.
 
 
 

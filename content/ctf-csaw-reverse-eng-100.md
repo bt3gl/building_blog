@@ -63,7 +63,7 @@ A pre-compiled Python file stands out in this list: *utils.pyc*. We need to deco
 $ sudo pip install uncompyle2
 ```
 
-Let's learn a bit more about this tool with ```uncompyle2 --help```. The usage is straightfoward, but it's a good knowledge to learn about the *-o* flag, which will decompile to a *.dis* file instead of *stdout*:
+Let's learn a bit more about this tool with ```uncompyle2 --help```. The usage is straightforward, but it's a good knowledge to learn about the *-o* flag, which will decompile to a *.dis* file instead of *stdout*:
 
 ```sh
 Usage: uncompyle2 [OPTIONS]... [ FILE | DIR]...

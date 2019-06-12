@@ -22,7 +22,7 @@ The given file has a funny extension *.mem.zip*. Before we go ahead and unzip it
 ```sh
 $ file --help
 Usage: file [OPTION...] [FILE...]
-Determine type of FILEs.
+Determine the type of FILEs.
 
       --help                 display this help and exit
   -v, --version              output version information and exit
@@ -81,9 +81,9 @@ Archive:  firefox.mem.zip
 
 ## Extra: Learning More about the *.mem* File
 
-This is a very weird file extension. If you google *.mem*, you don't find much, it's clear it's a memory file, but what now?  From the *file* command, we learned that this is an *ELF 64-bit LSB core*. Let's understand this  by parts.
+This is a very weird file extension. If you google *.mem*, you don't find much, it's clear it's a memory file, but what now?  From the *file* command, we learned that this is an *ELF 64-bit LSB core*. Let's understand this by parts.
 
-An [ELF] file  (Executable and Linkable Format) is a standard file format for executables, object code, shared libraries, and core dumps. The cool thing about ELF is that it's not bound to any particular architecture.
+A [ELF] file  (Executable and Linkable Format) is a standard file format for executables, object code, shared libraries, and core dumps. The cool thing about ELF is that it's not bound to any particular architecture.
 
 In Linux, we can use the command [readelf] to displays information about ELF files:
 

@@ -4,7 +4,7 @@ Category: Cryptography
 Tags: SSH
 
 
-Last week was the [Hack.lu](https://wildwildweb.fluxfingers.net/scoreboard) Final CTF. In this post I  discuss  one of my favorite  crypto problems in that CTF: the "Peace Pipe".
+Last week was the [Hack.lu](https://wildwildweb.fluxfingers.net/scoreboard) Final CTF. In this post, I discuss one of my favorite crypto problems in that CTF: the "Peace Pipe".
 
 
 ## Understanding the Problem
@@ -15,7 +15,7 @@ The problem starts with this weird story:
     To celebrate friendship one of them takes out his wooden peace pipe and minutes later everyone seems to be pretty dizzy.
     You remember that their war chief "Makawee" started something to say about a secret tipi filled with fire-water (the good stuff). But when he noticed your interest he immediately stopped talking.
     You recall that "Makawee" spoke with "Wahkoowah" about that issue, but it ended with a fight.
-    Since then Makawee wouldnt talk to Wahkoowah anymore. While they argued "Chapawee" wrote something down.
+    Since then Makawee wouldn't talk to Wahkoowah anymore. While they argued "Chapawee" wrote something down.
     Maybe you can exploit their dizzyness to find out the location of the tipi.
 
 Then it gives us three *ports* in the *host*. With the first one, we  talk to **Chapawee**:

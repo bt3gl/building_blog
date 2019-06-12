@@ -25,7 +25,7 @@ In general, when dealing with reverse-engineering malicious documents, we follow
 
      2. We extract any suspicious code segments
 
-     3. If we see shell code, we disassemble or debug it. If we see JavaScript (or ActionScript or VB macro code), we try to examine it.
+     3. If we see shellcode, we disassemble or debug it. If we see JavaScript (or ActionScript or VB macro code), we try to examine it.
 
 
 However, this problem turned out to be very simple...
@@ -41,13 +41,13 @@ Yeap, this easy:
 
     2. Open it in any PDF viewer.
 
-    3. CTRL+A (select all the contend).
+    3. CTRL+A (select all the content).
 
     4. You see the flag!
 
 ![cyber](http://i.imgur.com/b03EehK.png)
 
-OK, we were luck. Keep reading if you think this was too easy.
+OK, we were lucky. Keep reading if you think this was too easy.
 
 
 
@@ -55,11 +55,11 @@ OK, we were luck. Keep reading if you think this was too easy.
 
 ## Analyzing the ID and the Streams in a PDF File
 
-Let's suppose we had no clue that the flag would just be a text in the file. In this case, we would want to examine the file's structure. For this task we use the [PDF Tool] suite, which is written in Python.
+Let's suppose we had no clue that the flag would just be a text in the file. In this case, we would want to examine the file's structure. For this task, we use the [PDF Tool] suite, which is written in Python.
 
 #### pdfid
 
-We start with *pdfid.py*, which parses the PDF  looking for certain  keywords. We download and unzip that script, and then we make it an executable:
+We start with *pdfid.py*, which parses the PDF  looking for certain keywords. We download and unzip that script, and then we make it an executable:
 
 ```sh
 $ unzip pdfid_v0_1_2.zip
@@ -94,7 +94,7 @@ PDFiD 0.1.2 pdf.pdf
  /Colors > 2^24         0
 ```
 
-All right, no funny stuff going on here. We need to look deeper into each of the these streams.
+All right, no funny stuff going on here. We need to look deeper into each of these streams.
 
 #### pdf-parser
 

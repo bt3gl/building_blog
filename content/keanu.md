@@ -29,7 +29,7 @@ Aw, [such a nice heart](https://www.theepochtimes.com/hollywood-superstar-keanu-
 
 [Which Cyberpunk Keanu Reeves Protagonist Will You Be in the Future?](https://io9.gizmodo.com/which-cyberpunk-keanu-reeves-protagonist-will-you-be-in-1835384364) 
 
-### 5. Finally someone is standing with "being alone is freakin awesome" 
+### 5. Finally, someone is standing with "being alone is freakin awesome" 
 
 ![cyberpunk](./cyberpunk/keanu2.jpg){:height="200" width="300"}
 

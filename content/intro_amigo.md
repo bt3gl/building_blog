@@ -1,6 +1,6 @@
 Title: Introducing Amigo, a tool to manage Google Cloud Platform Security
 Date: 2017-12-17
-Category: gcp, dev, h4x0r, python
+Category: GCP, dev, h4x0r, python
 
 ![cyberpunk](./cyberpunk/27.jpg){:height="300px" width="400px"}
 
@@ -37,7 +37,7 @@ $ make install
 
 ### Creating a Service Account 
 
-This should be done once, at the first time you run Amigo:
+This should be done once, for the first time you run Amigo:
 
 1. Create a project and a service account at [https://console.cloud.google.com/iam-admin/serviceaccounts](https://console.cloud.google.com/iam-admin/serviceaccounts).
 
@@ -86,7 +86,7 @@ Run amigo with:
 $ sudo amigo
 ```
 
-This retrieves the data from GCP and generate JSON reports. These reports will be save where is `reports_dir` in the config file.
+This retrieves the data from GCP and generates JSON reports. These reports will be saved where is `reports_dir` in the config file.
 
 It is advised to watch for STERR and STDOUT in the `log_file` file defined in `config.yaml` (default to `amigo_log.txt`):
 
@@ -236,4 +236,4 @@ Instance Template reports have this format:
 
 ----
 
-*** Thank you for reading, and let me know what you think!***
+*** Aloha, bt3***

@@ -10,7 +10,7 @@ At Apple I had the chance to learn a lot of deep learning while working with the
 * [🛰 CUDA Studies for Deep Learning Problems](https://github.com/bt3gl/CUDA_Studies_For_Deep_Learning).
 
 
-Additionally, when I was in my PhD I had the pleasure of doing [some nice work on Machine Learning](http://bt3gl.github.io/projects_page/html_files/ml.html) as well. Here is the open-sourced code for you:
+Additionally, when I was in my Ph.D. I had the pleasure of doing [some nice work on Machine Learning](http://bt3gl.github.io/projects_page/html_files/ml.html) as well. Here is the open-sourced code for you:
 
 
 * [💎Advanced Machine Learning](https://github.com/bt3gl/Advanced-Machine-Learning).

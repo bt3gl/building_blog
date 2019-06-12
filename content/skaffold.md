@@ -34,11 +34,11 @@ In resume, Skaffold makes development very easy: all you need to do is run `skaf
 In this single command, Skaffold:
 
 1. builds container images (locally or remotely),
-2. pushes container images if target is not local cluster,
+2. pushes container images if the target is not local cluster,
 3. updates Kubernetes manifests with image tags,
 4. deploys your application with `kubectl apply`,
 5. streams logs from the pods,
-6. watches for changes in the source code and Kubernetes manifests, and  then repeat 1-5.
+6. watches for changes in the source code and Kubernetes manifests, and then repeat 1-5.
 
 
 Cool, right? :)

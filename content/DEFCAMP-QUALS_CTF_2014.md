@@ -5,7 +5,7 @@ Tags: Linux, RFI, SQL_injection, LFI, RCE, PHP, CMS, ApPHP, unoconv, ColdFusion,
 
 
 
-Last weekend I played some of the [DEFCAMP CTF Quals]. It was pretty intense. For (my own)  organizational purposes, I made a list of all the technologies and vulnerabilities  found in this CTF, some based on my team's game, some based on the [CTF write-ups git repo].
+Last weekend I played some of the [DEFCAMP CTF Quals]. It was pretty intense. For (my own)  organizational purposes, I made a list of all the technologies and vulnerabilities found in this CTF, some based on my team's game, some based on the [CTF write-ups git repo].
 
 
 [CTF write-ups git repo]: https://github.com/ctfs/write-ups/tree/master/d-ctf-2014/
@@ -22,9 +22,9 @@ Last weekend I played some of the [DEFCAMP CTF Quals]. It was pretty intense. Fo
 In [Remote File Inclusion] (RFI) an attacker can load exploits to the server. An attacker can use RFI to run exploits in both server and client sides. PHP's [include()](http://php.net/manual/en/function.include.php) is extremely vulnerable to RFI attacks.
 
 
-[Local File Inclusion](https://www.owasp.org/index.php/Testing_for_Local_File_Inclusion) (LFI) is similar to RFI but only files that are currently in the server can be included.  This type of vulnerability is seem in forms for file uploading (with improper sanitation).
+[Local File Inclusion](https://www.owasp.org/index.php/Testing_for_Local_File_Inclusion) (LFI) is similar to RFI but only files that are currently in the server can be included.  This type of vulnerability is seemed in forms for file uploading (with improper sanitation).
 
-An example of RFI exploitation is the case where the form only accepts some type of extensions (such as JPG or PNG) but the verification is made in the client side. In this case, an attacker can tamper the HTTP requests to send shell code (with PHP extension, for example). I've shown examples of this attack in the  [Natas post]. There  I've explained that the trick was to rename a PHP shell code to one of these safe extensions.
+An example of RFI exploitation is the case where the form only accepts some type of extensions (such as JPG or PNG) but the verification is made in the client side. In this case, an attacker can tamper the HTTP requests to send shellcode (with PHP extension, for example). I've shown examples of this attack in the  [Natas post]. There  I've explained that the trick was to rename a PHP shell code to one of these safe extensions.
 
 
 [Remote File Inclusion]: http://projects.webappsec.org/w/page/13246955/Remote%20File%20Inclusion
@@ -36,7 +36,7 @@ An example of RFI exploitation is the case where the form only accepts some type
 
 [TimThumb] is a PHP script for manipulating web images. It was recently [discontinued because of security issues].
 
-With TimThumb 1.33, an attacker is able to upload a shell by appending it to an image. All  she needs to do is to have it in some online subdomain. TimThumb will store this image in a cache folder and generate a MD5 of the full path of the shell. The last step is to perform a LFI attack with the shell in this folder. Check this [example of LFI exploitation](http://kaoticcreations.blogspot.com/2011/12/lfi-tip-how-to-read-source-code-using.html).
+With TimThumb 1.33, an attacker is able to upload a shell by appending it to an image. All she needs to do is to have it in some online subdomain. TimThumb will store this image in a cache folder and generate an MD5 of the full path of the shell. The last step is to perform an LFI attack with the shell in this folder. Check this [example of LFI exploitation](http://kaoticcreations.blogspot.com/2011/12/lfi-tip-how-to-read-source-code-using.html).
 
 
 
@@ -50,7 +50,7 @@ With TimThumb 1.33, an attacker is able to upload a shell by appending it to an 
 ### CMS Mini and RFI
 
 
-[CMS Mini] is file system to build simple websites. It has [several vulnerabilities] such as [CSRF], RFI, and [XSS].
+[CMS Mini] is a file system to build simple websites. It has [several vulnerabilities] such as [CSRF], RFI, and [XSS].
 
 [CSRF]: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
 [XSS]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
@@ -114,7 +114,7 @@ Cookie: 0=http://www.r57shell.net/shell/r57.txt
 
 ### Gitlist and Remote Command Execution
 
-[Gitlist] is an application to browse github repositories in a browser. The  versions up to 5.0 are known for [allowing remote attackers to execute arbitrary commands via shell], a type of [command injection]. Exploits for this vulnerability can be seen at [hatriot], at [packet storm], at [1337day], and at [exploit-db].
+[Gitlist] is an application to browse GitHub repositories in a browser. The versions up to 5.0 are known for [allowing remote attackers to execute arbitrary commands via shell], a type of [command injection]. Exploits for this vulnerability can be seen at [hatriot], at [packet storm], at [1337day], and at [exploit-db].
 
 In this CTF, the following command could be used to look for the flag:
 
@@ -136,7 +136,7 @@ http://10.13.37.33/gitlist/redis/blame/unstable/README%22%22%60ls%20-al%60
 
 LibreOffice's has a binary [soffice.bin] that takes socket connections on the *port 2002* (in this CTF, in the VPN's localhost).
 
-For instance, the  command [unoconv] can be used  to convert a file to a LibreOffice supported format. The flag **-c** opens a connection by the client to connect to an LibreOffice instance. It also can be used by the listener to make LibreOffice listen.
+For instance, the command [unoconv] can be used to convert a file to a LibreOffice supported format. The flag **-c** opens a connection by the client to connect to an LibreOffice instance. It also can be used by the listener to make LibreOffice listen.
 
 From the documentation, the default connection string is:
 
@@ -150,7 +150,7 @@ Therefore, you can connect to the socket and convert some document (such as */fl
 $ unoconv --connection 'socket,host=127.0.0.1,port=2002;urp;StarOffice.ComponentContext' -f pdf /flag.txt
 ```
 
-An example of payload can be seen [here].
+An example of a payload can be seen [here].
 
 
 [here]: https://github.com/ctfs/write-ups/tree/master/d-ctf-2014/web-400
@@ -164,7 +164,7 @@ An example of payload can be seen [here].
 
 CFM has scripting features like ASP and PHP, and syntax resembling HTML and JavaScript.  ColdFusion scripts  have **cfm** and **cfc** file extension. For instance,  [Adobe ColdFusion 11] and [Railio 4.2], the two platform accepting CFM,  were both released in the beginning of 2014.
 
-The problem is that CFM is [vulnerable to a variety of attacks], including [Local File Disclosure](https://www.owasp.org/index.php/Full_Path_Disclosure) (LFD) and SQL injection (SQLi). Adding this to the fact that ColdFusion scripts  usually run on elevated privileged users, we have a very vulnerable platform.
+The problem is that CFM is [vulnerable to a variety of attacks], including [Local File Disclosure](https://www.owasp.org/index.php/Full_Path_Disclosure) (LFD) and SQL injection (SQLi). Adding this to the fact that ColdFusion scripts usually run on elevated privileged users, we have a very vulnerable platform.
 
 [Railio 4.2]: http://www.getrailo.org/
 [ColdFusion]: http://en.wikipedia.org/wiki/Adobe_ColdFusion
@@ -174,7 +174,7 @@ The problem is that CFM is [vulnerable to a variety of attacks], including [Loca
 #### SQL Injection (SQLi)
 
 
-[SQL Injection](https://www.owasp.org/index.php/SQL_Injection) is a classic attack where one injects exploits in a [SQL query](http://technet.microsoft.com/en-us/library/bb264565(v=sql.90).aspx). Vulnerabilities of this type can be spot in queries such as **index.php?id=1**. I showed some of these exploits in my [Natas post].
+[SQL Injection](https://www.owasp.org/index.php/SQL_Injection) is a classic attack where one injects exploits in a [SQL query](http://technet.microsoft.com/en-us/library/bb264565(v=sql.90).aspx). Vulnerabilities of this type can be spotted in queries such as **index.php?id=1**. I showed some of these exploits in my [Natas post].
 
 In this CTF, these were  some of the  exploits that could be used:
 
@@ -209,7 +209,7 @@ By the way, it's useful in general to know [HTML URL Encoding] to craft these UR
 
 ### CesarFTP 0.99g and Buffer Overflow
 
-[CesarFTP 0.99g](http://www.softpedia.com/get/Internet/Servers/FTP-Servers/Cesar-FTP.shtml) is an easy-to-use  FTP server. It is also known for having several vulnerabities, including [buffer overflow](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2961).
+[CesarFTP 0.99g](http://www.softpedia.com/get/Internet/Servers/FTP-Servers/Cesar-FTP.shtml) is an easy-to-use  FTP server. It is also known for having several vulnerabilities, including [buffer overflow](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2961).
 
 For example, see this exploit for **Metasploit** from [exploit-db](http://www.exploit-db.com/exploits/16713/) (or [an older one here](http://www.exploit-db.com/exploits/1906/)).
 
@@ -217,7 +217,7 @@ For example, see this exploit for **Metasploit** from [exploit-db](http://www.ex
 
 #### File Disclosure of Password Hashes
 
-This vulnerability provides a 30 second window in the Administration panel, which can e use to write a shell code. The main idea is a [directory traversal] to the **password.proprieties** that can be used to login in the server.
+This vulnerability provides a 30-second window in the Administration panel, which can e use to write a shellcode. The main idea is a [directory traversal] to the **password.proprieties** that can be used to login in the server.
 
 Ingredients of this attack are:
 
@@ -257,7 +257,7 @@ Ingredients of this attack are:
 
 ### Vulnerability Scanners
 
-Vulnerability scanners can be useful for several problems. For instance, for a PHP static source code analyser, we can use [RIPS](http://rips-scanner.sourceforge.net/).
+Vulnerability scanners can be useful for several problems. For instance, for a PHP static source code analyzer, we can use [RIPS](http://rips-scanner.sourceforge.net/).
 
 In this CTF we had to scan for [Heartbleed](http://en.wikipedia.org/wiki/Heartbleed), and we used [this script](https://gist.githubusercontent.com/eelsivart/10174134/raw/5c4306a11fadeba9d9f9385cdda689754ca4d362/heartbleed.py).
 
@@ -318,7 +318,7 @@ $ exiftool IMAGEFILE
 
 ### MD5 Lookups
 
-Several hashes in this CTF needed to be searched. Google in general does a good job, but here are some specific websites: [hash-killer] and [md5this].
+Several hashes in this CTF needed to be searched. Google, in general, does a good job, but here are some specific websites: [hash-killer] and [md5this].
 
 
 [hash-killer]: http://hash-killer.com/
@@ -379,7 +379,7 @@ $ echo -n password | md5sum
 $ cat PHP-shell.php >> fig.gif
 ```
 
-* Now a special one: Windows! One of the trivia questions in this CTF. How to disable the Windows XP Firewall from command line:
+* Now a special one: Windows! One of the trivia questions in this CTF. How to disable the Windows XP Firewall from the command line:
 ```sh
 netsh firewall set opmode mode=DISABLE.
 ```

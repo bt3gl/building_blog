@@ -4,7 +4,7 @@ Category: Web Security
 Tags: XSS, CSRF, XSSI, Buffer_Overflow, LFI, RFI, iframe, SQLi
 
 
-Although nomenclatures don't help  much when you are facing a security problem, I am keeping this list for a systematic organization. It is constantly been updated.
+Although nomenclatures don't help much when you are facing a security problem, I am keeping this list for a systematic organization. It is constantly been updated.
 
 In addition to this list, you can check some specific web exploration older posts: [Exploiting the web in 20 lessons](http://bt3gl.github.io/exploiting-the-web-in-20-lessons-natas.html) and [D-Camp CTF 2014](http://bt3gl.github.io/exploring-d-ctf-quals-2014s-exploits.html).
 
@@ -13,7 +13,7 @@ In addition to this list, you can check some specific web exploration older post
 
 ## Cross-site Scripting (XSS)
 
-XSS is caused by **insufficient input validation or output escaping**. This can allow an attacker to insert HTML markup or scripts in a vulnerable website. The injected  code will have plenty of access in this site, and in many cases, to the HTTP cookies stored by the client.
+XSS is caused by **insufficient input validation or output escaping**. This can allow an attacker to insert HTML markup or scripts in a vulnerable website. The injected code will have plenty of access in this site, and in many cases, to the HTTP cookies stored by the client.
 
 
 HTML has five characters that are reserved:
@@ -24,7 +24,7 @@ HTML has five characters that are reserved:
 
 * and **ampersand**.
 
-The ampersand should never appear in most HTML sections. Both angle brackets should not be used inside a tag, unless  properly quoted. Quote characters inside a tag can also be harmless in text.
+The ampersand should never appear in most HTML sections. Both angle brackets should not be used inside a tag, unless properly quoted. Quote characters inside a tag can also be harmless in text.
 
 To allow these characters to appear in problematic locations, an encoding based in an ampersand-prefixed and a semicolon-terminated scheme is used: the [Entity Encoding](http://www.w3schools.com/html/html_entities.asp).
 
@@ -33,7 +33,7 @@ To allow these characters to appear in problematic locations, an encoding based 
 
 XSS non-persistent attacks consist on getting users to click a link with attacker's script. A typical scenario is the following:
 
-1. The target website perform  query searches that are not sanitized. For example, the query could accept scripts on it. A simple example to check this vulnerability is by verifying whether the alert box with the message **Pwnd** is displayed:
+1. The target website perform query searches that are not sanitized. For example, the query could accept scripts on it. A simple example to check this vulnerability is by verifying whether the alert box with the message **Pwnd** is displayed:
 ```
 http://website.org?q=<script%20type='text/javascript'>alert('Pwnd!');</script>
 ```
@@ -58,7 +58,7 @@ XSS persistent attacks store a malicious script in the databases, which will ret
 3. When anyone loads the page with that post, the script runs, and the attacker is able to hijack the victim's section.
 
 
-Additionally, in *password managers*, there is a risk of  amplification of XSS bugs. In the web applications that use *[httponly](https://www.owasp.org/index.php/HttpOnly)* cookies, a successful exploitation of an XSS flaw may give the attacker a transient access to the user's account (and password).
+Additionally, in *password managers*, there is a risk of amplification of XSS bugs. In the web applications that use *[httponly](https://www.owasp.org/index.php/HttpOnly)* cookies, a successful exploitation of an XSS flaw may give the attacker a transient access to the user's account (and password).
 
 
 
@@ -85,12 +85,12 @@ Additionally, in *password managers*, there is a risk of  amplification of XSS b
 
 XSSI comes with the failure to secure sensitive JSON-like responses against being loaded on third-party sites via ```<script src=..>```, and leaking user-specific information in the response. It a risk whenever ambient authority credentials (such as cookies) are used by the server to generate user-specific JavaScript code.
 
-For instance, JSON is a JavaScript syntax structure  to keep in-place object serialization.  The curly bracket **{** is assumed to be the beginning of the object. Overloading curly  brackets means that JSON blocks will not be recognized properly in standalone statements.
+For instance, JSON is a JavaScript syntax structure to keep in-place object serialization.  The curly bracket **{** is assumed to be the beginning of the object. Overloading curly brackets means that JSON blocks will not be recognized properly in standalone statements.
 
 ---
 ## Cross-site Request Forgery (CSRF, XSRF)
 
-CSRF allows attackers to execute actions using the credentials of another user without that user's knowledge or consent. It is  the failure to verify that a particular state-changing HTTP request received by the **server-side** portion of the application was initiated from the expected **client-side** origin. Any third-party website loaded in the browser can perform actions in behalf of the victim.
+CSRF allows attackers to execute actions using the credentials of another user without that user's knowledge or consent. It is the failure to verify that a particular state-changing HTTP request received by the **server-side** portion of the application was initiated from the expected **client-side** origin. Any third-party website loaded in the browser can perform actions in behalf of the victim.
 
 
 On cross-domain navigation, the browser includes any ambient credentials. To the server, a request originating from its own client-side code will appear as the same as the request from a rogue third-party site and  it might be granted the same privilege.
@@ -168,7 +168,7 @@ Possibility that the browser will ignore any authoritative content type of chara
 ---
 ## Cookie Forcing/Injection
 
-Possibility of blindly injecting HTTP cookies into the context of an otherwise impenetrable web application due to issues in how the mechanism is designed and implemented in  browsers. There are special concern to HTTPS applications.
+Possibility of blindly injecting HTTP cookies into the context of an otherwise impenetrable web application due to issues in how the mechanism is designed and implemented in browsers. There are special concern to HTTPS applications.
 
 ### Examples of exploitation:
 
@@ -177,7 +177,7 @@ Possibility of blindly injecting HTTP cookies into the context of an otherwise i
 ---
 ## Denial-of-Service (DoS)
 
-Any opportunity of the attacker to bring down a browser or server, or make the use of a targeted application  more difficult.
+Any opportunity of the attacker to bring down a browser or server, or make the use of a targeted application more difficult.
 
 
 ### DoS and amplification attacks
@@ -294,13 +294,13 @@ If used without a qualifier or prefixed with a *local* (LFI), the term is synony
 ----
 ## Format String Vulnerability
 
-Several libraries accept templates (format strings) followed by a set of parameters that the function is expected to insert into the template at predefined locations. For example,  C has functions such as *printf*, *syslog*, etc. The vulnerability is caused by permitting attackers to supply the template to one of these functions. This can lead to  data leaks and code execution.
+Several libraries accept templates (format strings) followed by a set of parameters that the function is expected to insert into the template at predefined locations. For example,  C has functions such as *printf*, *syslog*, etc. The vulnerability is caused by permitting attackers to supply the template to one of these functions. This can lead to data leaks and code execution.
 
 
 ---
 ## Integer Overflow
 
-Vulnerability specific to languages with no range checking. The flaw is caused by the developer failing to detect that an integer exceeded the maximum possible value and rolled back to zero, to a large negative integer, or to some hardware-specific  result.
+Vulnerability specific to languages with no range checking. The flaw is caused by the developer failing to detect that an integer exceeded the maximum possible value and rolled back to zero, to a large negative integer, or to some hardware-specific result.
 
 Integer underflow is the opposite effect: crossing the minimum value and rolling over to a very large positive integer.
 

@@ -3,7 +3,7 @@ Date: 2014-06-21 2:00
 Category: Exploitation
 Tags: Reverse_shell netcat
 
-I was never a big fan of Macbooks. Being a penguin user for so long, you learn to stop worrying and love love the bomb. But here is a little trick that works for both.
+I was never a big fan of MacBooks. Being a penguin user for so long, you learn to stop worrying and love the bomb. But here is a little trick that works for both.
 
 In the victim's machine (presumably a macbook), create the reverse shell in the port 1337:
 

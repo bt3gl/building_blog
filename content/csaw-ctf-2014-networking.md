@@ -26,7 +26,7 @@ The file extension [.pcapng] correspond to files for *packet capture*. They usua
 
 We can open this file with [Wireshark], which is an open-source packet analyzer, or using [chaosreader], a freeware tool to trace TCP and UDP sessions. We choose the first. There are several things that we could explore and look for in this file:
 
-        - We could search for all the the interesting protocols inside and analyze them.
+        - We could search for all the interesting protocols inside and analyze them.
 
         - We could go to *Statistics*-> *Protocol Hierarchy* and look at the traffic patterns.
 

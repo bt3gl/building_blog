@@ -5,8 +5,8 @@ Tags: CTF, CSAW, Wireshark, FTP
 
 
 
-The purpose of this problem is to teach about the need of encrypting your data. The [FTP]  protocol sends clear text over the wire, *i.e*  the  data is transmitted without any encryption.
- [SSH/Secure File Transfer Protocol] is a network protocol providing secure file transfer. Using SFTP, instead of FTP, would avoid to find the flag in this problem in the way we did.
+The purpose of this problem is to teach about the need for encrypting your data. The [FTP]  protocol sends clear text over the wire, *i.e* the data is transmitted without any encryption.
+ [SSH/Secure File Transfer Protocol] is a network protocol providing secure file transfer. Using SFTP, instead of FTP, would avoid finding the flag in this problem in the way we did.
 
 This is the second forensics problem and it starts with the following text:
 
@@ -23,7 +23,7 @@ This is the second forensics problem and it starts with the following text:
 
 ## Analyzing the PCAP File
 
-Now let's search for the flag! We open the [pcap] file in [Wireshark] (an open-source packet analyzer). There are several things that we could search for in this file, for instance we could look for FTP transactions or we could search for strings such as *password* or *flag*. We show both approaches.
+Now let's search for the flag! We open the [pcap] file in [Wireshark] (an open-source packet analyzer). There are several things that we could search for in this file, for instance, we could look for FTP transactions or we could search for strings such as *password* or *flag*. We show both approaches.
 
 
 ## Solution 1: Searching for the string *flag*
@@ -39,7 +39,7 @@ So the first thing I did was searching for the string *password*:
 Clicking on *Follow TCP Stream* gives:
 ![cyber](http://i.imgur.com/c61P5Aj.png)
 
-Nope. This is a misleading information!
+Nope. This is misleading information!
 
 ---
 
@@ -71,7 +71,7 @@ ftp-data
 Cool, we found a few packets:
 ![cyber](http://i.imgur.com/cWhiXZD.png)
 
- We don't need to scroll down too much to find a packet with  a string flag on it! Awesome.
+ We don't need to scroll down too much to find a packet with a string flag on it! Awesome.
 
 
 ---
@@ -82,7 +82,7 @@ Once we find the packet with any of the methods above, we right-click it selecti
 
 ![cyber](http://i.imgur.com/LZTse2s.png)
 
-The file *flag.png* is our flag. To extract it we  click in the *Save as* button, then in the terminal we can use the command [file]:
+The file *flag.png* is our flag. To extract it we  click in the *Save as* button, then in the terminal, we can use the command [file]:
 ```sh
 $ file s.whatever
 s.whatever: Zip archive data, at least v2.0 to extract

@@ -4,7 +4,7 @@ Category: Cryptography
 Tags: CTF, CSAW, ROT13, telnet, socket, Vigenere, pygenere, Python
 
 
-This is the first crypto-problem, and it was supposed to be the easiest one. For this reason I was expecting simple cryptographic algorithms, which turned out to be true.
+This is the first crypto-problem, and it was supposed to be the easiest one. For this reason, I was expecting simple cryptographic algorithms, which turned out to be true.
 
 The problem starts with the following text:
 
@@ -46,7 +46,7 @@ This text gives a cipher ``` wkh dqvzhu wr wklv vwdjh lv vxshuvlpsoh``` and the 
 #### Frequency Analysis
 The famous roman is **Caesar**, and [his cryptographic scheme] is one of the simplest possible. This cipher is also known as  **rotation cipher**, because all we do is rotating the letters by some value (the **key**). A modern version of it is called **ROT13**, meaning **rotation by 13 places**. This is a simple letter substitution cipher which replaces each letter with the 13th letter after it in the alphabet. In this case, we say that the *key is 13*.
 
-In our problem, we don't know the key. However there is a method to circumvent it: we can count how many times each letter appears in the text and then we use some previous knowledge about the frequency of each letter in the English words. For example, in the English language, *e*, *t*, *a*, *o*, and *n* are frequent letters while *z* or *v* are not. This means that we can analyse the frequency of each character to determine what's the most probable rotation key.
+In our problem, we don't know the key. However, there is a method to circumvent it: we can count how many times each letter appears in the text and then we use some previous knowledge about the frequency of each letter in the English words. For example, in the English language, *e*, *t*, *a*, *o*, and *n* are frequent letters while *z* or *v* is not. This means that we can analyze the frequency of each character to determine what's the most probable rotation key.
 
 To count the frequency of characters in our cipher, we write a snippet that creates a counter [dictionary (hash table)] with all the (lowercase) characters as the dictionary's keys. Note that we could have used Python's [Counter() data-structure] as well. We then iterate through each character in the message, counting their frequency, and returning a sorted list of these values:
 
@@ -76,7 +76,7 @@ def frequency(msg):
 
 Using a [well-known table of word frequency values], we write a snippet that does the following:
 
- 1. First, for each of the 26 letters, we subtract its known frequency value from the  frequency obtained from our message.
+ 1. First, for each of the 26 letters, we subtract its known frequency value from the frequency obtained from our message.
  2. Second, we find what is the minimum value from those subtractions. The closest value is the most probable value for the rotation key.
 
 
@@ -103,14 +103,14 @@ def decipher(msg):
 
 
 
-Once we have the key, we just plug it  back to the cipher algorithm, inverting the rotation to the other side, with ```cipher(msg, -best_rotation)```. In this cipher function, we iterate through all the character in the message, checking whether it's a letter or a special character. If it is the former case we perform the following operations:
+Once we have the key, we just plug it back to the cipher algorithm, inverting the rotation to the other side, with ```cipher(msg, -best_rotation)```. In this cipher function, we iterate through all the character in the message, checking whether it's a letter or a special character. If it is the former case we perform the following operations:
 
  1. We start getting the integer representing the [Unicode] code point of the character.
  2. To get its position in the alphabet and we subtract it from the Unicode value of *a*, given by **ord('a')** (this is 97).
  3. We add the key value to it to get the (absolute) shift position.
- 4. Now we need to remember that this cipher is a ring, *i.e*, adding more stuff should always lead to a *spot* within the 26 letters in the alphabet. That's why we apply a [module] operation to this number to get the *relative* position in the letter's table.
+ 4. Now we need to remember that this cipher is a ring, *i.e*, adding more stuff should always lead to a *spot* within the 26 letters in the alphabet. That's why we apply an [module] operation to this number to get the *relative* position in the letter's table.
  5. Finally, we just need the value of the shift to the Unicode of *a* to get the position of the character in the cipher.
- 6. Remember we are using *-key*, so instead of making a new cipher we are using the same steps to rotate the cipher to the other side to recover the message.
+ 6. Remember we are using *-key*, so instead of making a new cipher, we are using the same steps to rotate the cipher to the other side to recover the message.
 
 ```python
 def cipher(msg, key):
@@ -136,7 +136,7 @@ Netcating several times can return other similar answers such as **hopeyouautoma
 
 To advance forward, we need to send one of the above answers to the socket. However, we only **have 10 seconds** to do this! It's clear that we need to automate this problem with a script.
 
-We can do this in many ways. In Python, for example, we can use the libraries [telnetlib] or [socket] or even writing our [own netcat script]. We will use the former  for this exploit. Let us create a telnet connection with:
+We can do this in many ways. In Python, for example, we can use the libraries [telnetlib] or [socket] or even writing our [own netcat script]. We will use the former for this exploit. Let us create a telnet connection with:
 
 ```python
 from telnetlib import Telnet
@@ -161,7 +161,7 @@ s.connect(HOST)
 
 Here ```socket.AF_UNIX, socket.AF_INET, socket.AF_INET6``` are constants that represent the address (and protocol) families. The constants ```socket.SOCK_STREAM, socket.SOCK_DGRAM, socket.SOCK_RAW, socket.SOCK_RDM, socket.SOCK_SEQPACKET```represent the socket types.
 
-To read the socket stream we would use commands such as ```s.recv(2048)``` and for writing we could use ```s.sendall(answer)```.
+To read the socket stream we would use commands such as ```s.recv(2048)``` and for writing, we could use ```s.sendall(answer)```.
 
 
 
@@ -204,11 +204,11 @@ To crack this cipher we need to deal with special characters to find the rotatio
 
  1. We start looping over the length of our message, where for each iteration we create a blank list with the size of the message. This is a bit *space-expensive* and it should be optimized if we needed to scale for larger problems. It's fine for our current problem.
 
- 2. We start a second loop, which will tell us about the shifts. This loop iterates again in the length of the message, this time adding the current character to the list we've created before and updating a pointer to the pacing value given in the first loop. Notice that we have a loop inside another, so this solutions has *O(n^2) runtime* and it also should be optimized for larger problems.
+ 2. We start a second loop, which will tell us about the shifts. This loop iterates again in the length of the message, this time adding the current character to the list we've created before and updated a pointer to the pacing value given in the first loop. Notice that we have a loop inside another, so this solution has *O(n^2) runtime* and it also should be optimized for larger problems.
 
  3. Inside this second loop, we check whether the pacing pointer is larger than the length of the message, and if this is the case, we register it in a shift counter. The former pointer receives the value of this shift. This is the end of the second loop.
 
- 4. Back to the first loop, we add all the characters so far from our list into a the message string. But when should we stop doing this? Until we make sure that had a rotation that produces real words. I tried a few of common words, and 'you' worked just fine!
+ 4. Back to the first loop, we add all the characters so far from our list into the message string. But when should we stop doing this? Until we make sure that had a rotation that produces real words. I tried a few common words, and 'you' worked just fine!
 
 
 ```python
@@ -269,7 +269,7 @@ This will give us the **key = TOBRUTE** and the deciphered text. After fixing th
 ```
 THIS TIME WE WILL GIVE YOU MORE PLAINTEXT TO WORK WITH YOU WILL PROBABLY FIND THAT HAVING EXTRA CONTENT THAT IS ASCII MAKES THIS ONE MORE SOLVABLE IT WOULD BE SOLVABLE WITHOUT THAT BUT WE WILL MAKE SURE TO GIVE LOTS OF TEXT JUST TO MAKE SURE THAT WE CAN HANDLE IT I WONDER HOW MUCH WILL BE REQUIRED LETS PUT THE MAGIC PHRASE FOR THE NEXT LEVEL IN THE MIDDLE RIGHT HERE NORMALWORD OK NOW MORE TEXT TO MAKE SURE THAT IT IS SOLVABLE I SHOULD PROBABLY JUST PUT IN SOME NURSERY RHYME OR SOMETHING MARY HADA LITTLE LAMB LITTLE LAMB LITTLE LAMB MARY HADA LITTLE LAMB WHOSE FLEEZE WAS WHITE AS SNOW I DONT WANT TO MAKE THIS HARDER THAN IT NEEDS TO BE IF YOU VE SOLVED A LOT OF SIMPLE CRYPTO CHALLENGES YOU PROBABLY ALREADY HAVE THE CODE AND WILL BREEZE RIGHT THROUGH IT IF IT HELPS MOST OF THE PLAINTEXT IS STATIC AT EACH OF THE LEVELS I M NOT A MASOCHIST THE FUNNY THING IS THAT DEPENDING ON WHICH RANDOMKEY YOU GET THAT POEM MIGHT BE EXACTLY THE RIGHT OFFSET TO SUCCESSFULLY MOUNT AN ATTACK WE LL SEE LITTLE BIT MORE LITTLE BIT MORE THERE,
 ```
-Reading it carefully give us thee last answer for the flag: **NORMALWORD**. Sweet!
+Reading it carefully give us the last answer for the flag: **NORMALWORD**. Sweet!
 
 
 

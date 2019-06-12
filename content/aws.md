@@ -18,8 +18,8 @@ Whenever you are designing a system, these are some first questions to think abo
 ## Scope of the System
 
 - **User cases**: Who is going to use it? How are they going to use it?
-- **Constraints**: Amount of traffic, amount of data, scale of the system (e.g. requests per second, requests types, data written per second, data read per second), special system requirements (e.g. multi-threading, read or write oriented, etc.)?
-- **High level architecture design**: Application service layer, different services required, data storage layer?
+- **Constraints**: Amount of traffic, amount of data, the scale of the system (e.g. requests per second, requests types, data written per second, data read per second), special system requirements (e.g. multi-threading, read or write-oriented, etc.)?
+- ** High-level architecture design**: Application service layer, different services required, data storage layer?
 - **Understanding bottlenecks**: Do we need a load balancer and many instances behind it to handle user requests? Is data large enough so that you need to distribute your database on multiple machines? What are the downsides from doing that?
 - **User interface**: Is this a full web app, with a web interface? Or just a RESTful API?
 
@@ -58,9 +58,9 @@ Load balancers also provide the critical function of being able to test the heal
 
 ### Queues and Asynchronous requests
 
-**Queues** are a common way to bring asynchrony into you system, for instance, in the cases when some tasks (e.g. writes) may take a long time. This helps achieving performance and availability.
+**Queues** are a common way to bring asynchrony into your system, for instance, in the cases when some tasks (e.g. writes) may take a long time. This helps to achieve performance and availability.
 
- A queue is as simple as it sounds: a task comes in, is added to the queue and then workers pick up the next task, providing abstraction of a client's request and its response.
+ A queue is as simple as it sounds: a task comes in, is added to the queue and then workers pick up the next task, providing an abstraction of a client's request and its response.
 
 -------
 
@@ -118,13 +118,13 @@ resource "aws_s3_bucket" {
 
 Now, all you need is a couple of commands (such as `terraform apply`) and your system would be up and running. 
 
-This was a high-level overview of how you would start designing and implementing real world end-to-end applications, where **design meets code and infrastructure as a code**. Pretty awesome to live in 2019.
+This was a high-level overview of how you would start designing and implementing real-world end-to-end applications, where **design meets code and infrastructure as a code**. Pretty awesome to live in 2019.
 
 ----------------------
 
 # Learning References
 
-
+* [Terraform Provider AWS](https://github.com/terraform-providers/terraform-provider-aws)
 * [Scalability for Dummies](http://www.lecloud.net/tagged/scalability)
 * [Scalable Web Architecture and Distributed Systems](http://www.aosabook.org/en/distsys.html)
 * [Scalable System Design Patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
@@ -132,11 +132,11 @@ This was a high-level overview of how you would start designing and implementing
 * [Heads First - Design Pattern](https://www.u-cursos.cl/usuario/f133dab21b6cbf814b4607124f431358/mi_blog/r/head_first_design_patterns.pdf).
 
 
+
 -----
 
 **
-Aloha,
-Mia
+Aloha, bt3
 **
 
 

@@ -6,9 +6,9 @@ Tags: Shellshock, Bash, Command_Injection
 
 ![cyber](http://i.imgur.com/kjkWTWV.png)
 
-Almost a week ago, a new ([old]) type of [OS command Injection] was reported. The **Shellshock** vulnerability, also know as **[CVE-2014-6271]**, allows attackers to inject their own code into [Bash] using specially crafted **environment variables**, and it was disclosed with the following description:
+Almost a week ago, a new ([old]) type of [OS command Injection] was reported. The **Shellshock** vulnerability, also known as **[CVE-2014-6271]**, allows attackers to inject their own code into [Bash] using specially crafted **environment variables**, and it was disclosed with the following description:
 
-        Bash supports exporting not just shell variables, but also shell functions to other bash instances, via the process environment to(indirect) child processes. Current bash versions use an environment variable named by the function name, and a function definition starting with “() {” in the variable value to propagate function  definitions through the environment. The vulnerability occurs because  bash does not stop after processing the function definition; it continues to parse and execute shell commands following the function definition.
+        Bash supports exporting not just shell variables, but also shell functions to other bash instances, via the process environment to(indirect) child processes. Current bash versions use an environment variable named by the function name, and a function definition starting with “() {” in the variable value to propagate function definitions through the environment. The vulnerability occurs because bash does not stop after processing the function definition; it continues to parse and execute shell commands following the function definition.
 
         For example, an environment variable setting of
                         VAR=() { ignored; }; /bin/id
@@ -61,7 +61,7 @@ SYNOPSIS
 COPYRIGHT
        Bash is Copyright (C) 1989-2011 by the Free Software Foundation, Inc.
 DESCRIPTION
-       Bash  is  an sh-compatible command language interpreter that executes commands read from the standard input or from a file.  Bash also incorporates useful features from the Korn and C shells (ksh and csh).
+       Bash is an sh-compatible command language interpreter that executes commands read from the standard input or from a file.  Bash also incorporates useful features from the Korn and C shells (ksh and csh).
 (...)
 ```
 
@@ -70,7 +70,7 @@ DESCRIPTION
 
 ### Functions in Bash
 
-The interesting stuff comes from the fact that Bash  is also a scripting language, with the ability to define functions. This is super useful when you are writing scripts. For example, ```hello.sh```:
+The interesting stuff comes from the fact that Bash is also a scripting language, with the ability to define functions. This is super useful when you are writing scripts. For example, ```hello.sh```:
 ```sh
 #!/bin/bash
 function hello {
@@ -120,7 +120,7 @@ In other words, first the ```export``` command creates a **regular environment v
 ### A Simple Example of an Environment Variable
 
 
-Let's  see how environment variables work examining some *builtin* Bash command. For instance, a very popular one,  ```grep```, is used to search for pattern in files (or the standard input).
+Let's see how environment variables work examining some *builtin* Bash command. For instance, a very popular one,  ```grep```, is used to search for pattern in files (or the standard input).
 
 Running ```grep``` in a file that contains the word 'fun' will return the line where this word is. Running ```grep``` with a flag ```-v``` will return the non-matching lines, *i.e.* the lines where the word 'fun' does not appear:
 ```sh
@@ -154,7 +154,7 @@ $ grep fun file.txt
 
 ### The  ```env```  command
 
-Another Bash *builtin*, the ```env```  prints the environment variables. But it can also  be used to run a single command with an exported variable (or variables) given to that command. In this case, ```env``` starts a new process, then it modifies the environment, and then it calls the command that was provided as an argument (the ```env``` process is  replaced by the command process).
+Another Bash *builtin*, the ```env```  prints the environment variables. But it can also be used to run a single command with an exported variable (or variables) given to that command. In this case, ```env``` starts a new process, then it modifies the environment, and then it calls the command that was provided as an argument (the ```env``` process is replaced by the command process).
 
 In practice, to use ```env```  to run commands, we:
 
@@ -210,7 +210,7 @@ grep: fun: No such file or directory
 ```
 Did you notice that ```echo NOOOOOOOOOOOOOOO!``` was executed normally? **This is the (first) Shellshock bug!**
 
-This works because when the new shell sees an environment variable beginning with ```()```, it gets the variable name and executes the  string following it. This  includes executing anything after the function, *i.e*, the evaluation does not stop when the end of the function definition is reached!
+This works because when the new shell sees an environment variable beginning with ```()```, it gets the variable name and executes the string following it. This includes executing anything after the function, *i.e*, the evaluation does not stop when the end of the function definition is reached!
 
 Remember that ```echo``` is not the only thing we can do. The possibilities are unlimited! For example, we can issue any ```/bin``` command:
 ```sh
@@ -228,7 +228,7 @@ STILL NOOOOOOOO!!!!
 ```
 
 
-In the example above, ```env``` runs a command with an arbitrary  variable  (test)  set to some function (in this case is just a single ```:```, a Bash command defined as doing nothing). The semi-colon signals the end of the function definition. Again, the bug is in the fact that there's nothing stopping the parsing of what is after the semi-colon!
+In the example above, ```env``` runs a command with an arbitrary variable (test)  set to some function (in this case is just a single ```:```, a Bash command defined as doing nothing). The semi-colon signals the end of the function definition. Again, the bug is in the fact that there's nothing stopping the parsing of what is after the semi-colon!
 
 
 Now it's easy to see if your system is vulnerable, all you need to do is run:
@@ -252,7 +252,7 @@ That simple.
 ----
 
 ## There is more than one!
-The Shellshock vulnerability is  an example of an [arbitrary code execution] (ACE) vulnerability, which is executed on running programs. An attacker will use an ACE vulnerability to run a program that gives her a simple way of controlling the targeted machine. This is nicely achieved by running a Shell such as Bash.
+The Shellshock vulnerability is an example of an [arbitrary code execution] (ACE) vulnerability, which is executed on running programs. An attacker will use an ACE vulnerability to run a program that gives her a simple way of controlling the targeted machine. This is nicely achieved by running a Shell such as Bash.
 
 It is not surprising that right after a patch for [CVE-2014-6271] was released, several new issues were opened:
 
@@ -312,7 +312,7 @@ done
 
 
 
-- Update firmware on your router or any other web-enabled devices, as soon as they become available. Remember  to only download patches  from reputable sites (only HTTPS please!), since scammers will likely try to take advantage of Shellshock reports.
+- Update firmware on your router or any other web-enabled devices, as soon as they become available. Remember to only download patches from reputable sites (only HTTPS please!), since scammers will likely try to take advantage of Shellshock reports.
 
 
 - Keep an eye on all of your accounts for signs of unusual activity. Consider changing important passwords.
@@ -320,7 +320,7 @@ done
 
 
 
--  HTTP requests to CGI scripts have been identified as the major attack vector. Disable any  scripts that call on the shell (however, it does not fully mitigate the vulnerability). To check if your system is vulnerable you can use [this online scanner]. Consider [mod_security] if you're not already using it.
+-  HTTP requests to CGI scripts have been identified as the major attack vector. Disable any scripts that call on the shell (however, it does not fully mitigate the vulnerability). To check if your system is vulnerable you can use [this online scanner]. Consider [mod_security] if you're not already using it.
 
 
 

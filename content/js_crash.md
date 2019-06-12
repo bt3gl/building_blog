@@ -17,17 +17,17 @@ To include your example.js in an HTML page (usually placed right before </body> 
 <script src="/path/to/example.js"></script>
 ```
 
-Variables can be defined using multiple var statements, or in a single combined var statement. The value of a variable declared without a value is undefined.
+Variables can be defined using multiple var statements or in a single combined var statement. The value of a variable declared without a value is undefined.
 
 ## Types in JavaScript
 
 ### Primitive:
 
-	- String
-	- Number
-	- Boolean
-	- null (represent the absence of a value, similar to many other programming languages)
-	- undefined (represent a state in which no value has been assigned at all)
+    - String
+    - Number
+    - Boolean
+    - null (represent the absence of a value, similar to many other programming languages)
+    - undefined (represent a state in which no value has been assigned at all)
 
 ### Objects:
 

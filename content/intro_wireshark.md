@@ -6,11 +6,11 @@ Tags: Wireshark, ARP, OSI_Model, ARP_Cache_Poisining, ARP_spoofing, Kismet, Nmap
 
 
 
-[Wireshark](https://www.wireshark.org/) is an open source **network packet analyzer** that allows live  traffic analysis, with support to several  protocols.
+[Wireshark](https://www.wireshark.org/) is an open source **network packet analyzer** that allows live traffic analysis, with support to several protocols.
 
 Wireshark also allows **network forensic**, being very useful for CTFs for example (check my writeups for the  [D-CTF Quals 2014](http://bt3gl.github.io/exploring-d-ctf-quals-2014s-exploits.html) and for the CSAW Quals 2014 in [Networking](http://bt3gl.github.io/csaw-ctf-2014-networking-100-big-data.html) and [Forensics](http://bt3gl.github.io/csaw-ctf-2014-forensics-200-why-not-sftp.html)).
 
-In this blog post I introduce Wireshark and I talk about my favorite features.
+In this blog post, I introduce Wireshark and I talk about my favorite features.
 
 
 ------------------------------------------------------
@@ -81,7 +81,7 @@ The way the protocols on different layers of the OSI model communicate is throug
 
 The encapsulation protocol creates a [protocol data unit](http://en.wikipedia.org/wiki/Protocol_data_unit) (PDU),  including the data with all header and footer information added to it. What we call *packet* is the complete PDU.
 
-For instance, in Wireshark we can track the sequence number where a higher layer PDU starts and stops. This allows us to  measure how long it took to transfer a PDU (the *display filter* is **tcp.pdu.time**).
+For instance, in Wireshark, we can track the sequence number where a higher layer PDU starts and stops. This allows us to  measure how long it took to transfer a PDU (the *display filter* is **tcp.pdu.time**).
 
 
 ---
@@ -94,7 +94,7 @@ There are four primary ways to capture traffic from a target device on a
 ![cyber](http://i.imgur.com/aRUfmsp.png)
 
 
-All of the techniques for switched network are available on **routed** networks as well. However, for routers the sniffer placement becomes more relevant since a device's broadcast domain extends only until it reaches a
+All of the techniques for switched network are available on **routed** networks as well. However, for routers, the sniffer placement becomes more relevant since a device's broadcast domain extends only until it reaches a
 router.
 
 ---
@@ -153,7 +153,7 @@ Additionally, the IP packet header contain informations such as:
 
 * **Fragment offset**:  identification of whether a packet is a fragment.
 
-* **Time to Live**: definition of the lifetime of the packet, measured in hops/seconds through routers. A TTL is defined when a packet is created, and generally is decremented by 1 every time the packet is forwarded by a router.
+* **Time to Live**: definition of the lifetime of the packet, measured in hops/seconds through routers. A TTL is defined when a packet is created and generally is decremented by 1 every time the packet is forwarded by a router.
 
 * **Protocol**: identification of the type of packet coming next in the sequence.
 
@@ -212,7 +212,7 @@ PS: Check out  this post from Julia Evans on how to create a simple [*Traceroute
 
 ### The Transmission Control Protocol (Layer 4)
 
-Provides a reliable flow of data between two hosts with a **three-way handshake**. The purpose is to allow the transmitting host to ensure that the destination host is up, and let the transmitting host check the availability of the port as well.
+Provides a reliable flow of data between two hosts with a **three-way handshake**. The purpose is to allow the transmitting host to ensure that the destination host is up and let the transmitting host check the availability of the port as well.
 
 This handshake works as  follows:
 
@@ -370,7 +370,7 @@ Packages can be filtering in two ways:
 * **Capture filters**: specified when packets are being captured. This method is good for performance of large captures.
 * **Display filters**: applied to an existing set of collected packets. This method gives more versatility since you have the entire data available.
 
-In the following sessions I  show several examples of capture and display  filters.
+In the following sessions, I  show several examples of capture and display  filters.
 
 ### Capture Filters by Host Address and Name
 
@@ -663,7 +663,7 @@ Technique to determine the operating system on a system without have access to i
 
 In  **Passive Fingerprinting**, an attacker can use certain fields within packets sent from the target to craft a stealthy fingerprint.
 
-This is possible due the lack of specificity by protocol's [RFCs](http://en.wikipedia.org/wiki/Request_for_Comments): although the various fields contained in the TCP, UDP and IP headers are very specific, no default values are defined for these fields.
+This is possible due the lack of specificity by protocol's [RFCs](http://en.wikipedia.org/wiki/Request_for_Comments): although the various fields contained in the TCP, UDP, and IP headers are very specific, no default values are defined for these fields.
 
 For instance, the following header values can help one to distinguish between several operating systems:
 

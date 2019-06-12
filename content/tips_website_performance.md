@@ -31,7 +31,7 @@ Additionally, check [Google's performance resources](https://developers.google.c
 ## 4. Reduce the number of HTTP Requests
 
 * If your JS code is small enough, you can have it inline.
-* Reduce the number of third party plugins and frameworks.
+* Reduce the number of third-party plugins and frameworks.
 * Have less code.
 
 
@@ -53,7 +53,7 @@ Additionally, check [Google's performance resources](https://developers.google.c
 
 ## 8.  Render Blocking Resources blocking the DOM
 
-The ***Document Object Model*** is a programming interface for HTML and XML documents that provides a structured representation (node tree) of a document, defining ways it can be accessed and manipulated using scripting languages such as Javascript. To ensure that the DOM loads in a responsive time, render blocking resources should get to the client as soon and as quickly as possible.
+The ***Document Object Model*** is a programming interface for HTML and XML documents that provide a structured representation (node tree) of a document, defining ways it can be accessed and manipulated using scripting languages such as Javascript. To ensure that the DOM loads in a responsive time, render blocking resources should get to the client as soon and as quickly as possible.
 
 Here some tips for DOM resources:
 
@@ -107,7 +107,7 @@ With the ***preconnect*** label, the browser can set up early connections (such 
 
 ## 14. HTTP/2
 
-HTTP/2 comes with a huge performance benefit. To enable HTTP/2 one needs a SSL certificate and a server that supports HTTP/2.
+HTTP/2 comes with a huge performance benefit. To enable HTTP/2 one needs an SSL certificate and a server that supports HTTP/2.
 
 ## 15. Hotlink Protection
 
@@ -122,7 +122,7 @@ RewriteRule .*\.(jpe?g|gif|bmp|png)$ http://i.imgur.com/DONT_DISPLAY.gif [L]
 
 ## 16. Enable Gzip Compression
 
-Gzip compresses web pages, CSS, and JS code at the server level, before sending them over to the browser, to optimize the website performance. This is enable in the `.htaccess` file (Apache) or `nginx.conf` (Nginx).
+Gzip compresses web pages, CSS, and JS code at the server level, before sending them over to the browser, to optimize the website performance. This is enabled in the `.htaccess` file (Apache) or `nginx.conf` (Nginx).
 
 
 

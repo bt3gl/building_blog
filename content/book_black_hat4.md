@@ -6,11 +6,11 @@ Tags: Python, socket, sniffing, UDP, netaddr, ICMP, scanner, packet_header
 
 When it comes to the reconnaissance of some target network, the start point is undoubtedly on host discovering. This task might come together with the ability to sniff and parse the packets flying through the network.
 
-A few weeks ago, I talked about [how to use Wireshark](http://bt3gl.github.io/wiresharking-for-fun-or-profit.html) for packet sniffing, but what if you don't have Wireshark available to monitor a network traffic?
+A few weeks ago, I talked about [how to use Wireshark](http://bt3gl.github.io/wiresharking-for-fun-or-profit.html) for packet sniffing, but what if you don't have Wireshark available to monitor network traffic?
 
-Again, Python comes with several solutions and today I'm going  through the steps to build a **UDP Host discovery tool**. First, we are going to see how we deal with [raw sockets](http://en.wikipedia.org/wiki/Raw_socket) to  write a simple sniffer, which is able to view and decode network packets. Then we are going to multithread this process within a subnet, which will result in our scanner.
+Again, Python comes with several solutions and today I'm going through the steps to build a **UDP Host discovery tool**. First, we are going to see how we deal with [raw sockets](http://en.wikipedia.org/wiki/Raw_socket) to write a simple sniffer, which is able to view and decode network packets. Then we are going to multithread this process within a subnet, which will result in our scanner.
 
-The cool thing about **raw sockets** is that they allow access to low-level networking information. For example, we can use it to check **IP** and **ICMP** headers, which are in the layer 3 of the OSI model (the network layer).
+The cool thing about **raw sockets** is that they allow access to low-level networking information. For example, we can use it to check **IP** and **ICMP** headers, which are in layer 3 of the OSI model (the network layer).
 
 The cool thing about using **UDP datagrams** is that, differently from **TCP**, they do not bring much overhead when sent across an entire subnet (remember the TCP [handshaking](http://www.inetdaemon.com/tutorials/internet/tcp/3-way_handshake.shtml)). All we need to do is wait for the **ICMP** responses saying whether the hosts are available or closed (unreachable).
 Remember that ICMP is essentially a special control protocol that issues error reports and can control the behavior of machines in data transfer.
@@ -21,9 +21,9 @@ Remember that ICMP is essentially a special control protocol that issues error r
 
 We start with a  very simple task: with Python's  [socket](http://bt3gl.github.io/black-hat-python-networking-the-socket-module.html) library, we will write a very simple packet sniffer.
 
-In this sniffer we create a raw socket and then we bind it to the public interface. The interface should be in **promiscuous mode**, which means that every packet that the network card sees is captured, even those that are not destined to the host.
+In this sniffer, we create a raw socket and then we bind it to the public interface. The interface should be in **promiscuous mode**, which means that every packet that the network card sees is captured, even those that are not destined to the host.
 
-One detail to remember is that things are slightly different if we are using Windows: in this case we need to send a [IOCTL](http://en.wikipedia.org/wiki/Ioctl) package to set the interface to **promiscuous mode**. In addition, while Linux needs to use ICMP, Windows allow us to sniff the incoming packets independently of the protocol:
+One detail to remember is that things are slightly different if we are using Windows: in this case, we need to send a [IOCTL](http://en.wikipedia.org/wiki/Ioctl) package to set the interface to **promiscuous mode**. In addition, while Linux needs to use ICMP, Windows allows us to sniff the incoming packets independently of the protocol:
 
 
 ```python
@@ -226,7 +226,7 @@ ICMP -> Type:3, Code:3
 
 We are ready to write our full scanner. But, first, let's install [netaddr](https://pypi.python.org/pypi/netaddr), which is a Python library for representing and manipulating network addresses.
 
-Netaddr supports the ability to work with IPv4 and IPv6 addresses and subnets MAC addresses, among others. This is very useful for our problem, since we want to be able to use a subnet mask such as 192.168.1.0/24.
+Netaddr supports the ability to work with IPv4 and IPv6 addresses and subnets MAC addresses, among others. This is very useful for our problem since we want to be able to use a subnet mask such as 192.168.1.0/24.
 
 ```sh
 $ sudo pip install netaddr

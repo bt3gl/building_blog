@@ -53,13 +53,13 @@ Although the [Heap] can be also fun to play with, for the purpose of these games
 ### What's the Stack
 
 
-A Stack is an *abstract data type* that has the property that the last object placed will be the first object removed. This is also known as *last-in/first-out queue* or *LIFO*.Two of the most important operations in a Stack are *push* and *pop*.
+A Stack is an *abstract data type* that has the property that the last object placed will be the first object removed. This is also known as *last-in/first-out queue* or *LIFO*. Two of the most important operations in a Stack are *push* and *pop*.
 
 You can think of a stack of books: the only way to reach the book in the bottom (the first book that was pushed) is by popping every book on the top. To learn how to write a Stack in Python, take a look at my notes on [Python & Algorithms]. I also made the source code available: [here are some examples].
 
 The memory Stack frame  is a collection of (stack) frames. Every time a process calls a function, it  alters the flow of control.  In this case, a new frame needs to be added and the Stack grows downward (lower memory address).
 
-If you think about it, a Stack is the perfect object for a process: the process can push a  function (its arguments, code, etc.) into the Stack, then, in the end, it pops everything, back to where it started.
+If you think about it, a Stack is a perfect object for a process: the process can push a  function (its arguments, code, etc.) into the Stack, then, in the end, it pops everything, back to where it started.
 
 
 
@@ -98,7 +98,7 @@ movl %esp,%ebp
 subl $20,%esp
 ```
 
-The two first lines are the prologue. In the first line of this code, the (old) **frame pointer** (ebp) is pushed onto the top of the Stack (lowest memory). Then, the current **esp** is copied into the **stack frame base pointer** (ebp), making it the new frame pointer.  In the last line, the space is allocated for the local variables, subtracting their size from esp (remember that memory can only be addressed in multiples of the word size, for example 4 bytes, or 32 bits).
+The two first lines are the prologue. In the first line of this code, the (old) **frame pointer** (ebp) is pushed onto the top of the Stack (lowest memory). Then, the current **esp** is copied into the **stack frame base pointer** (ebp), making it the new frame pointer.  In the last line, space is allocated for the local variables, subtracting their size from esp (remember that memory can only be addressed in multiples of the word size, for example 4 bytes, or 32 bits).
 
 
 
@@ -139,7 +139,7 @@ In each of Narnia's levels we are able to [run a binary and read its C code]. Th
 #### Memory and Exploits Representation
 
 
-When it comes to memory addresses, it's fundamental to understand [hexadecimal representation]. You can print an HEX into [ASCII] with Python:
+When it comes to memory addresses, it's fundamental to understand [hexadecimal representation]. You can print a HEX into [ASCII] with Python:
 ```python
 $ python -c 'print "\x41"'
 A
@@ -147,7 +147,7 @@ A
 
 Remember that Narnia's severs are [x86], so they have [little-endian] representation. This means that an address ```0xffffd546 ``` is actually written as ```\x46\xd5\xff\xff ```.
 
-Most of the exploit we deliver in Narnia are in form of input strings. Python with the flag, ```-c```, is really handy to craft what we need:
+Most of the exploit we deliver in Narnia is in form of input strings. Python with the flag, ```-c```, is really handy to craft what we need:
 ```sh
 $ python -c 'print "A"*20'
 AAAAAAAAAAAAAAAAAAAA
@@ -221,7 +221,7 @@ To learn more about gdb, you might want to check this [very introductory guide] 
 (gdb) b *main+<SOME NUMBER>
 ```
 
-* To run the program: ```(gdb) r```. We also can use ```c``` to continue to run it after breakpoint.  We can  use ```n``` for next program line. We can print things using ```p```.
+* To run the program: ```(gdb) r```. We also can use ```c``` to continue to run it after the breakpoint.  We can  use ```n``` for the next program line. We can print things using ```p```.
 
 * To examine some memory address, we can use ```(gdb) x/nfu A```, where **A** is the address (*e.g.*, ```$esp``), n is the number of units to print, f is the format character, and u is the unit.
 
@@ -298,7 +298,7 @@ int main(){
 }
 ```
 
-The program receives an input from the user and save it in a buffer variable of size 20. Then, it checks if the *val* is equal to a different value of what it was declared:
+The program receives an input from the user and saves it in a buffer variable of size 20. Then, it checks if the *val* is equal to a different value of what it was declared:
 ```c
 if(val==0xdeadbeef)
         system("/bin/sh");
@@ -392,7 +392,7 @@ Yay, the exploit worked!
 
 We  were able to get access to our shell, but it closed too fast, when the program execution ended.
 
-We need to create a way to read the password before we loose the  control to the shell. A good way is pipelining some command that  waits for an input, such as ```tail``` or ```cat```.
+We need to create a way to read the password before we loose the  control to the shell. A good way is pipelining some command that  waits for input, such as ```tail``` or ```cat```.
 
 It turns out that only ```cat``` actually prints the output:
 
@@ -623,7 +623,7 @@ int main(int argc, char * argv[]){
 
 This function copies an input string  to a *buf*, using ```strcpy()``` (instead of safer ```strncpy()```).  Since there is no bounds checking,  *buf* overflows to the higher address  in the Stack if the input is larger than 128 bytes.
 
-In this problem we will use overflow to take control of the return address of the main function, which is right after *buf*. We will overwrite this to any address we want, for example to the address of a beautiful crafted exploit.
+In this problem we will use overflow to take control of the return address of the main function, which is right after *buf*. We will overwrite this to any address we want, for example to the address of a beautifully crafted exploit.
 
 
 ### Step 2: Finding the Frame Size
@@ -857,13 +857,13 @@ The previous example showed the first byte after overflowing *ifile*. This last 
 
 ### Step 3: Writing and Applying the Exploit
 
-We want two things happening in *ifile*: first, to read the password file, then to overflows *ofile*, making it to point to a file we have access to read.
+We want two things happening in *ifile*: first, to read the password file, then to overflows *ofile*, making it point to a file we have access to read.
 
-The best way to put all of this in one input name is creating a symbolic link with the following rules:
+The best way to put all of this in one input name is by creating a symbolic link with the following rules:
 
 1. Point to */etc/narnia_pass/narnia4*.
 2. Fill the 32 bytes of the *ifile* array with junk.
-3. End with a some file name which we  had created before, and we have permission to read (we can just use ```touch``` to create an empty file).
+3. End with some file name which we  had created before, and we have permission to read (we can just use ```touch``` to create an empty file).
 
 The result, for a file name *out*, is:
 ```sh
@@ -916,7 +916,7 @@ int main(int argc,char **argv){
 
 This binary does three things: first, it creates a buffer array of size 256, then it makes all of the system environment variables equal to zero, and then it copies whatever user input it had to the buffer.
 
-The reason why this code clears  the environment variables is to avoid the possibility of us placing a shellcode exploit to them  (like we did in the Level 2).
+The reason why this code clears  the environment variables is to avoid the possibility of us placing a shellcode exploit to them  (like we did in Level 2).
 
 
 
@@ -927,7 +927,7 @@ To exploit this binary we are going to overwrite our **return address** like in 
 
 1. Find out the size of the Stack.  Just having the return address won't help  since we can't point it to anywhere outside the code.
 2. Create a shellcode with the return address minus some value we define so that the return address points to somewhere inside the Stack.
-3. Fill the beginning of the Stack with a lots of [NOPs] (No Operations, used to pad/align bytes or to delay time), which in the x86 CPU family is represented with ```0x90```. If the pointer hits these places, it just keeps advancing until it finds our shell.
+3. Fill the beginning of the Stack with lots of [NOPs] (No Operations, used to pad/align bytes or to delay time), which in the x86 CPU family is represented with ```0x90```. If the pointer hits these places, it just keeps advancing until it finds our shell.
 4. To make everything fit right in the Stack frame, we pad the end of the shell code with junk.
 .
 
@@ -1023,7 +1023,7 @@ $1 = 272
 
 ### Step 4: Writing and Applying the Exploit
 
-We know that the Stack has size of 272 bytes and that the return address is **0xffffd5dc**.  If we add the return address, it sums to 276.
+We know that the Stack has a size of 272 bytes and that the return address is **0xffffd5dc**.  If we add the return address, it sums to 276.
 
 Now we have some freedom to choose where to place our shellcode. Let's say, we place it somewhere in the middle, say, at the position 134. In the memory, we get: ```0xffffd5cc - 134 = 0xffffd546```.
 

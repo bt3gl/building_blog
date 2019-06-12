@@ -9,11 +9,11 @@ LAMP is an acronym for a model of web service solution stacks: Linux, the Apache
 
 We will use a web interface to access data in our database:
 
-* Log in with your root login/password (set in the installation above): ```http://localhost/phpmyadmin```.
-The left hand column contains a list of all of the databases you currently have.
+* Login with your root login/password (set in the installation above): ```http://localhost/phpmyadmin```.
+The left-hand column contains a list of all of the databases you currently have.
 
-	- mysql: contains information about the MySQL database server.
-	- information_schema: contains information about all of the other databases on your computer.
+    - mysql: contains information about the MySQL database server.
+    - information_schema: contains information about all of the other databases on your computer.
 
 * In the Databases interface you are presented with a list of all of the databases.
 * Above that list there should be a form labeled “Create new database” with a text field.
@@ -136,7 +136,7 @@ $other_array[] = $i;
 
 ## The Model-View-Controller Pattern (MVC)
 
-In high level, the flow of a web app is:
+In a high level, the flow of a web app is:
 
 * User request to view a certain page by typing a URL in the browser.
 * The app determines what needs to be displayed.
@@ -157,7 +157,7 @@ Determine what objects to retrieve and how to organize them.
 
 Handle user request, retrieve proper information, and pass it to the proper view.
 
-Different request are handled by different controller actions.
+Different request is handled by different controller actions.
 
 ### Views: What the User Sees
 
@@ -217,7 +217,7 @@ For example:
 
 ### Configuring our app to use the Database
 
-CI has a built-in support for interacting with a database.
+CI has built-in support for interacting with a database.
 In our application, the database configuration file is store at application/config/database.php
 
 To connect our app to the MySQL database, update this file to:

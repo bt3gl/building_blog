@@ -1,12 +1,12 @@
 Title: The Ultimate Linux Guide for Hackers ;)
 Date: 2014-11-10 4:20
-Category: Life,Universe,Everything
+Category: life
 Tags: Linux, Python, Unicode, tr, ifconfig, ssh, netcat, Stripe
 
 
  Being a Linux user is, above all, a *life style*. Interestingly, more and more people have been joining this community, keeping it dynamic and organic.
 
- Linux has been in my life since my high school  years  and  I'm still constantly inspired by the fact that it has not lost any of its appeal. There is always something new or deeper to be learned. Linux is *the* tool for those who choose to spend their excess of curiosity flying around bytes.
+ Linux has been in my life since my high school years and  I'm still constantly inspired by the fact that it has not lost any of its appeals. There is always something new or deeper to be learned. Linux is *the* tool for those who choose to spend their excess of curiosity flying around bytes.
 
 With the novice in mind, this blog post is my introduction to the Linux machinery, containing some of my favorite tricks. I hope you enjoy this exciting adventure of taking control of *The Machine*.
 
@@ -120,7 +120,7 @@ Filesystem              Type  Size  Used Avail Use% Mounted on
 
     * **usr/src**: source code, usually for the Linux kernel.
 
-    * **usr/local**: data and programs specific to the local machine,  things that apply to computer rather than things provided by the operating system go.
+    * **usr/local**: data and programs specific to the local machine,  things that apply to a computer rather than things provided by the operating system go.
 
 ### /proc
 
@@ -131,11 +131,11 @@ Filesystem              Type  Size  Used Avail Use% Mounted on
 
 * There exist files provided by the operating system that do not represent any physical device, but provide a way to access special features:
 
-    * **/dev/null** ignores everything written to it. It's convenient for discarding unwanted output.
+    * **/dev/null** ignores everything written to it. It's convenient for discarding the unwanted output.
 
     * **/dev/zero** contains an *infinite* number of zero bytes, which can be useful for creating files of a specified length.
 
-    * **/dev/urandom** and **/dev/random** contain infinite stream of operating-system-generated random numbers, available to any application that wants to read them. The difference between them is that the second guarantees strong randomness (it will wait until enough is available) and so it should used for encryption, while the former can be used for games.
+    * **/dev/urandom** and **/dev/random** contain an infinite stream of operating-system-generated random numbers, available to any application that wants to read them. The difference between them is that the second guarantees strong randomness (it will wait until enough is available) and so it should be used for encryption, while the former can be used for games.
 
 * For example, to output random bytes, you can type:
 
@@ -164,7 +164,7 @@ Linux version 3.14.9-200.fc20.x86_64 (mockbuild@bkernel02.phx2.fedoraproject.org
  Linux XXXXX 3.14.9-200.fc20.x86_64 #1 SMP Thu Jun 26 21:40:51 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-* For instance, we might be interested on **checking whether you are using the latest Kernel**. You can do this by checking whether the outputs of the following commands match:
+* For instance, we might be interested in **checking whether you are using the latest Kernel**. You can do this by checking whether the outputs of the following commands match:
 
 ```
 $ rpm -qa kernel | sort -V | tail -n 1
@@ -181,7 +181,7 @@ $ rpm -q kernel
 ---
 ## Processes
 
-* A running program is called **process**. Each process has a **owner** (in the same sense as when we talk about file permissions below).
+* A running program is called **process**. Each process has an **owner** (in the same sense as when we talk about file permissions below).
 
 * You can find out which programs are running with the **ps** command. This also gives the **process ID** or **PID**, which is a unique long-term identity for the process (different copies of a given program will have separate PIDs).
 
@@ -287,7 +287,7 @@ $ uptime
 
 ### nice and renice
 
-* Finally, you can change processes priority using ```nice``` (runs a program with modified scheduling priority) and ```renice```(alter priority of running processes).
+* Finally, you can change processes priority using ```nice``` (runs a program with modified scheduling priority) and ```renice```(alter the priority of running processes).
 
 
 ---
@@ -320,7 +320,7 @@ $ export VAR=<value>
 $ echo $VAR
 ```
 
-* The **PATH** (search path) is the list of directories that the shell look in to try to find a particular command. For example, when you type ```ls``` it will look at ```/bin/ls```. The path is stored in the variable **PATH**, which is a list of directory names separated by colons and it's coded inside **./bashrc**. To export a new path you can do:
+* The **PATH** (search path) is the list of directories that the shell looks in to try to find a particular command. For example, when you type ```ls``` it will look at ```/bin/ls```. The path is stored in the variable **PATH**, which is a list of directory names separated by colons and it's coded inside **./bashrc**. To export a new path you can do:
 
 ```
 $ export PATH=$PATH:/<DIRECTORY>
@@ -591,13 +591,13 @@ $ whereis <FILENAME>
 
 ### locate
 
-* To find files by name (using database):
+* To find files by name (using a database):
 
 ```
 $ locate <FILENAME>
 ```
 
-* To test if a a file exist:
+* To test if a a file exists:
 
 ```
 $ test -f <FILENAME>
@@ -685,7 +685,7 @@ $ uniq -d <FILENAME>
 
 ### cut
 
-* **cut** selects particular fields (columns) from a structured text files (or particular characters from each line of any text file). The flag **-d** specifies what delimiter should be used to divide columns (default is tab), the flag **-f** specifies which field or fields to print and in what order:
+* **cut** selects particular fields (columns) from structured text files (or particular characters from each line of any text file). The flag **-d** specifies what delimiter should be used to divide columns (default is tab), the flag **-f** specifies which field or fields to print and in what order:
 
 ```
 $ cut -d ' ' -f 2 <FILENAME>
@@ -712,7 +712,7 @@ $ join <FILENAME1> <FILENAME2>
 
 ### mkdir
 
-* **mkdir** creates a directory. An useful flag is **-p** which creates  the entire path of directories (in case they don't exist):
+* **mkdir** creates a directory. A useful flag is **-p** which creates  the entire path of directories (in case they don't exist):
 
 ```
 $ mkdir -p <DIRNAME>
@@ -907,7 +907,7 @@ $ ss -u -a
 
 ### tcptrack
 
-* **tcptrack** displays information about TCP connections it sees on a network and display bandwidth usage on some interface by a host.
+* **tcptrack** displays information about TCP connections it sees on a network and displays bandwidth usage on some interface by a host.
 
 ```
 $  tcptrack -i eth0
@@ -1067,17 +1067,17 @@ $ grep awesome$
 
 ## Awk and Sed
 
-* **awk**  is a pattern scanning tool while **sed** is a stream editor for filtering and transform text. While these tools are extremely powerful, if you have knowledge of any very high level languages such as Python or Ruby, you  don't necessary need to learn them.
+* **awk**  is a pattern scanning tool while **sed** is a stream editor for filtering and transform text. While these tools are extremely powerful, if you have knowledge of any very high level languages such as Python or Ruby, you  don't necessarily need to learn them.
 
 ### sed
 
-* Let's say we want  to replace every occurrence of *mysql* and with MySQL (Linux is case sensitive), and then save the new file to <FILENAME>. We can write an one-line command that says  "search for the word mysql and replace it with the word MySQL":
+* Let's say we want  to replace every occurrence of *mysql* and with MySQL (Linux is case sensitive), and then save the new file to <FILENAME>. We can write a one-line command that says  "search for the word mysql and replace it with the word MySQL":
 
 ```
 $ sed s/mysql/MySQL/g <FILEORIGIN> > <FILEDEST>
 ```
 
-* To replace any instances of period followed by any number of spaces with a period followed by a single space in every file in this directory:
+* To replace any instances of a period followed by any number of spaces with a period followed by a single space in every file in this directory:
 
 ```
 $ sed -i 's/\. */. /g' *
@@ -1161,7 +1161,7 @@ $ rsync -av <DIRECTORY> <HOST>:/planning
 
 * Historically, **tar** stood for tape archive and was used to archive files to a magnetic tape. Today **tar** is used to allow you to create or extract files from an archive file, often called a **tarball**.
 
-* Additionally you can add *file compression*, which works by finding redundancies in a file (like repeated strings) and creating more concise representation of the file's content. The most common compression programs are **gzip** and **bzip2**.
+* Additionally you can add *file compression*, which works by finding redundancies in a file (like repeated strings) and creating a more concise representation of the file's content. The most common compression programs are **gzip** and **bzip2**.
 
 * When issuing **tar**, the flag **f** must be the last option. No hyphen is needed. You can add **v** as verbose.
 
@@ -1238,7 +1238,7 @@ $ lastlog
 
     2. commanding the program to read the content out of the file descriptor (the **/proc** filesystem), copying the file content directly out of the open file descriptor pseudo-file inside **/proc**.
 
-* For example, if one runs ```$ dd if=/dev/zero of=trash & sleep 10; rm trash```, the available disk space on the system will continue to go downward (since more  contents gets written into the file by which **dd** is sending its output).
+* For example, if one runs ```$ dd if=/dev/zero of=trash & sleep 10; rm trash```, the available disk space on the system will continue to go downward (since more  contents get written into the file by which **dd** is sending its output).
 
 * However, the file can't be seen everywhere in the system! Only  killing the **dd** process will cause this space to be reclaimed.
 
@@ -1293,7 +1293,7 @@ $ hexdump -c < text.txt
 * Unlike text files on other operating systems, Linux files do not end with a special end-of-file character.
 
 
-* Linux text files were traditionally always interpreted as **ASCII**. In ASCII, each character is a single byte, the ASCII standard as such defines exactly **128 characters** from **ASCII 0 to ASCII 127**. Some of them are non-printable (such as newline). The printable starts at **32**. In that case, **ISO 8859** standards were  extensions to ASCII where the character positions **128 to 255** are given foreign-language interpretation.
+* Linux text files were traditionally always interpreted as **ASCII**. In ASCII, each character is a single byte, the ASCII standard as such defines exactly **128 characters** from **ASCII 0 to ASCII 127**. Some of them are non-printable (such as a newline). The printable starts at **32**. In that case, **ISO 8859** standards were  extensions to ASCII where the character positions **128 to 255** are given a foreign-language interpretation.
 
 * Nowadays, Linux files are most often interpreted as **UTF-8**, which is an encoding of **Unicode**, a character set standard able to represent a very large number of languages.
 
@@ -1356,7 +1356,7 @@ ZEfgQvpY4ixePt
 ## Most Common words plus Frequency
 
 
-* We can use the commands we learned to build a script that print the most common words plus their frequency:
+* We can use the commands we learned to build a script that prints the most common words plus their frequency:
 
 ```
 tr -cs A-Za-z '\n' |

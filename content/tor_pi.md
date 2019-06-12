@@ -17,13 +17,13 @@ In this tutorial I walk through all the steps to setup a Tor proxy in a Raspberr
 
 ## Network Setup
 
-The easiest way is to connect your Pi in the network is through an ethernet interface. Connecting the cable should be allow the connection directly as long as your network router allows DHCP.
+The easiest way is to connect your Pi in the network is through an ethernet interface. Connecting the cable should be allowed the connection directly as long as your network router allows DHCP.
 
-In addition, you can also setup a wireless connect, which requires your router to be broadcasting the SSID. At Raspbian, there is a WiFi configuration icon. Type wlan0 adapter and scan. After connecting in your network you will also be able to see the IP of your Pi.
+In addition, you can also setup wireless connect, which requires your router to be broadcasting the SSID. At Raspbian, there is a WiFi configuration icon. Type wlan0 adapter and scan. After connecting in your network you will also be able to see the IP of your Pi.
 
 ## Input/Output Setup
 
-The easiest way to connect to your Pi is by a HDMI cable to a monitor and an USB keyboard. Another options is through a console cable or a SSH connection.
+The easiest way to connect to your Pi is by an HDMI cable to a monitor and a USB keyboard. Another option is through a console cable or an SSH connection.
 
 ## Connection through a Console Cable (3.3V logic levels)
 
@@ -53,12 +53,12 @@ You need to enable SSH in the Pi:
 $ sudo raspi-config
 ```
 
-Find the Pi's IP by:
+Find Pi's IP by:
 ```
 $ sudo ifconfig
 ```
 
-From your Linux PC (using "pi" as user):
+From your Linux PC (using "pi" as the user):
 ```
 $ sudo PI-IP -l pi
 ```
@@ -149,7 +149,7 @@ sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
 
 ### Firewall Configuration
 
-We insert an iptables rules to allow NAT (network address translation):
+We insert an iptables rule to allow NAT (network address translation):
 ```
 $ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 $ iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
@@ -291,7 +291,7 @@ To route all TCP traffic from interface wlan0 to port 9040 (TransPort in our tor
 $ sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports 9040 
 ```
 
-Check that the iptables are right with:
+Check that the iptables is right with:
 ```
 $ sudo iptables -t nat -L
 ```

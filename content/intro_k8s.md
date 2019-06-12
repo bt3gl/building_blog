@@ -9,15 +9,15 @@ Hey everyone!
 
 I wrote this quick guide to help you to get started with k8s in 10 min.
 
-In this guide I show you how to spin a quick ```Node.js``` server in Kubernetes and to grasp some of its main concepts. [Here is the source code](https://github.com/bt3gl/k8s_security).
+In this guide, I show you how to spin a quick ```Node.js``` server in Kubernetes and to grasp some of its main concepts. [Here is the source code](https://github.com/bt3gl/k8s_security).
 
 ### Install kubectl
 
-First you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) in your machine.
+First, you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) in your machine.
 
-Make sure you have all the auths right, for instance, I do the follow:
+Make sure you have all the auths right, for instance, I do the following:
 
-1. Create a auth token and move to `~/.kube`
+1. Create an auth token and move to `~/.kube`
 2. Create a config file and move to `~/.kube`
 
 

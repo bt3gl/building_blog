@@ -11,7 +11,7 @@ For fun or profit:
 
 *  [A ThttpD Web Server](https://coderwall.com/p/uzu9mq/a-thttpd-web-server).
 
-*  [Setting a SSH Server in Fedora 20](https://coderwall.com/p/kopgca/setting-a-ssh-server-in-fedora-20).
+*  [Setting an SSH Server in Fedora 20](https://coderwall.com/p/kopgca/setting-a-ssh-server-in-fedora-20).
 
 *  [Setting up a VNC Server in Fedora 20](https://coderwall.com/p/3mpszw/setting-up-a-vnc-server-in-fedora-20).
 
