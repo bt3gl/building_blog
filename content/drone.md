@@ -5,7 +5,7 @@ Tags: nomad, droning, love
 
 ![cyberpunk](./cyberpunk/drone.jpg){:height="270px" width="390px"}
 
-So here is a story for you. A few years ago, after I left my career in Silicon Valley, I decided to [break bad](https://vimeo.com/262786853) 😂. I know, it sounds silly, but hey, I had fun. I spent almost two years being a full-time traveler (part-time remote-located engineer and part-time [having-so-much-freakin-fun](https://www.instagram.com/innermost.limits.of.pure.fun)).
+So here is a story for you. A few years ago, after I left my career in Silicon Valley, I decided to *live life* 🤓. I spent almost two years being a full-time traveler (part-time remote-located engineer and part-time [having-so-much-fun](https://www.instagram.com/innermost.limits.of.pure.fun)).
 
 Here are my top drone videos from those wild times:
 

@@ -54,6 +54,7 @@ Cool, right? :)
 * [Skaffold examples](https://github.com/GoogleContainerTools/skaffold/tree/master/examples).
 * [Skaffold: From code on your laptop to cloud](https://github.com/ahmetb/skaffold-from-laptop-to-cloud).
 * [Skaffold: happy Kubernetes workflows](https://ahmet.im/blog/skaffold/).
+* [How to write great container images](https://blog.bejarano.io/how-to-write-great-container-images.html).
 
 ----
 

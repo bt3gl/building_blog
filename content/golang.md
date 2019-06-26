@@ -142,7 +142,7 @@ Plus several cool stuff has been written in Go, such as [Docker](https://www.doc
 
 ----
 
-## Some Resources to Learn Go
+## Some Resources I Loved
 
 * Start with the [official documentation](https://golang.org/).
 * Take a look at [Go by Example](https://gobyexample.com/).
@@ -152,7 +152,7 @@ Plus several cool stuff has been written in Go, such as [Docker](https://www.doc
 * Watch some [JustForFunc videos](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw).
 * [Understanding Data Types in Go](https://www.digitalocean.com/community/tutorials/understanding-data-types-in-go).
 * [Tensorflow in Go](https://medium.com/@hackintoshrao/deep-learning-in-go-f13e586f7d8a).
-
+* [Jessie Frazelle on Internals of the Go Linker](https://www.reddit.com/r/golang/comments/c2rgrf/gothamgo_2017_internals_of_the_go_linker_by/).
 
 ----
 

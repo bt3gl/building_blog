@@ -28,7 +28,7 @@ Tags: mindfulness, TheGame, reality
 
 #### 8. Living life the way we choose to, regardless of fitting in with other people's norms. 
 
-#### 9. Making decisions about your own future that don't do any harm to anyone.
+#### 9. Making decisions about our own future that don't do any harm to anyone.
 
 #### 10. Being sensitive. 
 
