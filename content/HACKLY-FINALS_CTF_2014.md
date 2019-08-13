@@ -262,8 +262,3 @@ I knew you are able to see IT. Lets get drunk, I tell you where
 flag{FreeBoozeForEverone-Party!}
 ```
 
-
-
-----
-
-**Aloha, bt3**

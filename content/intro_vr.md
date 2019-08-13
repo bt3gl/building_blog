@@ -1,5 +1,5 @@
 Title: To All the AR & VR Groms Out There
-Date: 2017-12-07
+Date: 2016-12-07
 Category: VR, AR, dev
 
 ![cyberpunk](./cyberpunk/26.jpg){:height="300px" width="400px"}
@@ -8,7 +8,7 @@ Category: VR, AR, dev
 Hi Everyone!
 
 
-I am sharing a compilation of some of VR & AR resources that I have been learning and reading from. Enjoy and please let me know if you have something nice that I have not included here.
+I am sharing a compilation of some of VR & AR resources that I have been learning and reading from. Enjoy, and please let me know if you have something nice that I have not included here.
 
 
 
@@ -16,8 +16,8 @@ I am sharing a compilation of some of VR & AR resources that I have been learnin
 
 ## AR Platforms
 
-* [ARKit Developer Portal (Apple)](https://developer.apple.com/arkit/):  Apple’s developer portal for ARKit.
-* [ARCore Developer Portal (Google)](https://developers.google.com/ar/):  Google’s developer portal for ARCore.
+* [ARKit Developer Portal (Apple)](https://developer.apple.com/arkit/): Apple’s developer portal for ARKit.
+* [ARCore Developer Portal (Google)](https://developers.google.com/ar/): Google’s developer portal for ARCore.
 * [AR Studio (Facebook)](https://developers.facebook.com/docs/ar-studio): Facebook's tools.
 * [ViroAR for ARKit and ARCore](https://viromedia.com/viroar).
 
@@ -188,7 +188,3 @@ I am sharing a compilation of some of VR & AR resources that I have been learnin
 * [/r/Singularitarianism](https://www.reddit.com).
 * [/r/HTC_Vive](https://www.reddit.com/r/HTC_Vive).
 * [/r/learnVRdev](https://www.reddit.com/r/learnVRdev/).
-
-----
-
-**Aloha, bt3**

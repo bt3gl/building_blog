@@ -1,5 +1,5 @@
 Title: Spin up a Node.JS Server in Kubernetes in 10 Minutes
-Date: 2017-12-13
+Date: 2016-12-13
 Category: k8s, dev, h4x0r, docker
 
 ![cyberpunk](./cyberpunk/13.jpg){:height="300px" width="400px"}
@@ -15,7 +15,7 @@ In this guide, I show you how to spin a quick ```Node.js``` server in Kubernetes
 
 First, you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) in your machine.
 
-Make sure you have all the auths right, for instance, I do the following:
+Make sure you have all the auths right; for instance, I do the following:
 
 1. Create an auth token and move to `~/.kube`
 2. Create a config file and move to `~/.kube`
@@ -79,13 +79,13 @@ The system that images for distribution is called a **container registry**.
 Using a `yaml` Kubernetes files (for example, the one inside `node_server_example/`), you can now deploy the image with:
 
 ```
-$ kubectl create -f  node_example_kube_config.yaml
+$ kubectl create -f node_example_kube_config.yaml
 ```
 
 After that, you are able to create the service with:
 
 ```
-$  kubectl expose deployment node-app-test
+$ kubectl expose deployment node-app-test
 ```
 
 Also, check out the service status with:
@@ -138,9 +138,3 @@ $ kubectl describe pod --namespace=<ns-name> <pod name>
 * [Dockerfiles good practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#general-guidelines-and-recommendations).
 
 
-
-
-
-----
-
-**Aloha, bt3**

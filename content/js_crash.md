@@ -1,5 +1,5 @@
 Title: JavaScript: Crash Course
-Date: 2015-02-15
+Date: 2014-02-15
 Category: DevOps
 
 
@@ -425,8 +425,3 @@ jQuery.isArray( myValue ); // true
 
 ---
 Enjoy! This article was originally posted [here](https://coderwall.com/p/skucrq/javascript-crash-course).
-
-
-----
-
-**Aloha, bt3**

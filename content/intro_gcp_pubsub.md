@@ -1,17 +1,16 @@
 Title: Introducing a GCP Pub/Sub Message Framework
-Date: 2017-11-16
+Date: 2016-11-16
 Category: gcp, dev, kafka, cloud, k8s
 
 ![cyberpunk](./cyberpunk/21.jpg){:height="300px" width="400px"}
 
-Everything in either in GCP or AWS these days and there is so much data from so many sources!
 
-To try to make sense of all the logs from different sources on [GCP pub/sub](https://cloud.google.com/pubsub/docs/overview),  I created this little [serverless framework](https://github.com/bt3gl/GCP-Pub-Sub-Message-Framework) that uses [Kafka streams](https://kafka.apache.org/intro) for alerting correlation on [Kubernetes](https://kubernetes.io/).
+To try to make sense of all the logs from different sources on [GCP pub/sub](https://cloud.google.com/pubsub/docs/overview), I created this little [serverless framework](https://github.com/bt3gl/GCP-Pub-Sub-Message-Framework) that uses [Kafka streams](https://kafka.apache.org/intro) for alerting correlation on [Kubernetes](https://kubernetes.io/).
 
 
 ## Installing Kubeless
 
-Follow [this instructions](https://github.com/kubeless/kubeless). Customize Kubeless config file at `kubeless-config.yaml` and then run:
+Follow [these instructions](https://github.com/kubeless/kubeless). Customize Kubeless config file at `kubeless-config.yaml` and then run:
 
 ```
 $ make kl
@@ -44,7 +43,7 @@ $ make pods
 and then run:
 
 ```
-$ kubectl logs <podname>  --namespace=kubeless
+$ kubectl logs <podname> --namespace=kubeless
 ```
 
 -----

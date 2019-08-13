@@ -107,7 +107,3 @@ If we don't know the name of the file we are looking for, but we know its type, 
 [Wireshark]: https://www.wireshark.org/
 [FTP]: http://en.wikipedia.org/wiki/File_Transfer_Protocol
 
-
-----
-
-**Aloha, bt3**

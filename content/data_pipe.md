@@ -1,12 +1,12 @@
 Title: Thinking about Machine Learning Data Pipelines
-Date: 2018-05-16 4:19 
+Date: 2015-05-16 4:19 
 Category: AI & ML
 Tags: python, data, airflow, etl, luigi
 
 
 ![cyberpunk](./cyberpunk/data_pip.png){:height="270px" width="390px"}
 
-Almost every day I have a new idea of some machine learning model for an app or some feature. Machine learning involves tasks that include data sourcing, data ingestion, data transformation, pre-processing data for use in training, training a model and hosting the model. Additionally, to get value out of machine learning models we need an architecture and process in place to repeatedly and consistently train new models and retrain existing models with new data.
+ Machine learning involves tasks that include data sourcing, data ingestion, data transformation, pre-processing data for use in training, training a model, and hosting the model. Additionally, to get value out of machine learning models, we need an architecture and process in place to repeatedly and consistently train new models and retrain existing models with new data.
 
 For example, for a movie dataset from an external source on the internet:
 
@@ -18,7 +18,7 @@ For example, for a movie dataset from an external source on the internet:
 
 * If we have an **AWS S3 data lake** ready, we could use **Amazon Sagemaker for model training and inference**.
 
-As I start a little [github repo for my personal research (dumps...) on Data Pipelines](https://github.com/bt3gl/Data-Pipelines) (PR your contribution!), in this post I add my little intro on the topic.
+As I start a little [github repo for my personal research (dumps...) on Data Pipelines](https://github.com/bt3gl/Data-Pipelines) (PR your contribution!), in this post, I add my little intro on the topic.
 
 
 ## ETL: Extract, Transform, and Load
@@ -26,7 +26,7 @@ As I start a little [github repo for my personal research (dumps...) on Data Pip
 These three conceptual steps are how most data pipelines are designed and structured, serving as a blueprint for how raw data is transformed to analysis-ready data:
 
 * **Extract**: sensors wait for upstream data sources.
-* **Transform**: business logic is applied (e.g. filtering, grouping, and aggregation to translate raw data into analysis-ready datasets).
+* **Transform**: business logic is applied (e.g., filtering, grouping, and aggregation to translate raw data into analysis-ready datasets).
 * **Load**: processed data is transported to a final destination.
 
 ### Airflow
@@ -37,16 +37,16 @@ You can use Airflow to author workflows as directed acyclic graphs (DAGs) of tas
 
 The key concepts are:
 
-* DAG: a directed acyclic graph object that ties together all the tasks in a cohesive workflow and dictates the execution frequency (i.e. schedule).
-* task: a unit of work to be executed that should be both atomic and idempotent. In Airflow there are two types of tasks: Operators and Sensors.
+* DAG: a directed acyclic graph object that ties together all the tasks in a cohesive workflow and dictates the execution frequency (i.e., schedule).
+* task: a unit of work to be executed that should be both atomic and idempotent. In Airflow, there are two types of tasks: Operators and Sensors.
 * operator: a specific type of work to be executed.
 * sensor: a blocking task that runs until a condition is met or until it times out.
-  
+ 
 Airflow's architecture has the following components:
 
 * job definitions (in source control).
 * CLI: to test, run, backfill, describe and clear parts of your DAGs.
-* web application: to explore your DAGs definition, their dependencies, progress, metadata, and logs (built in Flask).
+* web application: to explore your DAGs definition, their dependencies, progress, metadata, and logs (built-in Flask).
 * metadata repository (in MySQL or Postgres): keeps track of task job statuses.
 * array of workers: runs jobs task instances in a distributed fashion.
 * scheduler: fires up the task instances that are ready.
@@ -57,41 +57,41 @@ Here is [a very simple toy example of an Airflow job](https://gist.github.com/ro
 ```python
 
 from datetime import datetime, timedelta
-from airflow.models import DAG  # Import the DAG class
+from airflow.models import DAG # Import the DAG class
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.sensors import TimeDeltaSensor
 
 default_args = {
-    'owner': 'you',
-    'depends_on_past': False,
-    'start_date': datetime(2018, 1, 8),
+ 'owner': 'you',
+ 'depends_on_past': False,
+ 'start_date': datetime(2018, 1, 8),
 }
 
 dag = DAG(
-    dag_id='anatomy_of_a_dag',
-    description="This describes my DAG",
-    default_args=default_args,
-    schedule_interval=timedelta(days=1))   # This is a daily DAG.
+ dag_id='anatomy_of_a_dag',
+ description="This describes my DAG",
+ default_args=default_args,
+ schedule_interval=timedelta(days=1)) # This is a daily DAG.
 
 # t0 and t1 are examples of tasks created by instantiating operators
 t0 = TimeDeltaSensor(
-    task_id='wait_a_second',
-    delta=timedelta(seconds=1),
-    dag=dag)
+ task_id='wait_a_second',
+ delta=timedelta(seconds=1),
+ dag=dag)
 
 t1 = BashOperator(
-    task_id='print_date_in_bash',
-    bash_command='date',
-    dag=dag)
+ task_id='print_date_in_bash',
+ bash_command='date',
+ dag=dag)
 
 t1.set_upstream(t0)
 ```
 
 ### Luigi
 
-[Luigi data pipelining](https://github.com/spotify/luigi) is Spotify's Python module that helps you build complex pipelines of batch jobs. It handles dependency resolution, workflow management, visualization, etc. It also comes with Hadoop support built in.
+[Luigi data pipelining](https://github.com/spotify/luigi) is Spotify's Python module that helps you build complex pipelines of batch jobs. It handles dependency resolution, workflow management, visualization, etc. It also comes with Hadoop support built-in.
 
-The basic units of Luigi are task classes that model an atomic ETL operation, in three parts: a requirements part that includes pointers to other tasks that need to run before this task, the data transformation step, and the output. All tasks can be feed into a final table (e.g. on Redshift) into one file.
+The basic units of Luigi are task classes that model an atomic ETL operation, in three parts: a requirements part that includes pointers to other tasks that need to run before this task, the data transformation step, and the output. All tasks can be feed into a final table (e.g., on Redshift) into one file.
 
 Here is [an example of a simple workflow in Luigi](https://towardsdatascience.com/data-pipelines-luigi-airflow-everything-you-need-to-know-18dc741449b7):
 
@@ -100,45 +100,45 @@ import luigi
 
 class WritePipelineTask(luigi.Task):
 
-    def output(self):
-        return luigi.LocalTarget("data/output_one.txt")
+ def output(self):
+ return luigi.LocalTarget("data/output_one.txt")
 
-    def run(self):
-        with self.output().open("w") as output_file:
-            output_file.write("pipeline")
+ def run(self):
+ with self.output().open("w") as output_file:
+ output_file.write("pipeline")
 
 
 class AddMyTask(luigi.Task):
 
-    def output(self):
-        return luigi.LocalTarget("data/output_two.txt")
+ def output(self):
+ return luigi.LocalTarget("data/output_two.txt")
 
-    def requires(self):
-        return WritePipelineTask()
+ def requires(self):
+ return WritePipelineTask()
 
-    def run(self):
-        with self.input().open("r") as input_file:
-            line = input_file.read()
+ def run(self):
+ with self.input().open("r") as input_file:
+ line = input_file.read()
 
-        with self.output().open("w") as output_file:
-            decorated_line = "My "+line
-            output_file.write(decorated_line)
+ with self.output().open("w") as output_file:
+ decorated_line = "My "+line
+ output_file.write(decorated_line)
 ```
 
 ### Airflow vs. Luigi
 
 
-|                                       |        Airflow        |           Luigi        |
+| | Airflow | Luigi |
 |---------------------------------------|-----------------------|------------------------|
-| web dashboard                            | very nice             |  minimal               |
-| Built in scheduler                    | yes                   |    no                  |
-| Separates output data and task state  | yes                   |    no                  |
-| calendar scheduling                   | yes                   | no, use cron           |
-| parallelism                           | yes, workers          | threads per workers    |
-| finds new deployed tasks              | yes                   | no                     |
-| persists state                        | yes, to db            | sort of                |
-| sync tasks to workers                    | yes                   | no                     |
-| scheduling                            | yes                   | no                     |
+| web dashboard | very nice | minimal |
+| Built in scheduler | yes | no |
+| Separates output data and task state | yes | no |
+| calendar scheduling | yes | no, use cron |
+| parallelism | yes, workers | threads per workers |
+| finds new deployed tasks | yes | no |
+| persists state | yes, to db | sort of |
+| sync tasks to workers | yes | no |
+| scheduling | yes | no |
 
 
 
@@ -182,8 +182,4 @@ class AddMyTask(luigi.Task):
 * [Coursera's Big Data Pipeline course](https://www.coursera.org/lecture/big-data-integration-processing/big-data-processing-pipelines-c4Wyd).
 * [Industrial Machine Learning Talk](https://www.youtube.com/watch?v=3JYDT8lap5U).
 
-
-----
-
-**Aloha, bt3**
 

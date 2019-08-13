@@ -29,7 +29,3 @@ $ say Hacked
 ```
 
 :)
-
-----
-
-**Aloha, bt3**

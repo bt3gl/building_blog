@@ -1,5 +1,5 @@
 Title: Deploying Suricata with Chef
-Date: 2015-12-01
+Date: 2014-12-01
 Category: dev, infra, chef, h4x0r
 
 ![cyberpunk](./cyberpunk/17.jpg){:height="300px" width="400px"}
@@ -21,6 +21,3 @@ To understand the first steps of this pipeline, check out an example of a cookbo
 * [AWS CI guide](https://aws.amazon.com/devops/continuous-delivery/).
 * [Create your first pipeline with Jenkins](https://jenkins.io/doc/pipeline/tour/hello-world/).
 
-----
-
-**Aloha, bt3**

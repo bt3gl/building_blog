@@ -9,11 +9,11 @@ In this little post, I show many ways to find your public IP address form the Li
 
 ### Using Curl
 
-You can simply curl it from IP websites:
+You can curl it from IP websites:
 
 
 ```bash
-$  curl ifconfig.me
+$ curl ifconfig.me
 ```
 
 You might want to get more details (such as remote_host) with:
@@ -51,6 +51,3 @@ $ curl -s http://checkip.dyndns.org/ | grep -o "[[:digit:].]\+"
 
 :)
 
-----
-
-**Aloha, bt3**

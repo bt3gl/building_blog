@@ -1,5 +1,5 @@
 Title: 18 Tips for Website Performance
-Date: 2017-12-12
+Date: 2016-12-12
 Category: web, dev
 
 ![cyberpunk](./cyberpunk/16.jpg){:height="300px" width="400px"}
@@ -22,7 +22,7 @@ Load test your website to check for any bottlenecks. Some cool tools for this ta
 ## 3. Use Performance Tools
 
 
-You can check how fast in seconds you want your site to load, on certain connection speed, with this [free Budget Calculator tool](http://www.performancebudget.io/), depending on the number of resources (HTML, images, JS, CSS, fonts, etc).
+You can check how fast in seconds you want your site to load, on certain connection speed, with this [free Budget Calculator tool](http://www.performancebudget.io/), depending on the number of resources (HTML, images, JS, CSS, fonts, etc.).
 
 Additionally, check [Google's performance resources](https://developers.google.com/speed/).
 
@@ -40,7 +40,7 @@ Additionally, check [Google's performance resources](https://developers.google.c
 * Remove unnecessary characters (whitespace, new line, comments).
 * Some useful tools are [grunt ugligy](https://www.npmjs.com/package/gulp-uglify) and [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css).
 
-## 6.  Avoid Redirects
+## 6. Avoid Redirects
 
 301 redirects will damage the performance of your website because they generate additional round trip times (RTT) before the browser even starts to load other assets.
 
@@ -51,23 +51,23 @@ Additionally, check [Google's performance resources](https://developers.google.c
 * Use responsive images in HTML with ***srcset*** and sizes attributes to serve different scaled images, based on the size of the display.
 
 
-## 8.  Render Blocking Resources blocking the DOM
+## 8. Render Blocking Resources blocking the DOM
 
-The ***Document Object Model*** is a programming interface for HTML and XML documents that provide a structured representation (node tree) of a document, defining ways it can be accessed and manipulated using scripting languages such as Javascript. To ensure that the DOM loads in a responsive time, render blocking resources should get to the client as soon and as quickly as possible.
+The ***Document Object Model*** is a programming interface for HTML and XML documents that provide a structured representation (node tree) of a document, defining ways it can be accessed and manipulated using scripting languages such as Javascript. To ensure that the DOM loads in a responsive time, render-blocking resources should get to the client as soon and as quickly as possible.
 
 Here some tips for DOM resources:
 
 * CSS
-    * Use [media queries](https://developers.google.com/web/fundamentals/performance/critical-rendering-path).
-    * Concatenate all CSS files in one.
-    * Remove extra spaces, characters, comments, etc.
-    * Check [Autoprefixer ](https://github.com/postcss/autoprefixer).
+ * Use [media queries](https://developers.google.com/web/fundamentals/performance/critical-rendering-path).
+ * Concatenate all CSS files in one.
+ * Remove extra spaces, characters, comments, etc.
+ * Check [Autoprefixer ](https://github.com/postcss/autoprefixer).
 
 * JavaScript
-    * The ***async*** tag allows the script to be downloaded in the background without blocking.
-    * Move JS scripts to the bottom of the page, right before the </body> tag.
-    * Concatenate all JS files in one.
-    * Remove extra spaces, characters, comments, etc.
+ * The ***async*** tag allows the script to be downloaded in the background without blocking.
+ * Move JS scripts to the bottom of the page, right before the </body> tag.
+ * Concatenate all JS files in one.
+ * Remove extra spaces, characters, comments, etc.
 
 
 ## 9. Reduce Latency with a CDN.
@@ -107,7 +107,7 @@ With the ***preconnect*** label, the browser can set up early connections (such 
 
 ## 14. HTTP/2
 
-HTTP/2 comes with a huge performance benefit. To enable HTTP/2 one needs an SSL certificate and a server that supports HTTP/2.
+HTTP/2 comes with a huge performance benefit. To enable HTTP/2, one needs an SSL certificate and a server that supports HTTP/2.
 
 ## 15. Hotlink Protection
 
@@ -133,19 +133,16 @@ Matching the file type to the optimal platform reduces playback issues:
 
 * `.mp4` is a good quality video with a small file size and is the recommended format for YouTube and Vimeo.
 
-* `.mov` is a high quality video with a large file size. This file type doesn't play on windows without the help of VLC.
+* `.mov` is a high-quality video with a large file size. This file type doesn't play on windows without the help of VLC.
 
 * `.wmv` is a good quality video with a large file size. It is also hard to play this format on Mac machines unless you have VLC.
 
 * `.flv` is a small file size, but need extra steps to bring up the quality. This format doesn’t play natively on most Mac and Windows machines.
 
-There are plenty of programs that will reformat videos, rearranging file settings for faster playback, which helps them stream more smoothly across a multitude of devices. For instance [Handbrake](https://handbrake.fr/), is a useful open source video transcoder.
+There are plenty of programs that will reformat videos, rearranging file settings for faster playback, which helps them stream more smoothly across a multitude of devices. For instance, [Handbrake](https://handbrake.fr/), is a useful open-source video transcoder.
 
 
 ## 18. Automate
 
-Have a [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) pipeline which includes profiling and performance analysis of acceptance and load tests.
+Have a [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) pipeline, which includes profiling and performance analysis of acceptance and load tests.
 
-----
-
-**Aloha, bt3**

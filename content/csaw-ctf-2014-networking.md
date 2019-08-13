@@ -87,6 +87,3 @@ for f in pcap.pcapng-chaosreader/*.html; do cat "${f}" | w3m -dump -T text/html 
 [chaosreader]:http://chaosreader.sourceforge.net/
 
 
-----
-
-**Aloha, bt3**

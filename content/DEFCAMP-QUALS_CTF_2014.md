@@ -392,7 +392,3 @@ netsh firewall set opmode mode=DISABLE.
 [writeups]: https://github.com/ctfs/write-ups/tree/master/d-ctf-2014/misc-100
 [xxd]: http://linuxcommand.org/man_pages/xxd1.html
 [Natas post]: http://bt3gl.github.io/exploiting-the-web-in-20-lessons-natas.html
-
-----
-
-**Aloha, bt3**

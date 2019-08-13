@@ -144,7 +144,3 @@ Yaaay! The flag is **trust_is_risky**! Easy!
 [read()]: http://www.tutorialspoint.com/python/file_read.htm
 
 
-
-----
-
-**Aloha, bt3**

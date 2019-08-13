@@ -15,18 +15,18 @@ Category: h4x0r, dev
 [OpenDNS Investigate](https://investigate.opendns.com/) provides an API that
 allows querying for:
 
-    * Domain categorization
-    * Security information about a domain
-    * Co-occurrences for a domain
-    * Related domains for a domain
-    * Domains related to an IP
-    * Domain tagging dates for a domain
-    * DNS RR history for a domain
-    * WHOIS information
-        - WHOIS information for an email
-        - WHOIS information for a nameserver
-        - Historical WHOIS information for a domain
-    * Latest malicious domains for an IP
+ * Domain categorization
+ * Security information about a domain
+ * Co-occurrences for a domain
+ * Related domains for a domain
+ * Domains related to an IP
+ * Domain tagging dates for a domain
+ * DNS RR history for a domain
+ * WHOIS information
+ - WHOIS information for an email
+ - WHOIS information for a nameserver
+ - Historical WHOIS information for a domain
+ * Latest malicious domains for an IP
 
 To use the Investigate API wrapper import `InvestigateApi` class from `threat_intel.opendns` module:
 
@@ -34,7 +34,7 @@ To use the Investigate API wrapper import `InvestigateApi` class from `threat_in
 from threat_intel.opendns import InvestigateApi
 ```
 
-To initialize the API wrapper you need the API key:
+To initialize the API wrapper, you need the API key:
 
 ```python
 investigate = InvestigateApi("<INVESTIGATE-API-KEY-HERE>")
@@ -62,16 +62,16 @@ will result in:
 
 ```
 {
-    "baidu.com": {"status": 1, "content_categories": ["Search Engines"], "security_categories": []},
-    "google.com": {"status": 1, "content_categories": ["Search Engines"], "security_categories": []},
-    "bibikun.ru": {"status": -1, "content_categories": [], "security_categories": ["Malware"]}
+ "baidu.com": {"status": 1, "content_categories": ["Search Engines"], "security_categories": []},
+ "google.com": {"status": 1, "content_categories": ["Search Engines"], "security_categories": []},
+ "bibikun.ru": {"status": -1, "content_categories": [], "security_categories": ["Malware"]}
 }
 ```
 
 #### Security information about a domain
 
 Calls `security/name/` Investigate API endpoint.
-It takes any Python enumerable with domains, e.g. list, and returns several security parameters
+It takes any Python enumerable with domains, e.g., list, and returns several security parameters
 associated with each domain.
 
 ```python
@@ -83,21 +83,21 @@ will result in:
 
 ```
 {
-  "baidu.com": {
-    "found": true,
-    "handlings": {
-      "domaintagging": 0.00032008666962131285,
-      "blocked": 0.00018876906157154347,
-      "whitelisted": 0.00019697641207465407,
-      "expired": 2.462205150933176e-05,
-      "normal": 0.9992695458052232
-    },
-    "dga_score": 0,
-    "rip_score": 0,
+ "baidu.com": {
+ "found": true,
+ "handlings": {
+ "domaintagging": 0.00032008666962131285,
+ "blocked": 0.00018876906157154347,
+ "whitelisted": 0.00019697641207465407,
+ "expired": 2.462205150933176e-05,
+ "normal": 0.9992695458052232
+ },
+ "dga_score": 0,
+ "rip_score": 0,
 
-    ..
+ ..
 
-  }
+ }
 }
 ```
 
@@ -115,13 +115,13 @@ will result in:
 
 ```
 {
-  "baidu.com": {
-    "found": true,
-    "pfs2": [
-      ["www.howtoforge.de", 0.14108563836506008],
-    }
+ "baidu.com": {
+ "found": true,
+ "pfs2": [
+ ["www.howtoforge.de", 0.14108563836506008],
+ }
 
-    ..
+ ..
 
 }
 ```
@@ -140,11 +140,11 @@ will result in:
 
 ```
 {
-    "tb1": [
-        ["t.co", 11.0],
-        ]
+ "tb1": [
+ ["t.co", 11.0],
+ ]
 
-    ..
+ ..
 
 }
 ```
@@ -164,14 +164,14 @@ will result in:
 
 ```
 {
-    'category': u'Malware',
-    'url': None,
-    'period': {
-        'begin': u'2013-09-16',
-        'end': u'Current'
-        }
+ 'category': u'Malware',
+ 'url': None,
+ 'period': {
+ 'begin': u'2013-09-16',
+ 'end': u'Current'
+ }
 
-    ..
+ ..
 
 }
 ```
@@ -190,21 +190,21 @@ will result in:
 
 ```
 {
-    'features': {
-        'geo_distance_mean': 0.0,
-        'locations': [
-            {
-                'lat': 59.89440155029297,
-                'lon': 30.26420021057129
-            }
-                    ],
-        'rips': 1,
-        'is_subdomain': False,
-        'ttls_mean': 86400.0,
-        'non_routable': False,
-        }
+ 'features': {
+ 'geo_distance_mean': 0.0,
+ 'locations': [
+ {
+ 'lat': 59.89440155029297,
+ 'lon': 30.26420021057129
+ }
+ ],
+ 'rips': 1,
+ 'is_subdomain': False,
+ 'ttls_mean': 86400.0,
+ 'non_routable': False,
+ }
 
-    ..
+ ..
 
 }
 ```
@@ -223,25 +223,25 @@ will result in:
 
 ```
 {
-  "8.8.8.8": {
-    "rrs": [
-      {
-        "name": "8.8.8.8",
-        "type": "A",
-        "class": "IN",
-        "rr": "000189.com.",
-        "ttl": 3600
-      },
-      {
-        "name": "8.8.8.8",
-        "type": "A",
-        "class": "IN",
-        "rr": "008.no-ip.net.",
-        "ttl": 60
-      },
-    }
+ "8.8.8.8": {
+ "rrs": [
+ {
+ "name": "8.8.8.8",
+ "type": "A",
+ "class": "IN",
+ "rr": "000189.com.",
+ "ttl": 3600
+ },
+ {
+ "name": "8.8.8.8",
+ "type": "A",
+ "class": "IN",
+ "rr": "008.no-ip.net.",
+ "ttl": 60
+ },
+ }
 
-    ..
+ ..
 
 }
 ```
@@ -263,18 +263,18 @@ will result in:
 
 ```
 {
-    "dns-admin@google.com": {
-        "totalResults": 500,
-        "moreDataAvailable": true,
-        "limit": 500,
-        "domains": [
-            {
-                "domain": "0emm.com",
-                "current": true
-            },
-            ..
-        ]
-    }
+ "dns-admin@google.com": {
+ "totalResults": 500,
+ "moreDataAvailable": true,
+ "limit": 500,
+ "domains": [
+ {
+ "domain": "0emm.com",
+ "current": true
+ },
+ ..
+ ]
+ }
 }
 ```
 
@@ -293,18 +293,18 @@ will result in:
 
 ```
 {
-    "ns2.google.com": {
-        "totalResults": 500,
-        "moreDataAvailable": true,
-        "limit": 500,
-        "domains": [
-            {
-                "domain": "46645.biz",
-                "current": true
-            },
-            ..
-        ]
-    }
+ "ns2.google.com": {
+ "totalResults": 500,
+ "moreDataAvailable": true,
+ "limit": 500,
+ "domains": [
+ {
+ "domain": "46645.biz",
+ "current": true
+ },
+ ..
+ ]
+ }
 }
 ```
 
@@ -323,14 +323,14 @@ will result in:
 
 ```
 {
-    "administrativeContactFax": null,
-    "whoisServers": null,
-    "addresses": [
-        "1600 amphitheatre parkway",
-        "please contact contact-admin@google.com, 1600 amphitheatre parkway",
-        "2400 e. bayshore pkwy"
-    ],
-    ..
+ "administrativeContactFax": null,
+ "whoisServers": null,
+ "addresses": [
+ "1600 amphitheatre parkway",
+ "please contact contact-admin@google.com, 1600 amphitheatre parkway",
+ "2400 e. bayshore pkwy"
+ ],
+ ..
 }
 ```
 
@@ -349,18 +349,18 @@ will result in:
 
 ```
 {
-    '5esb.biz':[
-        {
-            u'registrantFaxExt':u'',
-            u'administrativeContactPostalCode':u'656448',
-            u'zoneContactCity':u'',
-            u'addresses':[
-                u'nan qu hua yuan xiao he'
-            ],
-            ..
-        },
-        ..
-    ]
+ '5esb.biz':[
+ {
+ u'registrantFaxExt':u'',
+ u'administrativeContactPostalCode':u'656448',
+ u'zoneContactCity':u'',
+ u'addresses':[
+ u'nan qu hua yuan xiao he'
+ ],
+ ..
+ },
+ ..
+ ]
 }
 ```
 
@@ -379,13 +379,13 @@ will result in:
 
 ```
 {
-    [
-        '7ltd.biz',
-        'co0s.ru',
-        't0link.in',
-    ]
+ [
+ '7ltd.biz',
+ 'co0s.ru',
+ 't0link.in',
+ ]
 
-    ..
+ ..
 }
 ```
 
@@ -397,13 +397,13 @@ will result in:
 [API](https://www.virustotal.com/en/documentation/public-api/) that makes it
 possible to query for the reports about:
 
-    * Domains
-    * URLs
-    * IPs
-    * File hashes
-    * File Upload
-    * Live Feed
-    * Advanced search
+ * Domains
+ * URLs
+ * IPs
+ * File hashes
+ * File Upload
+ * Live Feed
+ * Advanced search
 
 To use the VirusTotal API wrapper import `VirusTotalApi` class from `threat_intel.virustotal` module:
 
@@ -411,7 +411,7 @@ To use the VirusTotal API wrapper import `VirusTotalApi` class from `threat_inte
 from threat_intel.virustotal import VirusTotalApi
 ```
 
-To initialize the API wrapper you need the API key:
+To initialize the API wrapper, you need the API key:
 
 ```python
 vt = VirusTotalApi("<VIRUSTOTAL-API-KEY-HERE>")
@@ -430,7 +430,7 @@ When using the public API your standard request rate allows you too put maximum 
 With private API you are able to put up to 25 resources per call. That is also the default value if you
 don't pass the `resources_per_req` parameter.
 
-Of course, when calling the API wrapper methods in the `VirusTotalApi` class you can pass as many resources
+Of course, when calling the API wrapper methods in the `VirusTotalApi` class, you can pass as many resources
 as you want and the wrapper will take care of producing as many API calls as necessary to satisfy the request rate.
 
 Similarly to OpenDNS API wrapper, you can also specify the file name where the responses will be cached:
@@ -453,18 +453,18 @@ will result in:
 
 ```
 {
-  "baidu.com": {
-    "undetected_referrer_samples": [
-      {
-        "positives": 0,
-        "total": 56,
-        "sha256": "e3c1aea1352362e4b5c008e16b03810192d12a4f1cc71245f5a75e796c719c69"
-      }
-    ],
+ "baidu.com": {
+ "undetected_referrer_samples": [
+ {
+ "positives": 0,
+ "total": 56,
+ "sha256": "e3c1aea1352362e4b5c008e16b03810192d12a4f1cc71245f5a75e796c719c69"
+ }
+ ],
 
-    ..
+ ..
 
-    }
+ }
 }
 ```
 
@@ -483,24 +483,24 @@ will result in:
 
 ```
 {
-  "http://www.google.com": {
-    "permalink": "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1423344006/",
-    "resource": "http://www.google.com",
-    "url": "http://www.google.com/",
-    "response_code": 1,
-    "scan_date": "2015-02-07 21:20:06",
-    "scan_id": "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1423344006",
-    "verbose_msg": "Scan finished, scan information embedded in this object",
-    "filescan_id": null,
-    "positives": 0,
-    "total": 62,
-    "scans": {
-      "CLEAN MX": {
-        "detected": false,
-        "result": "clean site"
-      },
-    }
-  ..
+ "http://www.google.com": {
+ "permalink": "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1423344006/",
+ "resource": "http://www.google.com",
+ "url": "http://www.google.com/",
+ "response_code": 1,
+ "scan_date": "2015-02-07 21:20:06",
+ "scan_id": "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1423344006",
+ "verbose_msg": "Scan finished, scan information embedded in this object",
+ "filescan_id": null,
+ "positives": 0,
+ "total": 62,
+ "scans": {
+ "CLEAN MX": {
+ "detected": false,
+ "result": "clean site"
+ },
+ }
+ ..
 
 }
 ```
@@ -522,8 +522,8 @@ You can request the file reports passing a list of hashes (md5, sha1 or sha2):
 
 ```python
 file_hashes = [
-    "99017f6eebbac24f351415dd410d522d",
-    "88817f6eebbac24f351415dd410d522d"
+ "99017f6eebbac24f351415dd410d522d",
+ "88817f6eebbac24f351415dd410d522d"
 ]
 
 vt.get_file_reports(file_hashes)
@@ -533,15 +533,15 @@ will result in:
 
 ```
 {
-  "88817f6eebbac24f351415dd410d522d": {
-    "response_code": 0,
-    "resource": "88817f6eebbac24f351415dd410d522d",
-    "verbose_msg": "The requested resource is not among the finished, queued or pending scans"
-  },
-  "99017f6eebbac24f351415dd410d522d": {
-    "scan_id": "52d3df0ed60c46f336c131bf2ca454f73bafdc4b04dfa2aea80746f5ba9e6d1c-1423261860",
-    "sha1": "4d1740485713a2ab3a4f5822a01f645fe8387f92",
-  }
+ "88817f6eebbac24f351415dd410d522d": {
+ "response_code": 0,
+ "resource": "88817f6eebbac24f351415dd410d522d",
+ "verbose_msg": "The requested resource is not among the finished, queued or pending scans"
+ },
+ "99017f6eebbac24f351415dd410d522d": {
+ "scan_id": "52d3df0ed60c46f336c131bf2ca454f73bafdc4b04dfa2aea80746f5ba9e6d1c-1423261860",
+ "sha1": "4d1740485713a2ab3a4f5822a01f645fe8387f92",
+ }
 
  ..
 
@@ -560,8 +560,8 @@ You can request the file reports passing a list of hashes (md5, sha1 or sha2):
 
 ```python
 file_hashes = [
-    "99017f6eebbac24f351415dd410d522d",
-    "88817f6eebbac24f351415dd410d522d"
+ "99017f6eebbac24f351415dd410d522d",
+ "88817f6eebbac24f351415dd410d522d"
 ]
 
 vt.get_file_behaviour(file_hashes)
@@ -574,8 +574,8 @@ You can request the file reports passing a list of hashes (md5, sha1 or sha2):
 
 ```python
 file_hashes = [
-    "99017f6eebbac24f351415dd410d522d",
-    "88817f6eebbac24f351415dd410d522d"
+ "99017f6eebbac24f351415dd410d522d",
+ "88817f6eebbac24f351415dd410d522d"
 ]
 
 vt.get_file_network_traffic(file_hashes)
@@ -588,8 +588,8 @@ You can request the file reports passing a list of hashes (md5, sha1 or sha2):
 
 ```python
 file_hashes = [
-    "99017f6eebbac24f351415dd410d522d",
-    "88817f6eebbac24f351415dd410d522d"
+ "99017f6eebbac24f351415dd410d522d",
+ "88817f6eebbac24f351415dd410d522d"
 ]
 
 vt.get_file_download(file_hashes)
@@ -609,46 +609,46 @@ will result in:
 
 ```
 {
-  "90.156.201.27": {
-    "asn": "25532",
-    "country": "RU",
-    "response_code": 1,
-    "as_owner": ".masterhost autonomous system",
-    "verbose_msg": "IP address found in dataset",
-    "resolutions": [
-      {
-        "last_resolved": "2013-04-01 00:00:00",
-        "hostname": "027.ru"
-      },
-      {
-        "last_resolved": "2015-01-20 00:00:00",
-        "hostname": "600volt.ru"
-      },
+ "90.156.201.27": {
+ "asn": "25532",
+ "country": "RU",
+ "response_code": 1,
+ "as_owner": ".masterhost autonomous system",
+ "verbose_msg": "IP address found in dataset",
+ "resolutions": [
+ {
+ "last_resolved": "2013-04-01 00:00:00",
+ "hostname": "027.ru"
+ },
+ {
+ "last_resolved": "2015-01-20 00:00:00",
+ "hostname": "600volt.ru"
+ },
 
-      ..
+ ..
 
-    ],
-    "detected_urls": [
-      {
-        "url": "http://shop.albione.ru/",
-        "positives": 2,
-        "total": 52,
-        "scan_date": "2014-04-06 11:18:17"
-      },
-      {
-        "url": "http://www.orlov.ru/",
-        "positives": 3,
-        "total": 52,
-        "scan_date": "2014-03-05 09:13:31"
-      }
-    ],
-  },
+ ],
+ "detected_urls": [
+ {
+ "url": "http://shop.albione.ru/",
+ "positives": 2,
+ "total": 52,
+ "scan_date": "2014-04-06 11:18:17"
+ },
+ {
+ "url": "http://www.orlov.ru/",
+ "positives": 3,
+ "total": 52,
+ "scan_date": "2014-03-05 09:13:31"
+ }
+ ],
+ },
 
-  "198.51.132.80": {
+ "198.51.132.80": {
 
-    ..
+ ..
 
-  }
+ }
 }
 ```
 
@@ -662,7 +662,7 @@ vt.get_url_distribution()
 
 #### Hash live feed endpoint
 
-Calls `file/distribution` VirusTotal API endpoint. Use to get a live a feed with the latest Hashes submitted to VirusTotal.
+Calls `file/distribution` VirusTotal API endpoint. Use to get a live feed with the latest Hashes submitted to VirusTotal.
 
 ```python
 vt.get_file_distribution()
@@ -714,8 +714,8 @@ call `get_bin_test` method and pass enumerable with the hashes you want to test:
 
 ```python
 file_hashes = [
-    "99017f6eebbac24f351415dd410d522d",
-    "88817f6eebbac24f351415dd410d522d"
+ "99017f6eebbac24f351415dd410d522d",
+ "88817f6eebbac24f351415dd410d522d"
 ]
 
 ss.get_bin_test(file_hashes)
@@ -740,7 +740,3 @@ $ sudo pip install tox
 $ make test
 ```
 
-
-----
-
-**Aloha, bt3**

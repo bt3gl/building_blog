@@ -1,5 +1,5 @@
 Title: Getting started with LAMP and CodeIgniter 
-Date: 2015-02-25
+Date: 2014-02-25
 Category: DevOps
 
 
@@ -12,12 +12,12 @@ We will use a web interface to access data in our database:
 * Login with your root login/password (set in the installation above): ```http://localhost/phpmyadmin```.
 The left-hand column contains a list of all of the databases you currently have.
 
-    - mysql: contains information about the MySQL database server.
-    - information_schema: contains information about all of the other databases on your computer.
+ - mysql: contains information about the MySQL database server.
+ - information_schema: contains information about all of the other databases on your computer.
 
 * In the Databases interface you are presented with a list of all of the databases.
 * Above that list there should be a form labeled “Create new database” with a text field.
-* Create tables within. Chose the types of your data.  Every table should always have an id column (auto-incrementing integer, meaning that each new record will be automatically assigned an id value, starting at 1). You can do this by selecting A_I checkbox.
+* Create tables within. Chose the types of your data. Every table should always have an id column (auto-incrementing integer, meaning that each new record will be automatically assigned an id value, starting at 1). You can do this by selecting A_I checkbox.
 * Add some data (using insert). The database is located at 
 ```/var/lib/mysql```.
 
@@ -69,8 +69,8 @@ Functions:
 ```
 <? php
 function print_this($name){
-    echo 'Print this ' . $name . '.';
-    return 'nice printing';
+ echo 'Print this ' . $name . '.';
+ return 'nice printing';
 }
 extra_print = print_this('aaaaa');
 print(extra_print);
@@ -108,12 +108,12 @@ Multi-arrays:
 
 ```
 $cars = array
-  (
-  array("Volvo",22,18),
-  array("BMW",15,13),
-  array("Saab",5,2),
-  array("Land Rover",17,15)
-  );
+ (
+ array("Volvo",22,18),
+ array("BMW",15,13),
+ array("Saab",5,2),
+ array("Land Rover",17,15)
+ );
 ```
 
 Loop foreach:
@@ -175,7 +175,7 @@ A simplified version of Facebook profile view:
 
 The basis/foundation of your web app.
 
-For PHP, we can download CodeIgniter, rename to our project name, copy it to the /var/ww folder and open it in the localhost/folder. We can modify the files for our app now.
+For PHP, we can download CodeIgniter, rename to our project name, copy it to the /var/www folder, and open it in the localhost/folder. We can modify the files for our app now.
 
 If you get the 403 forbidden error, check the permissions and then type:
 ```
@@ -183,7 +183,7 @@ restorecon -r /var/www/html
 ```
 (restorecon is used to reset the security context (type) (extended attributes) on one or more files).
 
-The use guide can be seen at 
+The user guide can be seen at 
 ```http://localhost/APP_NAME/user_guide/```
 
 ### CodeIgniter Basics
@@ -254,14 +254,10 @@ The second responsibility of models is to interact with our database. We need to
 function get_all_entries() { //$query = $this->db->get('todos'); $query = $this->db->order_by('order','ASC')->get('todos'); $results = array(); foreach ($query->result() as $result) { $results[] = $result; } return $results; }
 ```
 
-In this snippet we query our database by order, using ascending order.
+In this snippet, we query our database by order, using ascending order.
 
 
 ---
 Enjoy! This article was originally posted [here](https://coderwall.com/p/5ltrxq/lamp-and-codeigniter).
 
 
-
-----
-
-**Aloha, bt3**

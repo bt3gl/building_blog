@@ -8,14 +8,14 @@ About a year ago, Google published a seminal paper named [ImageNet Classificatio
 
 Convolutional Neural Networks take an image (a vector of pixels) as input, and transform the image through several layers of nonlinear functions (kind of how [kernels](https://en.wikipedia.org/wiki/Kernel_(image_processing)) work). The **dream images** are just a **gradient ascent process** that minimizes the **L2 norm** of activation functions of some deep neural network layer. 
 
-More specifically, in the task of image classification, the neurons have the follow functions:
+More specifically, in the task of image classification, the neurons have the following functions:
 
 * **lower levels** reveal edge-like regions in the images (such as corners, lines),
 * **intermediate layers** represent basic shapes and components of objects (such as eyes, boxes),
 * **the final layers** compose the complete interpretation (such as a dog), but in a [psychedelic way](https://www.reddit.com/r/deepdream/comments/3cawxb/what_are_deepdream_images_how_do_i_make_my_own/). 
 
 
-Google released the code of its [GoogLeNet model](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet), which is trained trained on [ImageNet dataset](http://www.image-net.org/).  I slightly adapted it [here](https://github.com/bt3gl/Machine-Learning-Resources/tree/master/Deep_Art/deepdream), adding some instructions on how one can play with it in an AWS GPU instance.
+Google released the code of its [GoogLeNet model](https://github.com/BVLC/caffe/tree/master/models/bvlc_googlenet), which is trained trained on [ImageNet dataset](http://www.image-net.org/). I slightly adapted it [here](https://github.com/bt3gl/Machine-Learning-Resources/tree/master/Deep_Art/deepdream), adding some instructions on how one can play with it in an AWS GPU instance.
 
 
 Examples of **deep dream** with the following layers:
@@ -36,7 +36,3 @@ Examples of **deep dream** with the following layers:
 ![dream](./dream/1.jpg){:height="300px" width="400px"}
 
 
-
-----
-
-**Aloha, bt3**

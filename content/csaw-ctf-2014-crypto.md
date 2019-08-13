@@ -297,8 +297,3 @@ If you like this solution, take a look at my  [exploit for this problem].
 [Unicode]: http://en.wikipedia.org/wiki/Unicode
 [encode()]: https://docs.python.org/2/library/stdtypes.html#str.encode
 
-
-
-----
-
-**Aloha, bt3**

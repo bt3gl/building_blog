@@ -18,7 +18,3 @@ If you like astrophysics, check out some of my IDL and Python work:
 
 * [Calculating the Diameter of the Sun](https://github.com/bt3gl/Calculating_the_Diameter_of_Sun): IDL Source code for data reduction and analysis. Here we analyze interferometric radio data from the Sun to be able to obtain its angular diameter.
 
-
-----
-
-**Aloha, bt3**

@@ -4,23 +4,23 @@ Category: life
 Tags: Linux, Python, Unicode, tr, ifconfig, ssh, netcat, Stripe
 
 
- Being a Linux user is, above all, a *life style*. Interestingly, more and more people have been joining this community, keeping it dynamic and organic.
+ Being a Linux user is, above all, a *lifestyle*. Interestingly, more and more people have been joining this community, keeping it dynamic and organic.
 
- Linux has been in my life since my high school years and  I'm still constantly inspired by the fact that it has not lost any of its appeals. There is always something new or deeper to be learned. Linux is *the* tool for those who choose to spend their excess of curiosity flying around bytes.
+ Linux has been in my life since my high school years, and I'm still always inspired by the fact that it has not lost any of its appeals. There is always something new or deeper to be learned. Linux is *the* tool for those who choose to spend their excess of curiosity flying around bytes.
 
 With the novice in mind, this blog post is my introduction to the Linux machinery, containing some of my favorite tricks. I hope you enjoy this exciting adventure of taking control of *The Machine*.
 
 
-**Disclaimer I**: Keep in mind that the truly way for mastering Linux is making the **man** and **help** pages in the command line your best friends:
+**Disclaimer I**: Keep in mind that the true way for mastering Linux is making the **man** and **help** pages in the command line your best friends:
 
 ```
 $ man <COMMAND>
 ```
 
 
-**Disclaimer II**: The Linux distributions I'm current using are Fedora and Kali (Debian-based). You should be comfortable exploring several distributions until you find your favorite. You should definitely aim to go beyond Ubuntu.
+**Disclaimer II**: The Linux distributions I'm currently using are Fedora and Kali (Debian-based). You should be comfortable exploring several distributions until you find your favorite. You should aim to go beyond Ubuntu.
 
-**Disclaimer III**: This guide is written for  [bash](http://www.gnu.org/software/bash/). I encourage you to go further and search for your favorite shell.
+**Disclaimer III**: This guide is written for [bash](http://www.gnu.org/software/bash/). I encourage you to go further and search for your favorite shell.
 
 
 ------
@@ -43,8 +43,8 @@ $ ls /
 
 ```
 $ df -h .
-Filesystem              Type  Size  Used Avail Use% Mounted on
-/dev/mapper/fedora-home ext4  127G   62G   59G  51% /home
+Filesystem Type Size Used Avail Use% Mounted on
+/dev/mapper/fedora-home ext4 127G 62G 59G 51% /home
 ```
 
 
@@ -61,7 +61,7 @@ Filesystem              Type  Size  Used Avail Use% Mounted on
 * The directory also contains entries that are created by the **udev** system, which creates and manages device nodes on Linux (creating them dynamically when devices are found).
 
 ### /var
-* **/var** stands for *variable* and  contains files that are expected to be changing in size and content as the system is running.
+* **/var** stands for *variable* and contains files that are expected to be changing in size and content as the system is running.
 
 * For example, the system log files are located at **/var/log**, the packages and database files are located at **/var/lib**, the print queues are located at **/var/spool**, temporary files stay inside **/var/tmp**, and networks services can be found in subdirectories such as **/var/ftp** and **/var/www**.
 
@@ -69,16 +69,16 @@ Filesystem              Type  Size  Used Avail Use% Mounted on
 
 * **/etc** is short for *et cetera* and contains the system configuration files. It contains no binary programs, but it might have some executable scripts.
 
-* For instance, the file **/etc/resolv.conf** tells the system where to go on the network to obtain the host name of some IP address (*i.e.* DNS).
+* For instance, the file **/etc/resolv.conf** tells the system where to go on the network to obtain the hostname of some IP address (*i.e.* DNS).
 
 * The **/etc/passwd** file is the authoritative list of users on any Unix system. It does not contain the passwords: the encrypted password information was migrated into **/etc/shadow**.
 
-* The **/etc/hosts** contains  a list of hostname to IP address mappings, which can be used to assign names to servers,  independently of the public DNS service.
+* The **/etc/hosts** contains a list of hostname to IP address mappings, which can be used to assign names to servers, independently of the public DNS service.
 
 ### /lib
 * **/lib** contains libraries (common code shared by applications and needed for them to run) for essential programs in **/bin** and **/sbin**.
 
-* This library filenames either start with ```ld``` or ```lib```  and are  called *dynamically loaded libraries* (or shared libraries).
+* This library filenames either start with ```ld``` or ```lib``` and are called *dynamically loaded libraries* (or shared libraries).
 
 
 ### /boot
@@ -87,15 +87,15 @@ Filesystem              Type  Size  Used Avail Use% Mounted on
 
 * For every alternative kernel installed on the system, there are four files:
 
-    * ```vmlinuz```: the compressed Linux kernel, required for booting.
+ * ```vmlinuz```: the compressed Linux kernel, required for booting.
 
-    * ```initramfs``` or ```initrd```: the initial RAM filesystem, required for booting.
+ * ```initramfs``` or ```initrd```: the initial RAM filesystem, required for booting.
 
-    * ```config```: the kernel configuration file, used for debugging.
+ * ```config```: the kernel configuration file, used for debugging.
 
-    * ```system.map```: the kernel symbol table.
+ * ```system.map```: the kernel symbol table.
 
-    * [GRUB](http://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-21-grub-bootloader-0154965/) files can also be found here (in /boot/grub/grub.cfg)
+ * [GRUB](http://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-21-grub-bootloader-0154965/) files can also be found here (in /boot/grub/grub.cfg)
 
 
 
@@ -103,39 +103,39 @@ Filesystem              Type  Size  Used Avail Use% Mounted on
 * Optional directory for application software packages, usually installed manually by the user.
 
 ### /tmp
-* **/tmp** contains temporary files that are  erased in a reboot.
+* **/tmp** contains temporary files that are erased in a reboot.
 
 ### /usr
 
 * **/usr** contains multi-user applications, utilities and data. The common subdirectories are:
-    * **/usr/include**: header files used to compile applications.
+ * **/usr/include**: header files used to compile applications.
 
-    * **usr/lib**: libraries for programs in **usr/(s)bin**.
+ * **usr/lib**: libraries for programs in **usr/(s)bin**.
 
-    * **usr/sbin**: non-essential system binaries, such as system daemons. In  modern Linux systems, this is actually linked together to **/sbin**.
+ * **usr/sbin**: non-essential system binaries, such as system daemons. In modern Linux systems, this is linked together to **/sbin**.
 
-    * **usr/bin**: primary directory of executable commands of the system.
+ * **usr/bin**: primary directory of executable commands of the system.
 
-    * **usr/share**: shaped data used by applications, generally architecture-independent.
+ * **usr/share**: shaped data used by applications, generally architecture-independent.
 
-    * **usr/src**: source code, usually for the Linux kernel.
+ * **usr/src**: source code, usually for the Linux kernel.
 
-    * **usr/local**: data and programs specific to the local machine,  things that apply to a computer rather than things provided by the operating system go.
+ * **usr/local**: data and programs specific to the local machine, things that apply to a computer rather than things provided by the operating system go.
 
 ### /proc
 
-* **/proc** contains dynamically-created virtual filesystem that contains data about each running process and about the system as a whole.
+* **/proc** contains dynamically-created virtual filesystem that contains data about each running process and the system as a whole.
 
 ---
 ## /dev Specials
 
-* There exist files provided by the operating system that do not represent any physical device, but provide a way to access special features:
+* There exist files provided by the operating system that does not represent any physical device, but provide a way to access special features:
 
-    * **/dev/null** ignores everything written to it. It's convenient for discarding the unwanted output.
+ * **/dev/null** ignores everything written to it. It's convenient for discarding the unwanted output.
 
-    * **/dev/zero** contains an *infinite* number of zero bytes, which can be useful for creating files of a specified length.
+ * **/dev/zero** contains an *infinite* number of zero bytes, which can be useful for creating files of a specified length.
 
-    * **/dev/urandom** and **/dev/random** contain an infinite stream of operating-system-generated random numbers, available to any application that wants to read them. The difference between them is that the second guarantees strong randomness (it will wait until enough is available) and so it should be used for encryption, while the former can be used for games.
+ * **/dev/urandom** and **/dev/random** contain an infinite stream of operating-system-generated random numbers, available to any application that wants to read them. The difference between them is that the second guarantees strong randomness (it will wait until enough is available) and so it should be used for encryption, while the former can be used for games.
 
 * For example, to output random bytes, you can type:
 
@@ -148,7 +148,7 @@ $ cat /dev/urandom | strings
 ## The Kernel
 
 
-*  The **Linux Kernel** is the program that manages *input/output requests* from software, and translates them into *data processing instructions* for the *central processing unit* (CPU).
+* The **Linux Kernel** is the program that manages *input/output requests* from software, and translates them into *data processing instructions* for the *central processing unit* (CPU).
 
 * To find the Kernel information you can type:
 
@@ -157,7 +157,7 @@ $ cat /proc/version
 Linux version 3.14.9-200.fc20.x86_64 (mockbuild@bkernel02.phx2.fedoraproject.org) (gcc version 4.8.3 20140624 (Red Hat 4.8.3-1) (GCC) ) #1 SMP Thu Jun 26 21:40:51 UTC 2014
 ```
 
-* You can also print similar system information with  the specific command to print system information, ```uname```. The flag **-a** stands for all:
+* You can also print similar system information with the specific command to print system information, ```uname```. The flag **-a** stands for all:
 
 ```
  $ uname -a
@@ -171,7 +171,7 @@ $ rpm -qa kernel | sort -V | tail -n 1
 $ uname -r
 ```
 
-* Additionally, for Fedora (and RPM systems) you can check  what kernels are installed with:
+* Additionally, for Fedora (and RPM systems) you can check what kernels are installed with:
 
 ```
 $ rpm -q kernel
@@ -225,11 +225,11 @@ $ ps -e
 $ top
 ```
 
-* I particularly like [htop](http://hisham.hm/htop/)  over top, which needs to be installed if you want to use it.
+* I particularly like [htop](http://hisham.hm/htop/) over the top, which needs to be installed if you want to use it.
 
 ### kill
 
-* To stop running a command you can use **kill**. This will send a message called  **signal** to the program. There are [64 different signals](http://www.linux.org/threads/kill-commands-and-signals.4423/), some having   distinct meanings from *stop running*:
+* To stop running a command you can use **kill**. This will send a message called **signal** to the program. There are [64 different signals](http://www.linux.org/threads/kill-commands-and-signals.4423/), some having distinct meanings from *stop running*:
 
 ```
 $ kill <SIGNAL or OPTION> <ID or PID>
@@ -239,7 +239,7 @@ $ kill <SIGNAL or OPTION> <ID or PID>
 
 * The default signal sent by kill is **SIGTERM** (15), telling the program that you want it to quit. This is just a request, and the program can choose to ignore it. **SIGHUP** (1) is a less secure way of killing the process.
 
-* The signal **SIGKILL** is mandatory and cause the immediate end of the process. The only exception is if the program is in the middle of making a request to the operating system, *i.e.* a system call). This is because the request needs to finish first. This is the most **unsafe** way to kill the process (check [this post from Stripe's Game Day](https://stripe.com/blog/game-day-exercises-at-stripe)).  **SIGKILL** is the 9th signal in the list and it is usually sent with:
+* The signal **SIGKILL** is mandatory and cause the immediate end of the process. The only exception is if the program is in the middle of making a request to the operating system, *i.e.,* a system call). This is because the request needs to finish first. This is the most **unsafe** way to kill the process (check [this post from Stripe's Game Day](https://stripe.com/blog/game-day-exercises-at-stripe)). **SIGKILL** is the 9th signal in the list, and it is usually sent with:
 
 ```
 $ kill -9 <ID or PID>
@@ -297,7 +297,7 @@ $ uptime
 
 
 ### set and env
-*  You can see the *environment variables and configuration* in your system with:
+* You can see the *environment variables and configuration* in your system with:
 
 ```
 $ set
@@ -320,7 +320,7 @@ $ export VAR=<value>
 $ echo $VAR
 ```
 
-* The **PATH** (search path) is the list of directories that the shell looks in to try to find a particular command. For example, when you type ```ls``` it will look at ```/bin/ls```. The path is stored in the variable **PATH**, which is a list of directory names separated by colons and it's coded inside **./bashrc**. To export a new path you can do:
+* The **PATH** (search path) is the list of directories that the shell looks in to try to find a particular command. For example, when you type ```ls``` it will look at ```/bin/ls```. The path is stored in the variable **PATH**, which is a list of directory names separated by colons, and it's coded inside **./bashrc**. To export a new path you can do:
 
 ```
 $ export PATH=$PATH:/<DIRECTORY>
@@ -335,15 +335,15 @@ $ export PATH=$PATH:/<DIRECTORY>
 
 
 ---
-##  The "~/." Files (dot-files)
+## The "~/." Files (dot-files)
 
-*  The leading dot in a file is used as an indicator to not list these files normally, but only when they are specifically requested. The reason is that, generally, dot-files are used to store configuration and sensitive information for  applications.
+* The leading dot in a file is used as an indicator not to list these files typically, but only when they are specifically requested. The reason is that, generally, dot-files are used to store configuration and sensitive information for applications.
 
 ### ~/.bashrc
 
-* **~/.bashrc** contains scripts and variables that are executed when bash is invoked.
+* **~/.bashrc** contains scripts and variables that are executed when Bash is invoked.
 
-* It's a good experience to customize your **~/.bashrc**. Just google for samples, or take a look at this [site dedicated for sharing dot-files](http://dotfiles.org), or at  [mine](https://github.com/bt3gl/Dotfiles-and-Bash-Examples/blob/master/configs/bashrc). Don't forget to ```source``` your **./bashrc** file every time you make a change (opening a new terminal has the same effect):
+* It's a good experience to customize your **~/.bashrc**. Just google for samples, or take a look at this [site dedicated for sharing dot-files](http://dotfiles.org), or at [mine](https://github.com/bt3gl/Dotfiles-and-Bash-Examples/blob/master/configs/bashrc). Don't forget to ```source``` your **./bashrc** file every time you make a change (opening a new terminal has the same effect):
 
 ```
 $ source ~/.bashrc
@@ -351,9 +351,9 @@ $ source ~/.bashrc
 
 ### Sensitive dot-files
 
-* If you use  cryptographic programs such as [ssh](http://en.wikipedia.org/wiki/Secure_Shell) and [gpg](https://www.gnupg.org/), you'll find that they keep a lot of information in the directories **~/.ssh** and **~/.gnupg**.
+* If you use cryptographic programs such as [ssh](http://en.wikipedia.org/wiki/Secure_Shell) and [gpg](https://www.gnupg.org/), you'll find that they keep a lot of information in the directories **~/.ssh** and **~/.gnupg**.
 
-* If you are a *Firefox* user, the **~/.mozilla** directory contains your  web browsing history, bookmarks, cookies, and any saved passwords.
+* If you are a *Firefox* user, the **~/.mozilla** directory contains your web browsing history, bookmarks, cookies, and any saved passwords.
 
 * If you use [Pidgin](http://pidgin.im/), the **~/.purple** directory (after the name of [the IM library](https://developer.pidgin.im/wiki/WhatIsLibpurple)) contains private information. This includes sensitive cryptographic keys for users of cryptographic extensions to Pidgin such as [Off-the-Record](https://otr.cypherpunks.ca/).
 
@@ -362,17 +362,17 @@ $ source ~/.bashrc
 ## File Descriptors
 
 * A **file descriptor** (FD) is a number indicator for accessing an I/O resource. The values are the following:
-    * fd 0: stdin (standard input).
-    * fd 1: stdout (standard output).
-    * fd 2: stderr (standard error).
+ * fd 0: stdin (standard input).
+ * fd 1: stdout (standard output).
+ * fd 2: stderr (standard error).
 
-* This naming is used for manipulation of these resources  in the command line. For example,  to send an **input** to a program you use **<**:
+* This naming is used for manipulation of these resources in the command line. For example, to send an **input** to a program, you use **<**:
 
 ```
 $ <PROGRAM> < <INPUT>
 ```
 
-* To send a program's **output** somewhere else than the terminal (such as a file), you use **>**. For example, to just  discard the output:
+* To send a program's **output** somewhere else than the terminal (such as a file), you use **>**. For example, to just discard the output:
 
 ```
 $ <PROGRAM> > /dev/null
@@ -384,7 +384,7 @@ $ <PROGRAM> > /dev/null
 $ <PROGRAM> 2> <FILE>
 ```
 
-* To send the program's error messages to the same place where **stdout** is going, *i.e.* merging it into a single stream (this works greatly for pipelines):
+* To send the program's error messages to the same place where **stdout** is going, *i.e.* merging it into a single stream (this works great for pipelines):
 
 ```
 $ <PROGRAM> 2>&1
@@ -399,25 +399,25 @@ $ <PROGRAM> 2>&1
 ### chmod
 * A resource can have three permissions: read, write, and execute:
 
-    * For a file resource, these permission are: read the file, to modify the file, and to run the file as a program.
+ * For a file resource, these permission are: read the file, to modify the file, and to run the file as a program.
 
-    * For a directory, these permissions are: the ability to list the directory's contents, to create and delete files inside the directory, and to access files within the directory.
+ * For a directory, these permissions are the ability to list the directory's contents, to create and delete files inside the directory, and to access files within the directory.
 
 * To change the permissions you use the command ```chmod```.
 
 
 ### chown and chgrp
 
-* Unix permissions model  does not support *access control lists*  allowing a file to be shared with an enumerated list of users for a particular purpose. Instead, the admin needs to put all the users in a group and make the file  to belong to that group. File owners cannot share files with an arbitrary list of users.
+* Unix permissions model does not support *access control lists* allowing a file to be shared with an enumerated list of users for a particular purpose. Instead, the admin needs to put all the users in a group and make the file to belong to that group. File owners cannot share files with an arbitrary list of users.
 
 
 * There are three agents relate to the resource: user, group, and all. Each of them can have separated permissions to read, write, and execute.
 
 * To change the owner of a resource you use ```chown```. There are two ways of setting permissions with chmod:
 
-    * A numeric form using octal modes: read = 4, write = 2, execute = 1, where you multiply by user = x100, group = x10, all = x1, and sum the values corresponding to the granted permissions. For example 755 = 700 + 50 + 5 = rwxr-xr-x: ``` $ chmod 774 <FILENAME>```
+ * A numeric form using octal modes: read = 4, write = 2, execute = 1, where you multiply by user = x100, group = x10, all = x1, and sum the values corresponding to the granted permissions. For example 755 = 700 + 50 + 5 = rwxr-xr-x: ``` $ chmod 774 <FILENAME>```
 
-    * An abbreviated letter-based form using symbolic modes:  u, g, or a, followed by a plus or minus, followed by a letter r, w, or x. This means that u+x "grants user execute permission", g-w  "denies group write permission", and a+r  "grants all read permission":```$ chmod g-w <FILENAME>```.
+ * An abbreviated letter-based form using symbolic modes: u, g, or a, followed by a plus or minus, followed by a letter r, w, or x. This means that u+x "grants user execute permission", g-w "denies group write permission", and a+r "grants all read permission":```$ chmod g-w <FILENAME>```.
 
 
 * To change the group you use ```chgrp```, using the same logic as for chmod.
@@ -435,7 +435,7 @@ $ ls -l
 
 ---
 
-#  Shell Commands and Tricks
+# Shell Commands and Tricks
 
 ## Reading Files
 
@@ -449,7 +449,7 @@ $ cat <FILENAME>
 
 ### tac
 
-* Prints the inverse of the content of a file  in the terminal (starting from the bottom):
+* Prints the inverse of the content of a file in the terminal (starting from the bottom):
 
 ```
 $ tac <FILENAME>
@@ -508,7 +508,7 @@ $ wc <FILENAME>
 
 ### diff and diff3
 
-* **diff** can be used to compare files and directories. Useful flags include: **-c** to list  differences, **-r** to recursively compare subdirectories, **-i** to ignore case, and **-w** to ignore spaces and tabs.
+* **diff** can be used to compare files and directories. Useful flags include: **-c** to list differences, **-r** to recursively compare subdirectories, **-i** to ignore case, and **-w** to ignore spaces and tabs.
 
 * You can compare three files at once using **diff3**, which uses one file as the reference basis for the other two.
 
@@ -541,7 +541,7 @@ $ grep -xv <WORD> <FILENAME>
 
 ### ls
 
-* **ls**  lists  directory and files. Useful flags are **-l** to list the permissions of each file in the directory and **-a** to include the dot-files:
+* **ls** lists directory and files. Useful flags are **-l** to list the permissions of each file in the directory and **-a** to include the dot-files:
 
 ```
 $ ls -la
@@ -553,7 +553,7 @@ $ ls -la
 $ ls -lrS
 ```
 
-* To list the names of the 10 most recently modified files ending with .txt:
+* To list the names of the ten most recently modified files ending with .txt:
 
 ```
 $ ls -rt *.txt | tail -10
@@ -575,7 +575,7 @@ $ find <DIRECTORY> -name <FILENAME>
 
 ### which
 
-* To find  binaries in PATH variables:
+* To find binaries in PATH variables:
 
 ```
 $ which ls
@@ -597,7 +597,7 @@ $ whereis <FILENAME>
 $ locate <FILENAME>
 ```
 
-* To test if a a file exists:
+* To test if a file exists:
 
 ```
 $ test -f <FILENAME>
@@ -615,7 +615,7 @@ $ true > <FILENAME>
 
 ### tr
 
-*  **tr** takes a pair of strings as arguments and replaces, in its input, every letter that occurs in the first string by the corresponding characters in the second string. For example, to make everything lowercase:
+* **tr** takes a pair of strings as arguments and replaces, in its input, every letter that occurs in the first string by the corresponding characters in the second string. For example, to make everything lowercase:
 
 ```
 $ tr A-Z a-z
@@ -644,7 +644,7 @@ $ cat "$@" | tr
 
 ### sort
 
-* Sort the contents of text files. The flag **-r** sort backwards, and the flag **-n** selects numeric sort order (for example, without it, 2 comes after 1000):
+* Sort the contents of text files. The flag **-r** sort backward, and the flag **-n** selects numeric sort order (for example, without it, 2 comes after 1000):
 
 ```
 $ sort -rn <FILENAME>
@@ -659,7 +659,7 @@ $ sort <FILENAME> | uniq -c | sort -rn
 * To chose random lines from a file:
 
 ```
-$ sort -R  <FILENAME> | head -10
+$ sort -R <FILENAME> | head -10
 ```
 
 * To combine multiple files into one sorted file:
@@ -712,7 +712,7 @@ $ join <FILENAME1> <FILENAME2>
 
 ### mkdir
 
-* **mkdir** creates a directory. A useful flag is **-p** which creates  the entire path of directories (in case they don't exist):
+* **mkdir** creates a directory. A useful flag is **-p** which creates the entire path of directories (in case they don't exist):
 
 ```
 $ mkdir -p <DIRNAME>
@@ -780,7 +780,7 @@ $ dd if=/dev/sda of=/dev/sdb
 $ du -sha
 ```
 
-* To see  this information sorted  and only the 10 largest files:
+* To see this information sorted and only the ten largest files:
 
 ```
 $ du -a | sort -rn | head -10
@@ -789,12 +789,12 @@ $ du -a | sort -rn | head -10
 * To determine which subdirectories are taking a lot of disk space:
 
 ```
-$ du --max-depth=1  | sort -k1 -rn
+$ du --max-depth=1 | sort -k1 -rn
 ```
 
 ### df
 
-* **df**  shows how much disk space is used on each mounted filesystem. It displays  five columns for each filesystem: the name, the size, how much is used, how much is available, percentage of use, and where it is mounted. Note the values won't add up because Unix filesystems have **reserved** storage blogs which only the root user can write to.
+* **df** shows how much disk space is used on each mounted filesystem. It displays five columns for each filesystem: the name, the size, how much is used, how much is available, percentage of use, and where it is mounted. Note the values won't add up because Unix filesystems have **reserved** storage blogs which only the root user can write to.
 
 ```
 $ df -h
@@ -812,9 +812,9 @@ $ ifconfig
 
 * In general, you will see the following devices when you issue **ifconfig**:
 
-    * ***eth0***: shows the Ethernet card with information such as: hardware (MAC) address, IP address, and the network mask.
+ * ***eth0***: shows the Ethernet card with information such as: hardware (MAC) address, IP address, and the network mask.
 
-    * ***lo***: loopback address or localhost.
+ * ***lo***: loopback address or localhost.
 
 
 * **ifconfig** is supposed to be deprecated. See [my short guide on ip-netns](https://coderwall.com/p/uf_44a).
@@ -842,7 +842,7 @@ $ dhclient
 ### netstat
 
 
-* **netstat** prints the network connections, routing tables, interface statistics, among others. Useful  flags are **-t** for TCP, **-u** for UDP, **-l** for listening, **-p** for program, **-n** for numeric. For example:
+* **netstat** prints the network connections, routing tables, interface statistics, among others. Useful flags are **-t** for TCP, **-u** for UDP, **-l** for listening, **-p** for program, **-n** for numeric. For example:
 
 ```
 $ netstat -s
@@ -910,12 +910,12 @@ $ ss -u -a
 * **tcptrack** displays information about TCP connections it sees on a network and displays bandwidth usage on some interface by a host.
 
 ```
-$  tcptrack -i eth0
+$ tcptrack -i eth0
 ```
 
 ### netcat, telnet and ssh
 
-* To connect to a host server, you can  use **netcat** (nc) and **telnet**. To connect under an encrypted session, **ssh** is used. For example, to send a string to a host at port 3000:
+* To connect to a host server, you can use **netcat** (nc) and **telnet**. To connect under an encrypted session, **ssh** is used. For example, to send a string to a host at port 3000:
 
 ```
 $ echo 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e | nc localhost 3000
@@ -964,7 +964,7 @@ $ lsof -Pnl +M -i6
 ### echo
 
 
-* **echo** prints its arguments as output. It can be useful for pipeling, and in this case you use the flag **-n** to not output the trailing new line:
+* **echo** prints its arguments as output. It can be useful for pipelining, and in this case, you use the flag **-n** not to output the trailing new line:
 ```
 $ echo -n <FILENAME>
 ```
@@ -994,9 +994,9 @@ $ echo Completed at $(date) >> log.log
 ```
 $ echo -n awesome | md5sum
 $ echo -n awesome | sha1sum
-03d67c263c27a453ef65b29e30334727333ccbcd  -
+03d67c263c27a453ef65b29e30334727333ccbcd -
 $ echo -n awesome | sha256sum
-705db0603fd5431451dab1171b964b4bd575e2230f40f4c300d70df6e65f5f1c  -
+705db0603fd5431451dab1171b964b4bd575e2230f40f4c300d70df6e65f5f1c -
 ```
 
 ### bc
@@ -1027,18 +1027,18 @@ $ echo '2*15454' | bc
 ---
 ## Regular Expression 101
 
-* **Regular expressions** (regex) are  sequences of characters that forms a search pattern for use in pattern matching with strings.
+* **Regular expressions** (regex) are sequences of characters that forms a search pattern for use in pattern matching with strings.
 
-* Letters and numbers match themselves. Therefore,  'awesome' is a regular expression that matches 'awesome'.
+* Letters and numbers match themselves. Therefore, 'awesome' is a regular expression that matches 'awesome'.
 
 * The main rules that can be used with **grep** are:
-    * ```.``` matches any character.
-    * ```*``` any number of times (including zero).
-    * ```.*``` matches any string (including empty).
-    * ```[abc]``` matches any character a or b or c.
-    * ```[^abc]``` matches any character other than a or b or c.
-    * ```^``` matches the beginning of a line.
-    * ```$``` matches the end of a line.
+ * ```.``` matches any character.
+ * ```*``` any number of times (including zero).
+ * ```.*``` matches any string (including empty).
+ * ```[abc]``` matches any character a or b or c.
+ * ```[^abc]``` matches any character other than a or b or c.
+ * ```^``` matches the beginning of a line.
+ * ```$``` matches the end of a line.
 
 * For example, to find lines in a file that begin with a particular string you can use the regex symbol **^**:
 
@@ -1052,11 +1052,11 @@ $ grep ^awesome
 $ grep awesome$
 ```
 
-*  As an extension, **egrep** uses a version called *extended regular expresses* (EREs) which include things such:
-    * ```()``` for grouping
-    * ```|``` for or
-    * ```+``` for one or more times
-    * ```\n``` for back-references (to refer to an additional copy of whatever was matched before by parenthesis group number n in this expression).
+* As an extension, **egrep** uses a version called *extended regular expresses* (EREs) which include things such:
+ * ```()``` for grouping
+ * ```|``` for or
+ * ```+``` for one or more times
+ * ```\n``` for back-references (to refer to an additional copy of whatever was matched before by parenthesis group number n in this expression).
 
 * For instance, you can use ``` egrep '.{12}'```to find words of at least 12 letters. You can use ```egrep -x '.{12}'``` to find words of exactly twelve letters.
 
@@ -1067,11 +1067,11 @@ $ grep awesome$
 
 ## Awk and Sed
 
-* **awk**  is a pattern scanning tool while **sed** is a stream editor for filtering and transform text. While these tools are extremely powerful, if you have knowledge of any very high level languages such as Python or Ruby, you  don't necessarily need to learn them.
+* **awk** is a pattern scanning tool while **sed** is a stream editor for filtering and transform text. While these tools are extremely powerful, if you have knowledge of any very high-level languages such as Python or Ruby, you don't necessarily need to learn them.
 
 ### sed
 
-* Let's say we want  to replace every occurrence of *mysql* and with MySQL (Linux is case sensitive), and then save the new file to <FILENAME>. We can write a one-line command that says  "search for the word mysql and replace it with the word MySQL":
+* Let's say we want to replace every occurrence of *mysql* and with MySQL (Linux is case sensitive), and then save the new file to <FILENAME>. We can write a one-line command that says "search for the word mysql and replace it with the word MySQL":
 
 ```
 $ sed s/mysql/MySQL/g <FILEORIGIN> > <FILEDEST>
@@ -1109,7 +1109,7 @@ $ at 3pm
 
 
 ### cron
-* If you  have to run processes periodically, you should use **cron**, which is already running as a [system daemon](http://en.wikipedia.org/wiki/Daemon_%28computing%29). You can add a list of tasks in a file named **crontab** and install those lists using a program also called **crontab**. **cron** checks all the installed crontab files and run cron jobs.
+* If you have to run processes periodically, you should use **cron**, which is already running as a [system daemon](http://en.wikipedia.org/wiki/Daemon_%28computing%29). You can add a list of tasks in a file named **crontab** and install those lists using a program also called **crontab**. **cron** checks all the installed crontab files and run cron jobs.
 
 
 * To view the contents of your crontab, run:
@@ -1124,7 +1124,7 @@ $ crontab -l
 $ crontab -e
 ```
 
-* The format of cron job is: *min, hour, day, month, dow* (day of the week, where Sunday is 0). They are separated by tabs or spaces. The symbol * means any. It's possible to specify many values with commas.
+* The format of the cron job is *min, hour, day, month, dow* (day of the week, where Sunday is 0). They are separated by tabs or spaces. The symbol * means any. It's possible to specify many values with commas.
 
 * For example, to run a backup every day at 5am, edit your crontab to:
 
@@ -1140,15 +1140,15 @@ $ crontab -e
 
 
 ---
-##  rsync
+## rsync
 
-*  **rsync**  performs file synchronization and file transfer. It can compress the data transferred using *zlib* and can use SSH or [stunnel](https://www.stunnel.org/index.html) to encrypt the transfer.
+* **rsync** performs file synchronization and file transfer. It can compress the data transferred using *zlib* and can use SSH or [stunnel](https://www.stunnel.org/index.html) to encrypt the transfer.
 
 * **rsync** is very efficient when recursively copying one directory tree to another because only the differences are transmitted over the network.
 
 * Useful flags are: **-e** to specify the SSH as remote shell, **-a** for archive mode, **-r** for recurse into directories, and **-z** to compress file data.
 
-* A very common set is **-av** which makes **rsync** to work recursively, preserving metadata about the files it copies, and displaying the name of each file as it is copied. For example, the command below is used to transfer some directory  to the **/planning** subdirectory on a remote host:
+* A very common set is **-av** which makes **rsync** to work recursively, preserving metadata about the files it copies, and displaying the name of each file as it is copied. For example, the command below is used to transfer some directory to the **/planning** subdirectory on a remote host:
 
 ```
 $ rsync -av <DIRECTORY> <HOST>:/planning
@@ -1208,10 +1208,10 @@ $ tar Jcf <FILE.tar.xz>
 ----
 ## Logs
 
-* Standard logging facility can be found  at ```/var/log```. For instance:
-    *  ```/var/log/boot.log``` contains information that is logged when the system boots.
-    * ```/var/log/auth.log``` contains system authorization information.
-    * ```/var/log/dmesg``` contains kernel ring buffer information.
+* Standard logging facility can be found at ```/var/log```. For instance:
+ * ```/var/log/boot.log``` contains information that is logged when the system boots.
+ * ```/var/log/auth.log``` contains system authorization information.
+ * ```/var/log/dmesg``` contains kernel ring buffer information.
 
 
 * The file ```/etc/rsyslog.conf``` controls what goes inside the log files.
@@ -1234,15 +1234,15 @@ $ lastlog
 ## /proc and inodes
 
 * If the last link to a file is deleted but this file is open in some editor, we can still retrieve its content. This can be done, for example, by:
-    1. attaching a debugger like **gdb** to the program that has the file open,
+ 1. attaching a debugger like **gdb** to the program that has the file open,
 
-    2. commanding the program to read the content out of the file descriptor (the **/proc** filesystem), copying the file content directly out of the open file descriptor pseudo-file inside **/proc**.
+ 2. commanding the program to read the content out of the file descriptor (the **/proc** filesystem), copying the file content directly out of the open file descriptor pseudo-file inside **/proc**.
 
-* For example, if one runs ```$ dd if=/dev/zero of=trash & sleep 10; rm trash```, the available disk space on the system will continue to go downward (since more  contents get written into the file by which **dd** is sending its output).
+* For example, if one runs ```$ dd if=/dev/zero of=trash & sleep 10; rm trash```, the available disk space on the system will continue to go downward (since more contents get written into the file by which **dd** is sending its output).
 
-* However, the file can't be seen everywhere in the system! Only  killing the **dd** process will cause this space to be reclaimed.
+* However, the file can't be seen everywhere in the system! Only killing the **dd** process will cause this space to be reclaimed.
 
-* An **index node** (inode) is a data structure used to represent a filesystem object such as files or  directories. The true name of a file, even when it has no other name, is in fact its *inode number* within the filesystem it was created, which can be obtained by
+* An **index node** (inode) is a data structure used to represent a filesystem object such as files or directories. The true name of a file, even when it has no other name, is in fact its *inode number* within the filesystem it was created, which can be obtained by
 ```
 $ stat
 ```
@@ -1255,7 +1255,7 @@ $ ls -i
 
 ```
 $ echo awesome > awesome
-$ cp awesome  more-awesome
+$ cp awesome more-awesome
 $ ln awesome same-awesome
 $ ls -i *some
 7602299 awesome
@@ -1268,7 +1268,7 @@ $ ls -i *some
 
 * A Linux text file contains lines consisting of zero or more text characters, followed by the **newline character** (ASCII 10, also referred to as hexadecimal 0x0A or '\n').
 
-* A text with a single line containing the word 'Hello' in  ASCII would be 6 bytes (one for each letter, and one for the trailing newline). For example, the text below:
+* A text with a single line containing the word 'Hello' in ASCII would be 6 bytes (one for each letter, and one for the trailing newline). For example, the text below:
 
 ```
 $ cat text.txt
@@ -1281,10 +1281,10 @@ is represented as:
 
 ```
 $ hexdump -c < text.txt
-0000000   H   e   l   l   o       e   v   e   r   y   o   n   e   !  \n
-0000010   L   i   n   u   x       i   s       r   e   a   l   l   y
-0000020   c   o   o   l   .  \n   L   e   t   '   s       l   e   a   r
-0000030   n       m   o   r   e   !  \n
+0000000 H e l l o e v e r y o n e ! \n
+0000010 L i n u x i s r e a l l y
+0000020 c o o l . \n L e t ' s l e a r
+0000030 n m o r e ! \n
 0000038
 ```
 
@@ -1293,11 +1293,11 @@ $ hexdump -c < text.txt
 * Unlike text files on other operating systems, Linux files do not end with a special end-of-file character.
 
 
-* Linux text files were traditionally always interpreted as **ASCII**. In ASCII, each character is a single byte, the ASCII standard as such defines exactly **128 characters** from **ASCII 0 to ASCII 127**. Some of them are non-printable (such as a newline). The printable starts at **32**. In that case, **ISO 8859** standards were  extensions to ASCII where the character positions **128 to 255** are given a foreign-language interpretation.
+* Linux text files were traditionally always interpreted as **ASCII**. In ASCII, each character is a single byte, the ASCII standard as such defines exactly **128 characters** from **ASCII 0 to ASCII 127**. Some of them are non-printable (such as a newline). The printable starts at **32**. In that case, **ISO 8859** standards were extensions to ASCII where the character positions **128 to 255** are given a foreign-language interpretation.
 
 * Nowadays, Linux files are most often interpreted as **UTF-8**, which is an encoding of **Unicode**, a character set standard able to represent a very large number of languages.
 
-* For East asian languages, **UTF-8 **chars are interpreted with **3 bytes** and  **UTF-16** chars are interpreted with **2 bytes**. For western languages (such as German, for example), **UTF-16** characters are interpreted with **2 bytes**, and all the regular characters have **00** in front of it.
+* For East Asian languages, **UTF-8 **chars are interpreted with **3 bytes** and **UTF-16** chars are interpreted with **2 bytes**. For western languages (such as German, for example), **UTF-16** characters are interpreted with **2 bytes**, and all the regular characters have **00** in front of it.
 
 * In **UTF-16**, sentences start with two bytes **fe ff** (decimal 254 255) which don't encode as any part of the text. These are the **Unicode byte order mark** (BOM), which guards against certain kinds of encoding errors [1].
 
@@ -1311,7 +1311,7 @@ $ recode iso8859-1..utf-8
 * This is useful if you see a **mojibake**, which is a character set encoding mismatch bug.
 
 
-* There are only two mandatory rules about characters that can't appear in filename: null bytes (bytes that have numeric value zero) and forward slashes **/**.
+* There are only two mandatory rules about characters that can't appear in the filename: null bytes (bytes that have numeric value zero) and forward slashes **/**.
 
 
 
@@ -1326,9 +1326,9 @@ $ recode iso8859-1..utf-8
 
 ```
 genpass() {
-    local p=$1
-        [ "$p" == "" ] && p=16
-        tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${p} | xargs
+ local p=$1
+ [ "$p" == "" ] && p=16
+ tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${p} | xargs
 }
 ```
 
@@ -1372,7 +1372,7 @@ sed ${1}q
 ```
 import sys, collections
 def common_words(n):
-    return collections.Counter(sys.stdin.read().lower().split()).most_common(n)
+ return collections.Counter(sys.stdin.read().lower().split()).most_common(n)
 ```
 
 
@@ -1388,14 +1388,14 @@ $ sudo visudo
 to have the value:
 
 ```
-Defaults                           pwfeedback
+Defaults pwfeedback
 ```
 
 
 ----
 ## imagemagick
 
-* You can create a gif file from terminal with  ***imagemagick***:
+* You can create a gif file from terminal with ***imagemagick***:
 
 ```
 $ mogrify -resize 640x480 *.jpg
@@ -1415,11 +1415,11 @@ $ convert -delay 20 -loop 0 *.jpg myimage.gif
 
 # Further References:
 
-- Unix: Culture and Command Line, Seth Schoen
+- Unix: Culture and Command-Line, Seth Schoen
 
--  [Understand STDERROR, STDOUT, STDIN](http://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-16-stdin-stdout-stderror-0150693/).
+- [Understand STDERROR, STDOUT, STDIN](http://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-16-stdin-stdout-stderror-0150693/).
 
-- [Introduction to  filesystems](http://www.howtogeek.com/196051/htg-explains-what-is-a-file-system-and-why-are-there-so-many-of-them).
+- [Introduction to filesystems](http://www.howtogeek.com/196051/htg-explains-what-is-a-file-system-and-why-are-there-so-many-of-them).
 
 - [Guide to Crontab](http://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-18-scheduling-jobs-0154969/)
 
@@ -1437,16 +1437,11 @@ $ convert -delay 20 -loop 0 *.jpg myimage.gif
 
 - [Usermode commands example](http://www.tecmint.com/usermod-command-examples/)
 
-    [1] Encoding is a problem between Python 2 and Python 3:
+ [1] Encoding is a problem between Python 2 and Python 3:
 
-    - In Python 2, a UTF-8 environment, len(" 美 國 ") is 6 and "美國 "[0] is a string containing the byte 0xe7 (which is the first byte of the three that encode 美 in UTF-8).
+ - In Python 2, a UTF-8 environment, len(" 美 國 ") is 6 and "美國 "[0] is a string containing the byte 0xe7 (which is the first byte of the three that encode 美 in UTF-8).
 
-    - In Python 3, len("美國") is 2 (it's two Unicode characters) and " 美國"[0] is the string "美" (the first character in the string).
+ - In Python 3, len("美國") is 2 (it's two Unicode characters), and " 美國"[0] is the string "美" (the first character in the string).
 
-    - Each version of Python provides a data type that produces the other version's default behavior (the Unicode type in Python 2 and the bytes type in Python 3).
+ - Each version of Python provides a data type that produces the other version's default behavior (the Unicode type in Python 2 and the bytes type in Python 3).
 
-
-
-----
-
-**Aloha, bt3**

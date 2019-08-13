@@ -187,6 +187,3 @@ As a note, there are several other PDF forensics tools that are worth to be ment
 [pdf.pdf]: https://ctf.isis.poly.edu/static/uploads/883c7046854e04138c55680ffde90a61/pdf.pdf
 [pdftotext]: http://en.wikipedia.org/wiki/Pdftotext
 
-----
-
-**Aloha, bt3**

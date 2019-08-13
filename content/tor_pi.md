@@ -5,7 +5,7 @@ Category: DevOps
 ![tor](./cyberpunk/tor.jpg){:height="250px" width="350px"}
 
 
-In this tutorial I walk through all the steps to setup a Tor proxy in a Raspberry Pi (Model B). This work was based on some of tutorials from Adafruit.
+In this tutorial, I walk through all the steps to set up a Tor proxy in a Raspberry Pi (Model B). This work was based on some of the tutorials from Adafruit.
 
 # Setting Up a Raspberry Pi
 
@@ -17,9 +17,9 @@ In this tutorial I walk through all the steps to setup a Tor proxy in a Raspberr
 
 ## Network Setup
 
-The easiest way is to connect your Pi in the network is through an ethernet interface. Connecting the cable should be allowed the connection directly as long as your network router allows DHCP.
+The easiest way is to connect your Pi in the network is through an Ethernet interface. Connecting the cable should be allowed the connection directly as long as your network router enable DHCP.
 
-In addition, you can also setup wireless connect, which requires your router to be broadcasting the SSID. At Raspbian, there is a WiFi configuration icon. Type wlan0 adapter and scan. After connecting in your network you will also be able to see the IP of your Pi.
+Also, you can also set up wireless connect, which requires your router to be broadcasting the SSID. At Raspbian, there is a WiFi configuration icon. Type wlan0 adapter and scan. After connecting in your network you will also be able to see the IP of your Pi.
 
 ## Input/Output Setup
 
@@ -47,7 +47,7 @@ In Windows, you can use a terminal emulation such as Putty and the drivers from 
 
 ## SSH Connection
 
-You need to enable SSH in the Pi:
+You need to enable SSH on the Pi:
 
 ```
 $ sudo raspi-config
@@ -104,8 +104,8 @@ iface eth0 inet dhcp
 allow-hotplug wlan0
 
 iface wlan0 inet static
-  address 192.168.42.1
-  netmask 255.255.255.0
+ address 192.168.42.1
+ netmask 255.255.255.0
 ```
 
 Then edit the DHCP server configuration file, ```/etc/dhcp/dhcpd.conf```:
@@ -328,7 +328,3 @@ That's it! Browser safe!
 ---
 Enjoy! This article was originally posted [here](https://coderwall.com/p/m3excg/a-tor-proxy-in-a-raspberry-pi).
 
-
-----
-
-**Aloha, bt3**

@@ -1,5 +1,5 @@
 Title: Some DNS stuff...
-Date: 2016-02-12 6:00 
+Date: 2014-02-12 6:00 
 Category: interwebz
 Tags: h4x0r, dns
 
@@ -16,7 +16,7 @@ $ nslookup -q=mx <website>
 ???????
 
 ```
-192.168.0.1 => 8.8.8.8 => X.root-servers.net =>  Authoritative server ==> ?
+192.168.0.1 => 8.8.8.8 => X.root-servers.net => Authoritative server ==> ?
 ```
 
 There are lots of different record types:
@@ -34,16 +34,16 @@ $ dig @8.8.8.8 -t A www.google.com
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 512
 ;; QUESTION SECTION:
-;www.google.com.			IN	A
+;www.google.com.            IN  A
 
 ;; ANSWER SECTION:
-www.google.com.		151	IN	A	167.206.12.84
+www.google.com.     151 IN  A   167.206.12.84
 ....
 
 ;; Query time: 46 msec
 ;; SERVER: 8.8.8.8#53(8.8.8.8)
 ;; WHEN: Mon Sep 29 13:55:31 EDT 2014
-;; MSG SIZE  rcvd: 299
+;; MSG SIZE rcvd: 299
 
 ```
 
@@ -60,15 +60,15 @@ $ dig @8.8.8.8 -t AAAA www.google.com
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 512
 ;; QUESTION SECTION:
-;www.google.com.			IN	AAAA
+;www.google.com.            IN  AAAA
 
 ;; ANSWER SECTION:
-www.google.com.		299	IN	AAAA	2607:f8b0:4006:80a::1011
+www.google.com.     299 IN  AAAA    2607:f8b0:4006:80a::1011
 
 ;; Query time: 31 msec
 ;; SERVER: 8.8.8.8#53(8.8.8.8)
 ;; WHEN: Mon Sep 29 13:55:44 EDT 2014
-;; MSG SIZE  rcvd: 71
+;; MSG SIZE rcvd: 71
 ```
 
 ### MX: Mail server
@@ -84,15 +84,15 @@ $ dig @8.8.8.8 -t MX www.google.com
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 512
 ;; QUESTION SECTION:
-;www.google.com.			IN	MX
+;www.google.com.            IN  MX
 
 ;; AUTHORITY SECTION:
-google.com.		41	IN	SOA	ns1.google.com. dns-admin.google.com. 1568903 7200 1800 1209600 300
+google.com.     41  IN  SOA ns1.google.com. dns-admin.google.com. 1568903 7200 1800 1209600 300
 
 ;; Query time: 29 msec
 ;; SERVER: 8.8.8.8#53(8.8.8.8)
 ;; WHEN: Mon Sep 29 13:57:48 EDT 2014
-;; MSG SIZE  rcvd: 93
+;; MSG SIZE rcvd: 93
 ```
 
 ### CNAME
@@ -110,15 +110,15 @@ $ dig @8.8.8.8 -t CNAME www.google.com
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 512
 ;; QUESTION SECTION:
-;www.google.com.			IN	CNAME
+;www.google.com.            IN  CNAME
 
 ;; AUTHORITY SECTION:
-google.com.		59	IN	SOA	ns1.google.com. dns-admin.google.com. 1568903 7200 1800 1209600 300
+google.com.     59  IN  SOA ns1.google.com. dns-admin.google.com. 1568903 7200 1800 1209600 300
 
 ;; Query time: 30 msec
 ;; SERVER: 8.8.8.8#53(8.8.8.8)
 ;; WHEN: Mon Sep 29 13:58:23 EDT 2014
-;; MSG SIZE  rcvd: 93
+;; MSG SIZE rcvd: 93
 
 ```
 
@@ -139,15 +139,15 @@ dig @8.8.8.8 -t TXT www.google.com
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 512
 ;; QUESTION SECTION:
-;www.google.com.			IN	TXT
+;www.google.com.            IN  TXT
 
 ;; AUTHORITY SECTION:
-google.com.		59	IN	SOA	ns1.google.com. dns-admin.google.com. 1568903 7200 1800 1209600 300
+google.com.     59  IN  SOA ns1.google.com. dns-admin.google.com. 1568903 7200 1800 1209600 300
 
 ;; Query time: 29 msec
 ;; SERVER: 8.8.8.8#53(8.8.8.8)
 ;; WHEN: Mon Sep 29 13:59:01 EDT 2014
-;; MSG SIZE  rcvd: 93
+;; MSG SIZE rcvd: 93
 ```
 
 ### Packet Structure
@@ -180,7 +180,7 @@ Where:
 A query for ANY works because the TYPE of record is returned:
 
 ```sh
-$  dig @8.8.8.8 -t ANY google.com
+$ dig @8.8.8.8 -t ANY google.com
 
 ; <<>> DiG 9.9.4-P2-RedHat-9.9.4-15.P2.fc20 <<>> @8.8.8.8 -t ANY google.com
 ; (1 server found)
@@ -192,20 +192,20 @@ $  dig @8.8.8.8 -t ANY google.com
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 512
 ;; QUESTION SECTION:
-;google.com.			IN	ANY
+;google.com.            IN  ANY
 
 ;; ANSWER SECTION:
-google.com.		299	IN	A	167.206.10.221
+google.com.     299 IN  A   167.206.10.221
 ...
-google.com.		21599	IN	SOA	ns1.google.com. dns-admin.google.com. 2014021800 7200 1800 1209600 300
-google.com.		3599	IN	TXT	"v=spf1 include:_spf.google.com ip4:216.73.93.70/31 ip4:216.73.93.72/31 ~all"
-google.com.		599	IN	MX	40 alt3.aspmx.l.google.com.
+google.com.     21599   IN  SOA ns1.google.com. dns-admin.google.com. 2014021800 7200 1800 1209600 300
+google.com.     3599    IN  TXT "v=spf1 include:_spf.google.com ip4:216.73.93.70/31 ip4:216.73.93.72/31 ~all"
+google.com.     599 IN  MX  40 alt3.aspmx.l.google.com.
 ...
 
 ;; Query time: 30 msec
 ;; SERVER: 8.8.8.8#53(8.8.8.8)
 ;; WHEN: Mon Sep 29 15:14:48 EDT 2014
-;; MSG SIZE  rcvd: 640
+;; MSG SIZE rcvd: 640
 ```
 
 ---
@@ -213,7 +213,7 @@ google.com.		599	IN	MX	40 alt3.aspmx.l.google.com.
 
 ## Reverse DNS
 
-Works identically, but has a record of type of PTR (and special way of formatting the IP address backwards).
+Works identically, but has a record of the type of PTR (and particular way of formatting the IP address backward).
 
 How frequently is it trusted?
 
@@ -227,7 +227,7 @@ How frequently is it trusted?
 
 DNS is allowed off every network. Most traffic gets blocked by firewalls, but not the internet. DNS traffic foes through the router.
 
-All requests to *.somesite.com go to its DNS sever.
+All requests to *.somesite.com go to its DNS server.
 
 
 
@@ -270,7 +270,7 @@ Results: data theft, shell access, arbitrary read.
 
 ### XXE
 
-XXE: returns to XML external entity attacks and lets you include files from filesystem.
+XXE: returns to XML external entity attacks and lets you include files from the filesystem.
 
 ```
 <!ENTITY xxe SYSTEM "file:///etc/passwd">]>
@@ -294,17 +294,17 @@ Grab a resource from a domain:
 <foo> &xxe; </foo>
 ```
 
-Even if there is a firewall, and a weird filesystem, and the file isn't send back to the user, you can still detect XXE!
+Even if there is a firewall, and a weird filesystem and the file isn't send back to the user, you can still detect XXE!
 
 ### Gopher
 
-If you ask a server to do a request for:
+If you ask a server to make a request for:
 
 ```
 gopher://internal-ip:25/AHELO%0AMAIL+FROM...
 ```
 
-Meaning that, if you can get a service to fetch an arbitrary gopher://URL, such as through XXE, you can attack back-end services.
+If you can get a service to fetch an arbitrary gopher://URL, such as through XXE, you can attack back-end services.
 
 Having to use DNS to exploit this is unlikely.
 
@@ -319,7 +319,7 @@ Arbitrary file read, gopher:// issues again.
 
 ### Shell injection
 
-Simply inject a DNS lookup into every field
+Simply inject a DNS lookup into every field.
 
 Full server access
 
@@ -349,14 +349,14 @@ The following is a valid CNAME, MX, TXT, PTR:
 
 ### DNS Re-binding
 
-First we look at how you can smuggle untrusted data to a protected server.
+First, we look at how you can smuggle untrusted data to a protected server.
 Then how to smuggle data off a protected server to the attack.
 
-1. The user ends up a the page evil. They look it up via DNS.
+1. The user ends up at a evil page. They look it up via DNS.
 
 2. The user is sent to an evil server.
 
-3. While there, a session is created (authentication, cookies, etc)
+3. While there, a session is created (authentication, cookies, etc.)
 
 4. The session refreshes, with another DNS lookup
 
@@ -364,7 +364,7 @@ Then how to smuggle data off a protected server to the attack.
 
 6. The session eventually refreshes, triggering another DNS lookup
 
-7. Any cookies/local storage/etc can be accessed. The browser thinks its the same origin.
+7. Any cookies/local storage/etc. can be accessed. The browser thinks its the same origin.
 
 This show two attacks:
 
@@ -376,8 +376,4 @@ This show two attacks:
 Advice:
 
 - Look at you DNS traffic, keep an eye for anomalies
-- A spike in traffic can mean a dns backdoor or some malware.. ☠️
-
-------
-
-**aloha, mia***
+- A spike in traffic can mean a DNS backdoor or some malware. ☠️

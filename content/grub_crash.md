@@ -1,5 +1,5 @@
 Title: Grub Configuration
-Date: 2015-01-29
+Date: 2014-01-29
 Category: DevOps
 
 
@@ -7,7 +7,7 @@ Category: DevOps
 
 BIOS/MBR is an older partition table type also referred to as Legacy mode. Nowadays, UEFI is in most of the new computer (especially those that came with W8 or W8.1 pre-installed). UEFI always use the gpt partition table type.
 
-To find out each one your computer uses, you can boot into your computers Bios/firmware. In addition, to see if it is UEFI:
+To find out each one your computer uses, you can boot into your computers Bios/firmware. Besides, to see if it is UEFI:
 
 ```
 $ efibootmgr 
@@ -38,6 +38,3 @@ In an EFI boot:
 ```
 $ grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 ```
-----
-
-**Aloha, bt3**

@@ -169,6 +169,3 @@ You can also resize panes if you don’t like the layout defaults. I personally 
 * [tmux: Productive Mouse-Free Development](http://pragprog.com/book/bhtmux/tmux)
 * [How to reorder windows](http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows)
 
-----
-
-**Aloha, bt3**

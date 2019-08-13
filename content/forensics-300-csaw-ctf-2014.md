@@ -559,7 +559,3 @@ endobj
 [Node]: http://nodejs.org/
 
 
-
-----
-
-**Aloha, bt3**

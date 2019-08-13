@@ -6,14 +6,14 @@ Category: DevOps
 
 
 
-I was playing with Flask and I wrote my own [Anti-Social Network](https://anti-social.herokuapp.com/). 
+I was playing with Flask, and I wrote my own [Anti-Social Network](https://anti-social.herokuapp.com/). 
 
-Heroku platform is very flexible and it supports several programming languages. To
+Heroku platform is very flexible, and it supports several programming languages. To
 deploy an application to Heroku, use Git to push the application to Heroku’s server.
 
 # Running in a Production Server
 
-Heroku does not provide a web server but it expects it to start their own servers and listen on the port number set in environment variable PORT. Flask will perform very poorly because it was not designed to run in a production environment. To ameliorate this, you may use a production-ready web server such as Gunicorn.
+Heroku does not provide a web server, but it expects it to start their own servers and listen on the port number set in environment variable PORT. Flask will perform very poorly because it was not designed to run in a production environment. To improve this, you may use a production-ready web server such as Gunicorn.
 
 ```
 $ pip install gunicorn
@@ -31,7 +31,7 @@ Gunicorn uses port 8000 instead of 5000.
 
 ### Create an account at Heroku.com
 
-If you haven't done it yet. Remember: you will be able to keep up to five applications running (you can always delete them if you need).
+If you haven't done it yet, remember: you will be able to keep up to five applications running (you can always delete them if you need).
 
 ### Install Git and Heroku Toolbelt
 
@@ -66,7 +66,7 @@ $ ssh-keygen -t rsa
 $ heroku keys:add
 ```
 
-The public and private keys will be at ```~/.ssh```. I recommend always backup your keys. Never share your private key.
+The public and private keys will be at ```~/.ssh```. I always recommend backup your keys. Never share your private key.
 
 ### Creating a Git Repository
 
@@ -82,7 +82,7 @@ and the deployment at Heroku (production) is done using:
 $ git push heroku master (or any branch you like)
 ```
 
-In the root of your project, go ahead and create a Git repository, commit, add, push:
+In the root of your project, go ahead, and create a Git repository, commit, add, push:
 
 ```
 $ git init
@@ -138,7 +138,7 @@ web gunicorn manage:app
 ```
 (if this is how you run your application).
 
-In the Procfile, each line has a task name, a colon, and the command that runs the task. We use web here because Heroku recognizes it as the task that starts the web server. Heroku gives this task a PORT environment variable, and set it to the port in which the application needs to listen for requests.
+In the Procfile, each line has a task name, a colon, and the command that runs the task. We use web here because Heroku recognizes it as the task that starts the webserver. Heroku gives this task a PORT environment variable, and set it to the port in which the application needs to listen for requests.
 
 ### Using Foreman to Emulate Heroku
 
@@ -163,15 +163,15 @@ In Heroku, logs are written to stdout or stderr. In my app, I added the logging 
 
 ```
 class HerokuConfig(ProductionConfig):
-    @classmethod
-    def init_app(cls, app):
-        ProductionConfig.init_app(app)
+ @classmethod
+ def init_app(cls, app):
+ ProductionConfig.init_app(app)
 
-    import logging
-    from logging import StreamHandler
-    file_handler = StreamHandler()
-    file_handler.setLevel(logging.WARNING)
-    app.logger.addHandler(file_handler)
+ import logging
+ from logging import StreamHandler
+ file_handler = StreamHandler()
+ file_handler.setLevel(logging.WARNING)
+ app.logger.addHandler(file_handler)
 ```
 
 To let Heroku know what configuration it should use, I add this environment variable:
@@ -207,6 +207,3 @@ That's it! The app should be running at ```< app-name >.herokuapp.com```.
 ---
 Enjoy! This article was originally posted [here](https://coderwall.com/p/pstm1w/deploying-a-flask-app-at-heroku).
 
-----
-
-**Aloha, bt3**

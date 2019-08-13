@@ -165,6 +165,3 @@ Yay! We found the flag: **cd69b4957f06cd818d7bf3d61980e291**!
 
 
 
-----
-
-**Aloha, bt3**

@@ -1,5 +1,5 @@
 Title: Introducing my Grey Hacker Bag of Fun
-Date: 2016-11-01
+Date: 2015-11-01
 Category: H4x0r, infra
 
 
@@ -30,7 +30,3 @@ Please check out my [gray hacker GitHub repo](https://github.com/bt3gl/Gray-Hack
 
 **Update: Thank you, everyone, for the 800+ stars and 200+ forks! <3**
 
-
-----
-
-**Aloha, bt3**

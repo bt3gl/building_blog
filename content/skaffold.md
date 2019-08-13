@@ -1,15 +1,13 @@
-Title: Forget Docker Compose: You Want Skaffold
+Title: Skaffold is a Kool K8s Tool!
 Date: 2018-04-02 5:00 
 Category: software
 Tags: docker, microservices, skaffold
 
 ![cyberpunk](./cyberpunk/w2.jpeg){:height="270px" width="390px"}
 
-I still remember, back in 2015 at [Yelp](https://engineeringblog.yelp.com/), when I learned about [Docker Compose](https://docs.docker.com/compose/). It was beautiful, like magic.
+I recently found out about [Skaffold](https://skaffold.dev/), a command-line tool [recently released by Google](https://www.infoq.com/news/2018/03/skaffold-kubernetes), and designed to make local Kubernetes development very easy, allowing for iterative local development against a Kubernetes cluster. It's really cool, check this out:
 
-It kinda felt the same when I recently found out about [Skaffold](https://skaffold.dev/), a command line tool [recently released by Google](https://www.infoq.com/news/2018/03/skaffold-kubernetes), and designed to make local Kubernetes development very easy, allowing for iterative local development against a Kubernetes cluster. Check this out:
-
-* It runs as a binary in your local machine (e.g. [easy install with brew](https://formulae.brew.sh/formula/skaffold), etc.).
+* It runs as a binary in your local machine (e.g., [easy install with brew](https://formulae.brew.sh/formula/skaffold), etc.).
 * It uses `yaml` configuration to describe how your application should be built: you specify the Docker images for your service(s) and Skaffold will tag them and push them to any valid Docker image repository.
   
 ```
@@ -41,8 +39,6 @@ In this single command, Skaffold:
 6. watches for changes in the source code and Kubernetes manifests, and then repeat 1-5.
 
 
-Cool, right? :)
-
 ------
 
 ### Some learning references
@@ -56,6 +52,3 @@ Cool, right? :)
 * [Skaffold: happy Kubernetes workflows](https://ahmet.im/blog/skaffold/).
 * [How to write great container images](https://blog.bejarano.io/how-to-write-great-container-images.html).
 
-----
-
-**Aloha, bt3**
