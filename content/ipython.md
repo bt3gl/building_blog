@@ -34,7 +34,6 @@ Where 0.0.0.0/0 means access from *ANY* outside I.P. address. We will use port 8
 
 Set up your python environment with [Anaconda](http://continuum.io/downloads.html). Use `wget` to download the Anaconda installer to your server:
 
-![Run Anaconda](https://dl.dropbox.com/u/550268/iPython%20Gist/RunAnaconda.png)
 ```
 $ wget http://09c8d0b2229f813c1b93-c95ac804525aac4b6dba79b00b39d1d3.r79.cf1.rackcdn.com/Anaconda-2.0.0-Linux-x86_64.sh
 ```
@@ -81,21 +80,17 @@ $ ipython profile create nbserver
 
 - The output of passwd() is going to be used in the notebook configuration file later. So save/remember it!
 
-![Make Password](https://dl.dropbox.com/u/550268/iPython%20Gist/MakePassword.png)
 
 - Up next we're going to create a directory in our home folder called "certificates". In this folder we're going to save a self-signed SSL certificate:
 
-![Create SSL Certificate](https://dl.dropbox.com/u/550268/iPython%20Gist/CreateSSLCert.png)
 
 - We're going to need the name of the certificate and the absolute path for the notebook configuration file.
 
-![Cert](https://dl.dropbox.com/u/550268/iPython%20Gist/SSLCertPath.png)
 
 - Last, but not least, it's time to modify our ipython_notebook_config.py file.
 
 - Cruise over to ~/.ipython/profile_nbserver/ and open up the ipython_notebook_config.py file.
 
-![Notebook Config](https://dl.dropbox.com/u/550268/iPython%20Gist/ModifyConfig.png)
 
 - Uncomment each of them, one by one and save.
 
@@ -107,7 +102,6 @@ $ ipython profile create nbserver
 $ ipython notebook --profile=nbserver
 ```
 
-![Server up](https://dl.dropbox.com/u/550268/iPython%20Gist/ServerUp.png)
 
 - If you're successful, you should have an output like the above! 
 
@@ -115,7 +109,6 @@ $ ipython notebook --profile=nbserver
 ## Logging in to your Notebook from the Browser
 - To log in via the browser, we need the Public DNS for our sever. Cruise over to your AWS Console and select your instance from the Instances page. Under description you should find this:
 
-![Public DNS](https://dl.dropbox.com/u/550268/iPython%20Gist/AmazonPublicDNS.png)
 
 - Using your public DNS go to your fav browser and type:
    https://your-Instance's-public-DNS:8888
@@ -123,12 +116,9 @@ Do not forget the https!
 
 - If successful you'll get a warning about the self-signed certificate. It's ok! Click **Continue**.
 
-![Chrome Warning](https://dl.dropbox.com/u/550268/iPython%20Gist/ChromeSSLWarning.png)
-![Safari Warning](https://dl.dropbox.com/u/550268/iPython%20Gist/SafariSSLWarning.png)
 
 - You're in! Enter your password, create a notebook, and start doing... stuff!
 
-![In!](https://dl.dropbox.com/u/550268/iPython%20Gist/in%21.png)
 
 
 ## Set up IPython Notebook to start automatically
@@ -144,7 +134,7 @@ $ which ipython
 - Add this line to the file: /etc/rc.local:
 
 ```
-$ /where/ipython notebook --profile nbserver --pylab inline
+<where>ipython notebook --profile nbserver --pylab inline
 
 ```
 - Now you should be able to reboot, and you should be able to access your IPython Notebook as before. Type reboot into the command-line. 
