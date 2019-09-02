@@ -1,5 +1,5 @@
 Title: So, What is GitOps?
-Date: 2018-08-22 9:00 
+Date: 2017-09-22 9:00 
 Category: infra
 Tags: k8s, scalability, gitops, flux
 
