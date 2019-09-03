@@ -7,7 +7,7 @@ Tags: aws, scalability, queues, lambda, sqs, mobgodb
 
 Some time ago I had to implement an end-to-end application to perform some manipulations (with [FFMPEG](https://ffmpeg.org/)) on surf video clips that were available in some cloud storage resource (say, [S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html)).
 
-The app I wrote was a Python software running in [AWS Lambda](https://aws.amazon.com/lambda/), which would be triggered by messages from an [SQS](https://aws.amazon.com/sqs/) queue. The function would then retrieve some specific clip, trim and edit it, and then it would 1) save the new clips to a destination bucket, 2) add their metadata to a [MongoDB](https://www.mongodb.com/) database, and 3) send a notification to a topic in an [SNS](https://aws.amazon.com/sns/) service, so that the front end bit could pick it up.
+The app I wrote was a Python software running in [AWS Lambda](https://aws.amazon.com/lambda/), which would be triggered by messages from an [SQS](https://aws.amazon.com/sqs/) queue. The function would then retrieve some specific clip, trim and edit it, and then it would 1) save the new clips to a destination bucket, 2) add their metadata to a [MongoDB](https://www.mongodb.com/) database, and 3) send a notification to a [SNS](https://aws.amazon.com/sns/) topic, so that the front end bit could pick it up.
 
 [Lambda functions](https://en.wikipedia.org/wiki/Anonymous_function) are fantastic because they abstract several layers in your design (e.g., serverless, anonymous), and they are super easy to set up. But I am getting ahead myself, let's talk a little more about high-level system design!
 
@@ -116,11 +116,13 @@ resource "aws_s3_bucket" {
 
 Now, all you need is a couple of commands (such as `terraform apply`), and your system would be up and running. 
 
-This was a high-level overview of how you would start designing and implementing real-world, end-to-end applications, where **design meets code and infrastructure as a code**. Pretty awesome to live in 2019.
+This was a high-level overview of how you would start designing and implementing real-world, end-to-end applications, where **design meets code and infrastructure as a code**. If you would like to check the code, [this is the repo in GitHub](https://github.com/bt3gl/AWS_Resources_By_Examples/tree/master/lambda_functions/sqs-sns_example).
+
 
 ----------------------
 
 # Learning References
+
 
 * [Terraform Provider AWS](https://github.com/terraform-providers/terraform-provider-aws)
 * [Scalability for Dummies](http://www.lecloud.net/tagged/scalability)

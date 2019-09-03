@@ -12,8 +12,9 @@ Tags: PGP, GPG
 The distribution of PGP keys can be done using the concept of [web of trust](http://en.wikipedia.org/wiki/Web_of_trust). It is a decentralized way of establishing the authenticity of a public key and its owner. If you want a cute (ludic) picture of the web of trust, check [Cory Doctorow](https://twitter.com/doctorow)'s book [Little Brother](http://craphound.com/littlebrother/).
 
 
-Almost 15 years after its creation, [PGP continues to be *pretty good*](https://firstlook.org/theintercept/2014/10/28/smuggling-snowden-secrets/). But there is still a [need for new solutions](http://blog.cryptographyengineering.com/2014/08/whats-matter-with-pgp.html) (and they appear to be [coming soon](http://googleonlinesecurity.blogspot.com/2014/06/making-end-to-end-encryption-easier-to.html)). Perhaps the main issue with PGP is its persistence. If one key is compromised, any message from the past can be read. That's where the concept of [perfect forward secrecy ](http://en.wikipedia.org/wiki/Forward_secrecy) comes in play, but this is a subject to another post. Meanwhile, I wrote this tutorial, and I hope you find it fun.
+Almost 15 years after its creation, [PGP continues to be *pretty good*](https://firstlook.org/theintercept/2014/10/28/smuggling-snowden-secrets/). But there is still a [need for new solutions](http://blog.cryptographyengineering.com/2014/08/whats-matter-with-pgp.html) (and they appear to be [coming soon](http://googleonlinesecurity.blogspot.com/2014/06/making-end-to-end-encryption-easier-to.html)). Perhaps the main issue with PGP is its persistence. If one key is compromised, any message from the past can be read. That's where the concept of [perfect forward secrecy ](http://en.wikipedia.org/wiki/Forward_secrecy) comes in play, but this is a subject to another post. 
 
+Meanwhile, I wrote this tutorial, and I hope you find it fun. Btw, [this post was first published at CodeWall and it had 1.5k+ views at the time](https://coderwall.com/p/ajtlqa/getting-started-with-pgp-gpg).
 
 
 
