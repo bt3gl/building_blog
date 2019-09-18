@@ -6,7 +6,7 @@ Category: Devops
 ![cyberpunk](./cyberpunk/444.jpeg){:height="300px" width="400px"}
 
 
-I have been working on startups engineering teams this last year, and what I like the most is the fact that I can wear several hats! Perhaps the most uncomplicated one is the [DevOps]((https://en.wikipedia.org/wiki/DevOps)) hat. But... what is the DevOps thing really?
+Rad thing about working in startup engineering teams is that you can wear several hats. Perhaps the most uncomplicated one is the [DevOps]((https://en.wikipedia.org/wiki/DevOps)) engineer. But... what is the DevOps thing really?
 
 
 **DevOps** is a set of software development practices that combine software development (Dev) and information-technology operations (Ops) to shorten the systems-development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.
@@ -56,4 +56,6 @@ Setup production & stage servers.
 --
 
 Once you have everything set, you can sit back and enjoy the view 😎.
+
+![cyberpunk](./cyberpunk/lol.png){:height="300px" width="400px"}
 
