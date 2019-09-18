@@ -1,5 +1,5 @@
 Title: Skaffold is a Kool K8s Tool!
-Date: 2018-04-02 5:00 
+Date: 2018-01-09 5:00 
 Category: software
 Tags: docker, microservices, skaffold
 
