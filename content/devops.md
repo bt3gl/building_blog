@@ -55,7 +55,7 @@ Setup production & stage servers.
 
 --
 
-Once you have everything set, you can sit back and enjoy the view 😎.
+Once you have everything set, you can sit back and enjoy the view 😅.
 
 ![cyberpunk](./cyberpunk/lol.png){:height="300px" width="400px"}
 
