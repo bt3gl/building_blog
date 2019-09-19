@@ -6,7 +6,7 @@ Category: Devops
 ![cyberpunk](./cyberpunk/444.jpeg){:height="300px" width="400px"}
 
 
-Rad thing about working in startup engineering teams is that you can wear several hats. Perhaps the most uncomplicated one is the [DevOps]((https://en.wikipedia.org/wiki/DevOps)) engineer. But... what is the DevOps thing really?
+Rad thing about working in startup engineering teams is that you can wear several hats. Let us talk about the [DevOps]((https://en.wikipedia.org/wiki/DevOps)) 🎩 today.
 
 
 **DevOps** is a set of software development practices that combine software development (Dev) and information-technology operations (Ops) to shorten the systems-development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.
