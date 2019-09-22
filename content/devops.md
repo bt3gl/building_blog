@@ -1,5 +1,5 @@
 Title: So, What is a DevOps Engineer?
-Date: 2018-02-10 2:00
+Date: 2017-02-10 2:00
 Category: Devops
 
 
@@ -9,9 +9,11 @@ Category: Devops
 Rad thing about working in startup engineering teams is that you can wear several hats. Let us talk about the [DevOps]((https://en.wikipedia.org/wiki/DevOps)) 🎩 today.
 
 
-**DevOps** is a set of software development practices that combine software development (Dev) and information-technology operations (Ops) to shorten the systems-development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.
+*DevOps is a set of software development practices that combine software development (Dev) and information-technology operations (Ops) to shorten the systems-development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.* - Wikipedia
 
-And that describes it pretty well, but let's try and boil it down and talk about what kind of tasks you would be doing and what kind of technologies and software you would use. Now, this is going to be from my personal experience, yours might differ, but the basic principles should be there.
+And that describes it pretty well, but what kind of tasks would you be doing and what kind of technologies and software would you use? 
+
+Now, this is going to be from my personal experience, yours might differ, but the basic principles should be there.
 
 These are the tasks for a DevOps engineer:
 
