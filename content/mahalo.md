@@ -15,7 +15,7 @@ Category: mahalo
 ### Hi there, folks 👋🏼
 
 
-In the past few years, I have been working in many environments, from big corporations to small startups. And with seniority, I have been spending most of my time on complex and private projects. At this point it's clear for me that it's time to say goodbye to **[chmod a+x singularity](http://marinasteinkirch.com)**. 
+In the past years I have been growing my software skills working in many environments, from big corporations to small startups. And with seniority, I have been spending most of my time on complex and private projects. At this point it's clear for me that it's time to say goodbye to **[chmod a+x singularity](http://marinasteinkirch.com)**. 
 
 
 
