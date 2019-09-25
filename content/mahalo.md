@@ -15,7 +15,7 @@ Category: mahalo
 ### Hi there, folks 👋🏼
 
 
-In the past years I have been growing my software skills working in many environments, from big corporations to small startups. And with seniority, I have been spending most of my time on complex and private projects. At this point it's clear for me that it's time to say goodbye to **[chmod a+x singularity](http://marinasteinkirch.com)**. 
+In the past years, I have been improving my software skills, working in many environments, from big corporations to small startups. And with seniority, I have been spending most of my time on complex and private projects. At this point it's clear for me that it's time to say goodbye to **[chmod a+x singularity.sh](http://marinasteinkirch.com)**. 
 
 
 
@@ -41,12 +41,12 @@ Funny how I had texts on AI and C++ and Java back then... Certain things don't c
 
 Then I created another website when **[I was in college](http://marinasteinkirch.com/projects_page/index.html)**:
 
-![cyberpunk](./cyberpunk/w2.png){:height="300px" width="400px"}
+![cyberpunk](./cyberpunk/w2.png){:height="400px" width="500px"}
 
 
-And then when I was in **[my Ph.D.](http://www.astro.sunysb.edu/steinkirch/index.html)** (so many papers in this one!). 
+And then when I was in **[my Ph.D.](http://www.astro.sunysb.edu/steinkirch/index.html)** (so many papers in this one!): 
 
-![cyberpunk](./cyberpunk/w1.png){:height="300px" width="400px"}
+![cyberpunk](./cyberpunk/w1.png){:height="400px" width="500px"}
 
 
 Finally, I wrote **singularity.sh**, and I feel like my journey has ended with style 👾.
