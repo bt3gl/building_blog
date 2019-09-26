@@ -27,7 +27,7 @@ I started this website in 2014 when I was about to graduate from **[my Ph.D. in 
 
 
 
-Creating nerdy websites has been a trend in my life. I wrote my first (**[Flash](https://get.adobe.com/flashplayer/about/)**) website when I was 11:
+Creating nerdy websites has been a trend in my life. I wrote **[my first Flash website when I was 11](https://web.archive.org/web/20070808185215/http://fly.to/bytegirl)**:
 
 
 
@@ -61,7 +61,7 @@ Thank you all for following my work, for reading my posts, and for cheering my s
 
 
 
-#### Ps: In case you already miss me, here a list of posts that I had the most fun writing:
+#### Ps: here a list of posts that I had lots of fun writing:
 
 - [Introducing Amigo, a tool to manage Google Cloud Platform Security](http://marinasteinkirch.com/introducing-amigo-a-tool-to-manage-google-cloud-platform-security.html).
 - [Wireshark for fun or profit](http://marinasteinkirch.com/wiresharking-for-fun-or-profit.html).
