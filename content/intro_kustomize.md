@@ -1,8 +1,8 @@
 Title: A quick introduction to Kustomize for Kubernets
 Date: 2017-01-13
-Category: k8s, dev, h4x0r, docker
+Category: k8s, dev, docker
 
-![cyberpunk](./cyberpunk/1.jpg){:height="300px" width="400px"}
+![cyberpunk](./cyberpunk/1.jpeg){:height="300px" width="400px"}
 
 
 
@@ -12,7 +12,7 @@ Kustomize traverses a Kubernetes manifest to add, remove or update configuration
 
 Kustomize enables you to do that by creating a file that ties everything together, or optionally includes “overrides” for individual parameters.
 
-In this example, I shown how to use Kustomize to setup a Wordpress Kubernetes clusters. The source code is available [here](https://github.com/bt3gl/Learning_Kubernetes/tree/master/kustomize-example).
+In this example, I setup a Wordpress Kubernetes cluster using Kustomize. The source code is available [here](https://github.com/bt3gl/Learning_Kubernetes/tree/master/kustomize-example).
 
 
 ### Set Minukube
