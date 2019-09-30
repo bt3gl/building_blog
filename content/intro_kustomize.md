@@ -2,7 +2,7 @@ Title: A quick introduction to Kustomize for Kubernetes
 Date: 2017-01-13
 Category: k8s, dev, docker
 
-![cyberpunk](./cyberpunk/1.jpeg){:height="300px" width="400px"}
+![cyberpunk](./cyberpunk/1337.jpeg){:height="300px" width="400px"}
 
 
 
