@@ -9,7 +9,7 @@ Hey everyone!
 
 I wrote this quick guide to help you to get started with k8s in 10 min.
 
-In this guide, I show you how to spin a quick ```Node.js``` server in Kubernetes and to grasp some of its main concepts. [Here is the source code](https://github.com/bt3gl/k8s_security).
+In this guide, I show you how to spin a quick ```Node.js``` server in Kubernetes and to grasp some of its main concepts. [Here is the source code](https://github.com/bt3gl/Learning_Kubernetes).
 
 ### Install kubectl
 
