@@ -116,10 +116,8 @@ Now you can apply the overlay changes with:
 kubectl apply -k $DEV_HOME
 ```
 
-## Cleaning app
+### Cleaning up
 
-
-To clean up the resources created from this exercise:
 
 ```
 kubectl delete -f $BASE

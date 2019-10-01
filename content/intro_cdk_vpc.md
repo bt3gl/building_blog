@@ -1,5 +1,5 @@
 Title: Setting up a VPC with CDK in Python
-Date: 2017-11-11 9:00 
+Date: 2018-08-11 9:00 
 Category: vpc
 
 ![cyberpunk](./cyberpunk/1338.jpeg){:height="270px" width="390px"}
@@ -8,7 +8,7 @@ Category: vpc
 
 You choose your favorite language to code what resources (stacks) you want, and CDK synthetizes them to CloudFormation and helps you to deploy them to AWS.
 
-In this post I will show how to setup a VPC using CDK in Python. The code is available [here](https://github.com/bt3gl/AWS_Resources/tree/master/CDK_examples/VPC_example).
+In this post I show how to setup a VPC using CDK in Python. The code is available [here](https://github.com/bt3gl/AWS_Resources/tree/master/CDK_examples/VPC_example).
 
 ### Install AWS CDK
 
@@ -62,7 +62,7 @@ cdk deploy --profile <AWS PROFILE>
 
 These are the resources that will be created with this command:
 
-![vpc](https://github.com/bt3gl/AWS_Resources/blob/master/CDK_examples/VPC_example/imgs/vpc.png)
+![vpc](./cyberpunk/vpc.png)
 
 
 
