@@ -2,7 +2,7 @@ Title: Setting up a PostgreSQL RDS instance using CDK in Python
 Date: 2018-08-11 9:00 
 Category: cdk
 
-![cyberpunk](./cyberpunk/1339.jpeg){:height="270px" width="390px"}
+![cyberpunk](./cyberpunk/1339.jpg){:height="270px" width="390px"}
 
 In [a previous post](https://marinasteinkirch.com/setting-up-a-vpc-with-cdk-in-python.html), I advocated that [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/home.html) is a very neat way to write infrastructure as code, enabling you to create and provision AWS infrastructure deployments predictably and repeatedly.
 
@@ -10,7 +10,7 @@ Today I show how to spin up a PostgreSQL RDS instance using CDK in Python. The c
 
 ### Install AWS CDK
 
-Follow [this instructions](https://github.com/aws/aws-cdk#at-a-glance).
+Follow [theses instructions](https://github.com/aws/aws-cdk#at-a-glance).
 
 
 ### Create a virtual environment and install dependencies:
