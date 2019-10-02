@@ -1,5 +1,5 @@
 Title: Thinking about Machine Learning Data Pipelines
-Date: 2015-05-16 4:19 
+Date: 2016-05-17 4:19 
 Category: AI & ML
 Tags: python, data, airflow, etl, luigi
 
