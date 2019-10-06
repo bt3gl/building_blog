@@ -11,15 +11,11 @@ Category: mahalo
 *To exist is to change, to change is to mature, to mature is to go on creating oneself endlessly.* - Henri Bergson
 
 
-
-### Hi there, folks 👋🏼
-
-
-In the past years, I have been improving my software skills, working in many environments, from big corporations to small startups. And with seniority, I have been spending most of my time on complex and private projects. At this point it's clear for me that it's time to say goodbye to **[chmod a+x singularity.sh](http://marinasteinkirch.com)**. 
+In the past years, since I graduate from my Ph.D., I had the opportunity of working in many different software projects and environments. From larger companies to small startups, these experiences have been fantastic! As I advance in my software career, it's clear that it's time to say goodbye to **[chmod a+x singularity.sh](http://marinasteinkirch.com)**. 
 
 
 
-#### But it's fun to look back and think about our journeys!
+#### But it's fun to look back and think about our journeys! So let's do this...
 
 
 
@@ -27,7 +23,7 @@ I started this website in 2014 when I was about to graduate from **[my Ph.D. in 
 
 
 
-Creating nerdy websites has been a trend in my life. I wrote **[my first Flash website when I was 11](https://web.archive.org/web/20070808185215/http://fly.to/bytegirl)**:
+I guess every new moment in my life I wanted to have a new website 😃 I wrote **[my first Flash website when I was 11, it was called http://fly.to/bytegirl](https://web.archive.org/web/20070808185215/http://fly.to/bytegirl)**:
 
 
 
@@ -53,15 +49,16 @@ Finally, I wrote **singularity.sh**, and I feel like my journey has ended with s
 
 
 
-Thank you all for following my work, for reading my posts, and for cheering my story. It has been an honor to be here.
+Thank you all for following my work, for reading my posts, and for cheering my story. It has been an honor to be here. If you are interested in continuing to follow my journey, please add me at **[medium](https://medium.com/@miavonsteinkirch)** or **[instagram](https://www.instagram.com/innermost.limits.of.pure.fun)**.
+
+
+**Mahalo,**
+
+**️ Mia (aka bytegirl or bt3) ♥️**
 
 
 
-** ️- ️ ♥️ Mia or Marina or bt3gl or bt3 or bytegirl ♥️**
-
-
-
-#### Ps: here a list of posts that I had lots of fun writing:
+#### Oh, before I leave, here is a list of posts that I enjoyed the most:
 
 - [Introducing Amigo, a tool to manage Google Cloud Platform Security](http://marinasteinkirch.com/introducing-amigo-a-tool-to-manage-google-cloud-platform-security.html).
 - [Wireshark for fun or profit](http://marinasteinkirch.com/wiresharking-for-fun-or-profit.html).
