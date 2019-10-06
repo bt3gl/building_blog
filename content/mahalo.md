@@ -11,19 +11,19 @@ Category: mahalo
 *To exist is to change, to change is to mature, to mature is to go on creating oneself endlessly.* - Henri Bergson
 
 
-In the past years, since I graduate from my Ph.D., I had the opportunity of working in many different software projects and environments. From larger companies to small startups, these experiences have been fantastic! As I advance in my software career, it's clear that it's time to say goodbye to **[chmod a+x singularity.sh](http://marinasteinkirch.com)**. 
+In the last 4 years, I had the opportunity of working in many different software projects and environments. From large companies to small startups, I feel accomplished because I learned what I needed to become the engineer I wanted. And as I advance my career, it's clear that it's time to say goodbye to **[chmod a+x singularity.sh](http://marinasteinkirch.com)**. 
 
 
 
-#### But it's fun to look back and think about our journeys! So let's do this...
+#### But it's fun to look back! So let's do this...
 
 
 
-I started this website in 2014 when I was about to graduate from **[my Ph.D. in Physics in Stony Brook](http://www.astro.sunysb.edu/steinkirch/index.html)**. Those were the days when I was so so thirsty about learning everything about computers! I wrote an entire book on **[Python & Algorithms](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures)**, and I was playing **[CTF intensively and top 30 at CTFTimes.org](https://ctftime.org/stats/2014)**. I had that 🔥 to learn everything and write about everything (hence the **[variety of topics that this blog has](http://marinasteinkirch.com/archives.html)** 😅). 
+I started this website in 2014 when I was about to graduate from **[my Ph.D. in Physics in Stony Brook](http://www.astro.sunysb.edu/steinkirch/index.html)**. Those were the days when I was so so thirsty about learning everything about computers! I wrote an entire book on **[Python & Algorithms](https://github.com/bt3gl/Python-and-Algorithms-and-Data-Structures)**, and I was playing **[CTF intensively and top 23th at CTFTimes.org](https://ctftime.org/team/3208)**. I had that 🔥 to learn everything and write about everything (hence the **[variety of topics that this blog has](http://marinasteinkirch.com/archives.html)** 😅). 
 
 
 
-I guess every new moment in my life I wanted to have a new website 😃 I wrote **[my first Flash website when I was 11, it was called http://fly.to/bytegirl](https://web.archive.org/web/20070808185215/http://fly.to/bytegirl)**:
+But my history of building nerdy sites with nerdy content goes way back in the day 😃 I wrote **[my first Flash website when I was 11, it was called http://fly.to/bytegirl](https://web.archive.org/web/20070808185215/http://fly.to/bytegirl)**:
 
 
 
@@ -54,7 +54,7 @@ Thank you all for following my work, for reading my posts, and for cheering my s
 
 **Mahalo,**
 
-**️ Mia (aka bytegirl or bt3) ♥️**
+**Mia (aka bytegirl or bt3) ♥️**
 
 
 
