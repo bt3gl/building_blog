@@ -49,8 +49,7 @@ Finally, I wrote **singularity.sh**, and I feel like my journey has ended with s
 
 
 
-Thank you all for following my work, for reading my posts, and for cheering my story. It has been an honor to be here. If you are interested in continuing to follow my journey, please add me at **[medium](https://medium.com/@miavonsteinkirch)** or **[instagram](https://www.instagram.com/innermost.limits.of.pure.fun)**.
-
+Thank you all for following my work, for reading my posts, and for cheering my story. It has been an honor to be here. 
 
 **Mahalo,**
 
