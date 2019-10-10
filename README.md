@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 #### Create the blog most as a ```md``` file inside ```./content``.
 
-####```Makefile``` has the commands to generate the final page:
+#### ```Makefile``` has the commands to generate the final page:
 
 ```
 make html
